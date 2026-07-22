@@ -210,8 +210,8 @@ GH_CATEGORY_RULES = (
     ("開發工具", {"developer", "code", "coding", "review", "debug", "test", "cli", "sdk", "api", "git",
               "terminal"}),
     ("生產力", {"productivity", "task", "todo", "notes", "calendar", "adhd", "workflow", "automation"}),
-    ("基礎設施", {"infrastructure", "devops", "deploy", "cloud", "server", "proxy", "router", "container",
-              "kubernetes"}),
+    ("基礎設施", {"infrastructure", "devops", "deploy", "deployment", "cloud", "server", "proxy", "router",
+              "container", "kubernetes"}),
     ("網站／應用", {"web", "app", "platform", "ecommerce", "browser", "mobile", "social"}),
 )
 
@@ -257,24 +257,29 @@ a:focus-visible,.date-switch:focus-visible{outline:3px solid var(--acc);outline-
 .skip-link{position:absolute;z-index:10;left:16px;top:-64px;background:var(--fg);color:var(--bg);padding:10px 14px}
 .skip-link:focus{top:10px}
 .topbar{height:6px;background:linear-gradient(90deg,#0f6e56,#d85a30,#185fa5,#eda100,#534ab7)}
-header,main,footer{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
+header,main,footer,.page-nav{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
 header{padding-top:32px;padding-bottom:8px}
 .kicker{font-size:12px;letter-spacing:.12em;color:var(--acc);font-weight:600}
-h1{font-size:30px;margin:6px 0 8px;font-weight:700}
+h1{font-size:30px;margin:6px 0 8px;font-weight:700;text-wrap:balance}
 h2{font-size:20px;margin:34px 0 14px;font-weight:600}
 h3{font-size:15px;margin:0 0 10px;font-weight:600}
 h4{font-size:14px;margin:0 0 10px;font-weight:600}
 .heading-icon{margin-right:.3em}
 .sub{color:var(--mut);font-size:14px;margin:0 0 4px;max-width:760px}
-.page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;margin-top:20px;padding:10px 0;
-border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.page-nav>a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg);font-size:14px;font-weight:600;text-decoration:none}
-.page-nav>a:hover{color:var(--acc)}
+.nav-shell{position:sticky;top:0;z-index:8;margin-top:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+background:var(--bg)}
+.page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;min-height:62px}
+.tab-list{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.page-tab{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:7px 14px;border-radius:7px;
+color:var(--mut);font-size:14px;font-weight:600;text-decoration:none}
+.page-tab[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+.page-tab:hover{text-decoration:none;color:var(--acc)}
+.page-tab[aria-selected="true"]:hover{color:var(--bg)}
 .history-picker{display:flex;align-items:center;gap:8px;min-height:44px;color:var(--mut);font-size:13px}
 .history-picker label{font-weight:600;color:var(--fg)}
 .date-switch{min-height:36px;font-size:13px;padding:4px 28px 4px 8px;border-radius:6px;border:1px solid var(--line);
 background:var(--card);color:var(--fg)}
-section{scroll-margin-top:16px}
+section,.tab-panel{scroll-margin-top:78px}
 .err{margin:12px 0;padding:10px 16px;background:#fbeaea;color:#791f1f;border-radius:8px;font-size:14px}
 @media(prefers-color-scheme:dark){.err{background:#3a2020;color:#ffd6d6}}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -324,14 +329,91 @@ border-radius:8px;font-size:14px}
 .lb-period h3{margin:0 0 4px}
 @media(max-width:840px){.cards{grid-template-columns:1fr}}
 @media(max-width:640px){
-  header,main,footer{padding-left:16px;padding-right:16px}header{padding-top:24px}h1{font-size:24px;line-height:1.35}
-  .page-nav{align-items:stretch;gap:4px 12px}.page-nav>a{flex:1;justify-content:center}
+  header,main,footer,.page-nav{padding-left:16px;padding-right:16px}header{padding-top:24px}h1{font-size:24px;line-height:1.35}
+  .title-date,.title-topic{display:block}
+  .nav-shell{margin-top:14px}.page-nav{align-items:stretch;gap:6px 12px;padding-top:8px;padding-bottom:8px}
+  .tab-list{flex:1}.page-tab{min-width:0;flex:1}
   .history-picker{flex-basis:100%;justify-content:space-between}.date-switch{flex:1;max-width:220px;min-height:44px}
   .cards{grid-template-columns:1fr}.hf-cols{grid-template-columns:1fr}
   .card,.link-card,.hn-discussion,.snapshot-banner a{min-height:44px}
   .hn-card-row{grid-template-columns:1fr}.hn-discussion{width:100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card,.link-card,.hn-discussion{transform:none!important}}
+"""
+
+
+TAB_SCRIPT = r"""
+<script data-tab-controller>
+(() => {
+  const tablist = document.querySelector('.tab-list[role="tablist"]');
+  if (!tablist) return;
+  const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+  const targetId = tab => tab.getAttribute('aria-controls');
+  const targetPanel = tab => document.getElementById(targetId(tab));
+  const samePage = tab => {
+    const url = new URL(tab.getAttribute('href'), window.location.href);
+    return url.origin === window.location.origin && url.pathname === window.location.pathname;
+  };
+  const tabFor = id => tabs.find(tab => targetId(tab) === id && targetPanel(tab));
+  const idFromHash = () => tabFor(window.location.hash.slice(1)) ? window.location.hash.slice(1) : 'today';
+
+  function activate(id, {write = false, scroll = false, focus = false} = {}) {
+    const activeTab = tabFor(id) || tabFor('today') || tabs[0];
+    if (!activeTab) return;
+    tabs.forEach(tab => {
+      const selected = tab === activeTab;
+      tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      tab.setAttribute('tabindex', selected ? '0' : '-1');
+      const panel = targetPanel(tab);
+      if (panel) panel.hidden = !selected;
+    });
+    if (write) {
+      const nextHash = `#${targetId(activeTab)}`;
+      if (window.location.hash !== nextHash) window.history.pushState(null, '', nextHash);
+    }
+    if (focus) activeTab.focus();
+    if (scroll) {
+      const panel = targetPanel(activeTab);
+      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      window.requestAnimationFrame(() => panel.scrollIntoView({block: 'start', behavior}));
+    }
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', event => {
+      if (!samePage(tab)) return;
+      event.preventDefault();
+      activate(targetId(tab), {write: true, scroll: true});
+    });
+    tab.addEventListener('keydown', event => {
+      if (event.key === ' ' || (event.key === 'Enter' && samePage(tab))) {
+        event.preventDefault();
+        tab.click();
+        return;
+      }
+      let nextIndex = null;
+      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') nextIndex = 0;
+      if (event.key === 'End') nextIndex = tabs.length - 1;
+      if (nextIndex === null) return;
+      event.preventDefault();
+      const nextTab = tabs[nextIndex];
+      if (samePage(nextTab)) {
+        activate(targetId(nextTab), {write: true, scroll: true, focus: true});
+      } else {
+        nextTab.focus();
+        nextTab.click();
+      }
+    });
+  });
+
+  const syncFromLocation = () => activate(idFromHash(), {scroll: true});
+  window.addEventListener('popstate', syncFromLocation);
+  window.addEventListener('hashchange', syncFromLocation);
+  activate(idFromHash());
+})();
+</script>
 """
 
 
@@ -442,7 +524,8 @@ def _accumulation_section(leaderboards):
         )
     if not period_blocks:
         return ""
-    return ('<section id="leaderboards" aria-labelledby="leaderboards-title">'
+    return ('<section id="leaderboards" class="tab-panel" role="tabpanel" '
+            'aria-labelledby="tab-leaderboards">'
             '<h2 id="leaderboards-title"><span class="heading-icon" aria-hidden="true">🏆</span>累積排行榜</h2>'
             + "".join(period_blocks) + '</section>')
 
@@ -598,11 +681,13 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     banner_html = _snapshot_banner_html(snapshot_date)
     switcher_html = _date_switcher_html(history_dates, snapshot_date)
     today_href = "../index.html#today" if snapshot_date else "#today"
-    today_current = ' aria-current="page"' if snapshot_date is None else ""
-    leaderboard_link = '<a href="#leaderboards">累積榜</a>' if lb_section else ""
-    nav_html = (f'<nav class="page-nav" aria-label="主要導覽">'
-                f'<a href="{today_href}"{today_current}>今日榜</a>'
-                f'{leaderboard_link}{switcher_html}</nav>')
+    leaderboard_tab = ('<a id="tab-leaderboards" class="page-tab" role="tab" href="#leaderboards" '
+                       'aria-controls="leaderboards" aria-selected="false" tabindex="-1">累積榜</a>') if lb_section else ""
+    nav_html = (f'<div class="nav-shell"><nav class="page-nav" aria-label="主要導覽">'
+                f'<div class="tab-list" role="tablist" aria-label="榜單頁面">'
+                f'<a id="tab-today" class="page-tab" role="tab" href="{today_href}" '
+                f'aria-controls="today" aria-selected="true" tabindex="0">今日榜</a>'
+                f'{leaderboard_tab}</div>{switcher_html}</nav></div>')
 
     err_html = ('<div class="err" role="alert">⚠️ 部分來源抓取失敗:'
                 + "；".join(_esc(e) for e in errors)
@@ -617,29 +702,29 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             f'<div class="topbar" aria-hidden="true"></div>'
             f'{banner_html}'
             f'<header><div class="kicker">每日趨勢總覽 · 純資料靜態頁</div>'
-            f'<h1>{date} · 開源與科技熱門觀測</h1>'
+            f'<h1><span class="title-date">{date} ·</span> <span class="title-topic">開源與科技熱門觀測</span></h1>'
             f'<p class="sub">彙整 GitHub、Hugging Face、Hacker News、OpenRouter、Product Hunt 與 Ollama 公開榜單。更新於 {stamp}。'
             f'各項目旁 <span class="mark up">↑n</span>/<span class="mark down">↓n</span>/<span class="mark new">NEW</span>/'
             f'<span class="mark same">—</span> 為與昨日(資料裡日期嚴格早於今天的最近一天)排名比較。</p>'
-            f'{nav_html}</header><main id="main-content">'
+            f'</header>{nav_html}<main id="main-content">'
             f'{err_html}'
-            f'<section id="today" aria-labelledby="github-focus-title">'
+            f'<div id="today" class="tab-panel" role="tabpanel" aria-labelledby="tab-today">'
             f'<section id="github-focus" aria-labelledby="github-focus-title">'
             f'<h2 id="github-focus-title"><span class="heading-icon" aria-hidden="true">🐙</span>GitHub 今日焦點 Top {len(gh[:10])}</h2>'
             f'<p class="sub">GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。</p>'
             f'<p class="sub">用途標籤依專案名稱與公開簡介規則推定。</p>'
-            f'<div class="cards">{cards}</div></section></section>'
+            f'<div class="cards">{cards}</div></section>'
             f'<section id="hugging-face" aria-labelledby="hugging-face-title">'
             f'<h2 id="hugging-face-title"><span class="heading-icon" aria-hidden="true">🤗</span>Hugging Face 本日熱門</h2>'
             f'<p class="sub">Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。</p>'
             f'<div class="hf-cols">{hf_html}</div></section>'
-            f'{hn_section}{or_section}{ph_section}{ol_section}'
+            f'{hn_section}{or_section}{ph_section}{ol_section}</div>'
             f'{lb_section}</main>'
             f'<footer>資料來源:GitHub Trending、Hugging Face Trending API、Hacker News Algolia、'
             f'OpenRouter 排行資料、Product Hunt API 與 Ollama popular 榜。'
             f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
             f'本頁由觀星台腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
-            f'</body></html>')
+            f'{TAB_SCRIPT}</body></html>')
 
 
 # ----------------------------- 檔案寫入 -----------------------------

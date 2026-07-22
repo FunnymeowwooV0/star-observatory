@@ -110,6 +110,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
             (("org/reviewer", "CLI code review SDK"), "開發工具"),
             (("org/focus", "ADHD task and notes workflow"), "生產力"),
             (("org/edge", "cloud deploy proxy server"), "基礎設施"),
+            (("org/openship", "Self-hosted deployment platform"), "基礎設施"),
             (("org/store", "mobile ecommerce platform"), "網站／應用"),
             (("org/daily", "a delightful utility"), "其他工具"),
             (("", ""), "其他工具"),
@@ -123,6 +124,8 @@ class TestRenderHtmlTaskA(unittest.TestCase):
 
         self.assertIsNotNone(soup.select_one('a.skip-link[href="#main-content"]'))
         self.assertIsNotNone(soup.select_one("main#main-content"))
+        self.assertEqual(soup.select_one("h1 .title-date").get_text(strip=True), "2026-07-22 ·")
+        self.assertEqual(soup.select_one("h1 .title-topic").get_text(strip=True), "開源與科技熱門觀測")
         theme_colors = {(tag.get("media"), tag.get("content")) for tag in soup.select('meta[name="theme-color"]')}
         self.assertEqual(theme_colors, {
             ("(prefers-color-scheme: light)", "#f7f7f4"),
@@ -130,11 +133,40 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         })
         nav = soup.select_one('nav[aria-label="主要導覽"]')
         self.assertIsNotNone(nav)
-        self.assertIsNotNone(nav.select_one('a[href="#today"]'))
-        self.assertIsNotNone(nav.select_one('a[href="#leaderboards"]'))
+        self.assertIsNotNone(nav.select_one('a[role="tab"][href="#today"]'))
+        self.assertIsNotNone(nav.select_one('a[role="tab"][href="#leaderboards"]'))
         self.assertIn("看歷史", nav.get_text(" ", strip=True))
-        self.assertIsNotNone(soup.select_one("section#today"))
-        self.assertIsNotNone(soup.select_one("section#leaderboards"))
+        self.assertIsNotNone(soup.select_one('#today[role="tabpanel"]'))
+        self.assertIsNotNone(soup.select_one('#leaderboards[role="tabpanel"]'))
+
+    def test_tabs_have_accessible_progressive_enhancement_markup(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        tablist = soup.select_one('.tab-list[role="tablist"]')
+        tabs = tablist.select('a[role="tab"]') if tablist else []
+
+        self.assertIsNotNone(tablist)
+        self.assertEqual([tab["aria-controls"] for tab in tabs], ["today", "leaderboards"])
+        self.assertEqual([tab["aria-selected"] for tab in tabs], ["true", "false"])
+        self.assertEqual([tab["tabindex"] for tab in tabs], ["0", "-1"])
+        self.assertNotIn("role", soup.select_one(".history-picker").attrs)
+        for panel_id in ("today", "leaderboards"):
+            panel = soup.select_one(f'#{panel_id}[role="tabpanel"]')
+            self.assertIsNotNone(panel)
+            self.assertFalse(panel.has_attr("hidden"))
+
+        script = soup.select_one("script[data-tab-controller]")
+        self.assertIsNotNone(script)
+        script_text = script.get_text()
+        for token in ("history.pushState", "popstate", "hashchange", "ArrowLeft", "ArrowRight", "scrollIntoView"):
+            self.assertIn(token, script_text)
+
+    def test_missing_leaderboards_omits_second_tab_and_panel(self):
+        soup = BeautifulSoup(_render(leaderboards={}), "html.parser")
+        tabs = soup.select('.tab-list[role="tablist"] a[role="tab"]')
+
+        self.assertEqual([tab["aria-controls"] for tab in tabs], ["today"])
+        self.assertIsNone(soup.select_one("#leaderboards"))
+        self.assertIsNotNone(soup.select_one('#today[role="tabpanel"]'))
 
     def test_github_top_ten_is_one_clickable_card_per_repo(self):
         gh, _hf, _leaderboards = _sample_data()
@@ -255,7 +287,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
 
     def test_truthful_github_metric_copy_is_adjacent_to_ranking(self):
         soup = BeautifulSoup(_render(), "html.parser")
-        today = soup.select_one("section#today")
+        today = soup.select_one("#today")
         text = today.get_text(" ", strip=True)
 
         self.assertIn("GitHub 今日焦點 Top 10", text)
@@ -293,6 +325,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("touch-action:manipulation", css)
         self.assertIn("-webkit-tap-highlight-color", css)
         self.assertIn("color-scheme:light dark", css)
+        self.assertIn("text-wrap:balance", css)
 
     def test_dark_mode_status_marks_have_readable_colour_overrides(self):
         css = BeautifulSoup(_render(), "html.parser").style.get_text()
