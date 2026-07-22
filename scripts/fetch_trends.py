@@ -34,13 +34,10 @@ GH_TOP = 10
 HF_TOP = 5
 
 
-# ----------------------------- 抓資料 -----------------------------
-def fetch_github_trending(period):
-    """period: 'daily' | 'weekly'. 回傳 list[dict],已按新增星由多到少。抓失敗丟例外。"""
-    url = f"https://github.com/trending?since={period}"
-    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
+# ----------------------------- 解析(純函式,可離線測試) -----------------------------
+def parse_github_trending(html, top=GH_TOP):
+    """把 GitHub Trending 頁面 HTML 解析成 list[dict],已按新增星由多到少。解析不到丟例外。"""
+    soup = BeautifulSoup(html, "html.parser")
     rows = soup.select("article.Box-row")
     if not rows:
         raise RuntimeError("GitHub Trending 頁面沒有解析到任何 repo(版面可能改了)")
@@ -70,18 +67,14 @@ def fetch_github_trending(period):
         })
     # 已按新增星排序;保險起見再排一次(None 當 -1)
     out.sort(key=lambda x: (x["period_stars"] if x["period_stars"] is not None else -1), reverse=True)
-    return out[:GH_TOP]
+    return out[:top]
 
 
-def fetch_hf_trending(kind):
-    """kind: 'model'|'dataset'|'space'. 回傳 list[dict]。抓失敗丟例外。"""
-    url = f"https://huggingface.co/api/trending?type={kind}&limit={HF_TOP}"
-    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
+def parse_hf_trending(data, kind, top=HF_TOP):
+    """把 HF trending API 的 JSON 解析成 list[dict]。kind: 'model'|'dataset'|'space'。"""
     items = data.get("recentlyTrending", [])
     out = []
-    for it in items[:HF_TOP]:
+    for it in items[:top]:
         rd = it.get("repoData", {})
         rid = rd.get("id", "?")
         out.append({
@@ -98,6 +91,23 @@ def fetch_hf_trending(kind):
 def _parse_int(s):
     m = re.search(r"[\d,]+", s or "")
     return int(m.group().replace(",", "")) if m else None
+
+
+# ----------------------------- 連網(薄 wrapper,呼叫上面的純解析) -----------------------------
+def fetch_github_trending(period):
+    """period: 'daily' | 'weekly'. 抓官方 Trending 頁再解析。抓失敗丟例外。"""
+    url = f"https://github.com/trending?since={period}"
+    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp.raise_for_status()
+    return parse_github_trending(resp.text)
+
+
+def fetch_hf_trending(kind):
+    """kind: 'model'|'dataset'|'space'. 呼叫官方 API 再解析。抓失敗丟例外。"""
+    url = f"https://huggingface.co/api/trending?type={kind}&limit={HF_TOP}"
+    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp.raise_for_status()
+    return parse_hf_trending(resp.json(), kind)
 
 
 # ----------------------------- 產 Markdown -----------------------------
