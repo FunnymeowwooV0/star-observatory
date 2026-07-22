@@ -8,67 +8,67 @@
 ---
 
 ## 今日榜單 · 2026-07-22
-_更新於 2026-07-22 21:18 UTC+08:00_
+_更新於 2026-07-22 23:07 UTC+08:00_
 
 ### 🐙 GitHub 本日新增星 Top 10
 
 | # | Repo | ⭐ 新增 | 總星 | 語言 | 說明 |
 |:-:|------|-------:|-----:|:----:|------|
-| 1 | [koala73/worldmonitor](https://github.com/koala73/worldmonitor) | +4,131 | 67,638 | TypeScript | Real-time global intelligence dashboard. AI-powered news aggregation, ge |
-| 2 | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) | +1,682 | 7,700 | Python | A skill for your coding agent to stop it from burying the answer. ADHD-f |
-| 3 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | +1,648 | 24,426 | TypeScript | Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50 |
-| 4 | [oblien/openship](https://github.com/oblien/openship) | +1,304 | 6,873 | TypeScript | Self-hosted deployment platform |
-| 5 | [ruvnet/RuView](https://github.com/ruvnet/RuView) | +1,114 | 83,070 | Rust | π RuView turns commodity WiFi signals into real-time spatial intelligenc |
-| 6 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | +1,007 | 41,870 | Python | Learn it. Build it. Ship it for others. |
-| 7 | [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) | +872 | 25,088 | Python | Local-first code intelligence graph for MCP and CLI. Builds a persistent |
-| 8 | [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11) | +766 | 70,335 | Assembly | Original Apollo 11 Guidance Computer (AGC) source code for the command a |
-| 9 | [schollz/croc](https://github.com/schollz/croc) | +737 | 37,212 | Go | Easily and securely send things from one computer to another 🐊 📦 |
-| 10 | [jamiepine/voicebox](https://github.com/jamiepine/voicebox) | +565 | 45,430 | TypeScript | The open-source AI voice studio. Clone, dictate, create. |
+| 1 | [koala73/worldmonitor](https://github.com/koala73/worldmonitor) | +4,131 | 67,960 | TypeScript | Real-time global intelligence dashboard. AI-powered news aggregation, ge |
+| 2 | [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) | +1,682 | 7,814 | Python | A skill for your coding agent to stop it from burying the answer. ADHD-f |
+| 3 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | +1,648 | 24,598 | TypeScript | Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50 |
+| 4 | [oblien/openship](https://github.com/oblien/openship) | +1,304 | 6,972 | TypeScript | Self-hosted deployment platform |
+| 5 | [ruvnet/RuView](https://github.com/ruvnet/RuView) | +1,114 | 83,246 | Rust | π RuView turns commodity WiFi signals into real-time spatial intelligenc |
+| 6 | [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) | +872 | 25,123 | Python | Local-first code intelligence graph for MCP and CLI. Builds a persistent |
+| 7 | [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11) | +766 | 70,398 | Assembly | Original Apollo 11 Guidance Computer (AGC) source code for the command a |
+| 8 | [schollz/croc](https://github.com/schollz/croc) | +737 | 37,313 | Go | Easily and securely send things from one computer to another 🐊 📦 |
+| 9 | [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | +688 | 41,959 | Python | Learn it. Build it. Ship it for others. |
+| 10 | [jamiepine/voicebox](https://github.com/jamiepine/voicebox) | +565 | 45,499 | TypeScript | The open-source AI voice studio. Clone, dictate, create. |
 
 ### 🤗 Hugging Face 熱門模型 Top 5
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [thinkingmachines/Inkling](https://huggingface.co/thinkingmachines/Inkling) | 1,409 | 16,441 | image-text-to-text |
-| 2 | [baidu/Unlimited-OCR](https://huggingface.co/baidu/Unlimited-OCR) | 2,652 | 2,237,351 | image-text-to-text |
-| 3 | [prism-ml/Ternary-Bonsai-27B-gguf](https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf) | 917 | 432,196 | text-generation |
-| 4 | [prism-ml/Bonsai-27B-gguf](https://huggingface.co/prism-ml/Bonsai-27B-gguf) | 582 | 1,404,962 | text-generation |
-| 5 | [poolside/Laguna-S-2.1](https://huggingface.co/poolside/Laguna-S-2.1) | 305 | 3,056 | text-generation |
+| 1 | [thinkingmachines/Inkling](https://huggingface.co/thinkingmachines/Inkling) | 1,417 | 16,441 | image-text-to-text |
+| 2 | [baidu/Unlimited-OCR](https://huggingface.co/baidu/Unlimited-OCR) | 2,667 | 2,237,351 | image-text-to-text |
+| 3 | [prism-ml/Ternary-Bonsai-27B-gguf](https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf) | 920 | 432,196 | text-generation |
+| 4 | [prism-ml/Bonsai-27B-gguf](https://huggingface.co/prism-ml/Bonsai-27B-gguf) | 586 | 1,404,962 | text-generation |
+| 5 | [poolside/Laguna-S-2.1](https://huggingface.co/poolside/Laguna-S-2.1) | 327 | 3,056 | text-generation |
 
 ### 🤗 Hugging Face 熱門資料集 Top 5
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [openbmb/UltraX-Preview](https://huggingface.co/datasets/openbmb/UltraX-Preview) | 249 | 2,935 | — |
-| 2 | [FlyRank/internship-warehouse](https://huggingface.co/datasets/FlyRank/internship-warehouse) | 312 | 2,187 | — |
-| 3 | [SupraLabs/reasoning-corpus-4K-5M-v1](https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1) | 67 | 443 | — |
+| 1 | [openbmb/UltraX-Preview](https://huggingface.co/datasets/openbmb/UltraX-Preview) | 251 | 2,935 | — |
+| 2 | [SupraLabs/reasoning-corpus-4K-5M-v1](https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1) | 67 | 443 | — |
+| 3 | [FlyRank/internship-warehouse](https://huggingface.co/datasets/FlyRank/internship-warehouse) | 315 | 2,187 | — |
 | 4 | [markov-ai/gaming-500-hours](https://huggingface.co/datasets/markov-ai/gaming-500-hours) | 202 | 32,029 | — |
-| 5 | [Glint-Research/Fable-5-traces](https://huggingface.co/datasets/Glint-Research/Fable-5-traces) | 651 | 67,452 | — |
+| 5 | [Glint-Research/Fable-5-traces](https://huggingface.co/datasets/Glint-Research/Fable-5-traces) | 652 | 67,452 | — |
 
 ### 🤗 Hugging Face 熱門Spaces Top 5
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [webml-community/bonsai-webgpu-kernels](https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels) | 267 | — | Text Generation |
-| 2 | [ICML-2026-agent-repro/challenge](https://huggingface.co/spaces/ICML-2026-agent-repro/challenge) | 147 | — | Other |
-| 3 | [kulkas2pintu/wan555](https://huggingface.co/spaces/kulkas2pintu/wan555) | 634 | — | Video Generation |
-| 4 | [smolagents/hf-realtime-voice](https://huggingface.co/spaces/smolagents/hf-realtime-voice) | 448 | — | Chatbots |
-| 5 | [selfit-camera/Omni-Image-Editor](https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor) | 2,189 | — | Image Editing |
+| 1 | [webml-community/bonsai-webgpu-kernels](https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels) | 271 | — | Text Generation |
+| 2 | [ICML-2026-agent-repro/challenge](https://huggingface.co/spaces/ICML-2026-agent-repro/challenge) | 148 | — | Other |
+| 3 | [kulkas2pintu/wan555](https://huggingface.co/spaces/kulkas2pintu/wan555) | 635 | — | Video Generation |
+| 4 | [smolagents/hf-realtime-voice](https://huggingface.co/spaces/smolagents/hf-realtime-voice) | 449 | — | Chatbots |
+| 5 | [loveseries/wanmanlove](https://huggingface.co/spaces/loveseries/wanmanlove) | 150 | — | Video Generation |
 
 ### 📰 Hacker News 頭版 Top 10(按分數)
 
 | # | 標題 | ▲ 分數 | 💬 留言 | 連結 |
 |:-:|------|-------:|-------:|:----:|
-| 1 | [OpenAI and Hugging Face address security incident during model evaluatio](https://openai.com/index/hugging-face-model-evaluation-security-incident/) | 1,344 | 898 | [HN](https://news.ycombinator.com/item?id=48997548) |
-| 2 | [Advertise in ChatGPT](https://ads.openai.com/) | 906 | 695 | [HN](https://news.ycombinator.com/item?id=48996571) |
-| 3 | [Kimi K3 Is Competitive with Fable; Kimi K3 and Fable Is SoTA](https://fireworks.ai/blog/kimik3-fable) | 743 | 392 | [HN](https://news.ycombinator.com/item?id=48999291) |
-| 4 | [Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/) | 720 | 542 | [HN](https://news.ycombinator.com/item?id=48993414) |
-| 5 | [FreeInk: Open ecosystem for e-readers](https://freeink.org/) | 626 | 131 | [HN](https://news.ycombinator.com/item?id=48996318) |
-| 6 | [Judge approves $1.5B Anthropic settlement for pirated books used to trai](https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63) | 446 | 405 | [HN](https://news.ycombinator.com/item?id=48996652) |
-| 7 | [Apple defeats liability for not scanning iCloud for CSAM](https://blog.ericgoldman.org/archives/2026/07/apple-defeats-liability-for-not-scanning-icloud-for-csam-but-the-judge-was-not-pleased-amy-v-apple.htm) | 431 | 460 | [HN](https://news.ycombinator.com/item?id=48992870) |
-| 8 | [Long presumed dead, a thriving coral reef is discovered in West Africa](https://e360.yale.edu/digest/benin-coral-reef) | 366 | 82 | [HN](https://news.ycombinator.com/item?id=48993816) |
-| 9 | [Laguna S 2.1](https://poolside.ai/blog/introducing-laguna-s-2-1) | 356 | 67 | [HN](https://news.ycombinator.com/item?id=48995261) |
-| 10 | [Jack Dorsey launches Buzz to combine team chat, AI agents and Git hostin](https://runtimewire.com/article/jack-dorsey-block-buzz-team-chat-ai-agents-git) | 342 | 299 | [HN](https://news.ycombinator.com/item?id=48995213) |
+| 1 | [OpenAI and Hugging Face address security incident during model evaluatio](https://openai.com/index/hugging-face-model-evaluation-security-incident/) | 1,419 | 959 | [HN](https://news.ycombinator.com/item?id=48997548) |
+| 2 | [Advertise in ChatGPT](https://ads.openai.com/) | 986 | 753 | [HN](https://news.ycombinator.com/item?id=48996571) |
+| 3 | [Kimi K3 Is Competitive with Fable; Kimi K3 and Fable Is SoTA](https://fireworks.ai/blog/kimik3-fable) | 794 | 405 | [HN](https://news.ycombinator.com/item?id=48999291) |
+| 4 | [Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/) | 731 | 550 | [HN](https://news.ycombinator.com/item?id=48993414) |
+| 5 | [FreeInk: Open ecosystem for e-readers](https://freeink.org/) | 659 | 141 | [HN](https://news.ycombinator.com/item?id=48996318) |
+| 6 | [OverpAId – Fire your CEO. Hire the future](https://overpaid.lol) | 532 | 252 | [HN](https://news.ycombinator.com/item?id=49004663) |
+| 7 | [Judge approves $1.5B Anthropic settlement for pirated books used to trai](https://apnews.com/article/ai-anthropic-copyright-settlement-claude-books-bartz-74b140444023898aeba8579b6e9f0d63) | 493 | 470 | [HN](https://news.ycombinator.com/item?id=48996652) |
+| 8 | [Long presumed dead, a thriving coral reef is discovered in West Africa](https://e360.yale.edu/digest/benin-coral-reef) | 378 | 85 | [HN](https://news.ycombinator.com/item?id=48993816) |
+| 9 | [A digestion of the Jacobian conjecture counterexample](https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/) | 296 | 123 | [HN](https://news.ycombinator.com/item?id=48998362) |
+| 10 | [Late.sh – a command-line Clubhouse for computer people](https://late.sh/) | 255 | 93 | [HN](https://news.ycombinator.com/item?id=49001127) |
 
 ### 🧮 OpenRouter 最新一日模型用量 Top 10
 
@@ -89,16 +89,16 @@ _更新於 2026-07-22 21:18 UTC+08:00_
 
 | # | 名稱 | 一句話 | ▲ 票數 |
 |:-:|------|--------|-------:|
-| 1 | [Humalike x Hermes](https://www.producthunt.com/products/humalike-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Social intelligence plugin for Hermes Agent | 246 |
-| 2 | [Buzzy](https://www.producthunt.com/products/buzzy-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Your creative AI co-director | 228 |
-| 3 | [Kastra](https://www.producthunt.com/products/kastra?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Runtime authorization for Claude, Cursor, Codex and OpenClaw | 187 |
-| 4 | [box](https://www.producthunt.com/products/box-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Simple computers for agent w/ full VMs | 171 |
-| 5 | [ACME.BOT](https://www.producthunt.com/products/acme-bot?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | No-slop AI SEO agent that interviews you first | 130 |
-| 6 | [Gemini 3.6 Flash Family](https://www.producthunt.com/products/gemini-3-6-flash-family?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber | 121 |
-| 7 | [AgentManager](https://www.producthunt.com/products/agentmanager?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Never miss a Claude Code session waiting for your input | 96 |
-| 8 | [Lattics](https://www.producthunt.com/products/lattics-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Brain-like knowledge base with AI writing & deep research | 89 |
-| 9 | [AI Agents in Chat](https://www.producthunt.com/products/cometchat?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Your Chat UI Just Got an AI Roommate | 88 |
-| 10 | [AGINE Academy](https://www.producthunt.com/products/agine-academy?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | A story-driven game for learning Claude by doing | 87 |
+| 1 | [Humalike x Hermes](https://www.producthunt.com/products/humalike-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Social intelligence plugin for Hermes Agent | 272 |
+| 2 | [Buzzy](https://www.producthunt.com/products/buzzy-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Your creative AI co-director | 262 |
+| 3 | [Kastra](https://www.producthunt.com/products/kastra?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Runtime authorization for Claude, Cursor, Codex and OpenClaw | 218 |
+| 4 | [box](https://www.producthunt.com/products/box-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Simple computers for agent w/ full VMs | 192 |
+| 5 | [ACME.BOT](https://www.producthunt.com/products/acme-bot?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | No-slop AI SEO agent that interviews you first | 144 |
+| 6 | [Gemini 3.6 Flash Family](https://www.producthunt.com/products/gemini-3-6-flash-family?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber | 134 |
+| 7 | [AgentManager](https://www.producthunt.com/products/agentmanager?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Never miss a Claude Code session waiting for your input | 105 |
+| 8 | [Lattics](https://www.producthunt.com/products/lattics-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Brain-like knowledge base with AI writing & deep research | 97 |
+| 9 | [AI Agents in Chat](https://www.producthunt.com/products/cometchat?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Your Chat UI Just Got an AI Roommate | 91 |
+| 10 | [AGINE Academy](https://www.producthunt.com/products/agine-academy?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | A story-driven game for learning Claude by doing | 90 |
 
 ### 🦙 Ollama 熱門模型 Top 10
 
