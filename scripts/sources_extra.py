@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-新資料源三合一(HN + OpenRouter + Product Hunt)— 純解析函式 + 薄連網 wrapper。
+新資料源(HN + OpenRouter + Product Hunt + Ollama)— 純解析函式 + 薄連網 wrapper。
 
 刻意與 fetch_trends.py 分檔:後者的 render_html()/SITE_CSS 之後要改版面,
 把三個新源的程式集中在這裡可減少撞檔。風格比照 fetch_trends.py 的
@@ -10,15 +10,20 @@ parse_hf_trending()(純解析、可離線測)/ fetch_hf_trending()(薄連網)。
     - HN         Algolia 官方 API,當前頭版按 points 取前 10(不爬 HTML)
     - OpenRouter 官方排行資料(非官方文件端點),最新一日模型用量 Top 10(脆弱源:解析不到丟例外)
     - Product Hunt 官方 GraphQL,過去 24h AI 主題貼文 Top 10(token 只從環境變數,無 token 由呼叫端 skip)
+    - Ollama    公開 HTML(ollama.com/library?sort=popular),popular 榜前 10(脆弱源:解析不到丟例外)
+                每模型帶官方一句描述;Pulls 累計數,delta 由 compute_pull_deltas 純函式算「今日新增」
 """
 import datetime as dt
+import re
 
 import requests
+from bs4 import BeautifulSoup
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trend-radar-bot"
 HN_TOP = 10
 OR_TOP = 10
 PH_TOP = 10
+OL_TOP = 10
 
 
 # ----------------------------- 解析(純函式,可離線測試) -----------------------------
@@ -97,6 +102,98 @@ def parse_ph_posts(data, top=PH_TOP):
     return out[:top]
 
 
+def _parse_pulls(s):
+    """把 Ollama 的 Pulls 縮寫字串轉成 int。K=1e3 / M=1e6 / B=1e9,含小數與千分位逗號。
+
+    例:'117.5M'→117500000、'79.3K'→79300、'1.2B'→1200000000、'900'→900。
+    解析不到數字回 None。
+    """
+    m = re.search(r"([\d.,]+)\s*([KMB]?)", s or "")
+    if not m or not m.group(1):
+        return None
+    num = float(m.group(1).replace(",", ""))
+    mult = {"": 1, "K": 1e3, "M": 1e6, "B": 1e9}[m.group(2)]
+    return int(round(num * mult))
+
+
+def parse_ollama_library(html, top=OL_TOP):
+    """把 Ollama 模型庫 popular 頁面 HTML 解析成 list[dict]。
+
+    **榜序=頁面原序**(sort=popular 是官方口徑),不自己按 Pulls 重排。
+    脆弱源(爬 HTML,同 GitHub Trending):解析不到任何模型 → 丟例外,不得靜默回空榜。
+
+    每筆:name / url / desc(官方一句描述)/ pulls(int,縮寫已展開)/
+          caps(能力標籤 list,如 tools/thinking/embedding,可為空)/ updated(原字串)。
+    caps 判定:標籤裡「不含數字」的才是能力標籤;含數字的是尺寸(8b/70b/270m/e2b)→ 排除。
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    anchors = soup.select('li a[href^="/library/"]')
+    if not anchors:
+        raise RuntimeError("Ollama library 頁面沒解析到任何模型(版面可能改了)")
+    out = []
+    for a in anchors:
+        href = (a.get("href") or "").strip()
+        if "/library/" not in href:
+            continue
+        name = href.split("/library/", 1)[1].strip("/")
+        if not name:
+            continue
+        desc_p = a.select_one("p")
+        desc = desc_p.get_text(strip=True) if desc_p else ""
+        tagdiv = a.select_one("div.flex.flex-wrap")
+        tags = [s.get_text(strip=True) for s in tagdiv.select("span")] if tagdiv else []
+        caps = [t for t in tags if t and not any(c.isdigit() for c in t)]
+        ps = a.select("p")
+        stats = ps[-1].get_text(" ", strip=True) if ps else ""
+        pm = re.search(r"([\d.,]+)\s*([KMB]?)\s*Pulls", stats)
+        pulls = _parse_pulls(pm.group(1) + pm.group(2)) if pm else None
+        um = re.search(r"Updated\s+(.+)$", stats)
+        updated = um.group(1).strip() if um else ""
+        out.append({
+            "name": name,
+            "url": f"https://ollama.com/library/{name}",
+            "desc": desc,
+            "pulls": pulls,
+            "caps": caps,
+            "updated": updated,
+        })
+    if not out:
+        raise RuntimeError("Ollama library 解析不到任何有效模型(選擇器可能壞了)")
+    return out[:top]
+
+
+def compute_pull_deltas(today_items, csv_rows, today):
+    """純函式:算每個模型的「今日新增下載」(pulls_delta)。
+
+    today_items:今日榜(list[dict],需含 name / pulls)。
+    csv_rows   :data/ollama_daily.csv 既有列(list[dict],需含 date / model / pulls)。
+    today      :今天日期字串 'YYYY-MM-DD'。
+
+    先前快照 = **日期嚴格小於 today** 的最近一個日期;delta = 今日 pulls − 該日 pulls。
+    找不到先前快照(首日/新進榜/該模型從未出現)→ None(不編造)。
+    同日重跑防呆:csv 裡「等於 today」的列**不得**被當基準(只取 date < today)。
+    回傳 dict:name → delta(int 或 None)。
+    """
+    prior_dates = [r.get("date", "") for r in csv_rows if r.get("date", "") < today]
+    if not prior_dates:
+        return {it["name"]: None for it in today_items}
+    prior = max(prior_dates)
+    base = {}
+    for r in csv_rows:
+        if r.get("date") != prior:
+            continue
+        try:
+            base[r["model"]] = int(r["pulls"])
+        except (ValueError, TypeError, KeyError):
+            pass
+    out = {}
+    for it in today_items:
+        b = base.get(it["name"])
+        p = it.get("pulls")
+        out[it["name"]] = (p - b) if (b is not None and p is not None) else None
+    return out
+
+
 # ----------------------------- 連網(薄 wrapper,呼叫上面的純解析) -----------------------------
 def fetch_hn_frontpage():
     """抓 HN 頭版(Algolia 官方 API)再解析。抓失敗丟例外。"""
@@ -140,3 +237,11 @@ def fetch_ph_posts(token):
     if payload.get("errors"):
         raise RuntimeError(f"Product Hunt GraphQL 回傳 errors:{payload['errors']}")
     return parse_ph_posts(payload)
+
+
+def fetch_ollama_library():
+    """抓 Ollama 模型庫 popular 頁(公開 HTML,免金鑰)再解析。抓/解析失敗丟例外。"""
+    url = "https://ollama.com/library?sort=popular"
+    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp.raise_for_status()
+    return parse_ollama_library(resp.text)

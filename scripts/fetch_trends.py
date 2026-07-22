@@ -174,6 +174,19 @@ def md_ph_table(items):
     return "\n".join(lines)
 
 
+def md_ollama_table(items, deltas):
+    lines = [f"### 🦙 Ollama 熱門模型 Top {len(items)}", "",
+             "| # | 模型 | Pulls(累計) | 今日新增 | 功能 |",
+             "|:-:|------|----------:|--------:|------|"]
+    for i, it in enumerate(items, 1):
+        pulls = f"{it['pulls']:,}" if isinstance(it["pulls"], int) else "—"
+        d = deltas.get(it["name"]) if deltas else None
+        delta = f"{d:+,}" if isinstance(d, int) else "—"
+        desc = (it["desc"] or "").replace("|", "/").strip()[:72]
+        lines.append(f"| {i} | [{it['name']}]({it['url']}) | {pulls} | {delta} | {desc} |")
+    return "\n".join(lines)
+
+
 PH_SKIP_NOTE = "### 🚀 Product Hunt AI 主題 24h 票選\n\n> Product Hunt:未設 token 略過(本機無環境變數 `PH_TOKEN`)。"
 
 
@@ -230,11 +243,14 @@ footer code{background:var(--line);padding:1px 5px;border-radius:4px}
 """
 
 
-def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False):
+def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False,
+                ollama=None, ollama_deltas=None):
     """把當日榜單渲染成一頁自足的靜態 HTML(不含 AI,純資料排版)。"""
     hn = hn or []
     openrouter = openrouter or []
     ph = ph or []
+    ollama = ollama or []
+    ollama_deltas = ollama_deltas or {}
     max_stars = max([r["period_stars"] or 0 for r in gh] + [1])
     bars = ""
     for r in gh:
@@ -293,6 +309,16 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                 f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["name"])}</a>'
                 f'<span class="hf-meta">▲ {votes}{tag}</span></li>')
 
+    def ol_item(i, it):
+        pulls = f'{it["pulls"]:,}' if isinstance(it["pulls"], int) else "—"
+        d = ollama_deltas.get(it["name"])
+        delta = f'今日 +{d:,}' if isinstance(d, int) else '今日新增 —'
+        caps = f' · {_esc(", ".join(it["caps"]))}' if it["caps"] else ""
+        return (f'<li><span class="hf-rank">{i}</span>'
+                f'<span class="hf-name">{_esc(it["name"])}</span>'
+                f'<span class="hf-meta">⬇ {pulls} Pulls · {delta}{caps}</span>'
+                f'<span class="hf-meta"><a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["desc"])}</a></span></li>')
+
     hn_section = (f'<section><h2>📰 Hacker News 頭版</h2>'
                   f'<p class="sub">HN 當前頭版按分數(Algolia 官方 API)。</p>'
                   f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div></section>') if hn else ""
@@ -309,6 +335,11 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     else:
         ph_section = ""
 
+    ol_section = (f'<section><h2>🦙 Ollama 熱門模型</h2>'
+                  f'<p class="sub">Ollama 模型庫 popular 榜(頁面原序,未按 Pulls 重排)。'
+                  f'Pulls 為累計下載數;「今日新增」由每日快照相減得出,需前一日資料,首日/無先前快照顯示 —。</p>'
+                  f'<div class="hf-cols">{list_block("🦙", "模型", ollama, ol_item)}</div></section>') if ollama else ""
+
     err_html = ('<div class="err">⚠️ 部分來源抓取失敗:' + "；".join(_esc(e) for e in errors) + "</div>") if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
@@ -321,7 +352,7 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             f'<section><h2>🐙 GitHub 24 小時成長排行 Top {len(gh)}</h2><div class="bars">{bars}</div></section>'
             f'<section><h2>焦點前五</h2><div class="cards">{cards}</div></section>'
             f'<section><h2>🤗 Hugging Face 本日熱門</h2><div class="hf-cols">{hf_html}</div></section>'
-            f'{hn_section}{or_section}{ph_section}'
+            f'{hn_section}{or_section}{ph_section}{ol_section}'
             f'<footer>資料來源:GitHub Trending 日榜 + Hugging Face 官方 API(<code>/api/trending</code>)。'
             f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
             f'本頁由觀星台腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
@@ -341,6 +372,15 @@ def append_text(path, text):
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "a", encoding="utf-8") as f:
         f.write(text)
+
+
+def read_csv_rows(path):
+    """讀既有 CSV 成 list[dict](DictReader)。檔案不存在回空列表(首次跑)。"""
+    full = os.path.join(ROOT, path)
+    if not os.path.exists(full):
+        return []
+    with open(full, encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
 
 
 def append_csv(path, header, rows):
@@ -403,6 +443,17 @@ def run_daily(now):
         except Exception as e:  # noqa: BLE001
             errors.append(f"Product Hunt 抓取失敗:{e}")
 
+    # Ollama 熱門模型(公開 HTML,零金鑰,一定嘗試)。抓成功後讀既有 CSV 算「今日新增」delta。
+    ollama = []
+    ollama_deltas = {}
+    attempted += 1
+    try:
+        ollama = se.fetch_ollama_library()
+    except Exception as e:  # noqa: BLE001
+        errors.append(f"Ollama 熱門模型抓取失敗:{e}")
+    if ollama:
+        ollama_deltas = se.compute_pull_deltas(ollama, read_csv_rows("data/ollama_daily.csv"), date)
+
     # 組 markdown 內文
     parts = []
     if gh:
@@ -421,6 +472,8 @@ def run_daily(now):
         parts.append(md_ph_table(ph))
     elif ph_skipped:
         parts.append(PH_SKIP_NOTE)
+    if ollama:
+        parts.append(md_ollama_table(ollama, ollama_deltas))
     if errors:
         parts.append("> ⚠️ 本次部分來源抓取失敗:\n>\n" + "\n".join(f"> - {e}" for e in errors))
     body = "\n\n".join(parts)
@@ -431,7 +484,8 @@ def run_daily(now):
 
     # 網頁 dashboard(靜態 HTML,覆蓋;供 GitHub Pages)
     write_text("docs/index.html",
-               render_html(date, stamp, gh, hf, errors, hn, openrouter, ph, ph_skipped))
+               render_html(date, stamp, gh, hf, errors, hn, openrouter, ph, ph_skipped,
+                           ollama, ollama_deltas))
 
     # 當月彙整(追加)
     month = now.strftime("%Y-%m")
@@ -463,6 +517,12 @@ def run_daily(now):
                ["date", "rank", "name", "tagline", "votes", "url"],
                [[date, i + 1, p["name"], p["tagline"], p["votes"], p["url"]]
                 for i, p in enumerate(ph)])
+    append_csv("data/ollama_daily.csv",
+               ["date", "rank", "model", "pulls", "pulls_delta", "caps", "updated", "url", "desc"],
+               [[date, i + 1, it["name"], it["pulls"],
+                 (ollama_deltas.get(it["name"]) if isinstance(ollama_deltas.get(it["name"]), int) else ""),
+                 ";".join(it["caps"]), it["updated"], it["url"], it["desc"]]
+                for i, it in enumerate(ollama)])
 
     # Issue 內文(= email)
     write_text(".issue_body.md",
@@ -471,7 +531,7 @@ def run_daily(now):
     print(f"[daily] done. GitHub={len(gh)} HF模型={len(hf.get('模型',[]))} "
           f"資料集={len(hf.get('資料集',[]))} Spaces={len(hf.get('Spaces',[]))} "
           f"HN={len(hn)} OpenRouter={len(openrouter)} "
-          f"PH={'skip' if ph_skipped else len(ph)} "
+          f"PH={'skip' if ph_skipped else len(ph)} Ollama={len(ollama)} "
           f"errors={len(errors)}/{attempted}")
     return errors, attempted
 

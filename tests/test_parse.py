@@ -200,5 +200,113 @@ class TestPhParse(unittest.TestCase):
         self.assertEqual(se.parse_ph_posts({"data": {"posts": {"edges": []}}}), [])
 
 
+class TestOllamaParse(unittest.TestCase):
+    """Ollama 模型庫 popular 榜解析(合成 fixture,見 fixtures/ollama_library.html)。
+
+    脆弱源(爬 HTML):解析不到必須丟例外。榜序=頁面原序,不按 Pulls 重排。
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(FIX, "ollama_library.html"), encoding="utf-8") as f:
+            cls.html = f.read()
+
+    # 頁面/榜序(fixture 刻意讓頁序≠Pulls 遞減,用來抓「有沒有偷偷重排」)
+    PAGE_ORDER = ["alpha-model", "beta-model", "gamma-embed", "delta-model", "epsilon-model",
+                  "zeta-model", "eta-model", "theta-model", "iota-model", "kappa-model"]
+
+    def test_returns_top_10_in_page_order(self):
+        items = se.parse_ollama_library(self.html, top=10)
+        self.assertEqual(len(items), 10)
+        self.assertEqual([it["name"] for it in items], self.PAGE_ORDER,
+                         "Ollama 榜序必須照頁面 popular 原序,不得取前 10 之外或改序")
+
+    def test_not_resorted_by_pulls(self):
+        items = se.parse_ollama_library(self.html, top=10)
+        names = [it["name"] for it in items]
+        by_pulls = [it["name"] for it in sorted(items, key=lambda x: x["pulls"], reverse=True)]
+        self.assertNotEqual(names, by_pulls,
+                            "頁序與 Pulls 遞減序在此 fixture 應不同;相同代表被錯誤重排了")
+
+    def test_pulls_abbreviation_parsing(self):
+        items = {it["name"]: it for it in se.parse_ollama_library(self.html, top=10)}
+        self.assertEqual(items["alpha-model"]["pulls"], 1_200_000_000)   # 1.2B
+        self.assertEqual(items["kappa-model"]["pulls"], 7_000_000_000)   # 7B
+        self.assertEqual(items["gamma-embed"]["pulls"], 79_300_000)      # 79.3M 小數
+        self.assertEqual(items["theta-model"]["pulls"], 3_140_000)       # 3.14M 兩位小數
+        self.assertEqual(items["beta-model"]["pulls"], 500_000)          # 500K
+        self.assertEqual(items["eta-model"]["pulls"], 1_500)             # 1.5K
+        self.assertEqual(items["epsilon-model"]["pulls"], 900)           # 無縮寫
+
+    def test_field_shape(self):
+        for it in se.parse_ollama_library(self.html, top=10):
+            self.assertIsInstance(it["name"], str)
+            self.assertEqual(it["url"], f"https://ollama.com/library/{it['name']}")
+            self.assertIsInstance(it["desc"], str)
+            self.assertTrue(it["desc"], f"{it['name']} 缺官方描述")
+            self.assertIsInstance(it["pulls"], int)
+            self.assertIsInstance(it["caps"], list)
+            self.assertIsInstance(it["updated"], str)
+
+    def test_caps_excludes_sizes_and_allows_empty(self):
+        items = {it["name"]: it for it in se.parse_ollama_library(self.html, top=10)}
+        self.assertEqual(items["alpha-model"]["caps"], ["tools"])
+        self.assertEqual(items["delta-model"]["caps"], ["thinking", "vision"])
+        self.assertEqual(items["beta-model"]["caps"], [], "無能力標籤應為空 list,不得混入尺寸(1b/3b)")
+        # 尺寸標籤(含數字)絕不能出現在 caps
+        for it in items.values():
+            for c in it["caps"]:
+                self.assertFalse(any(ch.isdigit() for ch in c),
+                                 f"caps 不該含尺寸標籤:{c}")
+
+    def test_empty_or_broken_html_raises(self):
+        with self.assertRaises(RuntimeError):
+            se.parse_ollama_library("<html><body>no models here</body></html>")
+        with self.assertRaises(RuntimeError):
+            se.parse_ollama_library("")
+
+
+class TestOllamaDelta(unittest.TestCase):
+    """compute_pull_deltas 純函式:今日 pulls − 最近先前日快照 = 今日新增下載。"""
+
+    TODAY = "2026-07-22"
+    TODAY_ITEMS = [
+        {"name": "a", "pulls": 1000},
+        {"name": "b", "pulls": 500},
+        {"name": "c", "pulls": 300},  # 新進榜,先前無快照
+    ]
+
+    def test_with_prior_snapshot(self):
+        rows = [
+            {"date": "2026-07-21", "model": "a", "pulls": "800"},
+            {"date": "2026-07-21", "model": "b", "pulls": "500"},
+            {"date": "2026-07-20", "model": "a", "pulls": "700"},  # 更舊,不該被當基準
+        ]
+        d = se.compute_pull_deltas(self.TODAY_ITEMS, rows, self.TODAY)
+        self.assertEqual(d["a"], 200)   # 1000 − 800(取最近先前日 07-21)
+        self.assertEqual(d["b"], 0)     # 500 − 500
+        self.assertIsNone(d["c"])       # 先前無此模型 → 不編造
+
+    def test_no_prior_snapshot_all_none(self):
+        d = se.compute_pull_deltas(self.TODAY_ITEMS, [], self.TODAY)
+        self.assertEqual(d, {"a": None, "b": None, "c": None})
+
+    def test_same_day_rerun_does_not_use_today_as_base(self):
+        # 今天已經跑過一次(csv 有 today 的列)+ 一筆昨天列。
+        # today 的列絕不能被當基準(否則 a 會誤算成 1000−1000=0)。
+        rows = [
+            {"date": self.TODAY, "model": "a", "pulls": "1000"},      # 今天,不得當基準
+            {"date": "2026-07-21", "model": "a", "pulls": "800"},     # 昨天,正解基準
+        ]
+        d = se.compute_pull_deltas(self.TODAY_ITEMS, rows, self.TODAY)
+        self.assertEqual(d["a"], 200, "同日重跑不得把今天的列當先前快照")
+
+    def test_same_day_only_no_earlier_returns_none(self):
+        # 只有今天的列、無更早日期 → 沒有先前快照 → None(不得 1000−1000=0)
+        rows = [{"date": self.TODAY, "model": "a", "pulls": "1000"}]
+        d = se.compute_pull_deltas(self.TODAY_ITEMS, rows, self.TODAY)
+        self.assertIsNone(d["a"], "無嚴格更早的日期時 delta 應為 None")
+
+
 if __name__ == "__main__":
     unittest.main()
