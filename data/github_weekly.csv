@@ -1,0 +1,11 @@
+week,date,rank,repo,new_stars,total_stars,language,url,description
+2026-W30,2026-07-22,1,mattpocock/skills,10651,181006,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-W30,2026-07-22,2,Nutlope/hallmark,8948,15128,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-W30,2026-07-22,3,OpenCut-app/OpenCut,8341,77174,TypeScript,https://github.com/OpenCut-app/OpenCut,The open-source CapCut alternative
+2026-W30,2026-07-22,4,stablyai/orca,5733,25316,TypeScript,https://github.com/stablyai/orca,"Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS."
+2026-W30,2026-07-22,5,Shubhamsaboo/awesome-llm-apps,5385,125935,Python,https://github.com/Shubhamsaboo/awesome-llm-apps,"100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source."
+2026-W30,2026-07-22,6,tirth8205/code-review-graph,4791,24824,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-W30,2026-07-22,7,iOfficeAI/OfficeCLI,4047,20753,C#,https://github.com/iOfficeAI/OfficeCLI,"OfficeCLI is the first and best Office suite purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. Free, open-source, single binary, no Office installation required."
+2026-W30,2026-07-22,8,HKUDS/Vibe-Trading,3679,26219,Python,https://github.com/HKUDS/Vibe-Trading,"""Vibe-Trading: Your Personal Trading Agent"""
+2026-W30,2026-07-22,9,earendil-works/pi,3569,74975,TypeScript,https://github.com/earendil-works/pi,"AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
+2026-W30,2026-07-22,10,HKUDS/DeepTutor,2908,28925,Python,https://github.com/HKUDS/DeepTutor,DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.

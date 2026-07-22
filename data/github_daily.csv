@@ -1,0 +1,11 @@
+date,rank,repo,new_stars,total_stars,language,url,description
+2026-07-22,1,bojieli/ai-agent-book,4624,15840,Python,https://github.com/bojieli/ai-agent-book,《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码
+2026-07-22,2,diegosouzapw/OmniRoute,2034,23978,TypeScript,https://github.com/diegosouzapw/OmniRoute,"Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors"
+2026-07-22,3,tirth8205/code-review-graph,1925,24824,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-07-22,4,oblien/openship,1562,6497,TypeScript,https://github.com/oblien/openship,Self-hosted deployment platform
+2026-07-22,5,koala73/worldmonitor,1295,66425,TypeScript,https://github.com/koala73/worldmonitor,"Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface"
+2026-07-22,6,chrislgarry/Apollo-11,1235,70076,Assembly,https://github.com/chrislgarry/Apollo-11,Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.
+2026-07-22,7,every-app/open-seo,849,6709,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
+2026-07-22,8,1jehuang/jcode,843,10475,Rust,https://github.com/1jehuang/jcode,The most intelligent agent harness for code
+2026-07-22,9,KnockOutEZ/wigolo,642,3274,TypeScript,https://github.com/KnockOutEZ/wigolo,"The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta."
+2026-07-22,10,AstrBotDevs/AstrBot,416,37588,Python,https://github.com/AstrBotDevs/AstrBot,"AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨"
