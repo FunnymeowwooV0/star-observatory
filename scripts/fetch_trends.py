@@ -23,6 +23,7 @@ import datetime as dt
 import os
 import re
 import sys
+from urllib.parse import quote
 
 import html as _html
 
@@ -224,15 +225,35 @@ def infer_github_category(name, desc):
     return "其他工具"
 
 
+def _openrouter_model_url(model):
+    model = str(model or "").strip()
+    return f"https://openrouter.ai/{quote(model, safe='/')}" if model else ""
+
+
+def _link_card_body(i, title, meta, mark="", desc=""):
+    desc_html = f'<span class="link-desc">{_esc(desc)}</span>' if desc else ""
+    return (f'<span class="link-rank">{i:02d}</span><span class="link-body">'
+            f'<span class="link-title">{_esc(title)}{mark}</span>'
+            f'<span class="link-meta">{meta}</span>{desc_html}</span>')
+
+
+def _link_card_item(i, title, meta, url, mark="", desc=""):
+    """輸出整列連結卡；沒有目的地時保留同版式但不產生空連結。"""
+    body = _link_card_body(i, title, meta, mark, desc)
+    if url:
+        return (f'<li class="link-card-item"><a class="link-card" href="{_esc(url)}" '
+                f'target="_blank" rel="noopener">{body}</a></li>')
+    return f'<li class="link-card-item"><span class="link-card link-card-static">{body}</span></li>'
+
+
 SITE_CSS = """
-:root{color-scheme:light dark;--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--acc:#0f6e56;--up:#0f6e56;--down:#b23b3b;--new:#185fa5}
-@media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--acc:#5dcaa5;--up:#5dcaa5;--down:#ff8f8f;--new:#85b7ff}}
+:root{color-scheme:light dark;--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--line-strong:#a9c7bb;--hover:#f1f7f4;--acc:#0f6e56;--up:#0f6e56;--down:#b23b3b;--new:#185fa5}
+@media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--line-strong:#527c6c;--hover:#26302c;--acc:#5dcaa5;--up:#5dcaa5;--down:#ff8f8f;--new:#85b7ff}}
 html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.6}
 a,select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(15,110,86,.18)}
 a{color:var(--acc)}a:hover{text-decoration-thickness:2px;text-underline-offset:3px}a:active{opacity:.72}
 a:focus-visible,.date-switch:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
-a[target="_blank"]::after{content:"↗";display:inline-block;margin-left:.25em;font-size:.78em;color:var(--mut);text-decoration:none}
 .skip-link{position:absolute;z-index:10;left:16px;top:-64px;background:var(--fg);color:var(--bg);padding:10px 14px}
 .skip-link:focus{top:10px}
 .topbar{height:6px;background:linear-gradient(90deg,#0f6e56,#d85a30,#185fa5,#eda100,#534ab7)}
@@ -270,17 +291,29 @@ font-size:12px;color:var(--mut)}
 font-size:13px;color:var(--mut);flex:1}
 .hf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
 .hf-col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
-.hf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
-.hf-list li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13px;align-items:baseline}
-.hf-list>li>a{grid-column:2;color:var(--fg);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
-.hf-name{grid-column:2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;overflow-wrap:anywhere}
-.hf-rank{color:var(--mut);font-variant-numeric:tabular-nums}
-.hf-meta{grid-column:2;color:var(--mut);font-size:12px}
+.source-note{margin:-4px 0 10px;color:var(--mut);font-size:12px;line-height:1.5}
+.link-card-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.link-card-item{min-width:0}
+.link-card{width:100%;min-width:0;min-height:58px;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;
+align-items:start;padding:10px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);
+text-decoration:none;cursor:pointer;overflow-wrap:anywhere}
+.link-card-static{cursor:default}
+.link-rank{color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
+.link-body{display:flex;min-width:0;flex-direction:column;gap:2px}
+.link-title{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.link-meta,.link-desc{color:var(--mut);font-size:12px;line-height:1.5}
+.hn-card-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch}
+.hn-discussion{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid var(--line);
+border-radius:8px;background:var(--bg);color:var(--fg);font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap}
+.card,.link-card,.hn-discussion{transition:transform 140ms ease,border-color 140ms ease,background-color 140ms ease}
+@media(hover:hover) and (pointer:fine){.card:hover,.link-card:not(.link-card-static):hover,.hn-discussion:hover{
+transform:translateY(-2px) scale(1.005);border-color:var(--line-strong);background:var(--hover);text-decoration:none}}
+.card:active,.link-card:not(.link-card-static):active,.hn-discussion:active{transform:translateY(0) scale(.995);opacity:1}
 footer{color:var(--mut);font-size:12px;padding:32px 24px 48px;border-top:1px solid var(--line);margin-top:40px}
 footer code{background:var(--line);padding:1px 5px;border-radius:4px}
 .mark{font-size:11px;font-weight:700;margin-left:6px}
 .mark.up{color:var(--up)}.mark.down{color:var(--down)}.mark.new{color:var(--new)}.mark.same{color:var(--mut);font-weight:400}
-.hf-list .mark{grid-column:2}
+.link-title .mark{margin-left:6px}
 .spark{display:block;margin-top:3px}
 .spark rect{fill:var(--acc)}
 .snapshot-banner{max-width:1080px;margin:16px auto 0;padding:10px 16px;background:#eef3fb;color:#1a3a5c;
@@ -295,10 +328,10 @@ border-radius:8px;font-size:14px}
   .page-nav{align-items:stretch;gap:4px 12px}.page-nav>a{flex:1;justify-content:center}
   .history-picker{flex-basis:100%;justify-content:space-between}.date-switch{flex:1;max-width:220px;min-height:44px}
   .cards{grid-template-columns:1fr}.hf-cols{grid-template-columns:1fr}
-  a[target="_blank"]{display:inline-flex;align-items:center;min-height:44px;padding-top:8px;padding-bottom:8px}
-  .hf-list li{align-items:start;row-gap:2px}.hf-meta a[target="_blank"]{margin-top:-8px;margin-bottom:-8px}
+  .card,.link-card,.hn-discussion,.snapshot-banner a{min-height:44px}
+  .hn-card-row{grid-template-columns:1fr}.hn-discussion{width:100%}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card,.link-card,.hn-discussion{transform:none!important}}
 """
 
 
@@ -328,15 +361,11 @@ def _build_sparks(dedup_rows, name_col, value_col, today, ids, diff=False):
 
 def _lb_item_github(i, e):
     days = f' · 上榜 {e["days"]} 天' if e.get("days") else ""
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">Σ +{e["value"]:,} ⭐{days}</span></li>')
+    return _link_card_item(i, e["name"], f'Σ +{e["value"]:,} ⭐{days}', e.get("url") or "")
 
 
 def _lb_item_openrouter(i, e):
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<span class="hf-name">{_esc(e["name"])}</span>'
-            f'<span class="hf-meta">Σ {e["value"]:,} tokens</span></li>')
+    return _link_card_item(i, e["name"], f'Σ {e["value"]:,} tokens', _openrouter_model_url(e["name"]))
 
 
 def _lb_item_hf(i, e):
@@ -345,33 +374,25 @@ def _lb_item_hf(i, e):
     metrics = [f'Likes {likes_s}']
     if isinstance(dls, int):
         metrics.append(f'下載 +{dls:,}')
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">{" · ".join(metrics)}</span></li>')
+    return _link_card_item(i, e["name"], " · ".join(metrics), e.get("url") or "")
 
 
 def _lb_item_ollama(i, e):
     d = e.get("pulls_delta")
     d_s = f'+{d:,}' if isinstance(d, int) else '—'
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">⬇ {d_s} pulls</span></li>')
+    return _link_card_item(i, e["name"], f'⬇ {d_s} pulls', e.get("url") or "")
 
 
 def _lb_item_hn(i, e):
     v = e.get("value")
     v_s = f'{v:,}' if isinstance(v, int) else '—'
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">▲ {v_s}(期間最高分)</span></li>')
+    return _link_card_item(i, e["name"], f'▲ {v_s}(期間最高分)', e.get("url") or "")
 
 
 def _lb_item_ph(i, e):
     v = e.get("value")
     v_s = f'{v:,}' if isinstance(v, int) else '—'
-    return (f'<li><span class="hf-rank">{i}</span>'
-            f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">▲ {v_s}(期間最高票)</span></li>')
+    return _link_card_item(i, e["name"], f'▲ {v_s}(期間最高票)', e.get("url") or "")
 
 
 # (source_key, 標題, emoji, item renderer, Top N)
@@ -391,7 +412,7 @@ def _lb_block(emoji, title, items, render_item, top):
     top_items = items[:top]
     rows = "".join(render_item(i, e) for i, e in enumerate(top_items, 1))
     return (f'<div class="hf-col"><h4><span class="heading-icon" aria-hidden="true">{_esc(emoji)}</span>'
-            f'{_esc(title)} Top {len(top_items)}</h4><ol class="hf-list">{rows}</ol></div>')
+            f'{_esc(title)} Top {len(top_items)}</h4><ol class="link-card-list">{rows}</ol></div>')
 
 
 def _accumulation_section(leaderboards):
@@ -430,7 +451,7 @@ def _snapshot_banner_html(snapshot_date):
     if not snapshot_date:
         return ""
     return (f'<div class="snapshot-banner">📅 這是 {_esc(snapshot_date)} 的歷史快照 · '
-            f'<a href="../index.html">回今日 →</a></div>')
+            f'<a href="../index.html">回今日</a></div>')
 
 
 def _date_switcher_html(history_dates, snapshot_date):
@@ -480,9 +501,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                   f'<span class="card-stars">+{period_stars:,}<span> 今日新增星</span></span>'
                   f'<span class="card-meta">{total_stars} 總星 · {_esc(r["lang"] or "—")}</span></a>')
 
-    def hf_block(label, items, prefix, mark_key):
+    def hf_block(label, items, prefix, mark_key, note=""):
         m = marks.get(mark_key, {})
-        sp = sparks.get(mark_key, {})
         rows = ""
         for i, it in enumerate(items, 1):
             likes = f'{it["likes"]:,}' if isinstance(it["likes"], int) else "—"
@@ -492,47 +512,52 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             if it["tag"]:
                 meta.append(_esc(it["tag"]))
             mark = _mark_html(m.get(it["id"]))
-            spark_svg = sp.get(it["id"], "")
-            spark_html = f'<span class="hf-meta">{spark_svg}</span>' if spark_svg else ""
-            rows += (f'<li><span class="hf-rank">{i}</span>'
-                     f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["id"])}</a>{mark}'
-                     f'<span class="hf-meta">{" · ".join(meta)}</span>{spark_html}</li>')
+            rows += _link_card_item(i, it["id"], " · ".join(meta), it["url"], mark)
+        note_html = f'<p class="source-note">{_esc(note)}</p>' if note else ""
         return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
-                f'{_esc(label)} Top {len(items)}</h3><ol class="hf-list">{rows}</ol></div>')
+                f'{_esc(label)} Top {len(items)}</h3>{note_html}<ol class="link-card-list">{rows}</ol></div>')
 
     hf_html = (hf_block("模型", hf.get("模型", []), "🔥", "hf_model")
                + hf_block("資料集", hf.get("資料集", []), "📚", "hf_dataset")
-               + hf_block("Spaces", hf.get("Spaces", []), "🚀", "hf_space"))
+               + hf_block("互動應用（Spaces）", hf.get("Spaces", []), "🚀", "hf_space",
+                          "可直接操作的機器學習 Demo／應用，不是模型。"))
 
     def list_block(prefix, label, items, render_item):
         rows = "".join(render_item(i, it) for i, it in enumerate(items, 1))
         return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
                 f'{_esc(label)} Top {len(items)}</h3>'
-                f'<ol class="hf-list">{rows}</ol></div>')
+                f'<ol class="link-card-list">{rows}</ol></div>')
 
     def hn_item(i, it):
         pts = f'{it["points"]:,}' if isinstance(it["points"], int) else "—"
         cmts = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
         mark = _mark_html(marks.get("hn", {}).get(it["url"]))
-        return (f'<li><span class="hf-rank">{i}</span>'
-                f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["title"])}</a>{mark}'
-                f'<span class="hf-meta">▲ {pts} · 💬 {cmts} · '
-                f'<a href="{_esc(it["hn_url"])}" target="_blank" rel="noopener">HN 討論</a></span></li>')
+        body = _link_card_body(i, it["title"], f'▲ {pts} · 💬 {cmts}', mark)
+        url = it.get("url") or ""
+        hn_url = it.get("hn_url") or ""
+        if url:
+            main = (f'<a class="link-card" href="{_esc(url)}" target="_blank" '
+                    f'rel="noopener">{body}</a>')
+        else:
+            main = f'<span class="link-card link-card-static">{body}</span>'
+        discussion = ""
+        if hn_url and hn_url != url:
+            discussion = (f'<a class="hn-discussion" href="{_esc(hn_url)}" target="_blank" '
+                          f'rel="noopener">HN 討論</a>')
+        return f'<li class="link-card-item hn-card-row">{main}{discussion}</li>'
 
     def or_item(i, it):
         mark = _mark_html(marks.get("openrouter", {}).get(it["model"]))
-        return (f'<li><span class="hf-rank">{i}</span>'
-                f'<span class="hf-name">{_esc(it["model"])}</span>{mark}'
-                f'<span class="hf-meta">Σ {it["total_tokens"]:,} tokens · '
-                f'prompt {it["prompt_tokens"]:,} · completion {it["completion_tokens"]:,}</span></li>')
+        meta = (f'Σ {it["total_tokens"]:,} tokens · prompt {it["prompt_tokens"]:,} · '
+                f'completion {it["completion_tokens"]:,}')
+        return _link_card_item(i, it["model"], meta, _openrouter_model_url(it["model"]), mark)
 
     def ph_item(i, it):
         votes = f'{it["votes"]:,}' if isinstance(it["votes"], int) else "—"
-        tag = f' — {_esc(it["tagline"])}' if it["tagline"] else ""
+        tagline = _esc(it["tagline"]) if it["tagline"] else ""
+        meta = f'▲ {votes}' + (f' · {tagline}' if tagline else "")
         mark = _mark_html(marks.get("ph", {}).get(it["url"]))
-        return (f'<li><span class="hf-rank">{i}</span>'
-                f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["name"])}</a>{mark}'
-                f'<span class="hf-meta">▲ {votes}{tag}</span></li>')
+        return _link_card_item(i, it["name"], meta, it["url"], mark)
 
     def ol_item(i, it):
         pulls = f'{it["pulls"]:,}' if isinstance(it["pulls"], int) else "—"
@@ -540,12 +565,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         delta = f'今日 +{d:,}' if isinstance(d, int) else '今日新增 —'
         caps = f' · {_esc(", ".join(it["caps"]))}' if it["caps"] else ""
         mark = _mark_html(marks.get("ollama", {}).get(it["name"]))
-        spark_svg = sparks.get("ollama", {}).get(it["name"], "")
-        spark_html = f'<span class="hf-meta">{spark_svg}</span>' if spark_svg else ""
-        return (f'<li><span class="hf-rank">{i}</span>'
-                f'<span class="hf-name">{_esc(it["name"])}</span>{mark}'
-                f'<span class="hf-meta">⬇ {pulls} Pulls · {delta}{caps}</span>'
-                f'<span class="hf-meta"><a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["desc"])}</a></span>{spark_html}</li>')
+        return _link_card_item(i, it["name"], f'⬇ {pulls} Pulls · {delta}{caps}', it["url"], mark,
+                               it["desc"])
 
     hn_section = (f'<section id="hacker-news" aria-labelledby="hacker-news-title">'
                   f'<h2 id="hacker-news-title"><span class="heading-icon" aria-hidden="true">📰</span>Hacker News 頭版</h2>'

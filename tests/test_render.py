@@ -45,21 +45,58 @@ def _sample_data():
             "days": 2,
             "sources": {
                 "github": [{"name": gh[0]["name"], "url": gh[0]["url"], "value": 2100, "days": 2}],
+                "openrouter": [{"name": "vendor/model name+v1", "value": 987654}],
+                "hf_model": [{"name": "org/model", "url": "https://huggingface.co/org/model",
+                              "likes_delta": 4, "downloads_delta": 120}],
+                "ollama": [{"name": "qwen3", "url": "https://ollama.com/library/qwen3",
+                            "pulls_delta": 900}],
+                "hn": [{"name": "A useful HN story", "url": "https://example.com/story", "value": 321}],
+                "ph": [{"name": "Useful Product", "url": "https://www.producthunt.com/posts/useful-product",
+                        "value": 88}],
             },
         }
     }
     return gh, hf, leaderboards
 
 
-def _render(*, errors=None, snapshot_date=None):
-    gh, hf, leaderboards = _sample_data()
+def _source_data():
+    return {
+        "hn": [{"title": "A useful HN story", "points": 321, "comments": 45,
+                "url": "https://example.com/story",
+                "hn_url": "https://news.ycombinator.com/item?id=1"}],
+        "openrouter": [{"model": "vendor/model name+v1", "total_tokens": 987654,
+                        "prompt_tokens": 654321, "completion_tokens": 333333}],
+        "ph": [{"name": "Useful Product", "tagline": "A practical launch tool", "votes": 88,
+                "url": "https://www.producthunt.com/posts/useful-product"}],
+        "ollama": [{"name": "qwen3", "pulls": 1234567, "caps": ["tools", "thinking"],
+                    "url": "https://ollama.com/library/qwen3", "desc": "A capable local model",
+                    "updated": "2 days ago"}],
+        "ollama_deltas": {"qwen3": 900},
+    }
+
+
+_UNSET = object()
+
+
+def _render(*, errors=None, snapshot_date=None, hn=_UNSET, leaderboards=_UNSET):
+    gh, hf, sample_leaderboards = _sample_data()
+    sources = _source_data()
+    actual_hn = sources["hn"] if hn is _UNSET else hn
+    actual_leaderboards = sample_leaderboards if leaderboards is _UNSET else leaderboards
     return ft.render_html(
         "2026-07-22",
         "2026-07-22 09:00 UTC+08:00",
         gh,
         hf,
         errors or [],
-        leaderboards=leaderboards,
+        hn=actual_hn,
+        openrouter=sources["openrouter"],
+        ph=sources["ph"],
+        ollama=sources["ollama"],
+        ollama_deltas=sources["ollama_deltas"],
+        sparks={"hf_model": {"org/model": '<svg class="spark"></svg>'},
+                "ollama": {"qwen3": '<svg class="spark"></svg>'}},
+        leaderboards=actual_leaderboards,
         history_dates=["2026-07-21", "2026-07-22"],
         snapshot_date=snapshot_date,
     )
@@ -142,15 +179,79 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         hf_section = soup.select_one("section#hugging-face")
         self.assertIsNotNone(hf_section)
         self.assertIn("官方 Trending API", hf_section.get_text(" ", strip=True))
+        spaces_heading = next(h for h in hf_section.select("h3") if "互動應用（Spaces）" in h.get_text())
+        self.assertIn("Top 1", spaces_heading.get_text(" ", strip=True))
+        self.assertIn("可直接操作的機器學習 Demo／應用，不是模型", hf_section.get_text(" ", strip=True))
 
-        model_li = hf_section.find("a", string="org/model").find_parent("li")
+        model_li = hf_section.find(string="org/model").find_parent("li")
         self.assertIn("Likes 12", model_li.get_text(" ", strip=True))
         self.assertIn("下載 345", model_li.get_text(" ", strip=True))
 
-        space_li = hf_section.find("a", string="org/space").find_parent("li")
+        space_li = hf_section.find(string="org/space").find_parent("li")
         self.assertIn("Likes 5", space_li.get_text(" ", strip=True))
         self.assertNotIn("下載", space_li.get_text(" ", strip=True))
         self.assertNotIn("⬇ —", space_li.get_text(" ", strip=True))
+
+    def test_source_rows_use_full_width_link_cards(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        selectors = {
+            "#hugging-face": 3,
+            "#openrouter": 1,
+            "#product-hunt": 1,
+            "#ollama": 1,
+        }
+        for selector, expected_count in selectors.items():
+            with self.subTest(selector=selector):
+                rows = soup.select(f"{selector} li.link-card-item")
+                self.assertEqual(len(rows), expected_count)
+                for row in rows:
+                    direct_links = row.find_all("a", class_="link-card", recursive=False)
+                    self.assertEqual(len(direct_links), 1)
+
+        openrouter_card = soup.select_one("#openrouter a.link-card")
+        self.assertEqual(openrouter_card["href"], "https://openrouter.ai/vendor/model%20name%2Bv1")
+        self.assertIn("Σ 987,654 tokens", openrouter_card.get_text(" ", strip=True))
+        self.assertEqual(soup.select_one("#product-hunt a.link-card")["href"],
+                         "https://www.producthunt.com/posts/useful-product")
+        ollama_card = soup.select_one("#ollama a.link-card")
+        self.assertEqual(ollama_card["href"], "https://ollama.com/library/qwen3")
+        self.assertIn("A capable local model", ollama_card.get_text(" ", strip=True))
+        self.assertIsNone(soup.select_one("#hugging-face .spark"))
+        self.assertIsNone(soup.select_one("#ollama .spark"))
+
+    def test_hn_keeps_separate_discussion_target_without_nested_links(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        row = soup.select_one("#hacker-news li.hn-card-row")
+
+        self.assertIsNotNone(row)
+        self.assertEqual(len(row.find_all("a", recursive=False)), 2)
+        self.assertIsNotNone(row.select_one("a.link-card"))
+        self.assertIsNotNone(row.select_one("a.hn-discussion"))
+        self.assertIsNone(row.select_one("a a"))
+
+        same_target = [{"title": "Ask HN", "points": 10, "comments": 3,
+                        "url": "https://news.ycombinator.com/item?id=2",
+                        "hn_url": "https://news.ycombinator.com/item?id=2"}]
+        same_soup = BeautifulSoup(_render(hn=same_target), "html.parser")
+        same_row = same_soup.select_one("#hacker-news li.hn-card-row")
+        self.assertEqual(len(same_row.find_all("a", recursive=False)), 1)
+
+    def test_accumulation_rows_are_full_link_cards(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        rows = soup.select("#leaderboards ol.link-card-list > li.link-card-item")
+
+        self.assertEqual(len(rows), 6)
+        for row in rows:
+            self.assertEqual(len(row.find_all("a", class_="link-card", recursive=False)), 1)
+            self.assertIsNone(row.select_one("a a"))
+        self.assertEqual(soup.select_one('#leaderboards a[href^="https://openrouter.ai/"]')["href"],
+                         "https://openrouter.ai/vendor/model%20name%2Bv1")
+
+    def test_blank_url_renders_static_link_card_without_empty_href(self):
+        soup = BeautifulSoup(ft._link_card_item(1, "No destination", "No URL", ""), "html.parser")
+
+        self.assertIsNone(soup.select_one("a"))
+        self.assertIsNotNone(soup.select_one(".link-card.link-card-static"))
 
     def test_truthful_github_metric_copy_is_adjacent_to_ranking(self):
         soup = BeautifulSoup(_render(), "html.parser")
@@ -172,18 +273,23 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("稍後重新整理", alert.get_text(strip=True))
         self.assertNotIn("<bad", raw_html)
 
-    def test_external_links_are_marked_and_keep_noopener(self):
-        soup = BeautifulSoup(_render(), "html.parser")
+    def test_external_links_have_no_decorative_arrows_and_keep_noopener(self):
+        raw_html = _render(snapshot_date="2026-07-22")
+        soup = BeautifulSoup(raw_html, "html.parser")
         external_links = soup.select('a[target="_blank"]')
 
         self.assertTrue(external_links)
         for link in external_links:
             self.assertIn("noopener", link.get("rel", []))
         css = soup.style.get_text()
-        self.assertIn('a[target="_blank"]::after', css)
-        self.assertIn("↗", css)
+        self.assertNotIn('a[target="_blank"]::after', css)
+        self.assertNotIn("↗", raw_html)
+        self.assertNotIn("回今日 →", raw_html)
         self.assertIn(":focus-visible", css)
         self.assertIn(":active", css)
+        self.assertIn("translateY(-2px) scale(1.005)", css)
+        self.assertIn("translateY(0) scale(.995)", css)
+        self.assertIn("140ms", css)
         self.assertIn("touch-action:manipulation", css)
         self.assertIn("-webkit-tap-highlight-color", css)
         self.assertIn("color-scheme:light dark", css)
