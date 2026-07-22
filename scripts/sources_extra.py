@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """
-新資料源(HN + OpenRouter + Product Hunt + Ollama)— 純解析函式 + 薄連網 wrapper。
+新資料源(HN + OpenRouter + Product Hunt + Ollama + Reddit)— 純解析函式 + 薄連網 wrapper。
 
 刻意與 fetch_trends.py 分檔:後者的 render_html()/SITE_CSS 之後要改版面,
-把三個新源的程式集中在這裡可減少撞檔。風格比照 fetch_trends.py 的
+把新源的程式集中在這裡可減少撞檔。風格比照 fetch_trends.py 的
 parse_hf_trending()(純解析、可離線測)/ fetch_hf_trending()(薄連網)。
 
-三源口徑:
+五源口徑:
     - HN         Algolia 官方 API,當前頭版按 points 取前 10(不爬 HTML)
     - OpenRouter 官方排行資料(非官方文件端點),最新一日模型用量 Top 10(脆弱源:解析不到丟例外)
     - Product Hunt 官方 GraphQL,過去 24h AI 主題貼文 Top 10(token 只從環境變數,無 token 由呼叫端 skip)
     - Ollama    公開 HTML(ollama.com/library?sort=popular),popular 榜前 10(脆弱源:解析不到丟例外)
                 每模型帶官方一句描述;Pulls 累計數,delta 由 compute_pull_deltas 純函式算「今日新增」
+    - Reddit    公開 HTML(old.reddit.com/r/LocalLLaMA/top/?t=week),週榜前 10(脆弱源:解析不到丟例外)
+                **不進 GitHub Actions**(資料中心 IP 可能被擋),只給本機每週導讀 CLI 用,見
+                scripts/reddit_weekly.py 與 goals/05-reddit週熱帖.md。
 """
 import datetime as dt
 import re
@@ -24,6 +27,7 @@ HN_TOP = 10
 OR_TOP = 10
 PH_TOP = 10
 OL_TOP = 10
+REDDIT_TOP = 10
 
 
 # ----------------------------- 解析(純函式,可離線測試) -----------------------------
@@ -162,6 +166,56 @@ def parse_ollama_library(html, top=OL_TOP):
     return out[:top]
 
 
+def parse_reddit_top(html, top=REDDIT_TOP):
+    """把 old.reddit r/LocalLLaMA 週榜頁面 HTML 解析成 list[dict],榜序=頁面原序(官方 top/week 排序)。
+
+    脆弱源(爬 HTML,同 GitHub Trending/Ollama):解析不到任何貼文 → 丟例外,不得靜默回空榜。
+
+    每筆:title / score(int,「•」隱藏分數或空 → None)/ comments(int,解析不到 → None)/
+          permalink(**正規化成 https://www.reddit.com/... 給讀者點**,內部抓取仍用 old.reddit)/
+          external_url(連結帖的外部連結;自帖(data-url 等於自己的 permalink)→ None)。
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    things = soup.select("div.thing[data-permalink]")
+    if not things:
+        raise RuntimeError("Reddit 週榜頁面沒解析到任何貼文(版面可能改了)")
+    out = []
+    for t in things[:top]:
+        permalink_path = (t.get("data-permalink") or "").strip()
+        if not permalink_path:
+            continue
+        title_a = t.select_one("a.title")
+        title = title_a.get_text(strip=True) if title_a else ""
+
+        score_raw = (t.get("data-score") or "").strip()
+        try:
+            score = int(score_raw)
+        except ValueError:
+            score = None
+
+        comments_raw = (t.get("data-comments-count") or "").strip()
+        try:
+            comments = int(comments_raw)
+        except ValueError:
+            comments = None
+
+        data_url = (t.get("data-url") or "").strip()
+        external_url = None
+        if data_url and data_url != permalink_path and not data_url.startswith("/r/"):
+            external_url = data_url
+
+        out.append({
+            "title": title,
+            "score": score,
+            "comments": comments,
+            "permalink": f"https://www.reddit.com{permalink_path}",
+            "external_url": external_url,
+        })
+    if not out:
+        raise RuntimeError("Reddit 週榜頁面貼文都缺 permalink,解析不到有效資料(版面可能改了)")
+    return out
+
+
 def compute_pull_deltas(today_items, csv_rows, today):
     """純函式:算每個模型的「今日新增下載」(pulls_delta)。
 
@@ -245,3 +299,15 @@ def fetch_ollama_library():
     resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
     resp.raise_for_status()
     return parse_ollama_library(resp.text)
+
+
+def fetch_reddit_top():
+    """抓 old.reddit r/LocalLLaMA 週榜(公開 HTML,免金鑰)再解析。抓/解析失敗丟例外。
+
+    刻意用 old.reddit(`.json` 後門與 www 版都被擋,見 goals/05-reddit週熱帖.md 的踩坑紀錄)。
+    只給本機呼叫(住宅 IP);不進 GitHub Actions(資料中心 IP 可能被擋)。
+    """
+    url = "https://old.reddit.com/r/LocalLLaMA/top/?t=week"
+    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp.raise_for_status()
+    return parse_reddit_top(resp.text)

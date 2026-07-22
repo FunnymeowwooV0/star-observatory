@@ -308,5 +308,65 @@ class TestOllamaDelta(unittest.TestCase):
         self.assertIsNone(d["a"], "無嚴格更早的日期時 delta 應為 None")
 
 
+class TestRedditParse(unittest.TestCase):
+    """Reddit r/LocalLLaMA 週榜解析(真實 old.reddit 頁面快照+一筆合成的隱藏分數列,
+    見 fixtures/reddit_localllama_weekly.html)。
+
+    脆弱源(爬 HTML):解析不到必須丟例外。榜序=頁面原序(官方 top/week 排序)。
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(FIX, "reddit_localllama_weekly.html"), encoding="utf-8") as f:
+            cls.html = f.read()
+
+    def test_returns_at_most_top_n(self):
+        items = se.parse_reddit_top(self.html, top=10)
+        self.assertEqual(len(items), 9)  # fixture 共 9 筆(8 真實+1 合成)
+
+    def test_capped_by_top(self):
+        items = se.parse_reddit_top(self.html, top=3)
+        self.assertEqual(len(items), 3)
+
+    def test_field_shape(self):
+        items = se.parse_reddit_top(self.html, top=10)
+        for it in items:
+            self.assertIsInstance(it["title"], str)
+            self.assertTrue(it["title"], "標題不得為空")
+            self.assertTrue(it["score"] is None or isinstance(it["score"], int))
+            self.assertTrue(it["comments"] is None or isinstance(it["comments"], int))
+            self.assertTrue(it["permalink"].startswith("https://www.reddit.com/r/LocalLLaMA/"),
+                             f"permalink 未正規化成 www.reddit.com:{it['permalink']}")
+
+    def test_self_post_has_no_external_url(self):
+        items = {it["title"]: it for it in se.parse_reddit_top(self.html, top=10)}
+        self_post = items["Anthropic and OpenAI don't have secret sauce"]
+        self.assertIsNone(self_post["external_url"], "自帖不該有 external_url")
+
+    def test_link_post_has_external_url(self):
+        items = {it["title"]: it for it in se.parse_reddit_top(self.html, top=10)}
+        link_post = items["Linus Torvalds tells people to stop attacking others for using AI"]
+        self.assertEqual(link_post["external_url"], "https://www.phoronix.com/news/Linux-Is-Not-Anti-AI")
+
+    def test_hidden_score_and_missing_comments_become_none(self):
+        # fixture 摻了一筆合成貼文,data-score="•"(隱藏分數)、data-comments-count=""
+        items = {it["title"]: it for it in se.parse_reddit_top(self.html, top=10)}
+        synth = items["Synthetic post with hidden score (測試 None 欄位)"]
+        self.assertIsNone(synth["score"], "隱藏分數(•)應解析為 None")
+        self.assertIsNone(synth["comments"], "缺留言數應解析為 None")
+
+    def test_permalink_normalized_shape(self):
+        items = se.parse_reddit_top(self.html, top=10)
+        for it in items:
+            self.assertRegex(it["permalink"], r"^https://www\.reddit\.com/r/LocalLLaMA/comments/",
+                             f"permalink 格式不對:{it['permalink']}")
+
+    def test_empty_or_broken_html_raises(self):
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_top("<html><body>no posts here</body></html>")
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_top("")
+
+
 if __name__ == "__main__":
     unittest.main()
