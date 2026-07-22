@@ -29,6 +29,8 @@ import html as _html
 import requests
 from bs4 import BeautifulSoup
 
+import sources_extra as se
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trend-radar-bot"
 TZ = dt.timezone(dt.timedelta(hours=8))  # 台北時間
@@ -138,6 +140,43 @@ def md_hf_table(items, label):
     return "\n".join(lines)
 
 
+def md_hn_table(items):
+    lines = [f"### 📰 Hacker News 頭版 Top {len(items)}(按分數)", "",
+             "| # | 標題 | ▲ 分數 | 💬 留言 | 連結 |",
+             "|:-:|------|-------:|-------:|:----:|"]
+    for i, it in enumerate(items, 1):
+        title = (it["title"] or "").replace("|", "/").strip()[:72]
+        pts = f"{it['points']:,}" if isinstance(it["points"], int) else "—"
+        cmts = f"{it['comments']:,}" if isinstance(it["comments"], int) else "—"
+        lines.append(f"| {i} | [{title}]({it['url']}) | {pts} | {cmts} | [HN]({it['hn_url']}) |")
+    return "\n".join(lines)
+
+
+def md_openrouter_table(items):
+    lines = [f"### 🧮 OpenRouter 最新一日模型用量 Top {len(items)}", "",
+             "| # | 模型 | Σ tokens | prompt | completion |",
+             "|:-:|------|---------:|-------:|-----------:|"]
+    for i, it in enumerate(items, 1):
+        lines.append(f"| {i} | {it['model']} | {it['total_tokens']:,} | "
+                     f"{it['prompt_tokens']:,} | {it['completion_tokens']:,} |")
+    return "\n".join(lines)
+
+
+def md_ph_table(items):
+    lines = [f"### 🚀 Product Hunt AI 主題 24h 票選 Top {len(items)}", "",
+             "| # | 名稱 | 一句話 | ▲ 票數 |",
+             "|:-:|------|--------|-------:|"]
+    for i, it in enumerate(items, 1):
+        name = (it["name"] or "").replace("|", "/").strip()
+        tag = (it["tagline"] or "").replace("|", "/").strip()[:72]
+        votes = f"{it['votes']:,}" if isinstance(it["votes"], int) else "—"
+        lines.append(f"| {i} | [{name}]({it['url']}) | {tag} | {votes} |")
+    return "\n".join(lines)
+
+
+PH_SKIP_NOTE = "### 🚀 Product Hunt AI 主題 24h 票選\n\n> Product Hunt:未設 token 略過(本機無環境變數 `PH_TOKEN`)。"
+
+
 ABOUT = """> 🛰️ **觀星台** — 每天/每週自動抓 GitHub 與 Hugging Face 的熱門榜,存成可累積的資料庫。
 > 資料來源:GitHub Trending(官方頁)＋ Hugging Face Trending API(官方)。由 GitHub Actions 自動更新,不需開電腦。
 > 想看歷史:[`archive/`](archive/)(每月一檔)、[`weekly/`](weekly/)、[`data/`](data/)(CSV)。
@@ -182,6 +221,7 @@ h3{font-size:15px;margin:0 0 10px;font-weight:600}
 .hf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .hf-list li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13px;align-items:baseline}
 .hf-list a{grid-column:2;color:var(--fg);text-decoration:none;font-weight:600;word-break:break-all}
+.hf-name{grid-column:2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;word-break:break-all}
 .hf-rank{color:var(--mut);font-variant-numeric:tabular-nums}
 .hf-meta{grid-column:2;color:var(--mut);font-size:12px}
 footer{color:var(--mut);font-size:12px;padding:32px 24px 48px;border-top:1px solid var(--line);margin-top:40px}
@@ -190,8 +230,11 @@ footer code{background:var(--line);padding:1px 5px;border-radius:4px}
 """
 
 
-def render_html(date, stamp, gh, hf, errors):
+def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False):
     """把當日榜單渲染成一頁自足的靜態 HTML(不含 AI,純資料排版)。"""
+    hn = hn or []
+    openrouter = openrouter or []
+    ph = ph or []
     max_stars = max([r["period_stars"] or 0 for r in gh] + [1])
     bars = ""
     for r in gh:
@@ -223,6 +266,49 @@ def render_html(date, stamp, gh, hf, errors):
     hf_html = (hf_block("模型", hf.get("模型", []), "🔥")
                + hf_block("資料集", hf.get("資料集", []), "📚")
                + hf_block("Spaces", hf.get("Spaces", []), "🚀"))
+
+    def list_block(prefix, label, items, render_item):
+        rows = "".join(render_item(i, it) for i, it in enumerate(items, 1))
+        return (f'<div class="hf-col"><h3>{prefix} {label} Top {len(items)}</h3>'
+                f'<ol class="hf-list">{rows}</ol></div>')
+
+    def hn_item(i, it):
+        pts = f'{it["points"]:,}' if isinstance(it["points"], int) else "—"
+        cmts = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
+        return (f'<li><span class="hf-rank">{i}</span>'
+                f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["title"])}</a>'
+                f'<span class="hf-meta">▲ {pts} · 💬 {cmts} · '
+                f'<a href="{_esc(it["hn_url"])}" target="_blank" rel="noopener">HN 討論</a></span></li>')
+
+    def or_item(i, it):
+        return (f'<li><span class="hf-rank">{i}</span>'
+                f'<span class="hf-name">{_esc(it["model"])}</span>'
+                f'<span class="hf-meta">Σ {it["total_tokens"]:,} tokens · '
+                f'prompt {it["prompt_tokens"]:,} · completion {it["completion_tokens"]:,}</span></li>')
+
+    def ph_item(i, it):
+        votes = f'{it["votes"]:,}' if isinstance(it["votes"], int) else "—"
+        tag = f' — {_esc(it["tagline"])}' if it["tagline"] else ""
+        return (f'<li><span class="hf-rank">{i}</span>'
+                f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["name"])}</a>'
+                f'<span class="hf-meta">▲ {votes}{tag}</span></li>')
+
+    hn_section = (f'<section><h2>📰 Hacker News 頭版</h2>'
+                  f'<p class="sub">HN 當前頭版按分數(Algolia 官方 API)。</p>'
+                  f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div></section>') if hn else ""
+    or_section = (f'<section><h2>🧮 OpenRouter 模型用量</h2>'
+                  f'<p class="sub">OpenRouter 官方排行資料(非官方文件端點),最新一日模型用量。</p>'
+                  f'<div class="hf-cols">{list_block("🧮", "模型用量", openrouter, or_item)}</div></section>') if openrouter else ""
+    if ph:
+        ph_section = (f'<section><h2>🚀 Product Hunt</h2>'
+                      f'<p class="sub">Product Hunt AI 主題 24h 票選。</p>'
+                      f'<div class="hf-cols">{list_block("🚀", "AI 榜", ph, ph_item)}</div></section>')
+    elif ph_skipped:
+        ph_section = ('<section><h2>🚀 Product Hunt</h2>'
+                      '<p class="sub">Product Hunt AI 主題 24h 票選 — 未設 token 略過(本機無環境變數 <code>PH_TOKEN</code>)。</p></section>')
+    else:
+        ph_section = ""
+
     err_html = ('<div class="err">⚠️ 部分來源抓取失敗:' + "；".join(_esc(e) for e in errors) + "</div>") if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
@@ -235,6 +321,7 @@ def render_html(date, stamp, gh, hf, errors):
             f'<section><h2>🐙 GitHub 24 小時成長排行 Top {len(gh)}</h2><div class="bars">{bars}</div></section>'
             f'<section><h2>焦點前五</h2><div class="cards">{cards}</div></section>'
             f'<section><h2>🤗 Hugging Face 本日熱門</h2><div class="hf-cols">{hf_html}</div></section>'
+            f'{hn_section}{or_section}{ph_section}'
             f'<footer>資料來源:GitHub Trending 日榜 + Hugging Face 官方 API(<code>/api/trending</code>)。'
             f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
             f'本頁由觀星台腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
@@ -287,6 +374,35 @@ def run_daily(now):
             errors.append(f"HF {label}榜抓取失敗:{e}")
             hf[label] = []
 
+    # 新資料源:HN / OpenRouter / Product Hunt(各自 try/except 進 errors,仿 HF 寫法)
+    attempted = 4  # GitHub(1) + HF(3);下面每嘗試一個抓取單元就 +1(PH 無 token 的 skip 不計入)
+
+    hn = []
+    attempted += 1
+    try:
+        hn = se.fetch_hn_frontpage()
+    except Exception as e:  # noqa: BLE001
+        errors.append(f"HN 頭版抓取失敗:{e}")
+
+    openrouter = []
+    attempted += 1
+    try:
+        openrouter = se.fetch_openrouter_rankings()
+    except Exception as e:  # noqa: BLE001
+        errors.append(f"OpenRouter 用量抓取失敗:{e}")
+
+    ph = []
+    ph_skipped = False
+    ph_token = os.environ.get("PH_TOKEN")
+    if not ph_token:
+        ph_skipped = True  # 沒 token 屬預期 skip,不算 error、不計入 attempted
+    else:
+        attempted += 1
+        try:
+            ph = se.fetch_ph_posts(ph_token)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"Product Hunt 抓取失敗:{e}")
+
     # 組 markdown 內文
     parts = []
     if gh:
@@ -297,6 +413,14 @@ def run_daily(now):
         parts.append(md_hf_table(hf["資料集"], "資料集"))
     if hf.get("Spaces"):
         parts.append(md_hf_table(hf["Spaces"], "Spaces"))
+    if hn:
+        parts.append(md_hn_table(hn))
+    if openrouter:
+        parts.append(md_openrouter_table(openrouter))
+    if ph:
+        parts.append(md_ph_table(ph))
+    elif ph_skipped:
+        parts.append(PH_SKIP_NOTE)
     if errors:
         parts.append("> ⚠️ 本次部分來源抓取失敗:\n>\n" + "\n".join(f"> - {e}" for e in errors))
     body = "\n\n".join(parts)
@@ -306,7 +430,8 @@ def run_daily(now):
     write_text("README.md", readme)
 
     # 網頁 dashboard(靜態 HTML,覆蓋;供 GitHub Pages)
-    write_text("docs/index.html", render_html(date, stamp, gh, hf, errors))
+    write_text("docs/index.html",
+               render_html(date, stamp, gh, hf, errors, hn, openrouter, ph, ph_skipped))
 
     # 當月彙整(追加)
     month = now.strftime("%Y-%m")
@@ -325,13 +450,30 @@ def run_daily(now):
     append_csv("data/hf_trending.csv",
                ["date", "type", "rank", "id", "likes", "downloads", "tag", "url"], hf_rows)
 
+    # 新資料源 CSV(新檔,不動既有 schema)
+    append_csv("data/hn_daily.csv",
+               ["date", "rank", "title", "points", "comments", "hn_url", "url"],
+               [[date, i + 1, h["title"], h["points"], h["comments"], h["hn_url"], h["url"]]
+                for i, h in enumerate(hn)])
+    append_csv("data/openrouter_daily.csv",
+               ["date", "rank", "model", "total_tokens", "prompt_tokens", "completion_tokens"],
+               [[date, i + 1, m["model"], m["total_tokens"], m["prompt_tokens"], m["completion_tokens"]]
+                for i, m in enumerate(openrouter)])
+    append_csv("data/ph_daily.csv",
+               ["date", "rank", "name", "tagline", "votes", "url"],
+               [[date, i + 1, p["name"], p["tagline"], p["votes"], p["url"]]
+                for i, p in enumerate(ph)])
+
     # Issue 內文(= email)
     write_text(".issue_body.md",
                f"每日自動彙整 · {date}(台北時間)\n\n{body}\n\n---\n完整歷史見 repo 的 archive/ 與 data/。")
 
     print(f"[daily] done. GitHub={len(gh)} HF模型={len(hf.get('模型',[]))} "
-          f"資料集={len(hf.get('資料集',[]))} Spaces={len(hf.get('Spaces',[]))} errors={len(errors)}")
-    return errors
+          f"資料集={len(hf.get('資料集',[]))} Spaces={len(hf.get('Spaces',[]))} "
+          f"HN={len(hn)} OpenRouter={len(openrouter)} "
+          f"PH={'skip' if ph_skipped else len(ph)} "
+          f"errors={len(errors)}/{attempted}")
+    return errors, attempted
 
 
 def run_weekly(now):
@@ -370,14 +512,18 @@ def main():
     ap.add_argument("--mode", choices=["daily", "weekly"], required=True)
     args = ap.parse_args()
     now = dt.datetime.now(TZ)
-    errors = run_daily(now) if args.mode == "daily" else run_weekly(now)
-    # 全部來源都掛才視為失敗(讓 Action 紅燈);部分失敗仍出榜但退場碼 0
-    if errors and args.mode == "daily" and len(errors) >= 4:
-        print("ERROR: 所有來源都抓取失敗", file=sys.stderr)
-        sys.exit(1)
-    if errors and args.mode == "weekly" and len(errors) >= 1:
-        print("ERROR: 每週榜抓取失敗", file=sys.stderr)
-        sys.exit(1)
+    if args.mode == "daily":
+        errors, attempted = run_daily(now)
+        # 全部抓取單元都掛才視為失敗(讓 Action 紅燈);部分失敗仍出榜但退場碼 0。
+        # attempted 隨啟用的資料源動態變化,不寫死數字;PH 無 token 的 skip 不計入。
+        if attempted and len(errors) >= attempted:
+            print("ERROR: 所有來源都抓取失敗", file=sys.stderr)
+            sys.exit(1)
+    else:
+        errors = run_weekly(now)
+        if errors and len(errors) >= 1:
+            print("ERROR: 每週榜抓取失敗", file=sys.stderr)
+            sys.exit(1)
 
 
 if __name__ == "__main__":

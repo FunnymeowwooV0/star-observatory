@@ -1,0 +1,64 @@
+{
+ "data": [
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "moonshotai/kimi-k3-20260715",
+   "total_prompt_tokens": 731482374108,
+   "total_completion_tokens": 9166688959
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "meta/muse-spark-1.1-20260709",
+   "total_prompt_tokens": 44937990906,
+   "total_completion_tokens": 1305832879
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "poolside/laguna-s-2.1-20260720",
+   "total_prompt_tokens": 27513727009,
+   "total_completion_tokens": 163418779
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "thinkingmachines/inkling-20260715",
+   "total_prompt_tokens": 12506625729,
+   "total_completion_tokens": 659788553
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "google/gemini-3.6-flash-20260721",
+   "total_prompt_tokens": 9513836964,
+   "total_completion_tokens": 955689844
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "meituan/longcat-2.0-20260720",
+   "total_prompt_tokens": 4151167333,
+   "total_completion_tokens": 159976005
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "poolside/laguna-s-2.1-20260720",
+   "total_prompt_tokens": 3656289621,
+   "total_completion_tokens": 88336136
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "google/gemini-3.5-flash-lite-20260721",
+   "total_prompt_tokens": 2888369740,
+   "total_completion_tokens": 119816820
+  },
+  {
+   "date": "2026-07-20 00:00:00",
+   "model_permaslug": "kwaipilot/kat-coder-air-v2.5-20260710",
+   "total_prompt_tokens": 999999999999999,
+   "total_completion_tokens": 113434
+  },
+  {
+   "date": "2026-07-21 00:00:00",
+   "model_permaslug": "moonshotai/kimi-k3-20260715",
+   "total_prompt_tokens": 1000,
+   "total_completion_tokens": 2000
+  }
+ ]
+}

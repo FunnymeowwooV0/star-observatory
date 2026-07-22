@@ -1,0 +1,14 @@
+{
+  "_comment": "SYNTHETIC fixture — 手造，非真實 API 回應。本機無 PH_TOKEN 抓不到真回應，故按 Product Hunt 官方 GraphQL v2 posts(...) 的回傳 schema (data.posts.edges[].node{name,tagline,votesCount,url}) 手造。votesCount 故意亂序，測試需自行按票數排序。",
+  "data": {
+    "posts": {
+      "edges": [
+        { "node": { "name": "Beta Launcher", "tagline": "Ship AI agents in minutes", "votesCount": 210, "url": "https://www.producthunt.com/posts/beta-launcher" } },
+        { "node": { "name": "Zeta Copilot", "tagline": "Your terminal, but smarter", "votesCount": 542, "url": "https://www.producthunt.com/posts/zeta-copilot" } },
+        { "node": { "name": "Gamma Vision", "tagline": "Turn screenshots into code", "votesCount": 388, "url": "https://www.producthunt.com/posts/gamma-vision" } },
+        { "node": { "name": "Delta Notes", "tagline": "Meeting notes that write themselves", "votesCount": 133, "url": "https://www.producthunt.com/posts/delta-notes" } },
+        { "node": { "name": "Alpha Search", "tagline": "Semantic search for your docs", "votesCount": 467, "url": "https://www.producthunt.com/posts/alpha-search" } }
+      ]
+    }
+  }
+}

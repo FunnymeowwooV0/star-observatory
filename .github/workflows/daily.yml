@@ -23,6 +23,8 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: 抓榜並產檔
+        env:
+          PH_TOKEN: ${{ secrets.PH_TOKEN }}
         run: python scripts/fetch_trends.py --mode daily
       - name: 提交資料庫
         run: |
