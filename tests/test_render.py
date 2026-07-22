@@ -66,6 +66,21 @@ def _render(*, errors=None, snapshot_date=None):
 
 
 class TestRenderHtmlTaskA(unittest.TestCase):
+    def test_github_category_inference_uses_tokens_priority_and_fallback(self):
+        cases = [
+            (("org/agent-kit", "Developer monitoring dashboard"), "AI／LLM"),
+            (("org/worldmonitor", "global analytics dashboard"), "資料與監測"),
+            (("org/reviewer", "CLI code review SDK"), "開發工具"),
+            (("org/focus", "ADHD task and notes workflow"), "生產力"),
+            (("org/edge", "cloud deploy proxy server"), "基礎設施"),
+            (("org/store", "mobile ecommerce platform"), "網站／應用"),
+            (("org/daily", "a delightful utility"), "其他工具"),
+            (("", ""), "其他工具"),
+        ]
+        for args, expected in cases:
+            with self.subTest(args=args):
+                self.assertEqual(ft.infer_github_category(*args), expected)
+
     def test_semantic_landmarks_and_prominent_navigation(self):
         soup = BeautifulSoup(_render(), "html.parser")
 
@@ -84,20 +99,33 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIsNotNone(soup.select_one("section#today"))
         self.assertIsNotNone(soup.select_one("section#leaderboards"))
 
-    def test_github_top_ten_is_ordered_and_every_repo_is_linked(self):
+    def test_github_top_ten_is_one_clickable_card_per_repo(self):
         gh, _hf, _leaderboards = _sample_data()
         soup = BeautifulSoup(_render(), "html.parser")
-        rows = soup.select("section#today ol.bars > li.bar-row")
+        section = soup.select_one("section#github-focus")
+        cards = section.select("a.card.gh-card") if section else []
 
-        self.assertEqual(len(rows), 10)
-        self.assertEqual([row.select_one("a.bar-name")["href"] for row in rows], [r["url"] for r in gh])
-        for i, (row, repo) in enumerate(zip(rows, gh), 1):
-            self.assertIn(f"#{i:02d}", row.get_text(" ", strip=True))
-            self.assertIn(repo["name"], row.get_text(" ", strip=True))
-            chart = row.select_one('.bar-track[role="img"]')
-            self.assertIsNotNone(chart)
-            self.assertIn(repo["name"], chart.get("aria-label", ""))
-            self.assertIn(f'{repo["period_stars"]:,}', chart.get("aria-label", ""))
+        self.assertIsNotNone(section)
+        self.assertIn("GitHub 今日焦點 Top 10", section.get_text(" ", strip=True))
+        self.assertIn("用途標籤依專案名稱與公開簡介規則推定", section.get_text(" ", strip=True))
+        self.assertEqual(len(cards), 10)
+        self.assertEqual([card["href"] for card in cards], [r["url"] for r in gh])
+        for i, (card, repo) in enumerate(zip(cards, gh), 1):
+            text = card.get_text(" ", strip=True)
+            self.assertIn(f"#{i:02d}", text)
+            self.assertIn(repo["name"], text)
+            self.assertIn(f'+{repo["period_stars"]:,}', text)
+            self.assertIn("今日新增星", text)
+            self.assertIn(f'{repo["total_stars"]:,} 總星', text)
+            self.assertIn(repo["lang"], text)
+            self.assertIsNotNone(card.select_one(".category"))
+            self.assertEqual(len(card.select("a")), 0)
+
+        self.assertIsNone(soup.select_one(".bars"))
+        self.assertIsNone(soup.select_one(".bar-row"))
+        self.assertIsNone(soup.select_one(".bar-spark"))
+        self.assertIsNone(soup.select_one(".card-link"))
+        self.assertNotIn("焦點前五", soup.get_text(" ", strip=True))
 
     def test_description_keeps_full_text_and_uses_consistent_empty_state(self):
         raw_html = _render()
@@ -129,7 +157,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         today = soup.select_one("section#today")
         text = today.get_text(" ", strip=True)
 
-        self.assertIn("GitHub 今日新增星排行", text)
+        self.assertIn("GitHub 今日焦點 Top 10", text)
         self.assertNotIn("GitHub 24 小時成長排行", text)
         self.assertIn("24 小時動能代理值", text)
         self.assertIn("非精確", text)

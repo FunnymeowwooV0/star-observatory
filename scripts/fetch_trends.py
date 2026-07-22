@@ -202,6 +202,28 @@ def _esc(s):
     return _html.escape(str(s if s is not None else ""))
 
 
+GH_CATEGORY_RULES = (
+    ("AI／LLM", {"ai", "llm", "model", "agent", "rag", "embedding", "prompt", "voice", "speech"}),
+    ("資料與監測", {"monitor", "monitoring", "dashboard", "analytics", "observability", "tracking",
+                 "intelligence", "visualization"}),
+    ("開發工具", {"developer", "code", "coding", "review", "debug", "test", "cli", "sdk", "api", "git",
+              "terminal"}),
+    ("生產力", {"productivity", "task", "todo", "notes", "calendar", "adhd", "workflow", "automation"}),
+    ("基礎設施", {"infrastructure", "devops", "deploy", "cloud", "server", "proxy", "router", "container",
+              "kubernetes"}),
+    ("網站／應用", {"web", "app", "platform", "ecommerce", "browser", "mobile", "social"}),
+)
+
+
+def infer_github_category(name, desc):
+    """以 repo 名稱與公開簡介的完整英數 token，依固定優先序推定單一用途。"""
+    tokens = set(re.findall(r"[a-z0-9]+", f"{name or ''} {desc or ''}".lower()))
+    for label, keywords in GH_CATEGORY_RULES:
+        if tokens & keywords:
+            return label
+    return "其他工具"
+
+
 SITE_CSS = """
 :root{color-scheme:light dark;--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--acc:#0f6e56;--up:#0f6e56;--down:#b23b3b;--new:#185fa5}
 @media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--acc:#5dcaa5;--up:#5dcaa5;--down:#ff8f8f;--new:#85b7ff}}
@@ -234,27 +256,18 @@ background:var(--card);color:var(--fg)}
 section{scroll-margin-top:16px}
 .err{margin:12px 0;padding:10px 16px;background:#fbeaea;color:#791f1f;border-radius:8px;font-size:14px}
 @media(prefers-color-scheme:dark){.err{background:#3a2020;color:#ffd6d6}}
-.bars{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
-.bar-row{display:grid;grid-template-columns:minmax(240px,300px) minmax(140px,1fr) 80px;
-grid-template-areas:"name track value" ". spark .";align-items:center;column-gap:12px;row-gap:3px;min-width:0;font-size:13px}
-.bar-name{grid-area:name;display:flex;align-items:flex-start;gap:8px;min-width:0;color:var(--fg);text-decoration:none;
-font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;overflow-wrap:anywhere}
-.bar-rank{flex:none;color:var(--acc);font-variant-numeric:tabular-nums}
-.bar-track{grid-area:track;background:var(--line);border-radius:6px;height:16px;overflow:hidden}
-.bar-fill{display:block;height:100%;background:var(--acc);border-radius:6px}
-.bar-val{grid-area:value;text-align:right;font-variant-numeric:tabular-nums;color:var(--mut)}
-.bar-spark{grid-area:spark;min-height:0}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;
+display:flex;flex-direction:column;gap:8px;color:var(--fg);text-decoration:none;cursor:pointer;overflow-wrap:anywhere}
 .card-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;min-width:0;
 font-size:12px;color:var(--mut)}
-.card-meta{min-width:0;margin-left:auto;text-align:right;overflow-wrap:anywhere}
+.card-meta{min-width:0;color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
 .rank{color:var(--acc);font-weight:700}
+.category{margin-right:auto;color:var(--mut);font-weight:600}
 .card-name{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600;overflow-wrap:anywhere}
-.card-stars{font-size:26px;font-weight:700}.card-stars span{font-size:12px;font-weight:400;color:var(--mut)}
+.card-stars{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}.card-stars span{font-size:12px;font-weight:400;color:var(--mut)}
 .card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:0;
 font-size:13px;color:var(--mut);flex:1}
-.card-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--acc);text-decoration:none;margin-top:4px}
 .hf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
 .hf-col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
 .hf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
@@ -276,14 +289,11 @@ border-radius:8px;font-size:14px}
 .snapshot-banner a{color:inherit;font-weight:700}
 .lb-period{margin-bottom:30px}
 .lb-period h3{margin:0 0 4px}
-@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:840px){.cards{grid-template-columns:1fr}}
 @media(max-width:640px){
   header,main,footer{padding-left:16px;padding-right:16px}header{padding-top:24px}h1{font-size:24px;line-height:1.35}
   .page-nav{align-items:stretch;gap:4px 12px}.page-nav>a{flex:1;justify-content:center}
   .history-picker{flex-basis:100%;justify-content:space-between}.date-switch{flex:1;max-width:220px;min-height:44px}
-  .bar-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name value" "track track" "spark spark";
-  row-gap:7px;padding:7px 0;border-bottom:1px solid var(--line)}
-  .bar-name{white-space:normal}.bar-track{width:100%;height:18px}.bar-spark{margin-left:0}
   .cards{grid-template-columns:1fr}.hf-cols{grid-template-columns:1fr}
   a[target="_blank"]{display:inline-flex;align-items:center;min-height:44px;padding-top:8px;padding-bottom:8px}
   .hf-list li{align-items:start;row-gap:2px}.hf-meta a[target="_blank"]{margin-top:-8px;margin-bottom:-8px}
@@ -453,32 +463,22 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     leaderboards = leaderboards or {}
     history_dates = history_dates or []
 
-    max_stars = max([r["period_stars"] or 0 for r in gh] + [1])
     gh_marks = marks.get("github", {})
-    gh_sparks = sparks.get("github", {})
-    bars = ""
-    for i, r in enumerate(gh, 1):
-        ps = r["period_stars"] or 0
-        w = max(4, round(ps / max_stars * 100))
-        mark = _mark_html(gh_marks.get(r["name"]))
-        spark_svg = gh_sparks.get(r["name"], "")
-        spark_html = f'<span class="bar-spark" aria-hidden="true">{spark_svg}</span>' if spark_svg else ""
-        chart_label = f'{r["name"]}：今日新增 {ps:,} 顆星'
-        bars += (f'<li class="bar-row">'
-                 f'<a class="bar-name" href="{_esc(r["url"])}" target="_blank" rel="noopener">'
-                 f'<span class="bar-rank">#{i:02d}</span><span>{_esc(r["name"])}{mark}</span></a>'
-                 f'<span class="bar-track" role="img" aria-label="{_esc(chart_label)}">'
-                 f'<span class="bar-fill" style="width:{w}%"></span></span>'
-                 f'<span class="bar-val">+{ps:,}</span>{spark_html}</li>')
     cards = ""
-    for i, r in enumerate(gh[:5], 1):
-        desc = (r["desc"] or "").strip() or "暫無說明"
-        cards += (f'<article class="card"><div class="card-top"><span class="rank">#{i:02d}</span>'
-                  f'<span class="card-meta">{_esc(r["lang"] or "—")} · {(r["total_stars"] or 0):,} 總星</span></div>'
+    for i, r in enumerate(gh[:10], 1):
+        raw_desc = (r["desc"] or "").strip()
+        desc = raw_desc or "暫無說明"
+        period_stars = r["period_stars"] if isinstance(r["period_stars"], int) else 0
+        total_stars = f'{r["total_stars"]:,}' if isinstance(r["total_stars"], int) else "—"
+        mark = _mark_html(gh_marks.get(r["name"]))
+        category = infer_github_category(r["name"], raw_desc)
+        cards += (f'<a class="card gh-card" href="{_esc(r["url"])}" target="_blank" rel="noopener">'
+                  f'<span class="card-top"><span class="rank">#{i:02d}</span>'
+                  f'<span class="category">{_esc(category)}</span>{mark}</span>'
                   f'<h3 class="card-name">{_esc(r["name"])}</h3>'
-                  f'<div class="card-stars">+{(r["period_stars"] or 0):,}<span> 今日新增星</span></div>'
-                  f'<p class="card-desc">{_esc(desc)}</p>'
-                  f'<a class="card-link" href="{_esc(r["url"])}" target="_blank" rel="noopener">GitHub 倉庫</a></article>')
+                  f'<span class="card-desc">{_esc(desc)}</span>'
+                  f'<span class="card-stars">+{period_stars:,}<span> 今日新增星</span></span>'
+                  f'<span class="card-meta">{total_stars} 總星 · {_esc(r["lang"] or "—")}</span></a>')
 
     def hf_block(label, items, prefix, mark_key):
         m = marks.get(mark_key, {})
@@ -602,12 +602,12 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             f'<span class="mark same">—</span> 為與昨日(資料裡日期嚴格早於今天的最近一天)排名比較。</p>'
             f'{nav_html}</header><main id="main-content">'
             f'{err_html}'
-            f'<section id="today" aria-labelledby="today-title">'
-            f'<h2 id="today-title"><span class="heading-icon" aria-hidden="true">🐙</span>GitHub 今日新增星排行 Top {len(gh)}</h2>'
-            f'<p class="sub">GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。</p>'
-            f'<ol class="bars">{bars}</ol></section>'
+            f'<section id="today" aria-labelledby="github-focus-title">'
             f'<section id="github-focus" aria-labelledby="github-focus-title">'
-            f'<h2 id="github-focus-title">焦點前五</h2><div class="cards">{cards}</div></section>'
+            f'<h2 id="github-focus-title"><span class="heading-icon" aria-hidden="true">🐙</span>GitHub 今日焦點 Top {len(gh[:10])}</h2>'
+            f'<p class="sub">GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。</p>'
+            f'<p class="sub">用途標籤依專案名稱與公開簡介規則推定。</p>'
+            f'<div class="cards">{cards}</div></section></section>'
             f'<section id="hugging-face" aria-labelledby="hugging-face-title">'
             f'<h2 id="hugging-face-title"><span class="heading-icon" aria-hidden="true">🤗</span>Hugging Face 本日熱門</h2>'
             f'<p class="sub">Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。</p>'
