@@ -28,7 +28,7 @@ jobs:
         run: |
           git config user.name "trend-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md archive data
+          git add README.md docs archive data
           if git diff --cached --quiet; then
             echo "沒有變更,略過提交"
           else

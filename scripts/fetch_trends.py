@@ -24,6 +24,8 @@ import os
 import re
 import sys
 
+import html as _html
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -142,6 +144,103 @@ ABOUT = """> 🛰️ **趨勢雷達** — 每天/每週自動抓 GitHub 與 Hugg
 """
 
 
+# ----------------------------- 產網頁 dashboard(靜態 HTML,零 AI) -----------------------------
+def _esc(s):
+    return _html.escape(str(s if s is not None else ""))
+
+
+SITE_CSS = """
+:root{--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--acc:#0f6e56}
+@media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--acc:#5dcaa5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.6}
+.topbar{height:6px;background:linear-gradient(90deg,#0f6e56,#d85a30,#185fa5,#eda100,#534ab7)}
+header,section,footer{max-width:1080px;margin:0 auto;padding:0 24px}
+header{padding-top:32px;padding-bottom:8px}
+.kicker{font-size:12px;letter-spacing:.12em;color:var(--acc);font-weight:600}
+h1{font-size:30px;margin:6px 0 8px;font-weight:700}
+h2{font-size:20px;margin:34px 0 14px;font-weight:600}
+h3{font-size:15px;margin:0 0 10px;font-weight:600}
+.sub{color:var(--mut);font-size:14px;margin:0 0 4px;max-width:760px}
+.err{max-width:1080px;margin:12px auto;padding:10px 16px;background:#fbeaea;color:#791f1f;border-radius:8px;font-size:14px}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar-row{display:grid;grid-template-columns:220px 1fr 72px;align-items:center;gap:12px;font-size:13px}
+.bar-name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{background:var(--line);border-radius:6px;height:16px;overflow:hidden}
+.bar-fill{display:block;height:100%;background:var(--acc);border-radius:6px}
+.bar-val{text-align:right;font-variant-numeric:tabular-nums;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.card-top{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.rank{color:var(--acc);font-weight:700}
+.card-name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600;word-break:break-all}
+.card-stars{font-size:26px;font-weight:700}.card-stars span{font-size:12px;font-weight:400;color:var(--mut)}
+.card-desc{font-size:13px;color:var(--mut);flex:1}
+.card-link{font-size:13px;color:var(--acc);text-decoration:none;margin-top:4px}
+.hf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.hf-col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.hf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.hf-list li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13px;align-items:baseline}
+.hf-list a{grid-column:2;color:var(--fg);text-decoration:none;font-weight:600;word-break:break-all}
+.hf-rank{color:var(--mut);font-variant-numeric:tabular-nums}
+.hf-meta{grid-column:2;color:var(--mut);font-size:12px}
+footer{color:var(--mut);font-size:12px;padding:32px 24px 48px;border-top:1px solid var(--line);margin-top:40px}
+footer code{background:var(--line);padding:1px 5px;border-radius:4px}
+@media(max-width:640px){.bar-row{grid-template-columns:130px 1fr 60px}h1{font-size:24px}}
+"""
+
+
+def render_html(date, stamp, gh, hf, errors):
+    """把當日榜單渲染成一頁自足的靜態 HTML(不含 AI,純資料排版)。"""
+    max_stars = max([r["period_stars"] or 0 for r in gh] + [1])
+    bars = ""
+    for r in gh:
+        ps = r["period_stars"] or 0
+        w = max(4, round(ps / max_stars * 100))
+        bars += (f'<div class="bar-row"><span class="bar-name">{_esc(r["name"])}</span>'
+                 f'<span class="bar-track"><span class="bar-fill" style="width:{w}%"></span></span>'
+                 f'<span class="bar-val">+{ps:,}</span></div>')
+    cards = ""
+    for i, r in enumerate(gh[:5], 1):
+        cards += (f'<div class="card"><div class="card-top"><span class="rank">#{i:02d}</span>'
+                  f'<span>{_esc(r["lang"] or "—")} · {(r["total_stars"] or 0):,} 總星</span></div>'
+                  f'<div class="card-name">{_esc(r["name"])}</div>'
+                  f'<div class="card-stars">+{(r["period_stars"] or 0):,}<span> 今日新增星</span></div>'
+                  f'<div class="card-desc">{_esc(r["desc"])[:120]}</div>'
+                  f'<a class="card-link" href="{_esc(r["url"])}" target="_blank" rel="noopener">GitHub 倉庫 →</a></div>')
+
+    def hf_block(label, items, prefix):
+        rows = ""
+        for i, it in enumerate(items, 1):
+            likes = f'{it["likes"]:,}' if isinstance(it["likes"], int) else "—"
+            dls = f'{it["downloads"]:,}' if isinstance(it["downloads"], int) else "—"
+            tag = f' · {_esc(it["tag"])}' if it["tag"] else ""
+            rows += (f'<li><span class="hf-rank">{i}</span>'
+                     f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["id"])}</a>'
+                     f'<span class="hf-meta">❤ {likes} · ⬇ {dls}{tag}</span></li>')
+        return f'<div class="hf-col"><h3>{prefix} {label} Top {len(items)}</h3><ol class="hf-list">{rows}</ol></div>'
+
+    hf_html = (hf_block("模型", hf.get("模型", []), "🔥")
+               + hf_block("資料集", hf.get("資料集", []), "📚")
+               + hf_block("Spaces", hf.get("Spaces", []), "🚀"))
+    err_html = ('<div class="err">⚠️ 部分來源抓取失敗:' + "；".join(_esc(e) for e in errors) + "</div>") if errors else ""
+    return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1">'
+            f'<title>趨勢雷達 · {date}</title><style>{SITE_CSS}</style></head><body>'
+            f'<div class="topbar"></div>'
+            f'<header><div class="kicker">GITHUB TRENDING 日榜 · HUGGING FACE 熱門</div>'
+            f'<h1>{date} · GitHub × Hugging Face 熱門觀測</h1>'
+            f'<p class="sub">以 GitHub Trending 日榜的「今日新增星」作 24 小時成長代理值,合併 Hugging Face 官方熱門 API。更新於 {stamp}。</p></header>'
+            f'{err_html}'
+            f'<section><h2>🐙 GitHub 24 小時成長排行 Top {len(gh)}</h2><div class="bars">{bars}</div></section>'
+            f'<section><h2>焦點前五</h2><div class="cards">{cards}</div></section>'
+            f'<section><h2>🤗 Hugging Face 本日熱門</h2><div class="hf-cols">{hf_html}</div></section>'
+            f'<footer>資料來源:GitHub Trending 日榜 + Hugging Face 官方 API(<code>/api/trending</code>)。'
+            f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
+            f'本頁由趨勢雷達腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
+            f'</body></html>')
+
+
 # ----------------------------- 檔案寫入 -----------------------------
 def write_text(path, text):
     full = os.path.join(ROOT, path)
@@ -205,6 +304,9 @@ def run_daily(now):
     # README(覆蓋)
     readme = f"# 📈 趨勢雷達\n\n{ABOUT}\n\n---\n\n## 今日榜單 · {date}\n_更新於 {stamp}_\n\n{body}\n"
     write_text("README.md", readme)
+
+    # 網頁 dashboard(靜態 HTML,覆蓋;供 GitHub Pages)
+    write_text("docs/index.html", render_html(date, stamp, gh, hf, errors))
 
     # 當月彙整(追加)
     month = now.strftime("%Y-%m")
