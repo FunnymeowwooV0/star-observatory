@@ -74,3 +74,18 @@ date,type,rank,id,likes,downloads,tag,url
 2026-07-22,Spaces,3,kulkas2pintu/wan555,635,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
 2026-07-22,Spaces,4,smolagents/hf-realtime-voice,449,,Chatbots,https://huggingface.co/spaces/smolagents/hf-realtime-voice
 2026-07-22,Spaces,5,loveseries/wanmanlove,150,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
+2026-07-22,模型,1,thinkingmachines/Inkling,1419,16441,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling
+2026-07-22,模型,2,baidu/Unlimited-OCR,2671,2237351,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR
+2026-07-22,模型,3,prism-ml/Ternary-Bonsai-27B-gguf,920,432196,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf
+2026-07-22,模型,4,prism-ml/Bonsai-27B-gguf,586,1404962,text-generation,https://huggingface.co/prism-ml/Bonsai-27B-gguf
+2026-07-22,模型,5,poolside/Laguna-S-2.1,335,3056,text-generation,https://huggingface.co/poolside/Laguna-S-2.1
+2026-07-22,資料集,1,openbmb/UltraX-Preview,251,2935,,https://huggingface.co/datasets/openbmb/UltraX-Preview
+2026-07-22,資料集,2,SupraLabs/reasoning-corpus-4K-5M-v1,67,443,,https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1
+2026-07-22,資料集,3,FlyRank/internship-warehouse,315,2187,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-07-22,資料集,4,markov-ai/gaming-500-hours,202,32029,,https://huggingface.co/datasets/markov-ai/gaming-500-hours
+2026-07-22,資料集,5,Glint-Research/Fable-5-traces,652,67452,,https://huggingface.co/datasets/Glint-Research/Fable-5-traces
+2026-07-22,Spaces,1,webml-community/bonsai-webgpu-kernels,271,,Text Generation,https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels
+2026-07-22,Spaces,2,ICML-2026-agent-repro/challenge,148,,Other,https://huggingface.co/spaces/ICML-2026-agent-repro/challenge
+2026-07-22,Spaces,3,kulkas2pintu/wan555,635,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-07-22,Spaces,4,smolagents/hf-realtime-voice,449,,Chatbots,https://huggingface.co/spaces/smolagents/hf-realtime-voice
+2026-07-22,Spaces,5,loveseries/wanmanlove,150,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
