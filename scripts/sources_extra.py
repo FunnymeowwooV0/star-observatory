@@ -53,23 +53,29 @@ def parse_hn_frontpage(data, top=HN_TOP):
     return out[:top]
 
 
-def parse_openrouter_rankings(data, top=OR_TOP):
+def parse_openrouter_rankings(data, top=OR_TOP, target_date=None):
     """把 OpenRouter 內部 rankings API 的 JSON 解析成 list[dict]。
 
-    取回資料中「最新一日」的所有 rows,按 model 合計 prompt+completion tokens
-    (同一 model 的多個 variant 會加總),再按 total_tokens 由多到少取前 top。
+    預設(target_date=None):取回資料中「最新一日」的所有 rows。
+    target_date(選配,'YYYY-MM-DD' 字串):改取該日的 rows(給回補腳本重用,
+    rankings API 一次回傳的資料本就含最近數天;不影響預設行為)。
+    同一 model 的多個 variant 會加總 prompt+completion tokens,
+    再按 total_tokens 由多到少取前 top。
 
     脆弱源:比照 GitHub Trending,解析不到就丟例外,**不得靜默回空榜**。
     """
     rows = data.get("data")
     if not rows:
         raise RuntimeError("OpenRouter rankings 沒解析到任何資料(內部 API 可能改版了)")
-    latest = max(r.get("date") or "" for r in rows)
-    if not latest:
+    if target_date is not None:
+        picked = target_date
+    else:
+        picked = max(r.get("date") or "" for r in rows)
+    if not picked:
         raise RuntimeError("OpenRouter rankings 解析不到日期欄位(內部 API 可能改版了)")
     agg = {}
     for r in rows:
-        if (r.get("date") or "") != latest:
+        if not (r.get("date") or "").startswith(picked):
             continue
         model = r.get("model_permaslug")
         if model is None:

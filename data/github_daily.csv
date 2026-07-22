@@ -49,3 +49,63 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-07-22,8,schollz/croc,737,37313,Go,https://github.com/schollz/croc,Easily and securely send things from one computer to another 🐊 📦
 2026-07-22,9,rohitg00/ai-engineering-from-scratch,688,41959,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
 2026-07-22,10,jamiepine/voicebox,565,45499,TypeScript,https://github.com/jamiepine/voicebox,"The open-source AI voice studio. Clone, dictate, create."
+2026-07-16,1,mattpocock/skills,2130,172236,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .claude directory.
+2026-07-16,2,OpenCut-app/OpenCut,1664,71624,TypeScript,https://github.com/OpenCut-app/OpenCut,The open-source CapCut alternative
+2026-07-16,3,Nutlope/hallmark,1277,8432,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-07-16,4,Shubhamsaboo/awesome-llm-apps,1236,121877,Python,https://github.com/Shubhamsaboo/awesome-llm-apps,"100+ AI Agent & RAG apps you can actually run — clone, customize, ship."
+2026-07-16,5,hasaneyldrm/exercises-dataset,949,14347,HTML,https://github.com/hasaneyldrm/exercises-dataset,"1,324-exercise fitness dataset — animation GIFs, 180×180 thumbnails, muscle-group & equipment data, and step-by-step instructions in 6 languages. The exercise data layer behind the LogPress app."
+2026-07-16,6,HKUDS/Vibe-Trading,915,23679,Python,https://github.com/HKUDS/Vibe-Trading,"""Vibe-Trading: Your Personal Trading Agent"""
+2026-07-16,7,HenryNdubuaku/maths-cs-ai-compendium,725,5878,TypeScript,https://github.com/HenryNdubuaku/maths-cs-ai-compendium,Become a cracked AI/ML Research Engineer
+2026-07-16,8,Dicklesworthstone/destructive_command_guard,471,4755,Rust,https://github.com/Dicklesworthstone/destructive_command_guard,The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.
+2026-07-16,9,coreyhaines31/marketingskills,340,39744,JavaScript,https://github.com/coreyhaines31/marketingskills,"Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering."
+2026-07-16,10,openinterpreter/openinterpreter,299,65466,Rust,https://github.com/openinterpreter/openinterpreter,A coding agent for low-cost models
+2026-07-17,1,OpenCut-app/OpenCut,3537,74038,TypeScript,https://github.com/OpenCut-app/OpenCut,The open-source CapCut alternative
+2026-07-17,2,Nutlope/hallmark,3372,10926,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-07-17,3,mattpocock/skills,2060,174280,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .claude directory.
+2026-07-17,4,Graphify-Labs/graphify,1107,89083,Python,https://github.com/Graphify-Labs/graphify,"AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph."
+2026-07-17,5,Shubhamsaboo/awesome-llm-apps,923,122895,Python,https://github.com/Shubhamsaboo/awesome-llm-apps,"100+ AI Agent & RAG apps you can actually run — clone, customize, ship."
+2026-07-17,6,hasaneyldrm/exercises-dataset,710,15045,HTML,https://github.com/hasaneyldrm/exercises-dataset,"1,324-exercise fitness dataset — animation GIFs, 180×180 thumbnails, muscle-group & equipment data, and step-by-step instructions in 6 languages. The exercise data layer behind the LogPress app."
+2026-07-17,7,openinterpreter/openinterpreter,661,65984,Rust,https://github.com/openinterpreter/openinterpreter,A coding agent for open models like Kimi K3
+2026-07-17,8,HKUDS/DeepTutor,656,26872,Python,https://github.com/HKUDS/DeepTutor,DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.
+2026-07-17,9,codecrafters-io/build-your-own-x,435,526314,Markdown,https://github.com/codecrafters-io/build-your-own-x,Master programming by recreating your favorite technologies from scratch.
+2026-07-17,10,PrismML-Eng/Bonsai-demo,196,1521,Shell,https://github.com/PrismML-Eng/Bonsai-demo,Bonsai Demo
+2026-07-18,1,Nutlope/hallmark,1485,12014,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-07-18,2,OpenCut-app/OpenCut,1074,74869,TypeScript,https://github.com/OpenCut-app/OpenCut,The open-source CapCut alternative
+2026-07-18,3,codecrafters-io/build-your-own-x,1068,527351,Markdown,https://github.com/codecrafters-io/build-your-own-x,Master programming by recreating your favorite technologies from scratch.
+2026-07-18,4,HKUDS/DeepTutor,531,27358,Python,https://github.com/HKUDS/DeepTutor,DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.
+2026-07-18,5,PostHog/posthog,438,36189,Python,https://github.com/PostHog/posthog,"🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP."
+2026-07-18,6,openinterpreter/openinterpreter,431,66369,Rust,https://github.com/openinterpreter/openinterpreter,A coding agent for open models like Kimi K3
+2026-07-18,7,RyanCodrai/turbovec,280,13306,Python,https://github.com/RyanCodrai/turbovec,"A vector index built on TurboQuant, written in Rust with Python bindings"
+2026-07-18,8,PrismML-Eng/Bonsai-demo,278,1710,Shell,https://github.com/PrismML-Eng/Bonsai-demo,Bonsai Demo
+2026-07-18,9,github/copilot-sdk,233,9792,Java,https://github.com/github/copilot-sdk,Multi-platform SDK for integrating GitHub Copilot Agent into apps and services
+2026-07-18,10,HenryNdubuaku/maths-cs-ai-compendium,200,6617,TypeScript,https://github.com/HenryNdubuaku/maths-cs-ai-compendium,Become a cracked AI/ML Research Engineer
+2026-07-19,1,codecrafters-io/build-your-own-x,1126,528244,Markdown,https://github.com/codecrafters-io/build-your-own-x,Master programming by recreating your favorite technologies from scratch.
+2026-07-19,2,Robbyant/lingbot-map,831,12919,Python,https://github.com/Robbyant/lingbot-map,A feed-forward 3D foundation model for reconstructing scenes from streaming data
+2026-07-19,3,tirth8205/code-review-graph,355,20154,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-07-19,4,PostHog/posthog,338,36582,Python,https://github.com/PostHog/posthog,"🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP."
+2026-07-19,5,KnockOutEZ/wigolo,203,1225,TypeScript,https://github.com/KnockOutEZ/wigolo,"The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta."
+2026-07-19,6,rohitg00/ai-engineering-from-scratch,191,39095,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-07-19,7,lyogavin/airllm,161,23324,Jupyter Notebook,https://github.com/lyogavin/airllm,AirLLM 70B inference with single 4GB GPU
+2026-07-19,8,ibelick/ui-skills,123,4996,TypeScript,https://github.com/ibelick/ui-skills,Skills for Design Engineers
+2026-07-19,9,elder-plinius/G0DM0D3,69,9501,TypeScript,https://github.com/elder-plinius/G0DM0D3,LIBERATED AI CHAT
+2026-07-19,10,MoonshotAI/kimi-cli,65,9473,Python,https://github.com/MoonshotAI/kimi-cli,Kimi Code CLI is your next CLI agent.
+2026-07-20,1,bojieli/ai-agent-book,1734,6594,Python,https://github.com/bojieli/ai-agent-book,《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码
+2026-07-20,2,codecrafters-io/build-your-own-x,754,529013,Markdown,https://github.com/codecrafters-io/build-your-own-x,Master programming by recreating your favorite technologies from scratch.
+2026-07-20,3,tirth8205/code-review-graph,663,21516,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-07-20,4,jamiepine/voicebox,610,43489,TypeScript,https://github.com/jamiepine/voicebox,"The open-source AI voice studio. Clone, dictate, create."
+2026-07-20,5,KnockOutEZ/wigolo,595,1952,TypeScript,https://github.com/KnockOutEZ/wigolo,"The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta."
+2026-07-20,6,rohitg00/ai-engineering-from-scratch,501,39828,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-07-20,7,PostHog/posthog,411,36981,Python,https://github.com/PostHog/posthog,"🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP."
+2026-07-20,8,MoonshotAI/kimi-cli,410,9939,Python,https://github.com/MoonshotAI/kimi-cli,Kimi Code CLI is your next CLI agent.
+2026-07-20,9,kvcache-ai/ktransformers,360,18442,Python,https://github.com/kvcache-ai/ktransformers,A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune Optimizations
+2026-07-20,10,lyogavin/airllm,358,23679,Jupyter Notebook,https://github.com/lyogavin/airllm,AirLLM 70B inference with single 4GB GPU
+2026-07-21,1,tirth8205/code-review-graph,1833,23169,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-07-21,2,oblien/openship,1641,4801,TypeScript,https://github.com/oblien/openship,Self-hosted deployment platform
+2026-07-21,3,diegosouzapw/OmniRoute,1107,21822,TypeScript,https://github.com/diegosouzapw/OmniRoute,"Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50+ free), 500+ models — Claude, GPT, Gemini, Kimi K3, GLM, DeepSeek. Works with Claude Code, Codex, Cursor, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, multimodal, Desktop/PWA. Built by 500+ contributors."
+2026-07-21,4,every-app/open-seo,939,5849,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
+2026-07-21,5,msitarzewski/agency-agents,862,134709,Shell,https://github.com/msitarzewski/agency-agents,"A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+2026-07-21,6,rohitg00/ai-engineering-from-scratch,823,40519,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-07-21,7,jamiepine/voicebox,821,44167,TypeScript,https://github.com/jamiepine/voicebox,"The open-source AI voice studio. Clone, dictate, create."
+2026-07-21,8,KnockOutEZ/wigolo,689,2550,TypeScript,https://github.com/KnockOutEZ/wigolo,"The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta."
+2026-07-21,9,1jehuang/jcode,568,9630,Rust,https://github.com/1jehuang/jcode,The most intelligent agent harness for code
+2026-07-21,10,Robbyant/lingbot-map,565,14224,Python,https://github.com/Robbyant/lingbot-map,A feed-forward 3D foundation model for reconstructing scenes from streaming data

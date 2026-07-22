@@ -170,6 +170,19 @@ class TestOpenRouterParse(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             se.parse_openrouter_rankings({"data": []})
 
+    def test_target_date_picks_that_day_not_latest(self):
+        # fixture 含 2026-07-20(僅一筆,含超大 prompt_tokens 的 row)與 2026-07-21(多筆)兩天;
+        # 預設(無 target_date)取最新一天 07-21,帶 target_date='2026-07-20' 應改取 07-20 那天。
+        default_items = se.parse_openrouter_rankings(self.data, top=10)
+        older_items = se.parse_openrouter_rankings(self.data, top=10, target_date="2026-07-20")
+        self.assertTrue(older_items)
+        self.assertNotEqual(
+            {it["model"] for it in default_items}, {it["model"] for it in older_items},
+            "target_date 應改取指定那天的資料,結果不該跟預設(最新一天)完全相同"
+        )
+        self.assertTrue(any(it["prompt_tokens"] >= 999999999999999 for it in older_items),
+                        "target_date='2026-07-20' 應該取到該日的 row(fixture 裡那天只有這筆髒資料)")
+
 
 class TestPhParse(unittest.TestCase):
     """Product Hunt GraphQL 解析(synthetic fixture,見 fixtures/ph_posts.json 內註)。"""
