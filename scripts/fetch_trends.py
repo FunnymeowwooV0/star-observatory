@@ -203,58 +203,92 @@ def _esc(s):
 
 
 SITE_CSS = """
-:root{--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--acc:#0f6e56}
-@media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--acc:#5dcaa5}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+:root{color-scheme:light dark;--bg:#f7f7f4;--fg:#1a1a19;--mut:#6b6b66;--card:#ffffff;--line:#e3e2db;--acc:#0f6e56;--up:#0f6e56;--down:#b23b3b;--new:#185fa5}
+@media(prefers-color-scheme:dark){:root{--bg:#161615;--fg:#f2f2ee;--mut:#a3a29a;--card:#1f1f1d;--line:#2f2f2c;--acc:#5dcaa5;--up:#5dcaa5;--down:#ff8f8f;--new:#85b7ff}}
+html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.6}
+a,select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(15,110,86,.18)}
+a{color:var(--acc)}a:hover{text-decoration-thickness:2px;text-underline-offset:3px}a:active{opacity:.72}
+a:focus-visible,.date-switch:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+a[target="_blank"]::after{content:"↗";display:inline-block;margin-left:.25em;font-size:.78em;color:var(--mut);text-decoration:none}
+.skip-link{position:absolute;z-index:10;left:16px;top:-64px;background:var(--fg);color:var(--bg);padding:10px 14px}
+.skip-link:focus{top:10px}
 .topbar{height:6px;background:linear-gradient(90deg,#0f6e56,#d85a30,#185fa5,#eda100,#534ab7)}
-header,section,footer{max-width:1080px;margin:0 auto;padding:0 24px}
+header,main,footer{max-width:1080px;margin:0 auto;padding-left:24px;padding-right:24px}
 header{padding-top:32px;padding-bottom:8px}
 .kicker{font-size:12px;letter-spacing:.12em;color:var(--acc);font-weight:600}
 h1{font-size:30px;margin:6px 0 8px;font-weight:700}
 h2{font-size:20px;margin:34px 0 14px;font-weight:600}
 h3{font-size:15px;margin:0 0 10px;font-weight:600}
+h4{font-size:14px;margin:0 0 10px;font-weight:600}
+.heading-icon{margin-right:.3em}
 .sub{color:var(--mut);font-size:14px;margin:0 0 4px;max-width:760px}
-.err{max-width:1080px;margin:12px auto;padding:10px 16px;background:#fbeaea;color:#791f1f;border-radius:8px;font-size:14px}
-.bars{display:flex;flex-direction:column;gap:8px}
-.bar-row{display:grid;grid-template-columns:220px 1fr 72px;align-items:center;gap:12px;font-size:13px}
-.bar-name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bar-track{background:var(--line);border-radius:6px;height:16px;overflow:hidden}
+.page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;margin-top:20px;padding:10px 0;
+border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.page-nav>a{display:inline-flex;align-items:center;min-height:44px;color:var(--fg);font-size:14px;font-weight:600;text-decoration:none}
+.page-nav>a:hover{color:var(--acc)}
+.history-picker{display:flex;align-items:center;gap:8px;min-height:44px;color:var(--mut);font-size:13px}
+.history-picker label{font-weight:600;color:var(--fg)}
+.date-switch{min-height:36px;font-size:13px;padding:4px 28px 4px 8px;border-radius:6px;border:1px solid var(--line);
+background:var(--card);color:var(--fg)}
+section{scroll-margin-top:16px}
+.err{margin:12px 0;padding:10px 16px;background:#fbeaea;color:#791f1f;border-radius:8px;font-size:14px}
+@media(prefers-color-scheme:dark){.err{background:#3a2020;color:#ffd6d6}}
+.bars{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.bar-row{display:grid;grid-template-columns:minmax(240px,300px) minmax(140px,1fr) 80px;
+grid-template-areas:"name track value" ". spark .";align-items:center;column-gap:12px;row-gap:3px;min-width:0;font-size:13px}
+.bar-name{grid-area:name;display:flex;align-items:flex-start;gap:8px;min-width:0;color:var(--fg);text-decoration:none;
+font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;overflow-wrap:anywhere}
+.bar-rank{flex:none;color:var(--acc);font-variant-numeric:tabular-nums}
+.bar-track{grid-area:track;background:var(--line);border-radius:6px;height:16px;overflow:hidden}
 .bar-fill{display:block;height:100%;background:var(--acc);border-radius:6px}
-.bar-val{text-align:right;font-variant-numeric:tabular-nums;color:var(--mut)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.bar-val{grid-area:value;text-align:right;font-variant-numeric:tabular-nums;color:var(--mut)}
+.bar-spark{grid-area:spark;min-height:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
-.card-top{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:6px 14px;min-width:0;
+font-size:12px;color:var(--mut)}
+.card-meta{min-width:0;margin-left:auto;text-align:right;overflow-wrap:anywhere}
 .rank{color:var(--acc);font-weight:700}
-.card-name{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600;word-break:break-all}
+.card-name{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-weight:600;overflow-wrap:anywhere}
 .card-stars{font-size:26px;font-weight:700}.card-stars span{font-size:12px;font-weight:400;color:var(--mut)}
-.card-desc{font-size:13px;color:var(--mut);flex:1}
-.card-link{font-size:13px;color:var(--acc);text-decoration:none;margin-top:4px}
-.hf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:0;
+font-size:13px;color:var(--mut);flex:1}
+.card-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--acc);text-decoration:none;margin-top:4px}
+.hf-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
 .hf-col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
 .hf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .hf-list li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:13px;align-items:baseline}
-.hf-list a{grid-column:2;color:var(--fg);text-decoration:none;font-weight:600;word-break:break-all}
-.hf-name{grid-column:2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;word-break:break-all}
+.hf-list>li>a{grid-column:2;color:var(--fg);text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.hf-name{grid-column:2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;overflow-wrap:anywhere}
 .hf-rank{color:var(--mut);font-variant-numeric:tabular-nums}
 .hf-meta{grid-column:2;color:var(--mut);font-size:12px}
 footer{color:var(--mut);font-size:12px;padding:32px 24px 48px;border-top:1px solid var(--line);margin-top:40px}
 footer code{background:var(--line);padding:1px 5px;border-radius:4px}
 .mark{font-size:11px;font-weight:700;margin-left:6px}
-.mark.up{color:#0f6e56}.mark.down{color:#b23b3b}.mark.new{color:#185fa5}.mark.same{color:var(--mut);font-weight:400}
+.mark.up{color:var(--up)}.mark.down{color:var(--down)}.mark.new{color:var(--new)}.mark.same{color:var(--mut);font-weight:400}
 .hf-list .mark{grid-column:2}
-.bar-spark{margin-bottom:4px}
 .spark{display:block;margin-top:3px}
 .spark rect{fill:var(--acc)}
 .snapshot-banner{max-width:1080px;margin:16px auto 0;padding:10px 16px;background:#eef3fb;color:#1a3a5c;
 border-radius:8px;font-size:14px}
 @media(prefers-color-scheme:dark){.snapshot-banner{background:#1c2c3d;color:#cfe0f5}}
 .snapshot-banner a{color:inherit;font-weight:700}
-.date-switch{margin-left:10px;font-size:13px;padding:4px 8px;border-radius:6px;border:1px solid var(--line);
-background:var(--card);color:var(--fg)}
 .lb-period{margin-bottom:30px}
 .lb-period h3{margin:0 0 4px}
-@media(max-width:640px){.bar-row{grid-template-columns:130px 1fr 60px}h1{font-size:24px}}
+@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  header,main,footer{padding-left:16px;padding-right:16px}header{padding-top:24px}h1{font-size:24px;line-height:1.35}
+  .page-nav{align-items:stretch;gap:4px 12px}.page-nav>a{flex:1;justify-content:center}
+  .history-picker{flex-basis:100%;justify-content:space-between}.date-switch{flex:1;max-width:220px;min-height:44px}
+  .bar-row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name value" "track track" "spark spark";
+  row-gap:7px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .bar-name{white-space:normal}.bar-track{width:100%;height:18px}.bar-spark{margin-left:0}
+  .cards{grid-template-columns:1fr}.hf-cols{grid-template-columns:1fr}
+  a[target="_blank"]{display:inline-flex;align-items:center;min-height:44px;padding-top:8px;padding-bottom:8px}
+  .hf-list li{align-items:start;row-gap:2px}.hf-meta a[target="_blank"]{margin-top:-8px;margin-bottom:-8px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 """
 
 
@@ -298,10 +332,12 @@ def _lb_item_openrouter(i, e):
 def _lb_item_hf(i, e):
     likes, dls = e.get("likes_delta"), e.get("downloads_delta")
     likes_s = f'+{likes:,}' if isinstance(likes, int) else '—'
-    dls_s = f'+{dls:,}' if isinstance(dls, int) else '—'
+    metrics = [f'Likes {likes_s}']
+    if isinstance(dls, int):
+        metrics.append(f'下載 +{dls:,}')
     return (f'<li><span class="hf-rank">{i}</span>'
             f'<a href="{_esc(e.get("url") or "")}" target="_blank" rel="noopener">{_esc(e["name"])}</a>'
-            f'<span class="hf-meta">❤ {likes_s} · ⬇ {dls_s}</span></li>')
+            f'<span class="hf-meta">{" · ".join(metrics)}</span></li>')
 
 
 def _lb_item_ollama(i, e):
@@ -344,7 +380,8 @@ LEADERBOARD_SOURCES = [
 def _lb_block(emoji, title, items, render_item, top):
     top_items = items[:top]
     rows = "".join(render_item(i, e) for i, e in enumerate(top_items, 1))
-    return f'<div class="hf-col"><h3>{emoji} {title} Top {len(top_items)}</h3><ol class="hf-list">{rows}</ol></div>'
+    return (f'<div class="hf-col"><h4><span class="heading-icon" aria-hidden="true">{_esc(emoji)}</span>'
+            f'{_esc(title)} Top {len(top_items)}</h4><ol class="hf-list">{rows}</ol></div>')
 
 
 def _accumulation_section(leaderboards):
@@ -366,11 +403,17 @@ def _accumulation_section(leaderboards):
         start, days = pdata.get("start", "?"), pdata.get("days", "?")
         note = (f'<p class="sub">統計自 {_esc(start)} 起(資料庫目前累積 {days} 天資料)。'
                 f'僅統計進過每日 Top N 的項目——這是快照資料庫的天生限制,不是全網統計。</p>')
-        period_blocks.append(f'<div class="lb-period"><h3>🏆 {period_label}累積榜</h3>{note}'
-                              f'<div class="hf-cols">{"".join(cols)}</div></div>')
+        period_id = f"leaderboards-{period_key}"
+        period_blocks.append(
+            f'<section class="lb-period" aria-labelledby="{period_id}">'
+            f'<h3 id="{period_id}"><span class="heading-icon" aria-hidden="true">🏆</span>{period_label}累積榜</h3>'
+            f'{note}<div class="hf-cols">{"".join(cols)}</div></section>'
+        )
     if not period_blocks:
         return ""
-    return '<section><h2>🏆 累積排行榜</h2>' + "".join(period_blocks) + '</section>'
+    return ('<section id="leaderboards" aria-labelledby="leaderboards-title">'
+            '<h2 id="leaderboards-title"><span class="heading-icon" aria-hidden="true">🏆</span>累積排行榜</h2>'
+            + "".join(period_blocks) + '</section>')
 
 
 def _snapshot_banner_html(snapshot_date):
@@ -385,14 +428,15 @@ def _date_switcher_html(history_dates, snapshot_date):
     非 None=在 docs/history/<snapshot_date>.html 頁。GitHub Pages 有路徑前綴,只用相對路徑。"""
     dates = sorted(set(history_dates), reverse=True)
     if not dates:
-        return ""
-    opts = ['<option value="" disabled selected>📅 切換日期…</option>'] if snapshot_date is None else []
+        return '<span class="history-picker"><span>看歷史</span><span>尚無快照</span></span>'
+    opts = ['<option value="" disabled selected>選擇日期…</option>'] if snapshot_date is None else []
     for d in dates:
         href = f"{d}.html" if snapshot_date is not None else f"history/{d}.html"
         sel = " selected" if d == snapshot_date else ""
         opts.append(f'<option value="{_esc(href)}"{sel}>{_esc(d)}</option>')
-    return ('<select class="date-switch" aria-label="切換日期查看歷史" '
-            'onchange="if(this.value) location.href=this.value">' + "".join(opts) + '</select>')
+    return ('<span class="history-picker"><label for="history-date">看歷史</label>'
+            '<select id="history-date" class="date-switch" aria-label="切換日期查看歷史" '
+            'onchange="if(this.value) location.href=this.value">' + "".join(opts) + '</select></span>')
 
 
 def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False,
@@ -413,23 +457,28 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     gh_marks = marks.get("github", {})
     gh_sparks = sparks.get("github", {})
     bars = ""
-    for r in gh:
+    for i, r in enumerate(gh, 1):
         ps = r["period_stars"] or 0
         w = max(4, round(ps / max_stars * 100))
         mark = _mark_html(gh_marks.get(r["name"]))
         spark_svg = gh_sparks.get(r["name"], "")
-        spark_html = f'<div class="bar-spark" style="margin-left:220px">{spark_svg}</div>' if spark_svg else ""
-        bars += (f'<div class="bar-row"><span class="bar-name">{_esc(r["name"])}{mark}</span>'
-                 f'<span class="bar-track"><span class="bar-fill" style="width:{w}%"></span></span>'
-                 f'<span class="bar-val">+{ps:,}</span></div>{spark_html}')
+        spark_html = f'<span class="bar-spark" aria-hidden="true">{spark_svg}</span>' if spark_svg else ""
+        chart_label = f'{r["name"]}：今日新增 {ps:,} 顆星'
+        bars += (f'<li class="bar-row">'
+                 f'<a class="bar-name" href="{_esc(r["url"])}" target="_blank" rel="noopener">'
+                 f'<span class="bar-rank">#{i:02d}</span><span>{_esc(r["name"])}{mark}</span></a>'
+                 f'<span class="bar-track" role="img" aria-label="{_esc(chart_label)}">'
+                 f'<span class="bar-fill" style="width:{w}%"></span></span>'
+                 f'<span class="bar-val">+{ps:,}</span>{spark_html}</li>')
     cards = ""
     for i, r in enumerate(gh[:5], 1):
-        cards += (f'<div class="card"><div class="card-top"><span class="rank">#{i:02d}</span>'
-                  f'<span>{_esc(r["lang"] or "—")} · {(r["total_stars"] or 0):,} 總星</span></div>'
-                  f'<div class="card-name">{_esc(r["name"])}</div>'
+        desc = (r["desc"] or "").strip() or "暫無說明"
+        cards += (f'<article class="card"><div class="card-top"><span class="rank">#{i:02d}</span>'
+                  f'<span class="card-meta">{_esc(r["lang"] or "—")} · {(r["total_stars"] or 0):,} 總星</span></div>'
+                  f'<h3 class="card-name">{_esc(r["name"])}</h3>'
                   f'<div class="card-stars">+{(r["period_stars"] or 0):,}<span> 今日新增星</span></div>'
-                  f'<div class="card-desc">{_esc(r["desc"])[:120]}</div>'
-                  f'<a class="card-link" href="{_esc(r["url"])}" target="_blank" rel="noopener">GitHub 倉庫 →</a></div>')
+                  f'<p class="card-desc">{_esc(desc)}</p>'
+                  f'<a class="card-link" href="{_esc(r["url"])}" target="_blank" rel="noopener">GitHub 倉庫</a></article>')
 
     def hf_block(label, items, prefix, mark_key):
         m = marks.get(mark_key, {})
@@ -437,15 +486,19 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         rows = ""
         for i, it in enumerate(items, 1):
             likes = f'{it["likes"]:,}' if isinstance(it["likes"], int) else "—"
-            dls = f'{it["downloads"]:,}' if isinstance(it["downloads"], int) else "—"
-            tag = f' · {_esc(it["tag"])}' if it["tag"] else ""
+            meta = [f'Likes {likes}']
+            if isinstance(it["downloads"], int):
+                meta.append(f'下載 {it["downloads"]:,}')
+            if it["tag"]:
+                meta.append(_esc(it["tag"]))
             mark = _mark_html(m.get(it["id"]))
             spark_svg = sp.get(it["id"], "")
             spark_html = f'<span class="hf-meta">{spark_svg}</span>' if spark_svg else ""
             rows += (f'<li><span class="hf-rank">{i}</span>'
                      f'<a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["id"])}</a>{mark}'
-                     f'<span class="hf-meta">❤ {likes} · ⬇ {dls}{tag}</span>{spark_html}</li>')
-        return f'<div class="hf-col"><h3>{prefix} {label} Top {len(items)}</h3><ol class="hf-list">{rows}</ol></div>'
+                     f'<span class="hf-meta">{" · ".join(meta)}</span>{spark_html}</li>')
+        return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
+                f'{_esc(label)} Top {len(items)}</h3><ol class="hf-list">{rows}</ol></div>')
 
     hf_html = (hf_block("模型", hf.get("模型", []), "🔥", "hf_model")
                + hf_block("資料集", hf.get("資料集", []), "📚", "hf_dataset")
@@ -453,7 +506,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
 
     def list_block(prefix, label, items, render_item):
         rows = "".join(render_item(i, it) for i, it in enumerate(items, 1))
-        return (f'<div class="hf-col"><h3>{prefix} {label} Top {len(items)}</h3>'
+        return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
+                f'{_esc(label)} Top {len(items)}</h3>'
                 f'<ol class="hf-list">{rows}</ol></div>')
 
     def hn_item(i, it):
@@ -493,23 +547,28 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                 f'<span class="hf-meta">⬇ {pulls} Pulls · {delta}{caps}</span>'
                 f'<span class="hf-meta"><a href="{_esc(it["url"])}" target="_blank" rel="noopener">{_esc(it["desc"])}</a></span>{spark_html}</li>')
 
-    hn_section = (f'<section><h2>📰 Hacker News 頭版</h2>'
+    hn_section = (f'<section id="hacker-news" aria-labelledby="hacker-news-title">'
+                  f'<h2 id="hacker-news-title"><span class="heading-icon" aria-hidden="true">📰</span>Hacker News 頭版</h2>'
                   f'<p class="sub">HN 當前頭版按分數(Algolia 官方 API)。</p>'
                   f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div></section>') if hn else ""
-    or_section = (f'<section><h2>🧮 OpenRouter 模型用量</h2>'
+    or_section = (f'<section id="openrouter" aria-labelledby="openrouter-title">'
+                  f'<h2 id="openrouter-title"><span class="heading-icon" aria-hidden="true">🧮</span>OpenRouter 模型用量</h2>'
                   f'<p class="sub">OpenRouter 官方排行資料(非官方文件端點),最新一日模型用量。</p>'
                   f'<div class="hf-cols">{list_block("🧮", "模型用量", openrouter, or_item)}</div></section>') if openrouter else ""
     if ph:
-        ph_section = (f'<section><h2>🚀 Product Hunt</h2>'
+        ph_section = (f'<section id="product-hunt" aria-labelledby="product-hunt-title">'
+                      f'<h2 id="product-hunt-title"><span class="heading-icon" aria-hidden="true">🚀</span>Product Hunt</h2>'
                       f'<p class="sub">Product Hunt AI 主題 24h 票選。</p>'
                       f'<div class="hf-cols">{list_block("🚀", "AI 榜", ph, ph_item)}</div></section>')
     elif ph_skipped:
-        ph_section = ('<section><h2>🚀 Product Hunt</h2>'
+        ph_section = ('<section id="product-hunt" aria-labelledby="product-hunt-title">'
+                      '<h2 id="product-hunt-title"><span class="heading-icon" aria-hidden="true">🚀</span>Product Hunt</h2>'
                       '<p class="sub">Product Hunt AI 主題 24h 票選 — 未設 token 略過(本機無環境變數 <code>PH_TOKEN</code>)。</p></section>')
     else:
         ph_section = ""
 
-    ol_section = (f'<section><h2>🦙 Ollama 熱門模型</h2>'
+    ol_section = (f'<section id="ollama" aria-labelledby="ollama-title">'
+                  f'<h2 id="ollama-title"><span class="heading-icon" aria-hidden="true">🦙</span>Ollama 熱門模型</h2>'
                   f'<p class="sub">Ollama 模型庫 popular 榜(頁面原序,未按 Pulls 重排)。'
                   f'Pulls 為累計下載數;「今日新增」由每日快照相減得出,需前一日資料,首日/無先前快照顯示 —。</p>'
                   f'<div class="hf-cols">{list_block("🦙", "模型", ollama, ol_item)}</div></section>') if ollama else ""
@@ -517,25 +576,46 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     lb_section = _accumulation_section(leaderboards)
     banner_html = _snapshot_banner_html(snapshot_date)
     switcher_html = _date_switcher_html(history_dates, snapshot_date)
+    today_href = "../index.html#today" if snapshot_date else "#today"
+    today_current = ' aria-current="page"' if snapshot_date is None else ""
+    leaderboard_link = '<a href="#leaderboards">累積榜</a>' if lb_section else ""
+    nav_html = (f'<nav class="page-nav" aria-label="主要導覽">'
+                f'<a href="{today_href}"{today_current}>今日榜</a>'
+                f'{leaderboard_link}{switcher_html}</nav>')
 
-    err_html = ('<div class="err">⚠️ 部分來源抓取失敗:' + "；".join(_esc(e) for e in errors) + "</div>") if errors else ""
+    err_html = ('<div class="err" role="alert">⚠️ 部分來源抓取失敗:'
+                + "；".join(_esc(e) for e in errors)
+                + '。可稍後重新整理；若持續發生，請查看 Actions 執行紀錄。</div>') if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
+            f'<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f4">'
+            f'<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#161615">'
+            f'<meta name="description" content="觀星台每日彙整開源、AI 與科技熱門榜單。">'
             f'<title>觀星台 · {date}</title><style>{SITE_CSS}</style></head><body>'
-            f'<div class="topbar"></div>'
+            f'<a class="skip-link" href="#main-content">跳至主要內容</a>'
+            f'<div class="topbar" aria-hidden="true"></div>'
             f'{banner_html}'
-            f'<header><div class="kicker">GITHUB TRENDING 日榜 · HUGGING FACE 熱門{switcher_html}</div>'
-            f'<h1>{date} · GitHub × Hugging Face 熱門觀測</h1>'
-            f'<p class="sub">以 GitHub Trending 日榜的「今日新增星」作 24 小時成長代理值,合併 Hugging Face 官方熱門 API。更新於 {stamp}。'
+            f'<header><div class="kicker">每日趨勢總覽 · 純資料靜態頁</div>'
+            f'<h1>{date} · 開源與科技熱門觀測</h1>'
+            f'<p class="sub">彙整 GitHub、Hugging Face、Hacker News、OpenRouter、Product Hunt 與 Ollama 公開榜單。更新於 {stamp}。'
             f'各項目旁 <span class="mark up">↑n</span>/<span class="mark down">↓n</span>/<span class="mark new">NEW</span>/'
-            f'<span class="mark same">—</span> 為與昨日(資料裡日期嚴格早於今天的最近一天)排名比較。</p></header>'
+            f'<span class="mark same">—</span> 為與昨日(資料裡日期嚴格早於今天的最近一天)排名比較。</p>'
+            f'{nav_html}</header><main id="main-content">'
             f'{err_html}'
-            f'<section><h2>🐙 GitHub 24 小時成長排行 Top {len(gh)}</h2><div class="bars">{bars}</div></section>'
-            f'<section><h2>焦點前五</h2><div class="cards">{cards}</div></section>'
-            f'<section><h2>🤗 Hugging Face 本日熱門</h2><div class="hf-cols">{hf_html}</div></section>'
+            f'<section id="today" aria-labelledby="today-title">'
+            f'<h2 id="today-title"><span class="heading-icon" aria-hidden="true">🐙</span>GitHub 今日新增星排行 Top {len(gh)}</h2>'
+            f'<p class="sub">GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。</p>'
+            f'<ol class="bars">{bars}</ol></section>'
+            f'<section id="github-focus" aria-labelledby="github-focus-title">'
+            f'<h2 id="github-focus-title">焦點前五</h2><div class="cards">{cards}</div></section>'
+            f'<section id="hugging-face" aria-labelledby="hugging-face-title">'
+            f'<h2 id="hugging-face-title"><span class="heading-icon" aria-hidden="true">🤗</span>Hugging Face 本日熱門</h2>'
+            f'<p class="sub">Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。</p>'
+            f'<div class="hf-cols">{hf_html}</div></section>'
             f'{hn_section}{or_section}{ph_section}{ol_section}'
-            f'{lb_section}'
-            f'<footer>資料來源:GitHub Trending 日榜 + Hugging Face 官方 API(<code>/api/trending</code>)。'
+            f'{lb_section}</main>'
+            f'<footer>資料來源:GitHub Trending、Hugging Face Trending API、Hacker News Algolia、'
+            f'OpenRouter 排行資料、Product Hunt API 與 Ollama popular 榜。'
             f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
             f'本頁由觀星台腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
             f'</body></html>')
