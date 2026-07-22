@@ -29,3 +29,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-07-22,8,every-app/open-seo,849,6810,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
 2026-07-22,9,1jehuang/jcode,843,10574,Rust,https://github.com/1jehuang/jcode,The most intelligent agent harness for code
 2026-07-22,10,KnockOutEZ/wigolo,642,3368,TypeScript,https://github.com/KnockOutEZ/wigolo,"The go-to web for your AI coding agent — local-first search, fetch, crawl & research over MCP. No API keys, no cloud, $0/query. Public beta."
+2026-07-22,1,koala73/worldmonitor,4131,67638,TypeScript,https://github.com/koala73/worldmonitor,"Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface"
+2026-07-22,2,ayghri/i-have-adhd,1682,7700,Python,https://github.com/ayghri/i-have-adhd,A skill for your coding agent to stop it from burying the answer. ADHD-friendly output.
+2026-07-22,3,diegosouzapw/OmniRoute,1648,24426,TypeScript,https://github.com/diegosouzapw/OmniRoute,"Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors"
+2026-07-22,4,oblien/openship,1304,6873,TypeScript,https://github.com/oblien/openship,Self-hosted deployment platform
+2026-07-22,5,ruvnet/RuView,1114,83070,Rust,https://github.com/ruvnet/RuView,"π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video."
+2026-07-22,6,rohitg00/ai-engineering-from-scratch,1007,41870,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-07-22,7,tirth8205/code-review-graph,872,25088,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
+2026-07-22,8,chrislgarry/Apollo-11,766,70335,Assembly,https://github.com/chrislgarry/Apollo-11,Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.
+2026-07-22,9,schollz/croc,737,37212,Go,https://github.com/schollz/croc,Easily and securely send things from one computer to another 🐊 📦
+2026-07-22,10,jamiepine/voicebox,565,45430,TypeScript,https://github.com/jamiepine/voicebox,"The open-source AI voice studio. Clone, dictate, create."
