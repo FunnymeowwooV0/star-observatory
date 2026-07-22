@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GitHub x Hugging Face 趨勢雷達 — 抓榜 + 產出資料庫檔案
+GitHub x Hugging Face 觀星台 — 抓榜 + 產出資料庫檔案
 
 用法:
     python scripts/fetch_trends.py --mode daily     # 每日:GitHub 當日新增星 Top10 + HF 各 Top5
@@ -138,7 +138,7 @@ def md_hf_table(items, label):
     return "\n".join(lines)
 
 
-ABOUT = """> 🛰️ **趨勢雷達** — 每天/每週自動抓 GitHub 與 Hugging Face 的熱門榜,存成可累積的資料庫。
+ABOUT = """> 🛰️ **觀星台** — 每天/每週自動抓 GitHub 與 Hugging Face 的熱門榜,存成可累積的資料庫。
 > 資料來源:GitHub Trending(官方頁)＋ Hugging Face Trending API(官方)。由 GitHub Actions 自動更新,不需開電腦。
 > 想看歷史:[`archive/`](archive/)(每月一檔)、[`weekly/`](weekly/)、[`data/`](data/)(CSV)。
 """
@@ -226,7 +226,7 @@ def render_html(date, stamp, gh, hf, errors):
     err_html = ('<div class="err">⚠️ 部分來源抓取失敗:' + "；".join(_esc(e) for e in errors) + "</div>") if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
-            f'<title>趨勢雷達 · {date}</title><style>{SITE_CSS}</style></head><body>'
+            f'<title>觀星台 · {date}</title><style>{SITE_CSS}</style></head><body>'
             f'<div class="topbar"></div>'
             f'<header><div class="kicker">GITHUB TRENDING 日榜 · HUGGING FACE 熱門</div>'
             f'<h1>{date} · GitHub × Hugging Face 熱門觀測</h1>'
@@ -237,7 +237,7 @@ def render_html(date, stamp, gh, hf, errors):
             f'<section><h2>🤗 Hugging Face 本日熱門</h2><div class="hf-cols">{hf_html}</div></section>'
             f'<footer>資料來源:GitHub Trending 日榜 + Hugging Face 官方 API(<code>/api/trending</code>)。'
             f'「今日新增星」為 GitHub 提供之當日動能,作 24 小時成長代理值。'
-            f'本頁由趨勢雷達腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
+            f'本頁由觀星台腳本每日自動產生(純資料、無 AI);白話說明與發想在 Obsidian 每週導讀。</footer>'
             f'</body></html>')
 
 
@@ -302,7 +302,7 @@ def run_daily(now):
     body = "\n\n".join(parts)
 
     # README(覆蓋)
-    readme = f"# 📈 趨勢雷達\n\n{ABOUT}\n\n---\n\n## 今日榜單 · {date}\n_更新於 {stamp}_\n\n{body}\n"
+    readme = f"# 📈 觀星台\n\n{ABOUT}\n\n---\n\n## 今日榜單 · {date}\n_更新於 {stamp}_\n\n{body}\n"
     write_text("README.md", readme)
 
     # 網頁 dashboard(靜態 HTML,覆蓋;供 GitHub Pages)
