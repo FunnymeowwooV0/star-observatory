@@ -8,22 +8,22 @@
 ---
 
 ## 今日榜單 · 2026-07-22
-_更新於 2026-07-22 14:37 UTC+08:00_
+_更新於 2026-07-22 14:40 UTC+08:00_
 
 ### 🐙 GitHub 本日新增星 Top 10
 
 | # | Repo | ⭐ 新增 | 總星 | 語言 | 說明 |
 |:-:|------|-------:|-----:|:----:|------|
-| 1 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | +4,624 | 15,840 | Python | 《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码 |
-| 2 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | +2,034 | 23,978 | TypeScript | Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50 |
+| 1 | [bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book) | +4,624 | 15,850 | Python | 《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码 |
+| 2 | [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | +2,034 | 23,984 | TypeScript | Never stop coding. Free MIT AI gateway: one endpoint, 268+ providers (50 |
 | 3 | [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) | +1,925 | 24,824 | Python | Local-first code intelligence graph for MCP and CLI. Builds a persistent |
-| 4 | [oblien/openship](https://github.com/oblien/openship) | +1,562 | 6,497 | TypeScript | Self-hosted deployment platform |
-| 5 | [koala73/worldmonitor](https://github.com/koala73/worldmonitor) | +1,295 | 66,425 | TypeScript | Real-time global intelligence dashboard. AI-powered news aggregation, ge |
-| 6 | [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11) | +1,235 | 70,076 | Assembly | Original Apollo 11 Guidance Computer (AGC) source code for the command a |
-| 7 | [every-app/open-seo](https://github.com/every-app/open-seo) | +849 | 6,709 | TypeScript | Open source alternative to Semrush and Ahrefs |
-| 8 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | +843 | 10,475 | Rust | The most intelligent agent harness for code |
-| 9 | [KnockOutEZ/wigolo](https://github.com/KnockOutEZ/wigolo) | +642 | 3,274 | TypeScript | The go-to web for your AI coding agent — local-first search, fetch, craw |
-| 10 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | +416 | 37,588 | Python | AI Agent Assistant & development framework that integrates lots of IM pl |
+| 4 | [oblien/openship](https://github.com/oblien/openship) | +1,562 | 6,500 | TypeScript | Self-hosted deployment platform |
+| 5 | [koala73/worldmonitor](https://github.com/koala73/worldmonitor) | +1,295 | 66,437 | TypeScript | Real-time global intelligence dashboard. AI-powered news aggregation, ge |
+| 6 | [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11) | +1,235 | 70,078 | Assembly | Original Apollo 11 Guidance Computer (AGC) source code for the command a |
+| 7 | [every-app/open-seo](https://github.com/every-app/open-seo) | +849 | 6,713 | TypeScript | Open source alternative to Semrush and Ahrefs |
+| 8 | [1jehuang/jcode](https://github.com/1jehuang/jcode) | +843 | 10,478 | Rust | The most intelligent agent harness for code |
+| 9 | [KnockOutEZ/wigolo](https://github.com/KnockOutEZ/wigolo) | +642 | 3,275 | TypeScript | The go-to web for your AI coding agent — local-first search, fetch, craw |
+| 10 | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) | +416 | 37,589 | Python | AI Agent Assistant & development framework that integrates lots of IM pl |
 
 ### 🤗 Hugging Face 熱門模型 Top 5
 
@@ -32,7 +32,7 @@ _更新於 2026-07-22 14:37 UTC+08:00_
 | 1 | [thinkingmachines/Inkling](https://huggingface.co/thinkingmachines/Inkling) | 1,382 | 16,441 | image-text-to-text |
 | 2 | [prism-ml/Ternary-Bonsai-27B-gguf](https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf) | 905 | 432,196 | text-generation |
 | 3 | [baidu/Unlimited-OCR](https://huggingface.co/baidu/Unlimited-OCR) | 2,629 | 2,237,351 | image-text-to-text |
-| 4 | [reteetzad/Kimi-K3](https://huggingface.co/reteetzad/Kimi-K3) | 541 | 0 | — |
+| 4 | [reteetzad/Kimi-K3](https://huggingface.co/reteetzad/Kimi-K3) | 545 | 0 | — |
 | 5 | [prism-ml/Bonsai-27B-gguf](https://huggingface.co/prism-ml/Bonsai-27B-gguf) | 573 | 1,404,962 | text-generation |
 
 ### 🤗 Hugging Face 熱門資料集 Top 5
