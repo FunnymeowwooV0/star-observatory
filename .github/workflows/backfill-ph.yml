@@ -1,0 +1,50 @@
+name: backfill-ph
+
+# 一次性/維護用:回補 Product Hunt 歷史(需 repo secret PH_TOKEN,只能在這裡跑)。
+# 兼任 Reddit 雲端可達性探測(僅印結果,不落地)。只能手動觸發。
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trend-update       # 與 daily/weekly 共用,避免同時 push 撞車
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: PH 歷史回補(冪等)
+        env:
+          PH_TOKEN: ${{ secrets.PH_TOKEN }}
+        run: python scripts/backfill_history.py --ph-only
+      - name: Reddit 雲端可達性探測(僅印結果)
+        continue-on-error: true
+        run: |
+          if python scripts/reddit_weekly.py > /tmp/reddit_probe.md 2>/tmp/reddit_probe.err; then
+            echo "REDDIT_PROBE=OK"
+            head -4 /tmp/reddit_probe.md
+          else
+            echo "REDDIT_PROBE=BLOCKED_OR_FAILED"
+            cat /tmp/reddit_probe.err
+          fi
+      - name: 提交回補資料
+        run: |
+          git config user.name "trend-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ph_daily.csv
+          if git diff --cached --quiet; then
+            echo "沒有變更,略過提交"
+          else
+            git commit -m "chore: 回補 Product Hunt 歷史(事後票數快照)"
+            git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+            git push
+          fi

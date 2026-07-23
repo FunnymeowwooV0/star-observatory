@@ -392,5 +392,25 @@ class TestRedditParse(unittest.TestCase):
             se.parse_reddit_top("")
 
 
+class TestPhBackfillWindow(unittest.TestCase):
+    """PH 歷史回補的 24h 窗:對齊平常每日抓榜口徑(01:00 UTC 收單,回看 24h)。"""
+
+    def setUp(self):
+        import backfill_history as bh
+        self.bh = bh
+
+    def test_window_ends_at_0100_utc_of_that_day(self):
+        after, before = self.bh.ph_window("2026-07-19")
+        self.assertEqual(before, "2026-07-19T01:00:00Z")
+        self.assertEqual(after, "2026-07-18T01:00:00Z")
+
+    def test_window_is_exactly_24h(self):
+        import datetime as dt
+        after, before = self.bh.ph_window("2026-07-16")
+        fmt = "%Y-%m-%dT%H:%M:%SZ"
+        delta = dt.datetime.strptime(before, fmt) - dt.datetime.strptime(after, fmt)
+        self.assertEqual(delta, dt.timedelta(hours=24))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -206,17 +206,71 @@ def backfill_ollama(force=False):
         print(f"  {date}: 成功,{len(rows)} 筆(快照 {ts};pulls_delta 留空,由讀取端 compute_pull_deltas 算)")
 
 
+def ph_window(date_str):
+    """PH 歷史回補的 24h 窗(純函式,可離線測)。
+
+    對齊平常每日抓榜口徑:每天 01:00 UTC(=09:00 台北)收單、回看 24h。
+    date_str='YYYY-MM-DD'(台北榜日)→ 回 (posted_after, posted_before) ISO8601 字串,
+    即 前一日 01:00 UTC → 當日 01:00 UTC。
+    """
+    y, m, d = (int(x) for x in date_str.split("-"))
+    end = dt.datetime(y, m, d, 1, 0, 0, tzinfo=dt.timezone.utc)
+    start = end - dt.timedelta(hours=24)
+    fmt = "%Y-%m-%dT%H:%M:%SZ"
+    return start.strftime(fmt), end.strftime(fmt)
+
+
+def backfill_ph(force=False):
+    """PH 歷史回補(2026-07-23 主理人拍板「補」)。只能在有 PH_TOKEN 的環境跑(GitHub Actions)。
+
+    口徑聲明:votesCount=查詢當下票數(事後快照),非當日即時票數;與 HN 回補同類限制。
+    """
+    print("== Product Hunt(官方 GraphQL,需 PH_TOKEN;口徑=事後票數快照)==")
+    token = os.environ.get("PH_TOKEN")
+    if not token:
+        print("  ⛔ 環境變數 PH_TOKEN 不存在——本機無法回補 PH,請在 GitHub Actions 跑(backfill-ph workflow)")
+        sys.exit(1)
+    existing = _existing_dates("data/ph_daily.csv")
+    for date in BACKFILL_DATES:
+        if date in existing and not force:
+            print(f"  {date}: 已存在,跳過")
+            continue
+        after, before = ph_window(date)
+        try:
+            items = se.fetch_ph_posts(token, posted_after=after, posted_before=before)
+        except Exception as e:  # noqa: BLE001
+            print(f"  {date}: 抓取失敗({e}),跳過")
+            _sleep()
+            continue
+        _sleep()
+        if not items:
+            print(f"  {date}: 該窗無貼文,跳過")
+            continue
+        rows = [[date, i + 1, p["name"], p["tagline"], p["votes"], p["url"]]
+                for i, p in enumerate(items)]
+        ft.append_csv("data/ph_daily.csv",
+                       ["date", "rank", "name", "tagline", "votes", "url"], rows)
+        print(f"  {date}: 成功,{len(rows)} 筆")
+
+
 def skip_ph_hf():
-    print("== Product Hunt:本工單不做(需雲端 token,無法在本機回補歷史)——跳過 ==")
-    print("== Hugging Face:本工單不做(官方無歷史查詢管道)——跳過 ==")
+    print("== Product Hunt:預設跑不做(需雲端 token;要補用 --ph-only 在 Actions 跑)==")
+    print("== Hugging Face:不做(官方無歷史查詢管道)——跳過 ==")
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--force", action="store_true", help="忽略既有資料,強制再 append 一輪(預設冪等跳過)")
+    ap.add_argument("--ph-only", action="store_true",
+                    help="只回補 Product Hunt(需環境變數 PH_TOKEN;設計上在 GitHub Actions 跑)")
     args = ap.parse_args()
     print(f"回補範圍:{BACKFILL_DATES[0]} ～ {BACKFILL_DATES[-1]}(絕不觸碰 {TODAY} 的既有列)")
     print()
+    if args.ph_only:
+        backfill_ph(force=args.force)
+        print()
+        print("PH 回補完成。")
+        return
     backfill_github(force=args.force)
     print()
     backfill_hn(force=args.force)

@@ -271,23 +271,39 @@ def fetch_openrouter_rankings():
     return parse_openrouter_rankings(resp.json())
 
 
-def fetch_ph_posts(token):
-    """用 GraphQL 抓過去 24h AI 主題貼文再解析。token 由呼叫端從環境變數帶入。
+def fetch_ph_posts(token, posted_after=None, posted_before=None):
+    """用 GraphQL 抓 AI 主題貼文再解析。token 由呼叫端從環境變數帶入。
+
+    預設(兩個時間參數皆 None)=平常每日抓法:過去 24h,行為與加參數前完全相同。
+    歷史回補用:帶 posted_after/posted_before(ISO8601 'YYYY-MM-DDTHH:MM:SSZ')查該窗。
+    ⚠️ 口徑:votesCount 是「查詢當下」的票數;回補歷史時屬事後快照,非當日票數。
 
     抓失敗或 GraphQL 回 errors → 丟例外。requests 內建即可 POST GraphQL,不需新相依。
     """
     url = "https://api.producthunt.com/v2/api/graphql"
-    posted_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    query = """
-    query($after: DateTime!, $first: Int!) {
-      posts(topic: "artificial-intelligence", order: VOTES, postedAfter: $after, first: $first) {
-        edges { node { name tagline votesCount url } }
-      }
-    }
-    """
+    if posted_after is None:
+        posted_after = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if posted_before is None:
+        query = """
+        query($after: DateTime!, $first: Int!) {
+          posts(topic: "artificial-intelligence", order: VOTES, postedAfter: $after, first: $first) {
+            edges { node { name tagline votesCount url } }
+          }
+        }
+        """
+        variables = {"after": posted_after, "first": PH_TOP}
+    else:
+        query = """
+        query($after: DateTime!, $before: DateTime!, $first: Int!) {
+          posts(topic: "artificial-intelligence", order: VOTES, postedAfter: $after, postedBefore: $before, first: $first) {
+            edges { node { name tagline votesCount url } }
+          }
+        }
+        """
+        variables = {"after": posted_after, "before": posted_before, "first": PH_TOP}
     resp = requests.post(
         url,
-        json={"query": query, "variables": {"after": posted_after, "first": PH_TOP}},
+        json={"query": query, "variables": variables},
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json",
                  "User-Agent": UA},
         timeout=30,
