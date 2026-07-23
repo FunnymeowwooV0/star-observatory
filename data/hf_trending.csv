@@ -89,3 +89,18 @@ date,type,rank,id,likes,downloads,tag,url
 2026-07-22,Spaces,3,kulkas2pintu/wan555,635,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
 2026-07-22,Spaces,4,smolagents/hf-realtime-voice,449,,Chatbots,https://huggingface.co/spaces/smolagents/hf-realtime-voice
 2026-07-22,Spaces,5,loveseries/wanmanlove,150,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
+2026-07-23,模型,1,thinkingmachines/Inkling,1463,16441,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling
+2026-07-23,模型,2,baidu/Unlimited-OCR,2765,2237351,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR
+2026-07-23,模型,3,prism-ml/Ternary-Bonsai-27B-gguf,952,432196,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf
+2026-07-23,模型,4,poolside/Laguna-S-2.1,411,3056,text-generation,https://huggingface.co/poolside/Laguna-S-2.1
+2026-07-23,模型,5,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,334,62842,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-07-23,資料集,1,openbmb/UltraX-Preview,256,2935,,https://huggingface.co/datasets/openbmb/UltraX-Preview
+2026-07-23,資料集,2,SupraLabs/reasoning-corpus-4K-5M-v1,72,443,,https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1
+2026-07-23,資料集,3,FlyRank/internship-warehouse,318,2187,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-07-23,資料集,4,markov-ai/gaming-500-hours,206,32029,,https://huggingface.co/datasets/markov-ai/gaming-500-hours
+2026-07-23,資料集,5,Glint-Research/Fable-5-traces,656,67452,,https://huggingface.co/datasets/Glint-Research/Fable-5-traces
+2026-07-23,Spaces,1,webml-community/bonsai-webgpu-kernels,282,,Text Generation,https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels
+2026-07-23,Spaces,2,kulkas2pintu/wan555,657,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-07-23,Spaces,3,ICML-2026-agent-repro/challenge,162,,Other,https://huggingface.co/spaces/ICML-2026-agent-repro/challenge
+2026-07-23,Spaces,4,loveseries/wanmanlove,155,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
+2026-07-23,Spaces,5,conradlocke/krea2-identity-edit,103,,Image Editing,https://huggingface.co/spaces/conradlocke/krea2-identity-edit
