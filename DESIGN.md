@@ -2,36 +2,28 @@
 product: 觀星台
 platform: static-responsive-web
 audience: 個人每日掃描開源與 AI 趨勢，未來公開展示
-direction: 深色精密資料儀表板
+direction: 銀河夕陽夜航編輯風
 colors:
-  light:
-    background: "#f7f7f4"
-    surface: "#ffffff"
-    text: "#1a1a19"
-    muted: "#6b6b66"
-    border: "#e3e2db"
-    accent: "#0f6e56"
-    danger: "#b23b3b"
-    info: "#185fa5"
-  dark:
-    background: "#161615"
-    surface: "#1f1f1d"
-    text: "#f2f2ee"
-    muted: "#a3a29a"
-    border: "#2f2f2c"
-    accent: "#5dcaa5"
-    danger: "#ff8f8f"
-    info: "#85b7ff"
+  sky_top: "#08206b"
+  sky_mid: "#07184f"
+  galaxy: "#1760e8"
+  dusk_mauve: "#66506d"
+  dusk_apricot: "#d7865b"
+  surface: "#f2e9d2"
+  surface_ink: "#111319"
+  ivory: "#f5edda"
+  star: "#e5c43a"
+  muted_blue: "#9fb3de"
 typography:
-  display: "-apple-system, BlinkMacSystemFont, Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif"
-  workhorse: "-apple-system, BlinkMacSystemFont, Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif"
-  data: "ui-monospace, SFMono-Regular, Menlo, monospace"
-  weights: [400, 700]
-spacing: [4, 8, 12, 16, 24, 32, 48, 64, 96]
+  display: "Noto Serif TC, serif"
+  workhorse: "Noto Sans TC, sans-serif"
+  data: "IBM Plex Mono, monospace"
+  license: "SIL Open Font License 1.1"
+spacing: [4, 8, 12, 16, 24, 32, 48, 64]
 radius:
-  small: 4
-  medium: 8
-  large: 12
+  small: 3
+  medium: 6
+  large: 8
 motion:
   duration_ms: 140
   easing: "cubic-bezier(0.2, 0, 0, 1)"
@@ -43,47 +35,70 @@ motion:
 
 ## 設計理念
 
-觀星台是快速掃讀用的資料工具，不是行銷落地頁。畫面要像精密但親切的觀測儀器：資訊層級明確、數字先被看見、點擊目標直覺，視覺裝飾不得搶走資料。
+觀星台是快速掃讀用的資料工具，不是行銷落地頁。新版像一本攤開在夜空下的觀測誌：深鈷藍天空承載暖白資料頁，襯線標題建立編輯感，等寬數字讓排行仍可快速比較。
 
-既有明暗配色、薄荷綠強調色與系統中文字體維持不變。本輪只改善內容結構與互動，不另開 Task B 品牌改造。
+視覺正本是主理人於 2026-07-23 核准的「銀河夕陽版預覽」。預覽圖只作設計參考，不是網頁背景素材；實作使用純 CSS 漸層、顆粒與線條，避免下載大型圖片。
 
-## 色彩使用規則
+## 背景規則
 
-- 薄荷綠只用於主要選取狀態、今日新增量與焦點框，不大面積鋪滿。
-- 紅／藍只表達排名下降／新進榜；資訊不能只靠顏色，必須同時有文字或符號。
-- 卡片用實色表面與細邊框，不使用玻璃、霓虹或紫藍漸層。
+- 主背景由深鈷藍起，亮區沿兩條不對稱、寬窄不一的曲線流動；不得退化成置中的規則 radial gradient。
+- 銀河只表現為藍色光感，不加入寫實星雲、雲朵或密集銀河照片。
+- 細顆粒覆蓋整個背景但不得壓低文字可讀性。
+- 星點只出現在頁首至標題區高度，數量少，最多兩三顆帶微弱光暈；導覽列以下快速淡出。
+- 頁面最下方由深藍經低飽和灰紫，慢慢過渡到杏橙／珊瑚夕陽色；不得變成亮橘色硬切帶。
+- 右上與左下保留細薄橢圓軌道線，不放人物、地景、月球或參考網站徽章。
 
-## 元件規則
+## 字體規則
 
-### 榜單分頁
+- 標題與大型排名：`Noto Serif TC`。
+- 介面與繁體中文內文：`Noto Sans TC`。
+- repo 名、模型 ID、排名與數字：`IBM Plex Mono`。
+- 三套字型皆使用 OFL 1.1 免費版本；網路字型載入失敗時必須退回本機繁中 serif／sans／monospace，不得造成版面跳壞。
+- 襯線字只用於標題與大型數字，不把整頁內文變成書籍排版。
 
-- 「今日榜／累積榜」是同層級分頁，一次只顯示一個面板。
-- 分頁列在頁首下方並可黏住；歷史日期選擇器同列但屬次要控制。
-- 支援滑鼠、鍵盤左右鍵、網址 hash、上一頁／下一頁；無 JavaScript 時退化為頁內錨點。
+## 導覽規則
+
+- 第一層為「今日榜／累積榜」；歷史日期選擇器維持同列的次要控制。
+- 今日榜第二層固定順序：GitHub、HF 模型、HF 資料集、HF Spaces、Hacker News、OpenRouter、Product Hunt、Ollama；只顯示有對應面板的按鈕。
+- HF 三類必須各自是獨立面板，不得包回單一 Hugging Face 長區塊。
+- 累積榜第二層只放「本週／本月」；只顯示所選期間。
+- 切到累積榜時隱藏今日來源列；切回今日榜時隱藏期間列。
+- 手機第二層按鈕為單列橫向手指捲動；不換行、不放左右箭頭，也不得讓整個頁面產生水平捲動。
+- 所有 tab 支援滑鼠、Enter／Space、左右鍵、Home／End、網址 hash、上一頁／下一頁與無 JavaScript 退化。
+
+## 榜單元件規則
 
 ### GitHub 大卡
 
-- 桌面兩欄、手機一欄，共十張；整張 `<a>` 是唯一主要連結。
-- 內容順序：排名／用途分類／昨日變化 → repo 名 → 說明 → 今日新增星 → 總星與語言。
-- 今日新增星是視覺主數字，總星與語言是輔助資料。
-- 不放箭頭、不放「GitHub 倉庫」小字、不放無說明的迷你趨勢圖。
+- 桌面兩欄五列，手機單欄，共十張；整張 `<a>` 是唯一主要連結。
+- 排名置左且使用襯線大字；repo、分類與簡介置中；總星與今日新增置右或在窄螢幕落到底列。
+- 今日新增使用芥末黃；總星與語言維持次要層級。
+- 卡面為暖白紙色、深墨字與細藍線；圓角克制，不使用浮誇陰影。
+- 描述完整保留在 DOM，視覺最多兩行。
 
 ### 長條連結卡
 
 - HF、OpenRouter、Product Hunt、Ollama 與累積榜的單一目的地項目，整列皆可點。
-- HN 有原文與討論兩個目的地：大卡進原文，另給足 44px 的「HN 討論」控制。
-- 連結感由游標、邊框／背景反應與微位移表達，不用大箭頭。
+- 清單外層使用開放式編輯排版，不做「大卡包小卡」的巢狀盒子。
+- HN 有原文與討論兩個目的地：主列進原文，另給至少 44px 的「HN 討論」控制。
 
-### 動效
+### 互動
 
-- 滑鼠移入卡片：140ms 微上浮 2px、放大 0.5%、邊框提亮。
-- 點下：縮回 0.5%；鍵盤焦點使用 3px 清楚外框。
-- `prefers-reduced-motion: reduce` 時取消位移與縮放。
+- 不使用大箭頭、裝飾箭頭或要求精準點擊的小字連結。
+- hover：140ms 微上浮 2px、放大 0.5%、邊線／底色輕微變化。
+- active：縮回 0.5%；focus-visible 使用 3px 清楚外框。
+- `prefers-reduced-motion: reduce` 時取消位移與 transition。
+
+## 累積榜規則
+
+- 刪除「🏆 累積排行榜」與同義的通用大標題。
+- 期間 tab 已說明「本週／本月」，面板只需直接顯示統計起日、天數與誠實限制，不再重複大標。
+- 本週與本月不得同時出現在增強後畫面；無 JavaScript 時可依 DOM 順序全部閱讀。
 
 ## 產品絕對不會做的事
 
 - 不用未標示的小圖表、假 KPI 或裝飾性資料。
 - 不把小字連結藏在卡片底部要求精準點擊。
 - 不用 AI 猜分類卻假裝是 GitHub 官方資料；用途標籤必須註明為規則推定。
-- 不新增前端框架、後端或資料 schema 來完成單頁互動。
-- 不在本輪改品牌配色、字體或發佈設定。
+- 不新增前端框架、後端、資料 schema 或執行期圖片依賴來完成單頁互動。
+- 不複製參考圖的人物、地景、徽章、文案或具體構圖。
