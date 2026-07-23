@@ -226,6 +226,25 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         for token in ("historyTrigger", "historySelect", "aria-expanded", "is-active"):
             self.assertIn(token, script_text)
 
+    def test_history_picker_has_compact_neutral_focus_and_pressed_only_underline(self):
+        css = BeautifulSoup(_render(), "html.parser").style.get_text()
+
+        self.assertIn(".history-trigger:active::after{transform:scaleX(1)}", css)
+        self.assertNotIn('.history-trigger[aria-expanded="true"]::after', css)
+        self.assertIn(".date-switch:focus-visible{outline:none}", css)
+        self.assertIn(
+            ".calendar-shell:focus-within{box-shadow:inset 0 0 0 1px",
+            css,
+        )
+        for token in (
+            ".history-picker{grid-column:2;justify-self:start;display:flex;align-items:center;gap:8px",
+            ".calendar-shell{display:inline-flex;align-items:center;min-height:36px",
+            ".calendar-icon{flex:0 0 auto;width:15px;height:15px;margin-left:8px",
+            ".date-switch{min-height:34px;max-width:128px;padding:3px 24px 3px 6px",
+            ".calendar-shell{min-height:44px}.date-switch{min-height:44px}",
+        ):
+            self.assertIn(token, css)
+
     def test_today_has_eight_independent_source_tabs_and_panels(self):
         soup = BeautifulSoup(_render(), "html.parser")
         tablist = soup.select_one('[data-tab-group="source"][role="tablist"]')
@@ -351,16 +370,20 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("可直接操作的機器學習 Demo／應用，不是模型",
                       space_section.get_text(" ", strip=True))
 
-        model_li = model_section.find(string="org/model").find_parent("li")
-        self.assertIn("Likes 12", model_li.get_text(" ", strip=True))
-        self.assertIn("下載 345", model_li.get_text(" ", strip=True))
+        model_card = model_section.find(string="org/model").find_parent(
+            "a", class_="ranking-card",
+        )
+        self.assertIn("12 Likes", model_card.get_text(" ", strip=True))
+        self.assertIn("下載 345", model_card.get_text(" ", strip=True))
 
-        space_li = space_section.find(string="org/space").find_parent("li")
-        self.assertIn("Likes 5", space_li.get_text(" ", strip=True))
-        self.assertNotIn("下載", space_li.get_text(" ", strip=True))
-        self.assertNotIn("⬇ —", space_li.get_text(" ", strip=True))
+        space_card = space_section.find(string="org/space").find_parent(
+            "a", class_="ranking-card",
+        )
+        self.assertIn("5 Likes", space_card.get_text(" ", strip=True))
+        self.assertNotIn("下載", space_card.get_text(" ", strip=True))
+        self.assertNotIn("⬇ —", space_card.get_text(" ", strip=True))
 
-    def test_source_rows_use_full_width_link_cards(self):
+    def test_non_hn_daily_sources_use_github_style_card_grid(self):
         soup = BeautifulSoup(_render(), "html.parser")
         selectors = {
             "#hf-models": 1,
@@ -372,20 +395,20 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         }
         for selector, expected_count in selectors.items():
             with self.subTest(selector=selector):
-                rows = soup.select(f"{selector} li.link-card-item")
-                self.assertEqual(len(rows), expected_count)
-                for row in rows:
-                    direct_links = row.find_all("a", class_="link-card", recursive=False)
-                    self.assertEqual(len(direct_links), 1)
+                cards = soup.select(f"{selector} .cards > a.card.ranking-card")
+                self.assertEqual(len(cards), expected_count)
+                self.assertIsNone(soup.select_one(f"{selector} .link-card-list"))
 
-        openrouter_card = soup.select_one("#openrouter a.link-card")
+        openrouter_card = soup.select_one("#openrouter a.ranking-card")
         self.assertEqual(openrouter_card["href"], "https://openrouter.ai/vendor/model%20name%2Bv1")
         self.assertIn("Σ 987,654 tokens", openrouter_card.get_text(" ", strip=True))
-        self.assertEqual(soup.select_one("#product-hunt a.link-card")["href"],
+        self.assertEqual(soup.select_one("#product-hunt a.ranking-card")["href"],
                          "https://www.producthunt.com/posts/useful-product")
-        ollama_card = soup.select_one("#ollama a.link-card")
+        ollama_card = soup.select_one("#ollama a.ranking-card")
         self.assertEqual(ollama_card["href"], "https://ollama.com/library/qwen3")
         self.assertIn("A capable local model", ollama_card.get_text(" ", strip=True))
+        self.assertIsNotNone(soup.select_one("#hacker-news .link-card-list"))
+        self.assertIsNone(soup.select_one("#hacker-news .cards"))
         self.assertIsNone(soup.select_one("#hf-models .spark"))
         self.assertIsNone(soup.select_one("#hf-datasets .spark"))
         self.assertIsNone(soup.select_one("#hf-spaces .spark"))
@@ -408,17 +431,29 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         same_row = same_soup.select_one("#hacker-news li.hn-card-row")
         self.assertEqual(len(same_row.find_all("a", recursive=False)), 1)
 
-    def test_accumulation_rows_are_full_link_cards(self):
+    def test_non_hn_accumulation_uses_github_style_card_grid(self):
         soup = BeautifulSoup(_render(), "html.parser")
-        rows = soup.select("#leaderboards ol.link-card-list > li.link-card-item")
+        cards = soup.select("#leaderboards .cards > a.card.ranking-card")
+        hn_rows = soup.select(
+            "#leaderboard-source-hn ol.link-card-list > li.link-card-item",
+        )
+        css = soup.style.get_text()
 
         self.assertEqual([source[4] for source in ft.LEADERBOARD_SOURCES], [10] * 8)
-        self.assertEqual(len(rows), 7)
-        for row in rows:
-            self.assertEqual(len(row.find_all("a", class_="link-card", recursive=False)), 1)
-            self.assertIsNone(row.select_one("a a"))
-        self.assertEqual(soup.select_one('#leaderboards a[href^="https://openrouter.ai/"]')["href"],
+        self.assertEqual(len(cards), 6)
+        self.assertEqual(len(hn_rows), 1)
+        for source in ("github", "hf_model", "hf_dataset", "hf_space",
+                       "openrouter", "ph", "ollama"):
+            panel = soup.select_one(f"#leaderboard-source-{source}")
+            if panel is not None:
+                self.assertIsNone(panel.select_one(".link-card-list"))
+        self.assertEqual(soup.select_one(
+            '#leaderboards a.ranking-card[href^="https://openrouter.ai/"]',
+        )["href"],
                          "https://openrouter.ai/vendor/model%20name%2Bv1")
+        single_column_rule = ".hf-cols.leaderboard-list{grid-template-columns:1fr}"
+        self.assertIn(single_column_rule, css)
+        self.assertGreater(css.index(single_column_rule), css.index(".hf-cols{display:grid"))
 
     def test_blank_url_renders_static_link_card_without_empty_href(self):
         soup = BeautifulSoup(ft._link_card_item(1, "No destination", "No URL", ""), "html.parser")

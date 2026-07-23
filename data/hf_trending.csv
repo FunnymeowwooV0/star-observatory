@@ -89,3 +89,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-07-22,Spaces,3,kulkas2pintu/wan555,635,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
 2026-07-22,Spaces,4,smolagents/hf-realtime-voice,449,,Chatbots,https://huggingface.co/spaces/smolagents/hf-realtime-voice
 2026-07-22,Spaces,5,loveseries/wanmanlove,150,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
+2026-07-23,模型,1,thinkingmachines/Inkling,1456,16441,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling
+2026-07-23,模型,2,baidu/Unlimited-OCR,2723,2237351,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR
+2026-07-23,模型,3,prism-ml/Ternary-Bonsai-27B-gguf,947,432196,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-27B-gguf
+2026-07-23,模型,4,poolside/Laguna-S-2.1,399,3056,text-generation,https://huggingface.co/poolside/Laguna-S-2.1
+2026-07-23,模型,5,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,325,62842,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-07-23,模型,6,prism-ml/Bonsai-27B-gguf,597,1404962,text-generation,https://huggingface.co/prism-ml/Bonsai-27B-gguf
+2026-07-23,模型,7,zai-org/GLM-5.2,4340,545109,text-generation,https://huggingface.co/zai-org/GLM-5.2
+2026-07-23,模型,8,upstage/Solar-Open2-250B,302,0,text-generation,https://huggingface.co/upstage/Solar-Open2-250B
+2026-07-23,模型,9,Nanbeige/Nanbeige4.2-3B,236,0,text-generation,https://huggingface.co/Nanbeige/Nanbeige4.2-3B
+2026-07-23,模型,10,HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive,3005,1997690,image-text-to-text,https://huggingface.co/HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive
+2026-07-23,資料集,1,openbmb/UltraX-Preview,254,2935,,https://huggingface.co/datasets/openbmb/UltraX-Preview
+2026-07-23,資料集,2,SupraLabs/reasoning-corpus-4K-5M-v1,70,443,,https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1
+2026-07-23,資料集,3,FlyRank/internship-warehouse,318,2187,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-07-23,資料集,4,markov-ai/gaming-500-hours,205,32029,,https://huggingface.co/datasets/markov-ai/gaming-500-hours
+2026-07-23,資料集,5,Glint-Research/Fable-5-traces,655,67452,,https://huggingface.co/datasets/Glint-Research/Fable-5-traces
+2026-07-23,資料集,6,Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset,48,5326,,https://huggingface.co/datasets/Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset
+2026-07-23,資料集,7,schema-harness/arc-agi-3-schema-traces,29,920,,https://huggingface.co/datasets/schema-harness/arc-agi-3-schema-traces
+2026-07-23,資料集,8,wikimedia/wikipedia,1321,229179,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-07-23,資料集,9,roneneldan/TinyStories,1092,79652,,https://huggingface.co/datasets/roneneldan/TinyStories
+2026-07-23,資料集,10,greghavens/kimi-k3-coding-and-debugging-traces,23,82,,https://huggingface.co/datasets/greghavens/kimi-k3-coding-and-debugging-traces
+2026-07-23,Spaces,1,webml-community/bonsai-webgpu-kernels,281,,Text Generation,https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels
+2026-07-23,Spaces,2,kulkas2pintu/wan555,653,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-07-23,Spaces,3,ICML-2026-agent-repro/challenge,156,,Other,https://huggingface.co/spaces/ICML-2026-agent-repro/challenge
+2026-07-23,Spaces,4,loveseries/wanmanlove,153,,Video Generation,https://huggingface.co/spaces/loveseries/wanmanlove
+2026-07-23,Spaces,5,smolagents/hf-realtime-voice,451,,Chatbots,https://huggingface.co/spaces/smolagents/hf-realtime-voice
+2026-07-23,Spaces,6,conradlocke/krea2-identity-edit,102,,Image Editing,https://huggingface.co/spaces/conradlocke/krea2-identity-edit
+2026-07-23,Spaces,7,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,1971,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-07-23,Spaces,8,selfit-camera/Omni-Image-Editor,2193,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-07-23,Spaces,9,baidu/Unlimited-OCR,277,,OCR,https://huggingface.co/spaces/baidu/Unlimited-OCR
+2026-07-23,Spaces,10,victor/gemma-avatar,148,,Chatbots,https://huggingface.co/spaces/victor/gemma-avatar
