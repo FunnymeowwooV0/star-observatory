@@ -68,6 +68,17 @@ class TestHfParse(unittest.TestCase):
         items = ft.parse_hf_trending(self.data, "model", top=5)
         self.assertEqual(len(items), 5)
 
+    def test_default_daily_limit_is_ten(self):
+        data = {
+            "recentlyTrending": [
+                {"repoData": {"id": f"org/model-{i}", "likes": i, "downloads": i * 10}}
+                for i in range(12)
+            ]
+        }
+
+        self.assertEqual(ft.HF_TOP, 10)
+        self.assertEqual(len(ft.parse_hf_trending(data, "model")), 10)
+
     def test_fields_and_url(self):
         items = ft.parse_hf_trending(self.data, "model", top=5)
         for it in items:
