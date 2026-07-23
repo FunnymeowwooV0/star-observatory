@@ -390,6 +390,12 @@ TAB_SCRIPT = r"""
     const list = byGroup.get(group);
     return list ? list.getAttribute('data-parent-panel') : null;
   };
+  const historyTargetId = (group, activeTab) => {
+    const ownId = targetId(activeTab);
+    if (group !== 'page') return ownId;
+    const childList = lists.find(list => list.getAttribute('data-parent-panel') === ownId);
+    return childList ? (selectedId(childList.dataset.tabGroup) || ownId) : ownId;
+  };
 
   function select(group, id) {
     const tabs = tabsFor(group);
@@ -420,7 +426,7 @@ TAB_SCRIPT = r"""
     if (!pageId) return;
     syncContext(pageId);
     if (write) {
-      const nextHash = `#${targetId(activeTab)}`;
+      const nextHash = `#${historyTargetId(group, activeTab)}`;
       if (window.location.hash !== nextHash) window.history.pushState(null, '', nextHash);
     }
     if (focus) activeTab.focus();

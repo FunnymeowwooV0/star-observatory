@@ -173,7 +173,8 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIsNotNone(script)
         script_text = script.get_text()
         for token in ("data-tab-group", "data-parent-panel", "data-tab-panel",
-                      "history.pushState", "popstate", "hashchange", "ArrowLeft", "ArrowRight",
+                      "historyTargetId", "history.pushState", "popstate", "hashchange",
+                      "ArrowLeft", "ArrowRight",
                       "Home", "End", "scrollIntoView"):
             self.assertIn(token, script_text)
 
