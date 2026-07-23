@@ -136,8 +136,8 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertEqual(soup.select_one("h1 .title-topic").get_text(strip=True), "開源與科技熱門觀測")
         theme_colors = {(tag.get("media"), tag.get("content")) for tag in soup.select('meta[name="theme-color"]')}
         self.assertEqual(theme_colors, {
-            ("(prefers-color-scheme: light)", "#f7f7f4"),
-            ("(prefers-color-scheme: dark)", "#161615"),
+            ("(prefers-color-scheme: light)", "#08206b"),
+            ("(prefers-color-scheme: dark)", "#061747"),
         })
         nav = soup.select_one('nav[aria-label="主要導覽"]')
         self.assertIsNotNone(nav)
@@ -263,7 +263,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertEqual(descriptions[0].get_text(strip=True), LONG_DESCRIPTION)
         self.assertIn(html_lib.escape(LONG_DESCRIPTION), raw_html)
         self.assertEqual(descriptions[1].get_text(strip=True), "暫無說明")
-        self.assertIn("-webkit-line-clamp:3", raw_html)
+        self.assertIn("-webkit-line-clamp:2", raw_html)
 
     def test_hf_uses_named_metrics_and_omits_missing_space_downloads(self):
         soup = BeautifulSoup(_render(), "html.parser")
@@ -392,12 +392,46 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("color-scheme:light dark", css)
         self.assertIn("text-wrap:balance", css)
 
-    def test_dark_mode_status_marks_have_readable_colour_overrides(self):
+    def test_night_sky_visual_system_uses_free_fonts_grain_and_dusk(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        css = soup.style.get_text()
+        font_urls = [link.get("href", "") for link in soup.select('link[rel="stylesheet"]')]
+
+        self.assertTrue(any("fonts.googleapis.com" in url for url in font_urls))
+        for family in ("Noto Serif TC", "Noto Sans TC", "IBM Plex Mono"):
+            self.assertIn(family, css)
+        for token in ("--sky-top:#08206b", "--sky-mid:#07184f", "--galaxy:#1760e8",
+                      "--dusk-mauve:#66506d", "--dusk-apricot:#d7865b", "--paper:#f2e9d2",
+                      "feTurbulence", "body::before", "body::after", ".orbit-top", ".orbit-bottom"):
+            self.assertIn(token, css)
+        self.assertGreaterEqual(css.count("radial-gradient("), 7)
+        self.assertIn("linear-gradient(180deg", css)
+        self.assertIsNotNone(soup.select_one('.sky-art[aria-hidden="true"]'))
+
+    def test_approved_editorial_card_and_mobile_tab_css_is_present(self):
         css = BeautifulSoup(_render(), "html.parser").style.get_text()
 
-        self.assertIn("--up:#5dcaa5", css)
-        self.assertIn("--down:#ff8f8f", css)
-        self.assertIn("--new:#85b7ff", css)
+        for token in ("overflow-x:auto", "overscroll-behavior-inline:contain",
+                      "scrollbar-width:none", "grid-template-columns:64px minmax(0,1fr)",
+                      "grid-template-columns:repeat(2,minmax(0,1fr))",
+                      "-webkit-line-clamp:2", "min-height:44px"):
+            self.assertIn(token, css)
+        self.assertNotIn(".hf-col{background:var(--card);border:1px", css)
+
+        soup = BeautifulSoup(_render(), "html.parser")
+        cards = soup.select("#github-focus .gh-card")
+        self.assertEqual(len(cards), 10)
+        for card in cards:
+            self.assertIsNotNone(card.select_one(":scope > .rank"))
+            self.assertIsNotNone(card.select_one(":scope > .card-content"))
+            self.assertIsNotNone(card.select_one(":scope > .card-metrics"))
+
+    def test_status_marks_use_readable_ink_colours(self):
+        css = BeautifulSoup(_render(), "html.parser").style.get_text()
+
+        self.assertIn("--up:#0f6e56", css)
+        self.assertIn("--down:#b23b3b", css)
+        self.assertIn("--new:#185fa5", css)
         self.assertIn(".mark.up{color:var(--up)}", css)
         self.assertIn(".mark.down{color:var(--down)}", css)
         self.assertIn(".mark.new{color:var(--new)}", css)
