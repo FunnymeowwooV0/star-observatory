@@ -756,7 +756,8 @@ def _date_switcher_html(history_dates, snapshot_date):
 
 
 def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False,
-                ollama=None, ollama_deltas=None, marks=None, sparks=None, leaderboards=None,
+                ollama=None, ollama_deltas=None, reddit=None, reddit_snapshot_date=None,
+                marks=None, sparks=None, leaderboards=None,
                 history_dates=None, snapshot_date=None):
     """把當日榜單渲染成一頁自足的靜態 HTML(不含 AI,純資料排版)。"""
     hn = hn or []
@@ -764,6 +765,7 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     ph = ph or []
     ollama = ollama or []
     ollama_deltas = ollama_deltas or {}
+    reddit = reddit or []
     marks = marks or {}
     sparks = sparks or {}
     leaderboards = leaderboards or {}
@@ -836,6 +838,25 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                           f'rel="noopener">HN 討論</a>')
         return f'<li class="link-card-item hn-card-row">{main}{discussion}</li>'
 
+    def reddit_item(i, it):
+        # HN 式雙入口卡,但主副角色與 HN 相反:主列進 Reddit 討論串(permalink),
+        # 副控制「原文」進外部連結(external_url),自帖(無 external_url)時只有主列。
+        score = f'{it["score"]:,}' if isinstance(it["score"], int) else "—"
+        comments = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
+        body = _link_card_body(i, it["title"], f'▲ {score} · 💬 {comments}')
+        permalink = it.get("permalink") or ""
+        if permalink:
+            main = (f'<a class="link-card" href="{_esc(permalink)}" target="_blank" '
+                    f'rel="noopener">{body}</a>')
+        else:
+            main = f'<span class="link-card link-card-static">{body}</span>'
+        external_url = it.get("external_url")
+        discussion = ""
+        if external_url and external_url != permalink:
+            discussion = (f'<a class="hn-discussion" href="{_esc(external_url)}" target="_blank" '
+                          f'rel="noopener">原文</a>')
+        return f'<li class="link-card-item hn-card-row">{main}{discussion}</li>'
+
     def or_item(i, it):
         mark = _mark_html(marks.get("openrouter", {}).get(it["model"]))
         meta = f'Prompt {it["prompt_tokens"]:,} · Completion {it["completion_tokens"]:,}'
@@ -864,6 +885,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         )
 
     hn_body = f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div>' if hn else ""
+    reddit_body = (f'<div class="hf-cols">{list_block("🧵", "本週熱帖", reddit, reddit_item)}</div>'
+                   if reddit else "")
     or_body = card_grid(openrouter, or_item) if openrouter else ""
     if ph:
         ph_body = card_grid(ph, ph_item)
@@ -914,6 +937,13 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             "ollama", "Ollama", f"Ollama 熱門模型 Top {len(ollama_top)}",
             "Ollama 模型庫 popular 榜（頁面原序，未按 Pulls 重排）。Pulls 為累計下載數；「今日新增」由每日快照相減得出，需前一日資料，首日／無先前快照顯示 —。",
             ol_body,
+        ))
+    if reddit_body:
+        source_specs.append((
+            "reddit", "Reddit", f"r/LocalLLaMA 本週熱帖 Top {len(reddit)}",
+            f"r/LocalLLaMA 本週熱帖（週榜視窗）。Reddit 封鎖雲端機房 IP，"
+            f"本榜由本機每週一抓取後入庫；目前顯示 {reddit_snapshot_date} 抓取的快照。",
+            reddit_body,
         ))
 
     source_tabs, source_panels = [], []
@@ -1021,6 +1051,37 @@ def append_csv(path, header, rows):
         w.writerows(rows)
 
 
+def _csv_int(s):
+    """把 CSV 讀出來的字串轉 int;空字串/None/轉不出來一律回 None(不編造)。"""
+    try:
+        return int(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def load_reddit_snapshot():
+    """讀 data/reddit_weekly.csv(scripts/reddit_weekly.py --save 本機每週寫入),取最新一次快照。
+
+    這不是雲端抓取單元(reddit_weekly.py 只在本機住宅 IP 跑,見 goals/18):
+    檔案不存在/空 → 回 ([], None),run_daily() 不得把它算進 errors/attempted。
+    回傳 (items, snapshot_date);items 依 CSV 的 rank 由小到大排序。
+    """
+    rows = hi.dedupe_daily_rows(read_csv_rows("data/reddit_weekly.csv"), ["rank"])
+    if not rows:
+        return [], None
+    latest = max(r.get("date") or "" for r in rows)
+    latest_rows = [r for r in rows if r.get("date") == latest]
+    latest_rows.sort(key=lambda r: _csv_int(r.get("rank")) or 0)
+    items = [{
+        "title": r.get("title") or "",
+        "score": _csv_int(r.get("score")),
+        "comments": _csv_int(r.get("comments")),
+        "permalink": r.get("permalink") or "",
+        "external_url": r.get("external_url") or None,
+    } for r in latest_rows]
+    return items, latest
+
+
 # ----------------------------- 主流程 -----------------------------
 def run_daily(now):
     date = now.strftime("%Y-%m-%d")
@@ -1080,6 +1141,10 @@ def run_daily(now):
         errors.append(f"Ollama 熱門模型抓取失敗:{e}")
     if ollama:
         ollama_deltas = se.compute_pull_deltas(ollama, read_csv_rows("data/ollama_daily.csv"), date)
+
+    # Reddit(本機每週一 --save 寫入 data/reddit_weekly.csv,雲端只讀最新快照,不連 reddit.com)。
+    # 不是雲端抓取單元:檔案不存在/空 不算 error、不進 attempted(見 goals/18)。
+    reddit, reddit_snapshot_date = load_reddit_snapshot()
 
     # 組 markdown 內文
     parts = []
@@ -1202,10 +1267,12 @@ def run_daily(now):
     html_common = dict(marks=marks, sparks=sparks, leaderboards=leaderboards, history_dates=history_dates)
     write_text("docs/index.html",
                render_html(date, stamp, gh, hf, errors, hn, openrouter, ph, ph_skipped,
-                           ollama, ollama_deltas, snapshot_date=None, **html_common))
+                           ollama, ollama_deltas, reddit, reddit_snapshot_date,
+                           snapshot_date=None, **html_common))
     write_text(f"docs/history/{date}.html",
                render_html(date, stamp, gh, hf, errors, hn, openrouter, ph, ph_skipped,
-                           ollama, ollama_deltas, snapshot_date=date, **html_common))
+                           ollama, ollama_deltas, reddit, reddit_snapshot_date,
+                           snapshot_date=date, **html_common))
 
     # Issue 內文(= email;v1 範圍鎖:不含累積榜,避免 email 過長)
     write_text(".issue_body.md",
@@ -1215,6 +1282,7 @@ def run_daily(now):
           f"資料集={len(hf.get('資料集',[]))} Spaces={len(hf.get('Spaces',[]))} "
           f"HN={len(hn)} OpenRouter={len(openrouter)} "
           f"PH={'skip' if ph_skipped else len(ph)} Ollama={len(ollama)} "
+          f"Reddit={len(reddit)} "
           f"errors={len(errors)}/{attempted}")
     return errors, attempted
 

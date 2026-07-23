@@ -59,7 +59,7 @@ motion:
 ## 導覽規則
 
 - 第一層為「今日榜／累積榜」；歷史日期選擇器維持同列的次要控制。
-- 今日榜第二層固定順序：GitHub、HF 模型、HF 資料集、HF Spaces、Hacker News、OpenRouter、Product Hunt、Ollama；只顯示有對應面板的按鈕。
+- 今日榜第二層固定順序：GitHub、HF 模型、HF 資料集、HF Spaces、Hacker News、OpenRouter、Product Hunt、Ollama、Reddit；只顯示有對應面板的按鈕。（Reddit 資料由本機每週一入庫，雲端只讀 CSV；無快照時按鈕不出現＝正常。）
 - HF 三類必須各自是獨立面板，不得包回單一 Hugging Face 長區塊。
 - 累積榜第二層使用與今日榜同序的 8 個來源；每個來源內的第三層再切「本週／本月」。
 - 切到累積榜時隱藏今日來源列，只顯示累積來源與該來源的期間列；切回今日榜時隱藏兩者。
@@ -81,7 +81,7 @@ motion:
 
 - GitHub、HF、OpenRouter、Product Hunt、Ollama 的今日榜與累積榜共用同一排行卡結構：桌面兩欄、手機單欄。
 - 每張卡都保留排名、名稱、來源／類型標籤與該榜單的主指標；有 URL 時整張卡為唯一主連結。
-- HN 是唯一例外，維持長條雙入口：主列進原文，另給至少 44px 的「HN 討論」控制。
+- HN 與 Reddit 是僅有的雙入口例外，維持長條卡：HN 主列進原文＋「HN 討論」副控制；Reddit 主列進討論串＋「原文」副控制（無外部連結時只有主列）。副控制觸控目標皆 ≥44px。（2026-07-23 主理人拍板 Reddit 上頁面後修訂。）
 
 ### 互動
 

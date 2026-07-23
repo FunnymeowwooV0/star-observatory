@@ -95,7 +95,8 @@ def _png_size(path):
     return struct.unpack(">II", self_header[16:24])
 
 
-def _render(*, errors=None, snapshot_date=None, hn=_UNSET, leaderboards=_UNSET):
+def _render(*, errors=None, snapshot_date=None, hn=_UNSET, leaderboards=_UNSET,
+            reddit=None, reddit_snapshot_date=None):
     gh, hf, sample_leaderboards = _sample_data()
     sources = _source_data()
     actual_hn = sources["hn"] if hn is _UNSET else hn
@@ -111,12 +112,26 @@ def _render(*, errors=None, snapshot_date=None, hn=_UNSET, leaderboards=_UNSET):
         ph=sources["ph"],
         ollama=sources["ollama"],
         ollama_deltas=sources["ollama_deltas"],
+        reddit=reddit,
+        reddit_snapshot_date=reddit_snapshot_date,
         sparks={"hf_model": {"org/model": '<svg class="spark"></svg>'},
                 "ollama": {"qwen3": '<svg class="spark"></svg>'}},
         leaderboards=actual_leaderboards,
         history_dates=["2026-07-21", "2026-07-22"],
         snapshot_date=snapshot_date,
     )
+
+
+REDDIT_SAMPLE = [
+    {"title": "Linus Torvalds tells people to stop attacking others for using AI",
+     "score": 512, "comments": 88,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/abc123/linus/",
+     "external_url": "https://www.phoronix.com/news/Linux-Is-Not-Anti-AI"},
+    {"title": "Anthropic and OpenAI don't have secret sauce",
+     "score": 321, "comments": 45,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/def456/secret/",
+     "external_url": None},
+]
 
 
 class TestRenderHtmlTaskA(unittest.TestCase):
@@ -285,6 +300,76 @@ class TestRenderHtmlTaskA(unittest.TestCase):
             self.assertEqual(panel["aria-labelledby"], tab["id"])
             self.assertFalse(panel.has_attr("hidden"))
         self.assertIsNone(soup.select_one("#hugging-face"))
+
+    def test_reddit_tab_absent_without_snapshot_data(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        tablist = soup.select_one('[data-tab-group="source"][role="tablist"]')
+        tabs = tablist.select(':scope > [role="tab"]') if tablist else []
+
+        self.assertNotIn("reddit", [tab["aria-controls"] for tab in tabs])
+        self.assertIsNone(soup.select_one("#reddit"))
+
+    def test_today_has_nine_source_tabs_when_reddit_snapshot_present(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE, reddit_snapshot_date="2026-07-20"),
+            "html.parser",
+        )
+        tablist = soup.select_one('[data-tab-group="source"][role="tablist"]')
+        tabs = tablist.select(':scope > [role="tab"]') if tablist else []
+        controls = [tab["aria-controls"] for tab in tabs]
+
+        self.assertEqual(controls, [
+            "github-focus", "hf-models", "hf-datasets", "hf-spaces",
+            "hacker-news", "openrouter", "product-hunt", "ollama", "reddit",
+        ])
+        self.assertEqual(controls[-1], "reddit")
+        reddit_tab = tabs[-1]
+        self.assertEqual(reddit_tab.get_text(" ", strip=True), "Reddit")
+        self.assertEqual(reddit_tab["aria-selected"], "false")
+
+        panel = soup.select_one('#reddit[data-tab-panel="source"]')
+        self.assertIsNotNone(panel)
+        self.assertEqual(panel["role"], "tabpanel")
+        self.assertEqual(panel["aria-labelledby"], reddit_tab["id"])
+        self.assertFalse(panel.has_attr("hidden"))
+        self.assertIn("2026-07-20", panel.get_text(" ", strip=True))
+        self.assertIn("r/LocalLLaMA", panel.get_text(" ", strip=True))
+
+    def test_reddit_card_is_hn_style_dual_entry_with_swapped_roles(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE, reddit_snapshot_date="2026-07-20"),
+            "html.parser",
+        )
+        rows = soup.select("#reddit li.hn-card-row")
+        self.assertEqual(len(rows), 2)
+
+        link_row = rows[0]
+        self.assertEqual(len(link_row.find_all("a", recursive=False)), 2)
+        main_link = link_row.select_one("a.link-card")
+        discussion_link = link_row.select_one("a.hn-discussion")
+        self.assertIsNotNone(main_link)
+        self.assertIsNotNone(discussion_link)
+        self.assertEqual(main_link["href"], REDDIT_SAMPLE[0]["permalink"])
+        self.assertEqual(discussion_link["href"], REDDIT_SAMPLE[0]["external_url"])
+        self.assertEqual(discussion_link.get_text(strip=True), "原文")
+        self.assertIsNone(link_row.select_one("a a"))
+
+        self_row = rows[1]
+        self.assertEqual(len(self_row.find_all("a", recursive=False)), 1)
+        self.assertIsNotNone(self_row.select_one("a.link-card"))
+        self.assertIsNone(self_row.select_one("a.hn-discussion"))
+
+    def test_accumulation_never_gains_a_reddit_source_even_with_snapshot_data(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE, reddit_snapshot_date="2026-07-20"),
+            "html.parser",
+        )
+        source_list = soup.select_one('[data-tab-group="leaderboard-source"][role="tablist"]')
+        source_tabs = source_list.select(':scope > [role="tab"]') if source_list else []
+
+        self.assertNotIn("leaderboard-source-reddit",
+                          [tab["aria-controls"] for tab in source_tabs])
+        self.assertIsNone(soup.select_one("#leaderboard-source-reddit"))
 
     def test_accumulation_has_source_tabs_with_period_tabs_inside_each_source(self):
         soup = BeautifulSoup(_render(), "html.parser")

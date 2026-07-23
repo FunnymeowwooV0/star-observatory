@@ -5,11 +5,22 @@
 **不進 GitHub Actions**(資料中心 IP 可能被 Reddit 擋)。
 
 抓取/解析失敗 → stderr 印錯誤、exit 1(不印空表假裝成功)。
-用法:python3 scripts/reddit_weekly.py
+用法:
+    python3 scripts/reddit_weekly.py            # 只印 Markdown
+    python3 scripts/reddit_weekly.py --save     # 額外 append 進 data/reddit_weekly.csv(同日冪等)
+
+--save 的資料供 fetch_trends.py 的 run_daily() 讀最新一次快照渲染網頁 Reddit tab,
+見 goals/18-reddit上頁面.md。
 """
+import argparse
+import datetime as dt
 import sys
 
 from sources_extra import fetch_reddit_top
+from fetch_trends import TZ, append_csv, read_csv_rows
+
+CSV_PATH = "data/reddit_weekly.csv"
+CSV_HEADER = ["date", "rank", "title", "score", "comments", "permalink", "external_url"]
 
 
 def render_markdown(items):
@@ -24,13 +35,51 @@ def render_markdown(items):
     return "\n".join(lines)
 
 
+def build_save_rows(items, date, existing_rows):
+    """純函式(離線可測):算今天要 append 的 CSV 列。
+
+    冪等:existing_rows 裡已有 date == 今天的列 → 回空 list(跳過寫入)。
+    否則把 items 依原序編號 1..N,轉成 CSV_HEADER 對應的列。
+    """
+    if any(r.get("date") == date for r in existing_rows):
+        return []
+    return [
+        [date, i, it["title"], it["score"], it["comments"], it["permalink"],
+         it["external_url"] or ""]
+        for i, it in enumerate(items, start=1)
+    ]
+
+
+def save_snapshot(items, date=None):
+    """讀既有 CSV → 算冪等後要寫入的列(見 build_save_rows)→ 真的寫入。回傳寫入列數。"""
+    if date is None:
+        date = dt.datetime.now(TZ).strftime("%Y-%m-%d")
+    existing = read_csv_rows(CSV_PATH)
+    rows = build_save_rows(items, date, existing)
+    if rows:
+        append_csv(CSV_PATH, CSV_HEADER, rows)
+    return len(rows)
+
+
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--save", action="store_true",
+                     help="抓成功後 append 進 data/reddit_weekly.csv(同日已有快照則跳過)")
+    args = ap.parse_args()
+
     try:
         items = fetch_reddit_top()
     except Exception as e:  # noqa: BLE001 - 薄 CLI,任何失敗都要如實回報並 exit 1
         print(f"抓取 Reddit r/LocalLLaMA 週榜失敗:{e}", file=sys.stderr)
         return 1
     print(render_markdown(items))
+
+    if args.save:
+        n = save_snapshot(items)
+        if n:
+            print(f"[reddit_weekly] 已寫入 data/reddit_weekly.csv:{n} 列", file=sys.stderr)
+        else:
+            print("[reddit_weekly] 今日已有快照,跳過寫入(冪等)", file=sys.stderr)
     return 0
 
 

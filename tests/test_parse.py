@@ -392,6 +392,42 @@ class TestRedditParse(unittest.TestCase):
             se.parse_reddit_top("")
 
 
+class TestRedditSave(unittest.TestCase):
+    """reddit_weekly.build_save_rows 純函式:同日冪等/新日寫入/欄位形狀(離線,零連網、零檔案 IO)。"""
+
+    def setUp(self):
+        import reddit_weekly as rw
+        self.rw = rw
+
+    ITEMS = [
+        {"title": "Post A", "score": 512, "comments": 88,
+         "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/a/",
+         "external_url": "https://example.com/a"},
+        {"title": "Post B", "score": None, "comments": None,
+         "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/b/",
+         "external_url": None},
+    ]
+
+    def test_new_date_writes_all_rows_in_order(self):
+        rows = self.rw.build_save_rows(self.ITEMS, "2026-07-23", existing_rows=[])
+        self.assertEqual(rows, [
+            ["2026-07-23", 1, "Post A", 512, 88,
+             "https://www.reddit.com/r/LocalLLaMA/comments/a/", "https://example.com/a"],
+            ["2026-07-23", 2, "Post B", None, None,
+             "https://www.reddit.com/r/LocalLLaMA/comments/b/", ""],
+        ])
+
+    def test_same_day_already_present_skips_write(self):
+        existing = [{"date": "2026-07-23", "rank": "1", "title": "Post A"}]
+        rows = self.rw.build_save_rows(self.ITEMS, "2026-07-23", existing_rows=existing)
+        self.assertEqual(rows, [], "同日已有列 → 冪等跳過,不得重複寫入")
+
+    def test_different_prior_date_does_not_block_write(self):
+        existing = [{"date": "2026-07-16", "rank": "1", "title": "Post A"}]
+        rows = self.rw.build_save_rows(self.ITEMS, "2026-07-23", existing_rows=existing)
+        self.assertEqual(len(rows), 2, "既有列是別的日期時,今天仍應正常寫入")
+
+
 class TestPhBackfillWindow(unittest.TestCase):
     """PH 歷史回補的 24h 窗:對齊平常每日抓榜口徑(01:00 UTC 收單,回看 24h)。"""
 
