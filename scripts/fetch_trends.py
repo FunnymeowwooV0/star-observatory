@@ -345,21 +345,36 @@ border-radius:8px;font-size:14px}
 TAB_SCRIPT = r"""
 <script data-tab-controller>
 (() => {
-  const tablist = document.querySelector('.tab-list[role="tablist"]');
-  if (!tablist) return;
-  const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+  const lists = Array.from(document.querySelectorAll('[data-tab-group][role="tablist"]'));
+  if (!lists.length) return;
+  const byGroup = new Map(lists.map(list => [list.dataset.tabGroup, list]));
+  const tabsFor = group => {
+    const list = byGroup.get(group);
+    return list ? Array.from(list.querySelectorAll(':scope > [role="tab"]')) : [];
+  };
   const targetId = tab => tab.getAttribute('aria-controls');
-  const targetPanel = tab => document.getElementById(targetId(tab));
+  const targetPanel = tab => {
+    const panel = document.getElementById(targetId(tab));
+    return panel && panel.matches('[data-tab-panel]') ? panel : null;
+  };
   const samePage = tab => {
     const url = new URL(tab.getAttribute('href'), window.location.href);
     return url.origin === window.location.origin && url.pathname === window.location.pathname;
   };
-  const tabFor = id => tabs.find(tab => targetId(tab) === id && targetPanel(tab));
-  const idFromHash = () => tabFor(window.location.hash.slice(1)) ? window.location.hash.slice(1) : 'today';
+  const tabFor = (group, id) => tabsFor(group).find(tab => targetId(tab) === id && targetPanel(tab));
+  const selectedId = group => {
+    const selected = tabsFor(group).find(tab => tab.getAttribute('aria-selected') === 'true');
+    return selected ? targetId(selected) : null;
+  };
+  const parentPanel = group => {
+    const list = byGroup.get(group);
+    return list ? list.getAttribute('data-parent-panel') : null;
+  };
 
-  function activate(id, {write = false, scroll = false, focus = false} = {}) {
-    const activeTab = tabFor(id) || tabFor('today') || tabs[0];
-    if (!activeTab) return;
+  function select(group, id) {
+    const tabs = tabsFor(group);
+    const activeTab = tabFor(group, id) || tabs[0];
+    if (!activeTab) return null;
     tabs.forEach(tab => {
       const selected = tab === activeTab;
       tab.setAttribute('aria-selected', selected ? 'true' : 'false');
@@ -367,6 +382,23 @@ TAB_SCRIPT = r"""
       const panel = targetPanel(tab);
       if (panel) panel.hidden = !selected;
     });
+    return activeTab;
+  }
+
+  function syncContext(pageId) {
+    lists.filter(list => list.hasAttribute('data-parent-panel')).forEach(list => {
+      list.hidden = list.getAttribute('data-parent-panel') !== pageId;
+    });
+  }
+
+  function activate(group, id, {write = false, scroll = false, focus = false} = {}) {
+    const parent = parentPanel(group);
+    if (parent) select('page', parent);
+    const activeTab = select(group, id);
+    if (!activeTab) return;
+    const pageId = parent || (group === 'page' ? targetId(activeTab) : selectedId('page'));
+    if (!pageId) return;
+    syncContext(pageId);
     if (write) {
       const nextHash = `#${targetId(activeTab)}`;
       if (window.location.hash !== nextHash) window.history.pushState(null, '', nextHash);
@@ -379,39 +411,51 @@ TAB_SCRIPT = r"""
     }
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', event => {
-      if (!samePage(tab)) return;
-      event.preventDefault();
-      activate(targetId(tab), {write: true, scroll: true});
-    });
-    tab.addEventListener('keydown', event => {
-      if (event.key === ' ' || (event.key === 'Enter' && samePage(tab))) {
+  lists.forEach(list => {
+    const group = list.dataset.tabGroup;
+    const tabs = tabsFor(group);
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', event => {
+        if (!samePage(tab)) return;
         event.preventDefault();
-        tab.click();
-        return;
-      }
-      let nextIndex = null;
-      if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') nextIndex = 0;
-      if (event.key === 'End') nextIndex = tabs.length - 1;
-      if (nextIndex === null) return;
-      event.preventDefault();
-      const nextTab = tabs[nextIndex];
-      if (samePage(nextTab)) {
-        activate(targetId(nextTab), {write: true, scroll: true, focus: true});
-      } else {
-        nextTab.focus();
-        nextTab.click();
-      }
+        activate(group, targetId(tab), {write: true, scroll: true});
+      });
+      tab.addEventListener('keydown', event => {
+        if (event.key === ' ' || (event.key === 'Enter' && samePage(tab))) {
+          event.preventDefault();
+          tab.click();
+          return;
+        }
+        let nextIndex = null;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        const nextTab = tabs[nextIndex];
+        if (samePage(nextTab)) {
+          activate(group, targetId(nextTab), {write: true, scroll: true, focus: true});
+        } else {
+          nextTab.focus();
+          nextTab.click();
+        }
+      });
     });
   });
 
-  const syncFromLocation = () => activate(idFromHash(), {scroll: true});
-  window.addEventListener('popstate', syncFromLocation);
-  window.addEventListener('hashchange', syncFromLocation);
-  activate(idFromHash());
+  function syncFromLocation({scroll = false} = {}) {
+    const id = window.location.hash.slice(1);
+    if (tabFor('source', id)) return activate('source', id, {scroll});
+    if (tabFor('period', id)) return activate('period', id, {scroll});
+    const pageId = tabFor('page', id) ? id : 'today';
+    activate('page', pageId, {scroll});
+  }
+
+  lists.forEach(list => select(list.dataset.tabGroup, selectedId(list.dataset.tabGroup)));
+  window.addEventListener('popstate', () => syncFromLocation({scroll: true}));
+  window.addEventListener('hashchange', () => syncFromLocation({scroll: true}));
+  syncFromLocation();
 })();
 </script>
 """
@@ -503,8 +547,8 @@ def _accumulation_section(leaderboards):
     誠實界線(見設計稿):每個 period 區塊都標「統計自…起(N 天)」+「僅統計進過每日 Top N 的項目」。
     """
     if not leaderboards:
-        return ""
-    period_blocks = []
+        return "", ""
+    tabs, panels = [], []
     for period_key, period_label in (("week", "本週"), ("month", "本月")):
         pdata = leaderboards.get(period_key) or {}
         sources = pdata.get("sources") or {}
@@ -514,20 +558,37 @@ def _accumulation_section(leaderboards):
         if not cols:
             continue
         start, days = pdata.get("start", "?"), pdata.get("days", "?")
-        note = (f'<p class="sub">統計自 {_esc(start)} 起(資料庫目前累積 {days} 天資料)。'
-                f'僅統計進過每日 Top N 的項目——這是快照資料庫的天生限制,不是全網統計。</p>')
-        period_id = f"leaderboards-{period_key}"
-        period_blocks.append(
-            f'<section class="lb-period" aria-labelledby="{period_id}">'
-            f'<h3 id="{period_id}"><span class="heading-icon" aria-hidden="true">🏆</span>{period_label}累積榜</h3>'
-            f'{note}<div class="hf-cols">{"".join(cols)}</div></section>'
+        note = (f'<p class="sub period-note"><strong>{period_label}</strong> · '
+                f'統計自 {_esc(start)} 起（資料庫目前累積 {days} 天資料）。'
+                f'僅統計進過每日 Top N 的項目——這是快照資料庫的天生限制，不是全網統計。</p>')
+        panel_id = f"leaderboards-{period_key}"
+        tab_id = f"period-tab-{period_key}"
+        selected = not tabs
+        selected_value = "true" if selected else "false"
+        tab_index = "0" if selected else "-1"
+        tabs.append(
+            f'<a id="{tab_id}" class="sub-tab period-tab" role="tab" href="#{panel_id}" '
+            f'aria-controls="{panel_id}" aria-selected="{selected_value}" '
+            f'tabindex="{tab_index}">{period_label}</a>'
         )
-    if not period_blocks:
-        return ""
-    return ('<section id="leaderboards" class="tab-panel" role="tabpanel" '
-            'aria-labelledby="tab-leaderboards">'
-            '<h2 id="leaderboards-title"><span class="heading-icon" aria-hidden="true">🏆</span>累積排行榜</h2>'
-            + "".join(period_blocks) + '</section>')
+        panels.append(
+            f'<section id="{panel_id}" class="lb-period" role="tabpanel" '
+            f'data-tab-panel="period" aria-labelledby="{tab_id}">{note}'
+            f'<div class="hf-cols">{"".join(cols)}</div></section>'
+        )
+    if not panels:
+        return "", ""
+    period_tabs = (
+        '<div class="context-tabs period-tab-list" role="tablist" '
+        'data-tab-group="period" data-parent-panel="leaderboards" aria-label="累積榜期間">'
+        + "".join(tabs) + '</div>'
+    )
+    section = (
+        '<section id="leaderboards" class="tab-panel" role="tabpanel" '
+        'data-tab-panel="page" aria-labelledby="tab-leaderboards">'
+        + "".join(panels) + '</section>'
+    )
+    return section, period_tabs
 
 
 def _snapshot_banner_html(snapshot_date):
@@ -584,7 +645,7 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                   f'<span class="card-stars">+{period_stars:,}<span> 今日新增星</span></span>'
                   f'<span class="card-meta">{total_stars} 總星 · {_esc(r["lang"] or "—")}</span></a>')
 
-    def hf_block(label, items, prefix, mark_key, note=""):
+    def hf_list(items, mark_key, note=""):
         m = marks.get(mark_key, {})
         rows = ""
         for i, it in enumerate(items, 1):
@@ -597,19 +658,19 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             mark = _mark_html(m.get(it["id"]))
             rows += _link_card_item(i, it["id"], " · ".join(meta), it["url"], mark)
         note_html = f'<p class="source-note">{_esc(note)}</p>' if note else ""
-        return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
-                f'{_esc(label)} Top {len(items)}</h3>{note_html}<ol class="link-card-list">{rows}</ol></div>')
-
-    hf_html = (hf_block("模型", hf.get("模型", []), "🔥", "hf_model")
-               + hf_block("資料集", hf.get("資料集", []), "📚", "hf_dataset")
-               + hf_block("互動應用（Spaces）", hf.get("Spaces", []), "🚀", "hf_space",
-                          "可直接操作的機器學習 Demo／應用，不是模型。"))
+        return f'{note_html}<ol class="link-card-list">{rows}</ol>'
 
     def list_block(prefix, label, items, render_item):
         rows = "".join(render_item(i, it) for i, it in enumerate(items, 1))
         return (f'<div class="hf-col"><h3><span class="heading-icon" aria-hidden="true">{_esc(prefix)}</span>'
                 f'{_esc(label)} Top {len(items)}</h3>'
                 f'<ol class="link-card-list">{rows}</ol></div>')
+
+    def source_panel(panel_id, tab_id, heading, note, body):
+        note_html = f'<p class="sub">{_esc(note)}</p>' if note else ""
+        return (f'<section id="{panel_id}" class="source-panel" role="tabpanel" '
+                f'data-tab-panel="source" aria-labelledby="{tab_id}">'
+                f'<h2 id="{panel_id}-title">{_esc(heading)}</h2>{note_html}{body}</section>')
 
     def hn_item(i, it):
         pts = f'{it["points"]:,}' if isinstance(it["points"], int) else "—"
@@ -651,43 +712,79 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         return _link_card_item(i, it["name"], f'⬇ {pulls} Pulls · {delta}{caps}', it["url"], mark,
                                it["desc"])
 
-    hn_section = (f'<section id="hacker-news" aria-labelledby="hacker-news-title">'
-                  f'<h2 id="hacker-news-title"><span class="heading-icon" aria-hidden="true">📰</span>Hacker News 頭版</h2>'
-                  f'<p class="sub">HN 當前頭版按分數(Algolia 官方 API)。</p>'
-                  f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div></section>') if hn else ""
-    or_section = (f'<section id="openrouter" aria-labelledby="openrouter-title">'
-                  f'<h2 id="openrouter-title"><span class="heading-icon" aria-hidden="true">🧮</span>OpenRouter 模型用量</h2>'
-                  f'<p class="sub">OpenRouter 官方排行資料(非官方文件端點),最新一日模型用量。</p>'
-                  f'<div class="hf-cols">{list_block("🧮", "模型用量", openrouter, or_item)}</div></section>') if openrouter else ""
+    hn_body = f'<div class="hf-cols">{list_block("📰", "頭版", hn, hn_item)}</div>' if hn else ""
+    or_body = (f'<div class="hf-cols">{list_block("🧮", "模型用量", openrouter, or_item)}</div>'
+               if openrouter else "")
     if ph:
-        ph_section = (f'<section id="product-hunt" aria-labelledby="product-hunt-title">'
-                      f'<h2 id="product-hunt-title"><span class="heading-icon" aria-hidden="true">🚀</span>Product Hunt</h2>'
-                      f'<p class="sub">Product Hunt AI 主題 24h 票選。</p>'
-                      f'<div class="hf-cols">{list_block("🚀", "AI 榜", ph, ph_item)}</div></section>')
+        ph_body = f'<div class="hf-cols">{list_block("🚀", "AI 榜", ph, ph_item)}</div>'
+        ph_note = "Product Hunt AI 主題 24h 票選。"
     elif ph_skipped:
-        ph_section = ('<section id="product-hunt" aria-labelledby="product-hunt-title">'
-                      '<h2 id="product-hunt-title"><span class="heading-icon" aria-hidden="true">🚀</span>Product Hunt</h2>'
-                      '<p class="sub">Product Hunt AI 主題 24h 票選 — 未設 token 略過(本機無環境變數 <code>PH_TOKEN</code>)。</p></section>')
+        ph_body = '<p class="sub">未設 token 略過（本機無環境變數 <code>PH_TOKEN</code>）。</p>'
+        ph_note = "Product Hunt AI 主題 24h 票選。"
     else:
-        ph_section = ""
+        ph_body = ""
+        ph_note = ""
 
-    ol_section = (f'<section id="ollama" aria-labelledby="ollama-title">'
-                  f'<h2 id="ollama-title"><span class="heading-icon" aria-hidden="true">🦙</span>Ollama 熱門模型</h2>'
-                  f'<p class="sub">Ollama 模型庫 popular 榜(頁面原序,未按 Pulls 重排)。'
-                  f'Pulls 為累計下載數;「今日新增」由每日快照相減得出,需前一日資料,首日/無先前快照顯示 —。</p>'
-                  f'<div class="hf-cols">{list_block("🦙", "模型", ollama, ol_item)}</div></section>') if ollama else ""
+    ol_body = f'<div class="hf-cols">{list_block("🦙", "模型", ollama, ol_item)}</div>' if ollama else ""
 
-    lb_section = _accumulation_section(leaderboards)
+    source_specs = [
+        ("github-focus", "GitHub", f"GitHub 今日焦點 Top {len(gh[:10])}",
+         "GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。",
+         '<p class="sub">用途標籤依專案名稱與公開簡介規則推定。</p>'
+         f'<div class="cards">{cards}</div>'),
+        ("hf-models", "HF 模型", f'Hugging Face 模型 Top {len(hf.get("模型", []))}',
+         "Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。",
+         f'<div class="hf-cols"><div class="hf-col">{hf_list(hf.get("模型", []), "hf_model")}</div></div>'),
+        ("hf-datasets", "HF 資料集", f'Hugging Face 資料集 Top {len(hf.get("資料集", []))}',
+         "Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。",
+         f'<div class="hf-cols"><div class="hf-col">{hf_list(hf.get("資料集", []), "hf_dataset")}</div></div>'),
+        ("hf-spaces", "HF Spaces", f'Hugging Face 互動應用（Spaces）Top {len(hf.get("Spaces", []))}',
+         "Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。",
+         f'<div class="hf-cols"><div class="hf-col">{hf_list(hf.get("Spaces", []), "hf_space", "可直接操作的機器學習 Demo／應用，不是模型。")}</div></div>'),
+    ]
+    if hn_body:
+        source_specs.append(("hacker-news", "Hacker News", "Hacker News 頭版",
+                             "HN 當前頭版按分數（Algolia 官方 API）。", hn_body))
+    if or_body:
+        source_specs.append(("openrouter", "OpenRouter", "OpenRouter 模型用量",
+                             "OpenRouter 官方排行資料（非官方文件端點），最新一日模型用量。", or_body))
+    if ph_body:
+        source_specs.append(("product-hunt", "Product Hunt", "Product Hunt", ph_note, ph_body))
+    if ol_body:
+        source_specs.append((
+            "ollama", "Ollama", "Ollama 熱門模型",
+            "Ollama 模型庫 popular 榜（頁面原序，未按 Pulls 重排）。Pulls 為累計下載數；「今日新增」由每日快照相減得出，需前一日資料，首日／無先前快照顯示 —。",
+            ol_body,
+        ))
+
+    source_tabs, source_panels = [], []
+    for index, (panel_id, label, heading, note, body) in enumerate(source_specs):
+        tab_id = f"source-tab-{panel_id}"
+        selected = index == 0
+        source_tabs.append(
+            f'<a id="{tab_id}" class="sub-tab source-tab" role="tab" href="#{panel_id}" '
+            f'aria-controls="{panel_id}" aria-selected="{"true" if selected else "false"}" '
+            f'tabindex="{0 if selected else -1}">{_esc(label)}</a>'
+        )
+        source_panels.append(source_panel(panel_id, tab_id, heading, note, body))
+    source_tabs_html = (
+        '<div class="context-tabs source-tab-list" role="tablist" data-tab-group="source" '
+        'data-parent-panel="today" aria-label="今日榜資料來源">'
+        + "".join(source_tabs) + '</div>'
+    )
+
+    lb_section, period_tabs_html = _accumulation_section(leaderboards)
     banner_html = _snapshot_banner_html(snapshot_date)
     switcher_html = _date_switcher_html(history_dates, snapshot_date)
     today_href = "../index.html#today" if snapshot_date else "#today"
     leaderboard_tab = ('<a id="tab-leaderboards" class="page-tab" role="tab" href="#leaderboards" '
                        'aria-controls="leaderboards" aria-selected="false" tabindex="-1">累積榜</a>') if lb_section else ""
     nav_html = (f'<div class="nav-shell"><nav class="page-nav" aria-label="主要導覽">'
-                f'<div class="tab-list" role="tablist" aria-label="榜單頁面">'
+                f'<div class="tab-list" role="tablist" data-tab-group="page" aria-label="榜單頁面">'
                 f'<a id="tab-today" class="page-tab" role="tab" href="{today_href}" '
                 f'aria-controls="today" aria-selected="true" tabindex="0">今日榜</a>'
-                f'{leaderboard_tab}</div>{switcher_html}</nav></div>')
+                f'{leaderboard_tab}</div>{switcher_html}</nav>'
+                f'<div class="subnav-wrap">{source_tabs_html}{period_tabs_html}</div></div>')
 
     err_html = ('<div class="err" role="alert">⚠️ 部分來源抓取失敗:'
                 + "；".join(_esc(e) for e in errors)
@@ -708,17 +805,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             f'<span class="mark same">—</span> 為與昨日(資料裡日期嚴格早於今天的最近一天)排名比較。</p>'
             f'</header>{nav_html}<main id="main-content">'
             f'{err_html}'
-            f'<div id="today" class="tab-panel" role="tabpanel" aria-labelledby="tab-today">'
-            f'<section id="github-focus" aria-labelledby="github-focus-title">'
-            f'<h2 id="github-focus-title"><span class="heading-icon" aria-hidden="true">🐙</span>GitHub 今日焦點 Top {len(gh[:10])}</h2>'
-            f'<p class="sub">GitHub Trending 日榜的「今日新增星」是當日動能訊號，作 24 小時動能代理值；非精確的 rolling 24 小時計量。</p>'
-            f'<p class="sub">用途標籤依專案名稱與公開簡介規則推定。</p>'
-            f'<div class="cards">{cards}</div></section>'
-            f'<section id="hugging-face" aria-labelledby="hugging-face-title">'
-            f'<h2 id="hugging-face-title"><span class="heading-icon" aria-hidden="true">🤗</span>Hugging Face 本日熱門</h2>'
-            f'<p class="sub">Hugging Face 官方 Trending API 排名；不是依 Likes 或下載量單獨排序。</p>'
-            f'<div class="hf-cols">{hf_html}</div></section>'
-            f'{hn_section}{or_section}{ph_section}{ol_section}</div>'
+            f'<div id="today" class="tab-panel" role="tabpanel" data-tab-panel="page" '
+            f'aria-labelledby="tab-today">{"".join(source_panels)}</div>'
             f'{lb_section}</main>'
             f'<footer>資料來源:GitHub Trending、Hugging Face Trending API、Hacker News Algolia、'
             f'OpenRouter 排行資料、Product Hunt API 與 Ollama popular 榜。'

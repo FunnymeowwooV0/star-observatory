@@ -54,7 +54,15 @@ def _sample_data():
                 "ph": [{"name": "Useful Product", "url": "https://www.producthunt.com/posts/useful-product",
                         "value": 88}],
             },
-        }
+        },
+        "month": {
+            "start": "2026-07-01",
+            "days": 22,
+            "sources": {
+                "github": [{"name": gh[1]["name"], "url": gh[1]["url"],
+                            "value": 4200, "days": 7}],
+            },
+        },
     }
     return gh, hf, leaderboards
 
@@ -141,7 +149,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
 
     def test_tabs_have_accessible_progressive_enhancement_markup(self):
         soup = BeautifulSoup(_render(), "html.parser")
-        tablist = soup.select_one('.tab-list[role="tablist"]')
+        tablist = soup.select_one('[data-tab-group="page"][role="tablist"]')
         tabs = tablist.select('a[role="tab"]') if tablist else []
 
         self.assertIsNotNone(tablist)
@@ -150,23 +158,74 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertEqual([tab["tabindex"] for tab in tabs], ["0", "-1"])
         self.assertNotIn("role", soup.select_one(".history-picker").attrs)
         for panel_id in ("today", "leaderboards"):
-            panel = soup.select_one(f'#{panel_id}[role="tabpanel"]')
+            panel = soup.select_one(f'#{panel_id}[role="tabpanel"][data-tab-panel="page"]')
             self.assertIsNotNone(panel)
             self.assertFalse(panel.has_attr("hidden"))
+
+        self.assertEqual(
+            [node["data-tab-group"] for node in soup.select('[data-tab-group][role="tablist"]')],
+            ["page", "source", "period"],
+        )
+        self.assertEqual(soup.select_one('[data-tab-group="source"]')["data-parent-panel"], "today")
+        self.assertEqual(soup.select_one('[data-tab-group="period"]')["data-parent-panel"], "leaderboards")
 
         script = soup.select_one("script[data-tab-controller]")
         self.assertIsNotNone(script)
         script_text = script.get_text()
-        for token in ("history.pushState", "popstate", "hashchange", "ArrowLeft", "ArrowRight", "scrollIntoView"):
+        for token in ("data-tab-group", "data-parent-panel", "data-tab-panel",
+                      "history.pushState", "popstate", "hashchange", "ArrowLeft", "ArrowRight",
+                      "Home", "End", "scrollIntoView"):
             self.assertIn(token, script_text)
+
+    def test_today_has_eight_independent_source_tabs_and_panels(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        tablist = soup.select_one('[data-tab-group="source"][role="tablist"]')
+        tabs = tablist.select(':scope > [role="tab"]') if tablist else []
+        controls = [tab["aria-controls"] for tab in tabs]
+
+        self.assertEqual(controls, [
+            "github-focus", "hf-models", "hf-datasets", "hf-spaces",
+            "hacker-news", "openrouter", "product-hunt", "ollama",
+        ])
+        self.assertEqual([tab.get_text(" ", strip=True) for tab in tabs], [
+            "GitHub", "HF 模型", "HF 資料集", "HF Spaces",
+            "Hacker News", "OpenRouter", "Product Hunt", "Ollama",
+        ])
+        self.assertEqual([tab["aria-selected"] for tab in tabs], ["true"] + ["false"] * 7)
+        for control, tab in zip(controls, tabs):
+            panel = soup.select_one(f'#{control}[data-tab-panel="source"]')
+            self.assertIsNotNone(panel)
+            self.assertEqual(panel["role"], "tabpanel")
+            self.assertEqual(panel["aria-labelledby"], tab["id"])
+            self.assertFalse(panel.has_attr("hidden"))
+        self.assertIsNone(soup.select_one("#hugging-face"))
+
+    def test_accumulation_has_period_tabs_without_redundant_heading(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        tablist = soup.select_one('[data-tab-group="period"][role="tablist"]')
+        tabs = tablist.select(':scope > [role="tab"]') if tablist else []
+
+        self.assertEqual([tab["aria-controls"] for tab in tabs],
+                         ["leaderboards-week", "leaderboards-month"])
+        self.assertEqual([tab.get_text(strip=True) for tab in tabs], ["本週", "本月"])
+        for tab in tabs:
+            panel = soup.select_one(f'#{tab["aria-controls"]}[data-tab-panel="period"]')
+            self.assertIsNotNone(panel)
+            self.assertEqual(panel["aria-labelledby"], tab["id"])
+            self.assertFalse(panel.has_attr("hidden"))
+        text = soup.select_one("#leaderboards").get_text(" ", strip=True)
+        self.assertNotIn("累積排行榜", text)
+        self.assertNotIn("本週累積榜", text)
+        self.assertNotIn("本月累積榜", text)
 
     def test_missing_leaderboards_omits_second_tab_and_panel(self):
         soup = BeautifulSoup(_render(leaderboards={}), "html.parser")
-        tabs = soup.select('.tab-list[role="tablist"] a[role="tab"]')
+        tabs = soup.select('[data-tab-group="page"][role="tablist"] a[role="tab"]')
 
         self.assertEqual([tab["aria-controls"] for tab in tabs], ["today"])
         self.assertIsNone(soup.select_one("#leaderboards"))
         self.assertIsNotNone(soup.select_one('#today[role="tabpanel"]'))
+        self.assertIsNone(soup.select_one('[data-tab-group="period"]'))
 
     def test_github_top_ten_is_one_clickable_card_per_repo(self):
         gh, _hf, _leaderboards = _sample_data()
@@ -208,18 +267,20 @@ class TestRenderHtmlTaskA(unittest.TestCase):
 
     def test_hf_uses_named_metrics_and_omits_missing_space_downloads(self):
         soup = BeautifulSoup(_render(), "html.parser")
-        hf_section = soup.select_one("section#hugging-face")
-        self.assertIsNotNone(hf_section)
-        self.assertIn("官方 Trending API", hf_section.get_text(" ", strip=True))
-        spaces_heading = next(h for h in hf_section.select("h3") if "互動應用（Spaces）" in h.get_text())
-        self.assertIn("Top 1", spaces_heading.get_text(" ", strip=True))
-        self.assertIn("可直接操作的機器學習 Demo／應用，不是模型", hf_section.get_text(" ", strip=True))
+        model_section = soup.select_one("section#hf-models")
+        space_section = soup.select_one("section#hf-spaces")
+        self.assertIsNotNone(model_section)
+        self.assertIsNotNone(space_section)
+        self.assertIn("官方 Trending API", model_section.get_text(" ", strip=True))
+        self.assertIn("互動應用（Spaces）Top 1", space_section.get_text(" ", strip=True))
+        self.assertIn("可直接操作的機器學習 Demo／應用，不是模型",
+                      space_section.get_text(" ", strip=True))
 
-        model_li = hf_section.find(string="org/model").find_parent("li")
+        model_li = model_section.find(string="org/model").find_parent("li")
         self.assertIn("Likes 12", model_li.get_text(" ", strip=True))
         self.assertIn("下載 345", model_li.get_text(" ", strip=True))
 
-        space_li = hf_section.find(string="org/space").find_parent("li")
+        space_li = space_section.find(string="org/space").find_parent("li")
         self.assertIn("Likes 5", space_li.get_text(" ", strip=True))
         self.assertNotIn("下載", space_li.get_text(" ", strip=True))
         self.assertNotIn("⬇ —", space_li.get_text(" ", strip=True))
@@ -227,7 +288,9 @@ class TestRenderHtmlTaskA(unittest.TestCase):
     def test_source_rows_use_full_width_link_cards(self):
         soup = BeautifulSoup(_render(), "html.parser")
         selectors = {
-            "#hugging-face": 3,
+            "#hf-models": 1,
+            "#hf-datasets": 1,
+            "#hf-spaces": 1,
             "#openrouter": 1,
             "#product-hunt": 1,
             "#ollama": 1,
@@ -248,7 +311,9 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         ollama_card = soup.select_one("#ollama a.link-card")
         self.assertEqual(ollama_card["href"], "https://ollama.com/library/qwen3")
         self.assertIn("A capable local model", ollama_card.get_text(" ", strip=True))
-        self.assertIsNone(soup.select_one("#hugging-face .spark"))
+        self.assertIsNone(soup.select_one("#hf-models .spark"))
+        self.assertIsNone(soup.select_one("#hf-datasets .spark"))
+        self.assertIsNone(soup.select_one("#hf-spaces .spark"))
         self.assertIsNone(soup.select_one("#ollama .spark"))
 
     def test_hn_keeps_separate_discussion_target_without_nested_links(self):
@@ -272,7 +337,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         soup = BeautifulSoup(_render(), "html.parser")
         rows = soup.select("#leaderboards ol.link-card-list > li.link-card-item")
 
-        self.assertEqual(len(rows), 6)
+        self.assertEqual(len(rows), 7)
         for row in rows:
             self.assertEqual(len(row.find_all("a", class_="link-card", recursive=False)), 1)
             self.assertIsNone(row.select_one("a a"))
