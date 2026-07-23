@@ -443,6 +443,8 @@ TAB_SCRIPT = r"""
     const tabs = tabsFor(group);
     const activeTab = tabFor(group, id) || tabs[0];
     if (!activeTab) return null;
+    const activePanel = targetPanel(activeTab);
+    if (activePanel) activePanel.hidden = false;
     tabs.forEach(tab => {
       const selected = tab === activeTab;
       tab.setAttribute('aria-selected', selected ? 'true' : 'false');

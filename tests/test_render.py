@@ -210,6 +210,17 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertNotIn("scrollIntoView", script_text)
         self.assertNotIn("scroll: true", script_text)
 
+    def test_tab_switch_reveals_next_panel_before_hiding_current_one(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        script_text = soup.select_one("script[data-tab-controller]").get_text()
+        select_body = script_text.split("function select(group, id) {", 1)[1].split(
+            "function selectAncestors", 1,
+        )[0]
+
+        reveal = "if (activePanel) activePanel.hidden = false;"
+        self.assertIn(reveal, select_body)
+        self.assertLess(select_body.index(reveal), select_body.index("tabs.forEach"))
+
     def test_history_picker_displays_latest_snapshot_date(self):
         soup = BeautifulSoup(_render(), "html.parser")
         selected = soup.select_one("#history-date option[selected]")
