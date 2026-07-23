@@ -200,8 +200,15 @@ class TestRenderHtmlTaskA(unittest.TestCase):
                       "historyTargetId", "history.pushState", "popstate", "hashchange",
                       "selectAncestors", "groupForTarget",
                       "ArrowLeft", "ArrowRight",
-                      "Home", "End", "scrollIntoView"):
+                      "Home", "End"):
             self.assertIn(token, script_text)
+
+    def test_tab_activation_never_programmatically_scrolls_the_page(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        script_text = soup.select_one("script[data-tab-controller]").get_text()
+
+        self.assertNotIn("scrollIntoView", script_text)
+        self.assertNotIn("scroll: true", script_text)
 
     def test_history_picker_displays_latest_snapshot_date(self):
         soup = BeautifulSoup(_render(), "html.parser")

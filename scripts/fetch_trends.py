@@ -469,7 +469,7 @@ TAB_SCRIPT = r"""
     });
   }
 
-  function activate(group, id, {write = false, scroll = false, focus = false} = {}) {
+  function activate(group, id, {write = false, focus = false} = {}) {
     selectAncestors(group);
     const activeTab = select(group, id);
     if (!activeTab) return;
@@ -480,11 +480,6 @@ TAB_SCRIPT = r"""
       if (window.location.hash !== nextHash) window.history.pushState(null, '', nextHash);
     }
     if (focus) activeTab.focus();
-    if (scroll) {
-      const panel = targetPanel(activeTab);
-      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-      window.requestAnimationFrame(() => panel.scrollIntoView({block: 'start', behavior}));
-    }
   }
 
   lists.forEach(list => {
@@ -494,7 +489,7 @@ TAB_SCRIPT = r"""
       tab.addEventListener('click', event => {
         if (!samePage(tab)) return;
         event.preventDefault();
-        activate(group, targetId(tab), {write: true, scroll: true});
+        activate(group, targetId(tab), {write: true});
       });
       tab.addEventListener('keydown', event => {
         if (event.key === ' ' || (event.key === 'Enter' && samePage(tab))) {
@@ -511,7 +506,7 @@ TAB_SCRIPT = r"""
         event.preventDefault();
         const nextTab = tabs[nextIndex];
         if (samePage(nextTab)) {
-          activate(group, targetId(nextTab), {write: true, scroll: true, focus: true});
+          activate(group, targetId(nextTab), {write: true, focus: true});
         } else {
           nextTab.focus();
           nextTab.click();
@@ -520,16 +515,16 @@ TAB_SCRIPT = r"""
     });
   });
 
-  function syncFromLocation({scroll = false} = {}) {
+  function syncFromLocation() {
     const id = window.location.hash.slice(1);
     const group = groupForTarget(id);
-    if (group) return activate(group, id, {scroll});
-    activate('page', 'today', {scroll});
+    if (group) return activate(group, id);
+    activate('page', 'today');
   }
 
   lists.forEach(list => select(list.dataset.tabGroup, selectedId(list.dataset.tabGroup)));
-  window.addEventListener('popstate', () => syncFromLocation({scroll: true}));
-  window.addEventListener('hashchange', () => syncFromLocation({scroll: true}));
+  window.addEventListener('popstate', syncFromLocation);
+  window.addEventListener('hashchange', syncFromLocation);
   syncFromLocation();
 })();
 </script>
