@@ -3,7 +3,7 @@
 GitHub x Hugging Face 觀星台 — 抓榜 + 產出資料庫檔案
 
 用法:
-    python scripts/fetch_trends.py --mode daily     # 每日:GitHub 當日新增星 Top10 + HF 各 Top5
+    python scripts/fetch_trends.py --mode daily     # 每日:GitHub 與各資料源 Top10
     python scripts/fetch_trends.py --mode weekly    # 每週:GitHub 當週新增星 Top10
 
 資料來源:
@@ -37,7 +37,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trend-radar-bot"
 TZ = dt.timezone(dt.timedelta(hours=8))  # 台北時間
 GH_TOP = 10
-HF_TOP = 5
+HF_TOP = 10
 
 
 # ----------------------------- 解析(純函式,可離線測試) -----------------------------
@@ -251,26 +251,16 @@ SITE_CSS = """
 @media(prefers-color-scheme:dark){:root{--sky-top:#061747;--sky-mid:#030d2f;--dusk-mauve:#51415f;--dusk-apricot:#b96649;--paper:#eadfc7;--ivory:#f0e6cf;--sky-muted:#aebddd;--nav:#05133f;--hover:#f6ecd5}}
 *{box-sizing:border-box}[hidden]{display:none!important}
 html{background:var(--sky-mid);scroll-behavior:smooth}
-body{position:relative;isolation:isolate;min-height:100vh;margin:0;color:var(--sky-text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) calc(100% - 190px),var(--dusk-mauve) calc(100% - 84px),var(--dusk-apricot) 100%);overflow-x:clip}
-body::before{content:"";position:absolute;z-index:0;inset:0 0 auto;height:min(560px,62vh);pointer-events:none;background:radial-gradient(circle at 12% 7%,rgba(229,196,58,.95) 0 1px,transparent 3px),radial-gradient(circle at 34% 5%,rgba(245,237,218,.85) 0 1px,transparent 3px),radial-gradient(circle at 63% 10%,rgba(229,196,58,.8) 0 1px,transparent 4px),radial-gradient(circle at 84% 4%,rgba(245,237,218,.9) 0 1px,transparent 4px),radial-gradient(ellipse 64% 46% at -6% 72%,rgba(23,96,232,.28),transparent 70%),radial-gradient(ellipse 58% 42% at 58% 18%,rgba(30,104,246,.25),transparent 72%),radial-gradient(ellipse 52% 38% at 106% 8%,rgba(26,91,230,.3),transparent 70%);mix-blend-mode:screen}
-body::after{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+body{position:relative;isolation:isolate;min-height:100vh;margin:0;color:var(--sky-text);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.55;background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 66%,var(--dusk-mauve) 88%,var(--dusk-apricot) 100%);overflow-x:clip}
 body>*{position:relative;z-index:1}
-.sky-art{position:absolute;z-index:0;inset:0;overflow:hidden;pointer-events:none}
-.sky-art::before,.sky-art::after{content:"";position:absolute;border-style:solid;border-color:rgba(26,99,240,.28);border-radius:50%;filter:blur(28px);mix-blend-mode:screen}
-.sky-art::before{width:118%;height:420px;left:-38%;top:150px;border-width:82px;transform:rotate(-11deg)}
-.sky-art::after{width:82%;height:350px;right:-34%;top:-170px;border-width:66px;transform:rotate(-23deg);opacity:.86}
-.orbit{position:absolute;width:290px;height:118px;border:1px solid rgba(245,237,218,.2);border-radius:50%}
-.orbit::before,.orbit::after{content:"";position:absolute;border:1px solid rgba(245,237,218,.15);border-radius:inherit}
-.orbit::before{inset:-18px}.orbit::after{inset:-39px;opacity:.65}
-.orbit-top{top:24px;right:-92px;transform:rotate(-12deg)}
-.orbit-bottom{bottom:36px;left:-126px;transform:rotate(17deg)}
+.sky-art{position:absolute;z-index:0;inset:0;pointer-events:none;background-image:url("__SKY_ASSET__");background-size:100% 100%;background-position:center top;background-repeat:no-repeat}
 a,select{touch-action:manipulation;-webkit-tap-highlight-color:rgba(229,196,58,.2)}
 a{color:var(--star)}a:hover{text-decoration-thickness:2px;text-underline-offset:3px}a:active{opacity:.76}
 a:focus-visible,.date-switch:focus-visible{outline:3px solid var(--star);outline-offset:3px;border-radius:4px}
 .skip-link{position:absolute;z-index:10;left:16px;top:-64px;background:var(--paper);color:var(--ink);padding:10px 14px}
 .skip-link:focus{top:10px}
 .topbar{height:2px;background:var(--star)}
-header,main,footer,.page-nav,.subnav-wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+header,main,footer,.page-nav,.subnav-wrap{width:90%;max-width:1384px;margin:0 auto;padding-left:24px;padding-right:24px}
 header{padding-top:34px;padding-bottom:6px}
 .kicker{font-size:12px;letter-spacing:.14em;color:var(--star);font-weight:600}
 h1,h2,.rank{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
@@ -280,27 +270,37 @@ h3{font-size:15px;margin:0 0 10px;font-weight:600;color:var(--sky-text)}
 h4{font-size:15px;margin:0 0 8px;font-weight:600;color:var(--sky-text)}
 .heading-icon{margin-right:.35em}
 .sub{color:var(--sky-muted);font-size:13px;margin:0 0 6px;max-width:920px}
-.nav-shell{position:sticky;top:0;z-index:8;margin-top:18px;border-top:1px solid rgba(245,237,218,.24);border-bottom:1px solid rgba(245,237,218,.24);background:var(--nav)}
-.page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;min-height:58px}
-.tab-list{display:flex;align-items:center;border:1px solid rgba(245,237,218,.48);border-radius:8px;overflow:hidden}
-.page-tab{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:7px 18px;border-left:1px solid rgba(245,237,218,.34);color:var(--sky-text);font-size:14px;font-weight:600;text-decoration:none}
-.page-tab:first-child{border-left:0}
-.page-tab[aria-selected="true"]{background:var(--paper);color:var(--ink)}
-.page-tab:hover{text-decoration:none;background:rgba(245,237,218,.1)}
-.page-tab[aria-selected="true"]:hover{background:var(--ivory);color:var(--ink)}
-.history-picker{display:flex;align-items:center;gap:8px;min-height:44px;color:var(--sky-muted);font-size:13px}
-.history-picker label{font-weight:600;color:var(--sky-text)}
-.date-switch{min-height:38px;font-size:13px;padding:5px 30px 5px 10px;border-radius:6px;border:1px solid rgba(245,237,218,.48);background:var(--nav);color:var(--sky-text)}
-.subnav-wrap{padding-bottom:9px}
+.nav-shell{position:sticky;top:0;z-index:8;margin-top:12px;background:rgba(4,15,54,.18);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.page-nav{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:50px;min-height:64px}
+.tab-list{display:flex;align-items:center;gap:48px;border:0;border-radius:0;overflow:visible}
+.page-tab{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:8px 0;border:0;color:var(--sky-text);font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap}
+.page-tab::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--star);transform:scaleX(0);transform-origin:center;transition:transform 140ms cubic-bezier(.2,0,0,1)}
+.page-tab[aria-selected="true"]{background:transparent;color:var(--sky-text);font-weight:600}
+.page-tab[aria-selected="true"]::after{transform:scaleX(1)}
+.page-tab:hover,.page-tab[aria-selected="true"]:hover{text-decoration:none;background:transparent;color:#fff}
+.history-picker{grid-column:2;justify-self:start;display:flex;align-items:center;gap:10px;min-width:0}
+.history-trigger{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:8px 0;border:0;background:transparent;color:var(--sky-text);font:500 15px/1.4 "Noto Sans TC","PingFang TC",sans-serif;white-space:nowrap;cursor:pointer}
+.history-trigger::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--star);transform:scaleX(0);transition:transform 140ms cubic-bezier(.2,0,0,1)}
+.history-trigger[aria-expanded="true"]::after{transform:scaleX(1)}
+.history-trigger:hover{color:#fff}.history-trigger:disabled{cursor:not-allowed;opacity:.42}
+.calendar-shell{display:inline-flex;align-items:center;min-height:40px;border:1px solid rgba(245,237,218,.3);border-radius:5px;background:rgba(4,15,54,.62);color:var(--sky-muted);opacity:.34;filter:saturate(.25);pointer-events:none;transition:opacity 140ms ease,border-color 140ms ease,filter 140ms ease}
+.calendar-shell.is-active{border-color:rgba(245,237,218,.72);color:var(--sky-text);opacity:1;filter:none;pointer-events:auto}
+.calendar-icon{flex:0 0 auto;width:17px;height:17px;margin-left:11px;stroke:currentColor;stroke-width:1.7;fill:none}
+.date-switch{min-height:38px;max-width:150px;padding:5px 30px 5px 8px;border:0;background:transparent;color:inherit;font-size:13px}
+.date-switch:disabled{cursor:not-allowed}.calendar-empty{padding:0 12px 0 8px;font-size:13px;white-space:nowrap}
+.subnav-wrap{padding-bottom:12px}
 .context-tabs{display:flex;min-width:0;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .context-tabs::-webkit-scrollbar{display:none}
-.sub-tab{display:inline-flex;flex:0 0 auto;min-height:44px;align-items:center;justify-content:center;padding:8px 18px;border:1px solid rgba(245,237,218,.46);border-left-width:0;color:var(--sky-text);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+.source-tab-list{width:100%}
+.sub-tab{display:inline-flex;flex:0 0 auto;min-height:44px;align-items:center;justify-content:center;padding:8px 10px;border:1px solid rgba(245,237,218,.56);border-left-width:0;color:var(--sky-text);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
+.source-tab-list>.source-tab{flex:1 1 0;min-width:0}
 .sub-tab:first-child{border-left-width:1px;border-radius:6px 0 0 6px}.sub-tab:last-child{border-radius:0 6px 6px 0}
 .sub-tab[aria-selected="true"]{background:var(--paper);color:var(--ink)}
 .sub-tab:hover{text-decoration:none;background:rgba(245,237,218,.1)}
 .sub-tab[aria-selected="true"]:hover{background:var(--ivory);color:var(--ink)}
 section,.tab-panel{scroll-margin-top:132px}
 .source-panel,.lb-period{padding:12px 0 34px}
+.leaderboard-source-panel{padding-top:12px}.leaderboard-list{grid-template-columns:1fr}.leaderboard-source-panel>.period-tab-list{margin-top:0}
 .err{margin:14px 0;padding:11px 16px;background:#f5d8d1;color:#6f1d1d;border:1px solid rgba(111,29,29,.25);border-radius:6px;font-size:14px}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin-top:14px}
 .card{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(128px,auto);gap:12px;align-items:center;min-width:0;min-height:98px;padding:12px 16px;background:var(--paper);border:1px solid var(--line);border-radius:8px;color:var(--ink);text-decoration:none;cursor:pointer;overflow-wrap:anywhere}
@@ -337,18 +337,19 @@ footer code{background:rgba(245,237,218,.16);padding:1px 5px;border-radius:3px}
 header .mark.up{color:#83d9bb}header .mark.down{color:#ffaaa6}header .mark.new{color:#a9ceff}header .mark.same{color:var(--sky-muted)}
 .link-title .mark{margin-left:6px}
 .spark{display:block;margin-top:3px}.spark rect{fill:var(--acc)}
-.snapshot-banner{max-width:1240px;margin:16px auto 0;padding:10px 16px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;font-size:14px}
+.snapshot-banner{width:90%;max-width:1384px;margin:16px auto 0;padding:10px 16px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;font-size:14px}
 .snapshot-banner a{color:#12388b;font-weight:700}
 .period-note{margin:10px 0 16px}.period-note strong{color:var(--sky-text);font-family:"Noto Serif TC",serif;font-size:18px}
 @media(max-width:900px){.cards{grid-template-columns:1fr}.hf-cols{grid-template-columns:1fr}}
 @media(max-width:640px){
-  header,main,footer,.page-nav,.subnav-wrap{padding-left:16px;padding-right:16px}
+  .sky-art{background-image:url("__SKY_ASSET_MOBILE__");background-size:cover;background-position:center top}
+  header,main,footer,.page-nav,.subnav-wrap{width:100%;padding-left:16px;padding-right:16px}
   header{padding-top:24px}h1{font-size:29px;line-height:1.28}h2{font-size:24px;margin-top:18px}
   .title-date,.title-topic{display:block}
-  .nav-shell{margin-top:12px}.page-nav{align-items:stretch;gap:6px 12px;padding-top:8px;padding-bottom:7px}
-  .tab-list{flex:1}.page-tab{min-width:0;flex:1;padding-left:10px;padding-right:10px}
-  .history-picker{flex-basis:100%;justify-content:space-between}.date-switch{flex:1;max-width:220px;min-height:44px}
-  .subnav-wrap{padding-bottom:8px}.sub-tab{padding-left:15px;padding-right:15px}
+  .nav-shell{margin-top:8px}.page-nav{grid-template-columns:1fr;gap:2px;align-items:center;padding-top:5px;padding-bottom:6px}
+  .tab-list{grid-column:1/-1;gap:32px}.page-tab{min-width:0;padding-left:0;padding-right:0}
+  .history-picker{grid-column:1;justify-self:start}.calendar-shell{min-height:44px}.date-switch{min-height:42px}
+  .subnav-wrap{padding-bottom:8px}.source-tab-list>.source-tab{flex:0 0 auto;min-width:max-content}.sub-tab{padding-left:15px;padding-right:15px}
   section,.tab-panel{scroll-margin-top:174px}.source-panel,.lb-period{padding-top:8px;padding-bottom:26px}
   .card{grid-template-columns:48px minmax(0,1fr);min-height:132px;padding:12px;gap:8px 10px}
   .rank{font-size:29px;align-self:start;padding-top:2px}
@@ -356,7 +357,6 @@ header .mark.up{color:#83d9bb}header .mark.down{color:#ffaaa6}header .mark.new{c
   .card-stars{text-align:right}.card-name{font-size:13px}.card-desc{font-size:12px}
   .hf-cols{grid-template-columns:1fr}.card,.link-card,.hn-discussion,.page-tab,.sub-tab,.snapshot-banner a{min-height:44px}
   .hn-card-row{grid-template-columns:1fr}.hn-discussion{width:100%}
-  .orbit-top{right:-180px}.orbit-bottom{left:-190px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.card,.link-card,.hn-discussion{transform:none!important}}
 """
@@ -367,6 +367,22 @@ TAB_SCRIPT = r"""
 (() => {
   const lists = Array.from(document.querySelectorAll('[data-tab-group][role="tablist"]'));
   if (!lists.length) return;
+  const historyTrigger = document.querySelector('.history-trigger');
+  const historySelect = document.getElementById('history-date');
+  const calendarShell = document.querySelector('.calendar-shell');
+  if (historyTrigger && historySelect && calendarShell) {
+    const setHistoryEnabled = enabled => {
+      historySelect.disabled = !enabled;
+      historyTrigger.setAttribute('aria-expanded', enabled ? 'true' : 'false');
+      calendarShell.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+      calendarShell.classList.toggle('is-active', enabled);
+    };
+    historyTrigger.addEventListener('click', () => {
+      const enabled = historySelect.disabled;
+      setHistoryEnabled(enabled);
+      if (enabled) historySelect.focus();
+    });
+  }
   const byGroup = new Map(lists.map(list => [list.dataset.tabGroup, list]));
   const tabsFor = group => {
     const list = byGroup.get(group);
@@ -382,6 +398,10 @@ TAB_SCRIPT = r"""
     return url.origin === window.location.origin && url.pathname === window.location.pathname;
   };
   const tabFor = (group, id) => tabsFor(group).find(tab => targetId(tab) === id && targetPanel(tab));
+  const groupForTarget = id => {
+    const list = lists.find(candidate => tabFor(candidate.dataset.tabGroup, id));
+    return list ? list.dataset.tabGroup : null;
+  };
   const selectedId = group => {
     const selected = tabsFor(group).find(tab => tab.getAttribute('aria-selected') === 'true');
     return selected ? targetId(selected) : null;
@@ -411,20 +431,28 @@ TAB_SCRIPT = r"""
     return activeTab;
   }
 
-  function syncContext(pageId) {
+  function selectAncestors(group) {
+    const parent = parentPanel(group);
+    if (!parent) return;
+    const parentGroup = groupForTarget(parent);
+    if (!parentGroup) return;
+    selectAncestors(parentGroup);
+    select(parentGroup, parent);
+  }
+
+  function syncContext() {
     lists.filter(list => list.hasAttribute('data-parent-panel')).forEach(list => {
-      list.hidden = list.getAttribute('data-parent-panel') !== pageId;
+      const parent = document.getElementById(list.getAttribute('data-parent-panel'));
+      list.hidden = parent ? parent.hidden : false;
     });
   }
 
   function activate(group, id, {write = false, scroll = false, focus = false} = {}) {
-    const parent = parentPanel(group);
-    if (parent) select('page', parent);
+    selectAncestors(group);
     const activeTab = select(group, id);
     if (!activeTab) return;
-    const pageId = parent || (group === 'page' ? targetId(activeTab) : selectedId('page'));
-    if (!pageId) return;
-    syncContext(pageId);
+    if (!selectedId('page')) return;
+    syncContext();
     if (write) {
       const nextHash = `#${historyTargetId(group, activeTab)}`;
       if (window.location.hash !== nextHash) window.history.pushState(null, '', nextHash);
@@ -472,10 +500,9 @@ TAB_SCRIPT = r"""
 
   function syncFromLocation({scroll = false} = {}) {
     const id = window.location.hash.slice(1);
-    if (tabFor('source', id)) return activate('source', id, {scroll});
-    if (tabFor('period', id)) return activate('period', id, {scroll});
-    const pageId = tabFor('page', id) ? id : 'today';
-    activate('page', pageId, {scroll});
+    const group = groupForTarget(id);
+    if (group) return activate(group, id, {scroll});
+    activate('page', 'today', {scroll});
   }
 
   lists.forEach(list => select(list.dataset.tabGroup, selectedId(list.dataset.tabGroup)));
@@ -550,14 +577,25 @@ def _lb_item_ph(i, e):
 # (source_key, 標題, emoji, item renderer, Top N)
 LEADERBOARD_SOURCES = [
     ("github", "GitHub 累積新增星", "🐙", _lb_item_github, 10),
-    ("openrouter", "OpenRouter 用量", "🧮", _lb_item_openrouter, 5),
-    ("hf_model", "HF 模型 讚/下載增量", "🔥", _lb_item_hf, 5),
-    ("hf_dataset", "HF 資料集 讚/下載增量", "📚", _lb_item_hf, 5),
-    ("hf_space", "HF Spaces 讚/下載增量", "🚀", _lb_item_hf, 5),
-    ("ollama", "Ollama 下載增量", "🦙", _lb_item_ollama, 5),
-    ("hn", "HN 期間最高分", "📰", _lb_item_hn, 5),
-    ("ph", "PH 期間最高票", "🚀", _lb_item_ph, 5),
+    ("hf_model", "HF 模型 讚/下載增量", "🔥", _lb_item_hf, 10),
+    ("hf_dataset", "HF 資料集 讚/下載增量", "📚", _lb_item_hf, 10),
+    ("hf_space", "HF Spaces 讚/下載增量", "🚀", _lb_item_hf, 10),
+    ("hn", "HN 期間最高分", "📰", _lb_item_hn, 10),
+    ("openrouter", "OpenRouter 用量", "🧮", _lb_item_openrouter, 10),
+    ("ph", "PH 期間最高票", "🚀", _lb_item_ph, 10),
+    ("ollama", "Ollama 下載增量", "🦙", _lb_item_ollama, 10),
 ]
+
+LEADERBOARD_TAB_LABELS = {
+    "github": "GitHub",
+    "hf_model": "HF 模型",
+    "hf_dataset": "HF 資料集",
+    "hf_space": "HF Spaces",
+    "hn": "Hacker News",
+    "openrouter": "OpenRouter",
+    "ph": "Product Hunt",
+    "ollama": "Ollama",
+}
 
 
 def _lb_block(emoji, title, items, render_item, top):
@@ -574,47 +612,74 @@ def _accumulation_section(leaderboards):
     """
     if not leaderboards:
         return "", ""
-    tabs, panels = [], []
-    for period_key, period_label in (("week", "本週"), ("month", "本月")):
-        pdata = leaderboards.get(period_key) or {}
-        sources = pdata.get("sources") or {}
-        cols = [_lb_block(emoji, title, sources[key], render_item, top)
-                for key, title, emoji, render_item, top in LEADERBOARD_SOURCES
-                if sources.get(key)]
-        if not cols:
+    source_tabs, source_panels = [], []
+    period_specs = (("week", "本週"), ("month", "本月"))
+    for source_key, title, emoji, render_item, top in LEADERBOARD_SOURCES:
+        available_periods = []
+        for period_key, period_label in period_specs:
+            pdata = leaderboards.get(period_key) or {}
+            items = ((pdata.get("sources") or {}).get(source_key) or [])[:top]
+            if items:
+                available_periods.append((period_key, period_label, pdata, items))
+        if not available_periods:
             continue
-        start, days = pdata.get("start", "?"), pdata.get("days", "?")
-        note = (f'<p class="sub period-note"><strong>{period_label}</strong> · '
-                f'統計自 {_esc(start)} 起（資料庫目前累積 {days} 天資料）。'
-                f'僅統計進過每日 Top N 的項目——這是快照資料庫的天生限制，不是全網統計。</p>')
-        panel_id = f"leaderboards-{period_key}"
-        tab_id = f"period-tab-{period_key}"
-        selected = not tabs
-        selected_value = "true" if selected else "false"
-        tab_index = "0" if selected else "-1"
-        tabs.append(
-            f'<a id="{tab_id}" class="sub-tab period-tab" role="tab" href="#{panel_id}" '
-            f'aria-controls="{panel_id}" aria-selected="{selected_value}" '
-            f'tabindex="{tab_index}">{period_label}</a>'
+
+        source_panel_id = f"leaderboard-source-{source_key}"
+        source_tab_id = f"leaderboard-source-tab-{source_key}"
+        source_selected = not source_tabs
+        source_tabs.append(
+            f'<a id="{source_tab_id}" class="sub-tab source-tab" role="tab" '
+            f'href="#{source_panel_id}" aria-controls="{source_panel_id}" '
+            f'aria-selected="{"true" if source_selected else "false"}" '
+            f'tabindex="{0 if source_selected else -1}">'
+            f'{_esc(LEADERBOARD_TAB_LABELS[source_key])}</a>'
         )
-        panels.append(
-            f'<section id="{panel_id}" class="lb-period" role="tabpanel" '
-            f'data-tab-panel="period" aria-labelledby="{tab_id}">{note}'
-            f'<div class="hf-cols">{"".join(cols)}</div></section>'
+
+        period_group = f"leaderboard-period-{source_key}"
+        period_tabs, period_panels = [], []
+        for period_key, period_label, pdata, items in available_periods:
+            panel_id = f"leaderboard-{source_key}-{period_key}"
+            tab_id = f"leaderboard-period-tab-{source_key}-{period_key}"
+            selected = not period_tabs
+            start, days = pdata.get("start", "?"), pdata.get("days", "?")
+            note = (f'<p class="sub period-note"><strong>{period_label}</strong> · '
+                    f'統計自 {_esc(start)} 起（資料庫目前累積 {days} 天資料）。'
+                    f'僅統計進過每日 Top N 的項目——這是快照資料庫的天生限制，不是全網統計。</p>')
+            period_tabs.append(
+                f'<a id="{tab_id}" class="sub-tab period-tab" role="tab" href="#{panel_id}" '
+                f'aria-controls="{panel_id}" aria-selected="{"true" if selected else "false"}" '
+                f'tabindex="{0 if selected else -1}">{period_label}</a>'
+            )
+            block = _lb_block(emoji, title, items, render_item, top)
+            period_panels.append(
+                f'<section id="{panel_id}" class="lb-period" role="tabpanel" '
+                f'data-tab-panel="{period_group}" aria-labelledby="{tab_id}">{note}'
+                f'<div class="hf-cols leaderboard-list">{block}</div></section>'
+            )
+        period_tabs_html = (
+            f'<div class="context-tabs period-tab-list" role="tablist" '
+            f'data-tab-group="{period_group}" data-parent-panel="{source_panel_id}" '
+            f'aria-label="{_esc(LEADERBOARD_TAB_LABELS[source_key])} 累積榜期間">'
+            + "".join(period_tabs) + '</div>'
         )
-    if not panels:
+        source_panels.append(
+            f'<section id="{source_panel_id}" class="leaderboard-source-panel" role="tabpanel" '
+            f'data-tab-panel="leaderboard-source" aria-labelledby="{source_tab_id}">'
+            f'{period_tabs_html}{"".join(period_panels)}</section>'
+        )
+    if not source_panels:
         return "", ""
-    period_tabs = (
-        '<div class="context-tabs period-tab-list" role="tablist" '
-        'data-tab-group="period" data-parent-panel="leaderboards" aria-label="累積榜期間">'
-        + "".join(tabs) + '</div>'
+    source_tabs_html = (
+        '<div class="context-tabs source-tab-list" role="tablist" '
+        'data-tab-group="leaderboard-source" data-parent-panel="leaderboards" '
+        'aria-label="累積榜資料來源">' + "".join(source_tabs) + '</div>'
     )
     section = (
         '<section id="leaderboards" class="tab-panel" role="tabpanel" '
         'data-tab-panel="page" aria-labelledby="tab-leaderboards">'
-        + "".join(panels) + '</section>'
+        + "".join(source_panels) + '</section>'
     )
-    return section, period_tabs
+    return section, source_tabs_html
 
 
 def _snapshot_banner_html(snapshot_date):
@@ -627,17 +692,31 @@ def _snapshot_banner_html(snapshot_date):
 def _date_switcher_html(history_dates, snapshot_date):
     """history_dates:所有已產生快照的日期(任意順序)。snapshot_date:None=在 index 頁,
     非 None=在 docs/history/<snapshot_date>.html 頁。GitHub Pages 有路徑前綴,只用相對路徑。"""
+    calendar_icon = (
+        '<svg class="calendar-icon" aria-hidden="true" viewBox="0 0 24 24">'
+        '<rect x="3" y="5" width="18" height="16" rx="2"></rect>'
+        '<path d="M8 3v4M16 3v4M3 10h18"></path></svg>'
+    )
     dates = sorted(set(history_dates), reverse=True)
     if not dates:
-        return '<span class="history-picker"><span>看歷史</span><span>尚無快照</span></span>'
-    opts = ['<option value="" disabled selected>選擇日期…</option>'] if snapshot_date is None else []
+        return ('<span class="history-picker">'
+                '<button type="button" class="history-trigger" aria-expanded="false" disabled>'
+                '看歷史</button><span class="calendar-shell" aria-disabled="true">'
+                f'{calendar_icon}<span class="calendar-empty">尚無快照</span></span></span>')
+    current_date = snapshot_date or dates[0]
+    opts = []
     for d in dates:
         href = f"{d}.html" if snapshot_date is not None else f"history/{d}.html"
-        sel = " selected" if d == snapshot_date else ""
+        sel = " selected" if d == current_date else ""
         opts.append(f'<option value="{_esc(href)}"{sel}>{_esc(d)}</option>')
-    return ('<span class="history-picker"><label for="history-date">看歷史</label>'
-            '<select id="history-date" class="date-switch" aria-label="切換日期查看歷史" '
-            'onchange="if(this.value) location.href=this.value">' + "".join(opts) + '</select></span>')
+    return ('<span class="history-picker">'
+            '<button type="button" class="history-trigger" aria-controls="history-date" '
+            'aria-expanded="false">看歷史</button>'
+            '<span class="calendar-shell" aria-disabled="true">'
+            f'{calendar_icon}<select id="history-date" class="date-switch" '
+            'aria-label="切換日期查看歷史" disabled '
+            'onchange="if(this.value) location.href=this.value">' + "".join(opts)
+            + '</select></span></span>')
 
 
 def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, ph_skipped=False,
@@ -805,6 +884,11 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     lb_section, period_tabs_html = _accumulation_section(leaderboards)
     banner_html = _snapshot_banner_html(snapshot_date)
     switcher_html = _date_switcher_html(history_dates, snapshot_date)
+    asset_prefix = "../assets" if snapshot_date else "assets"
+    sky_asset = f"{asset_prefix}/observatory-night-sky-4k.webp"
+    mobile_sky_asset = f"{asset_prefix}/observatory-night-sky-mobile-4k.webp"
+    page_css = (SITE_CSS.replace("__SKY_ASSET__", sky_asset)
+                .replace("__SKY_ASSET_MOBILE__", mobile_sky_asset))
     today_href = "../index.html#today" if snapshot_date else "#today"
     leaderboard_tab = ('<a id="tab-leaderboards" class="page-tab" role="tab" href="#leaderboards" '
                        'aria-controls="leaderboards" aria-selected="false" tabindex="-1">累積榜</a>') if lb_section else ""
@@ -829,10 +913,9 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             f'family=IBM+Plex+Mono:wght@400;500;600&amp;'
             f'family=Noto+Sans+TC:wght@400;500;600;700&amp;'
             f'family=Noto+Serif+TC:wght@500;600;700&amp;display=swap">'
-            f'<title>觀星台 · {date}</title><style>{SITE_CSS}</style></head><body>'
+            f'<title>觀星台 · {date}</title><style>{page_css}</style></head><body>'
             f'<a class="skip-link" href="#main-content">跳至主要內容</a>'
-            f'<div class="sky-art" aria-hidden="true">'
-            f'<span class="orbit orbit-top"></span><span class="orbit orbit-bottom"></span></div>'
+            f'<div class="sky-art" aria-hidden="true"></div>'
             f'<div class="topbar" aria-hidden="true"></div>'
             f'{banner_html}'
             f'<header><div class="kicker">每日趨勢總覽 · 純資料靜態頁</div>'

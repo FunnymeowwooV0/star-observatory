@@ -5,6 +5,7 @@
 """
 import html as html_lib
 import os
+import struct
 import sys
 import unittest
 
@@ -86,6 +87,14 @@ def _source_data():
 _UNSET = object()
 
 
+def _png_size(path):
+    with open(path, "rb") as image:
+        self_header = image.read(24)
+    if self_header[:8] != b"\x89PNG\r\n\x1a\n":
+        raise AssertionError(f"不是 PNG:{path}")
+    return struct.unpack(">II", self_header[16:24])
+
+
 def _render(*, errors=None, snapshot_date=None, hn=_UNSET, leaderboards=_UNSET):
     gh, hf, sample_leaderboards = _sample_data()
     sources = _source_data()
@@ -162,20 +171,59 @@ class TestRenderHtmlTaskA(unittest.TestCase):
             self.assertIsNotNone(panel)
             self.assertFalse(panel.has_attr("hidden"))
 
-        self.assertEqual(
-            [node["data-tab-group"] for node in soup.select('[data-tab-group][role="tablist"]')],
-            ["page", "source", "period"],
-        )
+        groups = [node["data-tab-group"] for node in soup.select('[data-tab-group][role="tablist"]')]
+        self.assertEqual(groups[:3], ["page", "source", "leaderboard-source"])
+        self.assertEqual(set(groups[3:]), {
+            "leaderboard-period-github",
+            "leaderboard-period-hf_model",
+            "leaderboard-period-hn",
+            "leaderboard-period-openrouter",
+            "leaderboard-period-ph",
+            "leaderboard-period-ollama",
+        })
         self.assertEqual(soup.select_one('[data-tab-group="source"]')["data-parent-panel"], "today")
-        self.assertEqual(soup.select_one('[data-tab-group="period"]')["data-parent-panel"], "leaderboards")
+        self.assertEqual(
+            soup.select_one('[data-tab-group="leaderboard-source"]')["data-parent-panel"],
+            "leaderboards",
+        )
+        for tablist in soup.select('[data-tab-group^="leaderboard-period-"]'):
+            source_key = tablist["data-tab-group"].removeprefix("leaderboard-period-")
+            self.assertEqual(
+                tablist["data-parent-panel"],
+                f"leaderboard-source-{source_key}",
+            )
 
         script = soup.select_one("script[data-tab-controller]")
         self.assertIsNotNone(script)
         script_text = script.get_text()
         for token in ("data-tab-group", "data-parent-panel", "data-tab-panel",
                       "historyTargetId", "history.pushState", "popstate", "hashchange",
+                      "selectAncestors", "groupForTarget",
                       "ArrowLeft", "ArrowRight",
                       "Home", "End", "scrollIntoView"):
+            self.assertIn(token, script_text)
+
+    def test_history_picker_displays_latest_snapshot_date(self):
+        soup = BeautifulSoup(_render(), "html.parser")
+        selected = soup.select_one("#history-date option[selected]")
+        trigger = soup.select_one("button.history-trigger")
+        calendar = soup.select_one(".calendar-shell")
+        picker = soup.select_one("#history-date")
+
+        self.assertIsNotNone(selected)
+        self.assertEqual(selected.get_text(strip=True), "2026-07-22")
+        self.assertEqual(selected.get("value"), "history/2026-07-22.html")
+        self.assertNotIn("選擇日期", picker.get_text())
+        self.assertIsNotNone(trigger)
+        self.assertIsNotNone(calendar)
+        self.assertEqual(trigger.get_text(strip=True), "看歷史")
+        self.assertEqual(trigger["aria-expanded"], "false")
+        self.assertTrue(picker.has_attr("disabled"))
+        self.assertEqual(calendar["aria-disabled"], "true")
+        self.assertIsNotNone(calendar.select_one("svg.calendar-icon"))
+
+        script_text = soup.select_one("script[data-tab-controller]").get_text()
+        for token in ("historyTrigger", "historySelect", "aria-expanded", "is-active"):
             self.assertIn(token, script_text)
 
     def test_today_has_eight_independent_source_tabs_and_panels(self):
@@ -201,19 +249,44 @@ class TestRenderHtmlTaskA(unittest.TestCase):
             self.assertFalse(panel.has_attr("hidden"))
         self.assertIsNone(soup.select_one("#hugging-face"))
 
-    def test_accumulation_has_period_tabs_without_redundant_heading(self):
+    def test_accumulation_has_source_tabs_with_period_tabs_inside_each_source(self):
         soup = BeautifulSoup(_render(), "html.parser")
-        tablist = soup.select_one('[data-tab-group="period"][role="tablist"]')
-        tabs = tablist.select(':scope > [role="tab"]') if tablist else []
+        source_list = soup.select_one('[data-tab-group="leaderboard-source"][role="tablist"]')
+        source_tabs = source_list.select(':scope > [role="tab"]') if source_list else []
 
-        self.assertEqual([tab["aria-controls"] for tab in tabs],
-                         ["leaderboards-week", "leaderboards-month"])
-        self.assertEqual([tab.get_text(strip=True) for tab in tabs], ["本週", "本月"])
-        for tab in tabs:
-            panel = soup.select_one(f'#{tab["aria-controls"]}[data-tab-panel="period"]')
+        self.assertEqual([tab["aria-controls"] for tab in source_tabs], [
+            "leaderboard-source-github",
+            "leaderboard-source-hf_model",
+            "leaderboard-source-hn",
+            "leaderboard-source-openrouter",
+            "leaderboard-source-ph",
+            "leaderboard-source-ollama",
+        ])
+        self.assertEqual([tab.get_text(" ", strip=True) for tab in source_tabs], [
+            "GitHub", "HF 模型", "Hacker News", "OpenRouter", "Product Hunt", "Ollama",
+        ])
+        for tab in source_tabs:
+            panel = soup.select_one(
+                f'#{tab["aria-controls"]}[data-tab-panel="leaderboard-source"]'
+            )
             self.assertIsNotNone(panel)
             self.assertEqual(panel["aria-labelledby"], tab["id"])
             self.assertFalse(panel.has_attr("hidden"))
+
+        github_periods = soup.select(
+            '#leaderboard-source-github [data-tab-group="leaderboard-period-github"] '
+            '> [role="tab"]'
+        )
+        self.assertEqual([tab["aria-controls"] for tab in github_periods], [
+            "leaderboard-github-week", "leaderboard-github-month",
+        ])
+        self.assertEqual([tab.get_text(strip=True) for tab in github_periods], ["本週", "本月"])
+        for tab in github_periods:
+            panel = soup.select_one(
+                f'#{tab["aria-controls"]}[data-tab-panel="leaderboard-period-github"]'
+            )
+            self.assertIsNotNone(panel)
+            self.assertEqual(panel["aria-labelledby"], tab["id"])
         text = soup.select_one("#leaderboards").get_text(" ", strip=True)
         self.assertNotIn("累積排行榜", text)
         self.assertNotIn("本週累積榜", text)
@@ -226,7 +299,8 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertEqual([tab["aria-controls"] for tab in tabs], ["today"])
         self.assertIsNone(soup.select_one("#leaderboards"))
         self.assertIsNotNone(soup.select_one('#today[role="tabpanel"]'))
-        self.assertIsNone(soup.select_one('[data-tab-group="period"]'))
+        self.assertIsNone(soup.select_one('[data-tab-group="leaderboard-source"]'))
+        self.assertIsNone(soup.select_one('[data-tab-group^="leaderboard-period-"]'))
 
     def test_github_top_ten_is_one_clickable_card_per_repo(self):
         gh, _hf, _leaderboards = _sample_data()
@@ -338,6 +412,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         soup = BeautifulSoup(_render(), "html.parser")
         rows = soup.select("#leaderboards ol.link-card-list > li.link-card-item")
 
+        self.assertEqual([source[4] for source in ft.LEADERBOARD_SOURCES], [10] * 8)
         self.assertEqual(len(rows), 7)
         for row in rows:
             self.assertEqual(len(row.find_all("a", class_="link-card", recursive=False)), 1)
@@ -393,7 +468,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("color-scheme:light dark", css)
         self.assertIn("text-wrap:balance", css)
 
-    def test_night_sky_visual_system_uses_free_fonts_grain_and_dusk(self):
+    def test_night_sky_visual_system_uses_approved_background_asset(self):
         soup = BeautifulSoup(_render(), "html.parser")
         css = soup.style.get_text()
         font_urls = [link.get("href", "") for link in soup.select('link[rel="stylesheet"]')]
@@ -401,16 +476,70 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertTrue(any("fonts.googleapis.com" in url for url in font_urls))
         for family in ("Noto Serif TC", "Noto Sans TC", "IBM Plex Mono"):
             self.assertIn(family, css)
-        for token in ("--sky-top:#08206b", "--sky-mid:#07184f", "--galaxy:#1760e8",
-                      "--dusk-mauve:#66506d", "--dusk-apricot:#d7865b", "--paper:#f2e9d2",
-                      "feTurbulence", "body::before", "body::after", ".sky-art::before",
-                      ".sky-art::after", ".orbit::before", ".orbit::after",
-                      "filter:blur(", ".orbit-top", ".orbit-bottom"):
+        for token in ("--sky-top:#08206b", "--sky-mid:#07184f", "--paper:#f2e9d2",
+                      'background-image:url("assets/observatory-night-sky-4k.webp")',
+                      'background-image:url("assets/observatory-night-sky-mobile-4k.webp")',
+                      "background-size:100% 100%", "background-repeat:no-repeat"):
             self.assertIn(token, css)
-        self.assertNotIn("box-shadow:0 0 0 20px", css)
-        self.assertGreaterEqual(css.count("radial-gradient("), 7)
-        self.assertIn("linear-gradient(180deg", css)
+        self.assertNotIn("feTurbulence", css)
+        self.assertNotIn("body::before", css)
+        self.assertNotIn("body::after", css)
+        self.assertIsNone(soup.select_one(".orbit"))
         self.assertIsNotNone(soup.select_one('.sky-art[aria-hidden="true"]'))
+
+        history_css = BeautifulSoup(
+            _render(snapshot_date="2026-07-22"), "html.parser"
+        ).style.get_text()
+        self.assertIn(
+            'background-image:url("../assets/observatory-night-sky-4k.webp")',
+            history_css,
+        )
+        self.assertIn(
+            'background-image:url("../assets/observatory-night-sky-mobile-4k.webp")',
+            history_css,
+        )
+
+        asset = os.path.join(
+            os.path.dirname(__file__), "..", "docs", "assets",
+            "observatory-night-sky-4k.webp",
+        )
+        self.assertTrue(os.path.isfile(asset))
+        self.assertGreater(os.path.getsize(asset), 100_000)
+        mobile_asset = os.path.join(
+            os.path.dirname(__file__), "..", "docs", "assets",
+            "observatory-night-sky-mobile-4k.webp",
+        )
+        self.assertTrue(os.path.isfile(mobile_asset))
+        self.assertGreater(os.path.getsize(mobile_asset), 100_000)
+
+        source_sizes = {
+            "observatory-night-sky-4k.png": (3840, 2160),
+            "observatory-night-sky-mobile-4k.png": (2160, 3840),
+            "observatory-night-sky-4k-noise.png": (3840, 2160),
+            "observatory-night-sky-mobile-4k-noise.png": (2160, 3840),
+        }
+        for filename, expected_size in source_sizes.items():
+            with self.subTest(filename=filename):
+                source = os.path.join(
+                    os.path.dirname(__file__), "..", "design-assets", filename,
+                )
+                self.assertEqual(_png_size(source), expected_size)
+
+    def test_desktop_navigation_matches_approved_full_width_editorial_layout(self):
+        css = BeautifulSoup(_render(), "html.parser").style.get_text()
+
+        for token in (
+            "width:90%;max-width:1384px",
+            ".page-nav{display:grid;grid-template-columns:auto minmax(0,1fr)",
+            ".history-picker{grid-column:2;justify-self:start;display:flex",
+            ".calendar-shell.is-active",
+            '.page-tab[aria-selected="true"]::after',
+            ".source-tab-list{width:100%",
+            ".source-tab-list>.source-tab{flex:1 1 0",
+            "background:rgba(4,15,54,.18)",
+        ):
+            self.assertIn(token, css)
+        self.assertNotIn(".tab-list{display:flex;align-items:center;border:1px", css)
 
     def test_approved_editorial_card_and_mobile_tab_css_is_present(self):
         css = BeautifulSoup(_render(), "html.parser").style.get_text()
@@ -421,6 +550,10 @@ class TestRenderHtmlTaskA(unittest.TestCase):
                       "-webkit-line-clamp:2", "min-height:44px"):
             self.assertIn(token, css)
         self.assertIn("font-variant-numeric:tabular-nums;white-space:nowrap", css)
+        self.assertIn(
+            ".source-tab-list>.source-tab{flex:0 0 auto;min-width:max-content}",
+            css,
+        )
         self.assertNotIn(".hf-col{background:var(--card);border:1px", css)
 
         soup = BeautifulSoup(_render(), "html.parser")
