@@ -402,8 +402,11 @@ class TestRenderHtmlTaskA(unittest.TestCase):
             self.assertIn(family, css)
         for token in ("--sky-top:#08206b", "--sky-mid:#07184f", "--galaxy:#1760e8",
                       "--dusk-mauve:#66506d", "--dusk-apricot:#d7865b", "--paper:#f2e9d2",
-                      "feTurbulence", "body::before", "body::after", ".orbit-top", ".orbit-bottom"):
+                      "feTurbulence", "body::before", "body::after", ".sky-art::before",
+                      ".sky-art::after", ".orbit::before", ".orbit::after",
+                      "filter:blur(", ".orbit-top", ".orbit-bottom"):
             self.assertIn(token, css)
+        self.assertNotIn("box-shadow:0 0 0 20px", css)
         self.assertGreaterEqual(css.count("radial-gradient("), 7)
         self.assertIn("linear-gradient(180deg", css)
         self.assertIsNotNone(soup.select_one('.sky-art[aria-hidden="true"]'))
@@ -416,6 +419,7 @@ class TestRenderHtmlTaskA(unittest.TestCase):
                       "grid-template-columns:repeat(2,minmax(0,1fr))",
                       "-webkit-line-clamp:2", "min-height:44px"):
             self.assertIn(token, css)
+        self.assertIn("font-variant-numeric:tabular-nums;white-space:nowrap", css)
         self.assertNotIn(".hf-col{background:var(--card);border:1px", css)
 
         soup = BeautifulSoup(_render(), "html.parser")
