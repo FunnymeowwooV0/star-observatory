@@ -159,3 +159,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-07-23,8,schollz/croc,739,37804,Go,https://github.com/schollz/croc,Easily and securely send things from one computer to another 🐊 📦
 2026-07-23,9,rohitg00/ai-engineering-from-scratch,652,42439,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
 2026-07-23,10,jamiepine/voicebox,557,45932,TypeScript,https://github.com/jamiepine/voicebox,"The open-source AI voice studio. Clone, dictate, create."
+2026-07-24,1,koala73/worldmonitor,3175,71933,TypeScript,https://github.com/koala73/worldmonitor,"Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface"
+2026-07-24,2,block/buzz,2162,7349,Rust,https://github.com/block/buzz,A hive mind communication platform
+2026-07-24,3,diegosouzapw/OmniRoute,1929,27474,TypeScript,https://github.com/diegosouzapw/OmniRoute,"Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors"
+2026-07-24,4,ruvnet/RuView,1708,85324,Rust,https://github.com/ruvnet/RuView,"π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video."
+2026-07-24,5,ComposioHQ/awesome-claude-skills,636,69546,Python,https://github.com/ComposioHQ/awesome-claude-skills,"A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows"
+2026-07-24,6,Automattic/harper,624,12439,Rust,https://github.com/Automattic/harper,"Offline, privacy-first grammar checker. Fast, open-source, Rust-powered"
+2026-07-24,7,chrislgarry/Apollo-11,592,71160,Assembly,https://github.com/chrislgarry/Apollo-11,Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.
+2026-07-24,8,Pumpkin-MC/Pumpkin,565,8994,Rust,https://github.com/Pumpkin-MC/Pumpkin,Empowering everyone to host fast and efficient Minecraft servers.
+2026-07-24,9,likec4/likec4,472,4763,TypeScript,https://github.com/likec4/likec4,"Visualize, collaborate, and evolve the software architecture with always actual and live diagrams from your code"
+2026-07-24,10,shiyu-coder/Kronos,401,33161,Python,https://github.com/shiyu-coder/Kronos,Kronos: A Foundation Model for the Language of Financial Markets
