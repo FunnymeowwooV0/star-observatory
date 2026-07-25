@@ -179,3 +179,13 @@ date,rank,title,points,comments,hn_url,url
 2026-07-25,8,Opus 5 is currently #1 on Artificial Analysis Intelligence Leaderboard,304,169,https://news.ycombinator.com/item?id=49040741,https://artificialanalysis.ai/models
 2026-07-25,9,IRGC claims it destroyed Amazon's Bahrain data center,300,360,https://news.ycombinator.com/item?id=49033240,https://houseofsaud.com/irgc-claims-destroyed-amazon-bahrain-data-center/
 2026-07-25,10,Android May Soon Restrict On-Device ADB,253,132,https://news.ycombinator.com/item?id=49045159,https://kitsumed.github.io/blog/posts/android-may-soon-restrict-on-device-adb/
+2026-07-25,1,Claude Opus 5,1578,920,https://news.ycombinator.com/item?id=49038433,https://www.anthropic.com/news/claude-opus-5
+2026-07-25,2,India's first privately-developed rocket reaches orbit on debut launch,618,176,https://news.ycombinator.com/item?id=48973835,https://arstechnica.com/space/2026/07/indias-first-privately-developed-rocket-reaches-orbit-on-dramatic-debut-launch/
+2026-07-25,3,"Nvidia, Microsoft, Meta warn against overregulating open-weight models",615,271,https://news.ycombinator.com/item?id=49035303,https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html
+2026-07-25,4,My security camera shipped a GitHub admin token in its login page,596,193,https://news.ycombinator.com/item?id=49034292,https://hhh.hn/hanwha-github-token/
+2026-07-25,5,Firefox Containers Preview,356,101,https://news.ycombinator.com/item?id=48995409,https://blog.mozilla.org/en/firefox/firefox-containers-preview/
+2026-07-25,6,Postgres LISTEN/NOTIFY actually scales,314,59,https://news.ycombinator.com/item?id=49040296,https://www.dbos.dev/blog/postgres-listen-notify-scalability
+2026-07-25,7,Half-Life 2 running natively on HaikuOS,308,57,https://news.ycombinator.com/item?id=49034868,https://discuss.haiku-os.org/t/haiku-nvidia-porting-nvidia-driver-for-turing-gpus/16520?page=18
+2026-07-25,8,Opus 5 is currently #1 on Artificial Analysis Intelligence Leaderboard,304,170,https://news.ycombinator.com/item?id=49040741,https://artificialanalysis.ai/models
+2026-07-25,9,IRGC claims it destroyed Amazon's Bahrain data center,300,361,https://news.ycombinator.com/item?id=49033240,https://houseofsaud.com/irgc-claims-destroyed-amazon-bahrain-data-center/
+2026-07-25,10,Android May Soon Restrict On-Device ADB,261,140,https://news.ycombinator.com/item?id=49045159,https://kitsumed.github.io/blog/posts/android-may-soon-restrict-on-device-adb/
