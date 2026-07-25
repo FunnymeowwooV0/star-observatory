@@ -5,9 +5,7 @@ on:
     - cron: "0 1 * * 1"   # 每週一 01:00 UTC = 台北週一 09:00
   workflow_dispatch:
 
-permissions:
-  contents: write
-  issues: write
+permissions: {}
 
 concurrency:
   group: trend-update
@@ -16,29 +14,36 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - run: pip install --require-hashes -r requirements.lock
       - name: 抓本週榜並產檔
         run: python scripts/fetch_trends.py --mode weekly
       - name: 提交資料庫
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "trend-radar-bot"
+          git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add weekly data
           if git diff --cached --quiet; then
             echo "沒有變更,略過提交"
           else
             git commit -m "chore: 每週趨勢 $(TZ=Asia/Taipei date +%Y-W%V)"
-            git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-            git push
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
           fi
       - name: 開 Issue(= email 摘要)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           printf '\n\ncc @FunnymeowwooV0\n' >> .issue_body.md
           gh issue create \

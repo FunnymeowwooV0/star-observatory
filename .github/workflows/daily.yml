@@ -5,9 +5,8 @@ on:
     - cron: "0 1 * * *"   # 每天 01:00 UTC = 台北 09:00
   workflow_dispatch:        # 允許手動觸發
 
-permissions:
-  contents: write
-  issues: write
+# 預設不給任何權限;只在需要的 job 明確提權(最小權限)。
+permissions: {}
 
 concurrency:
   group: trend-update       # 與每週榜共用,避免同時 push 撞車
@@ -16,31 +15,38 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write       # 提交資料庫(push)
+      issues: write         # 開 Issue(= email 摘要)
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false   # 不把 GITHUB_TOKEN 留在 .git/config
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - run: pip install --require-hashes -r requirements.lock
       - name: 抓榜並產檔
         env:
           PH_TOKEN: ${{ secrets.PH_TOKEN }}
         run: python scripts/fetch_trends.py --mode daily
       - name: 提交資料庫
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "trend-radar-bot"
+          git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md docs archive data
           if git diff --cached --quiet; then
             echo "沒有變更,略過提交"
           else
             git commit -m "chore: 每日趨勢 $(TZ=Asia/Taipei date +%Y-%m-%d)"
-            git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-            git push
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
           fi
       - name: 開 Issue(= email 摘要)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           printf '\n\ncc @FunnymeowwooV0\n' >> .issue_body.md
           gh issue create \

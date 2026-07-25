@@ -78,7 +78,7 @@ def _fetch_with_retry(url, as_json=False, retries=1):
 
 def _cdx_snapshots(url_pattern, frm, to):
     """查 Wayback CDX,回 {date 'YYYY-MM-DD': timestamp} dict(collapse=timestamp:8,約一天一筆)。"""
-    cdx_url = (f"http://web.archive.org/cdx/search/cdx?url={url_pattern}"
+    cdx_url = (f"https://web.archive.org/cdx/search/cdx?url={url_pattern}"
                f"&from={frm}&to={to}&output=json&filter=statuscode:200&collapse=timestamp:8")
     data = _fetch_with_retry(cdx_url, as_json=True)
     if not data or len(data) < 2:

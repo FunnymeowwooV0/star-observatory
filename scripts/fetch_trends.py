@@ -23,7 +23,7 @@ import datetime as dt
 import os
 import re
 import sys
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 
 import html as _html
 
@@ -203,6 +203,51 @@ def _esc(s):
     return _html.escape(str(s if s is not None else ""))
 
 
+# 只允許 https 外部連結(本專案所有外部來源皆為 https;Wayback 亦已改 https)。
+_SAFE_URL_SCHEMES = frozenset({"https"})
+# 解析前先剝除的字元:C0 控制字元(0x00–0x1F,含 \t\r\n)+ DEL(0x7F)。
+_URL_STRIP_RE = re.compile("[" + "".join(chr(c) for c in range(0x20)) + "\x7f]")
+
+
+def safe_external_url(url):
+    """把外部來源的 URL 收斂成可安全放進 href 的值;不安全或無法解析→回空字串。
+
+    只放行 https 絕對網址。明確阻擋 javascript:/data:/vbscript:/file:/mailto: 等任何
+    非 https scheme、protocol-relative(//host)、空 scheme/相對路徑、帶 userinfo
+    (user[:pass]@host)。先移除 C0/DEL 控制字元(含內嵌 \\t\\r\\n 與 NUL)並 strip 前後
+    空白後再判定,擋大小寫混合與空白/控制字元 evasion。呼叫端在回空字串時已有「不產生
+    link、輸出靜態卡」的分支,直接沿用。
+    """
+    if not url:
+        return ""
+    try:
+        cleaned = _URL_STRIP_RE.sub("", str(url)).strip()
+        if not cleaned:
+            return ""
+        parts = urlsplit(cleaned)
+        if parts.scheme.lower() not in _SAFE_URL_SCHEMES:
+            return ""
+        # 必須有 host,且不得帶 userinfo(user[:pass]@host)。
+        if not parts.hostname:
+            return ""
+        if parts.username is not None or parts.password is not None or "@" in parts.netloc:
+            return ""
+        return cleaned
+    except (ValueError, TypeError):
+        return ""
+
+
+def _csv_safe_cell(value):
+    """中和試算表公式注入:字串 cell 若(去掉前導空白/tab/CR/LF後)以 = + - @ 開頭,
+    前綴單引號讓 Excel/試算表當純文字。非字串(int/None 等)原樣回傳,不影響數字欄。"""
+    if not isinstance(value, str):
+        return value
+    stripped = value.lstrip("\t\r\n ")
+    if stripped and stripped[0] in ("=", "+", "-", "@"):
+        return "'" + value
+    return value
+
+
 GH_CATEGORY_RULES = (
     ("AI／LLM", {"ai", "llm", "model", "agent", "rag", "embedding", "prompt", "voice", "speech"}),
     ("資料與監測", {"monitor", "monitoring", "dashboard", "analytics", "observability", "tracking",
@@ -240,6 +285,7 @@ def _link_card_body(i, title, meta, mark="", desc=""):
 def _link_card_item(i, title, meta, url, mark="", desc=""):
     """輸出整列連結卡；沒有目的地時保留同版式但不產生空連結。"""
     body = _link_card_body(i, title, meta, mark, desc)
+    url = safe_external_url(url)
     if url:
         return (f'<li class="link-card-item"><a class="link-card" href="{_esc(url)}" '
                 f'target="_blank" rel="noopener">{body}</a></li>')
@@ -259,6 +305,7 @@ def _ranking_card(i, title, url, *, badge="", desc="", meta="", primary="",
             f'{desc_html}</span><span class="card-metrics">{meta_html}'
             f'<span class="card-stars">{_esc(primary)}{label_html}</span></span>')
     classes = "card ranking-card" + (f" {extra_class}" if extra_class else "")
+    url = safe_external_url(url)
     if url:
         return (f'<a class="{classes}" href="{_esc(url)}" target="_blank" '
                 f'rel="noopener">{body}</a>')
@@ -825,8 +872,8 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         cmts = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
         mark = _mark_html(marks.get("hn", {}).get(it["url"]))
         body = _link_card_body(i, it["title"], f'▲ {pts} · 💬 {cmts}', mark)
-        url = it.get("url") or ""
-        hn_url = it.get("hn_url") or ""
+        url = safe_external_url(it.get("url") or "")
+        hn_url = safe_external_url(it.get("hn_url") or "")
         if url:
             main = (f'<a class="link-card" href="{_esc(url)}" target="_blank" '
                     f'rel="noopener">{body}</a>')
@@ -844,13 +891,13 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
         score = f'{it["score"]:,}' if isinstance(it["score"], int) else "—"
         comments = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
         body = _link_card_body(i, it["title"], f'▲ {score} · 💬 {comments}')
-        permalink = it.get("permalink") or ""
+        permalink = safe_external_url(it.get("permalink") or "")
         if permalink:
             main = (f'<a class="link-card" href="{_esc(permalink)}" target="_blank" '
                     f'rel="noopener">{body}</a>')
         else:
             main = f'<span class="link-card link-card-static">{body}</span>'
-        external_url = it.get("external_url")
+        external_url = safe_external_url(it.get("external_url"))
         discussion = ""
         if external_url and external_url != permalink:
             discussion = (f'<a class="hn-discussion" href="{_esc(external_url)}" target="_blank" '
@@ -984,6 +1031,14 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                 + "；".join(_esc(e) for e in errors)
                 + '。可稍後重新整理；若持續發生，請查看 Actions 執行紀錄。</div>') if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
+            f'<meta http-equiv="Content-Security-Policy" content="'
+            f"default-src 'self'; "
+            f"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            f"font-src https://fonts.gstatic.com; "
+            f"img-src 'self' data:; "
+            f"script-src 'unsafe-inline'; "
+            f"base-uri 'none'; form-action 'none'; frame-ancestors 'none'\">"
+            f'<meta name="referrer" content="no-referrer">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="theme-color" media="(prefers-color-scheme: light)" content="#08206b">'
             f'<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#061747">'
@@ -1048,7 +1103,7 @@ def append_csv(path, header, rows):
         w = csv.writer(f)
         if not exists:
             w.writerow(header)
-        w.writerows(rows)
+        w.writerows([_csv_safe_cell(c) for c in row] for row in rows)
 
 
 def _csv_int(s):
