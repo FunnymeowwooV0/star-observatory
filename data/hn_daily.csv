@@ -159,3 +159,13 @@ date,rank,title,points,comments,hn_url,url
 2026-07-24,8,The arguments against open source AI are bad,225,157,https://news.ycombinator.com/item?id=49024643,https://tombedor.dev/arguments-against-open-source-ai-are-very-bad/
 2026-07-24,9,Why Software Factories Fail (or: harness engineering is not enough),219,170,https://news.ycombinator.com/item?id=49023019,https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/wsff.md
 2026-07-24,10,The Beam Engine,205,63,https://news.ycombinator.com/item?id=49007221,https://glinscott.github.io/beam-engine/
+2026-07-25,1,Claude Opus 5,1385,755,https://news.ycombinator.com/item?id=49038433,https://www.anthropic.com/news/claude-opus-5
+2026-07-25,2,"If coding has been solved, why does software keep getting worse?",615,481,https://news.ycombinator.com/item?id=49033004,https://ptrchm.com/posts/nothing-works-and-everyone-is-euphoric/
+2026-07-25,3,"Nvidia, Microsoft, Meta warn against overregulating open-weight models",552,248,https://news.ycombinator.com/item?id=49035303,https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html
+2026-07-25,4,India's first privately-developed rocket reaches orbit on debut launch,537,152,https://news.ycombinator.com/item?id=48973835,https://arstechnica.com/space/2026/07/indias-first-privately-developed-rocket-reaches-orbit-on-dramatic-debut-launch/
+2026-07-25,5,My security camera shipped a GitHub admin token in its login page,535,184,https://news.ycombinator.com/item?id=49034292,https://hhh.hn/hanwha-github-token/
+2026-07-25,6,Be skeptical of OpenAI's rogue hacker agent story,458,261,https://news.ycombinator.com/item?id=49038060,https://www.theguardian.com/technology/2026/jul/24/openai-rogue-hacker
+2026-07-25,7,Government orders GitHub to remove Bluetooth-based chat app Bitchat: Jack Dorsey,408,297,https://news.ycombinator.com/item?id=49036433,https://www.thehindu.com/news/national/government-orders-github-to-remove-bluetooth-based-chat-app-bitchat-over-security-concerns-jack-dorsey/article71262049.ece
+2026-07-25,8,Half-Life 2 running natively on HaikuOS,284,53,https://news.ycombinator.com/item?id=49034868,https://discuss.haiku-os.org/t/haiku-nvidia-porting-nvidia-driver-for-turing-gpus/16520?page=18
+2026-07-25,9,IRGC claims it destroyed Amazon's Bahrain data center,265,337,https://news.ycombinator.com/item?id=49033240,https://houseofsaud.com/irgc-claims-destroyed-amazon-bahrain-data-center/
+2026-07-25,10,Firefox Containers Preview,253,89,https://news.ycombinator.com/item?id=48995409,https://blog.mozilla.org/en/firefox/firefox-containers-preview/
