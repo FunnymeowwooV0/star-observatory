@@ -3,3 +3,17 @@ __pycache__/
 *.pyc
 CLAUDE.md
 
+# 公開後防護:內部文件與金鑰(2026-07-25 資安掃描建議)
+.env*
+*.key
+*.pem
+.DS_Store
+交接_*
+研究_*
+開工單_*
+網頁修正提案*
+goals/
+roadmap.md
+AGENTS.md
+docs/superpowers/
+_內部檔案備份*/
