@@ -229,3 +229,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-07-27,8,anthropics/claude-cookbooks,379,50308,Jupyter Notebook,https://github.com/anthropics/claude-cookbooks,A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.
 2026-07-27,9,Pumpkin-MC/Pumpkin,338,10065,Rust,https://github.com/Pumpkin-MC/Pumpkin,Empowering everyone to host fast and efficient Minecraft servers.
 2026-07-27,10,shiyu-coder/Kronos,321,34235,Python,https://github.com/shiyu-coder/Kronos,Kronos: A Foundation Model for the Language of Financial Markets
+2026-07-28,1,permissionlesstech/bitchat,2346,32451,Swift,https://github.com/permissionlesstech/bitchat,"bluetooth mesh chat, IRC vibes"
+2026-07-28,2,alibaba/open-code-review,979,15014,Go,https://github.com/alibaba/open-code-review,"Open-source & free — Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible."
+2026-07-28,3,pbakaus/impeccable,847,51690,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-07-28,4,yorukot/superfile,600,20990,Go,https://github.com/yorukot/superfile,Pretty fancy and modern terminal file manager
+2026-07-28,5,moeru-ai/airi,572,44180,TypeScript,https://github.com/moeru-ai/airi,"💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported."
+2026-07-28,6,amnezia-vpn/amnezia-client,515,13927,C++,https://github.com/amnezia-vpn/amnezia-client,Amnezia VPN Client (Desktop+Mobile)
+2026-07-28,7,shiyu-coder/Kronos,441,34621,Python,https://github.com/shiyu-coder/Kronos,Kronos: A Foundation Model for the Language of Financial Markets
+2026-07-28,8,bradautomates/claude-video,434,11252,Python,https://github.com/bradautomates/claude-video,"Give Claude the ability to watch any video. /watch downloads, extracts frames, transcribes, hands it all to Claude."
+2026-07-28,9,opengeos/GeoLibre,420,2820,TypeScript,https://github.com/opengeos/GeoLibre,"A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web browser, on the desktop, on mobile, and inside Jupyter notebooks."
+2026-07-28,10,NanmiCoder/MediaCrawler,362,58423,Python,https://github.com/NanmiCoder/MediaCrawler,小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫

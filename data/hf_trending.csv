@@ -404,3 +404,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-07-27,Spaces,8,conradlocke/krea2-identity-edit,138,,Image Editing,https://huggingface.co/spaces/conradlocke/krea2-identity-edit
 2026-07-27,Spaces,9,pliny-the-prompter/obliteratus,459,,Chatbots,https://huggingface.co/spaces/pliny-the-prompter/obliteratus
 2026-07-27,Spaces,10,selfit-camera/Omni-Image-Editor,2226,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-07-28,模型,1,moonshotai/Kimi-K3,6623,2850,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3
+2026-07-28,模型,2,baidu/Unlimited-OCR,3343,2645773,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR
+2026-07-28,模型,3,poolside/Laguna-S-2.1,762,63605,text-generation,https://huggingface.co/poolside/Laguna-S-2.1
+2026-07-28,模型,4,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,761,634146,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-07-28,模型,5,upstage/Solar-Open2-250B,633,3761,text-generation,https://huggingface.co/upstage/Solar-Open2-250B
+2026-07-28,模型,6,Nanbeige/Nanbeige4.2-3B,495,16518,text-generation,https://huggingface.co/Nanbeige/Nanbeige4.2-3B
+2026-07-28,模型,7,microsoft/Mage-Flow,393,1691,text-to-image,https://huggingface.co/microsoft/Mage-Flow
+2026-07-28,模型,8,thinkingmachines/Inkling,1607,36196,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling
+2026-07-28,模型,9,zai-org/GLM-5.2,4554,1003547,text-generation,https://huggingface.co/zai-org/GLM-5.2
+2026-07-28,模型,10,Kwaipilot/KAT-Coder-V2.5-Dev,246,5312,text-generation,https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev
+2026-07-28,資料集,1,HuggingFaceCode/stack-v3-train,192,58644,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-07-28,資料集,2,SupraLabs/reasoning-corpus-4K-5M-v1,133,2718,,https://huggingface.co/datasets/SupraLabs/reasoning-corpus-4K-5M-v1
+2026-07-28,資料集,3,Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset,96,8077,,https://huggingface.co/datasets/Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset
+2026-07-28,資料集,4,FlyRank/internship-warehouse,364,6281,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-07-28,資料集,5,r0b0tlab/qwen3.8-max-distillation-50k,40,492,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-distillation-50k
+2026-07-28,資料集,6,Glint-Research/Fable-5-traces,673,57093,,https://huggingface.co/datasets/Glint-Research/Fable-5-traces
+2026-07-28,資料集,7,greghavens/kimi-k3-coding-and-debugging-traces,46,3762,,https://huggingface.co/datasets/greghavens/kimi-k3-coding-and-debugging-traces
+2026-07-28,資料集,8,unstonio/pixelgpt-24x24-20k,22,1435,,https://huggingface.co/datasets/unstonio/pixelgpt-24x24-20k
+2026-07-28,資料集,9,openbmb/UltraX-Preview,266,7166,,https://huggingface.co/datasets/openbmb/UltraX-Preview
+2026-07-28,資料集,10,markov-ai/gaming-500-hours,219,42012,,https://huggingface.co/datasets/markov-ai/gaming-500-hours
+2026-07-28,Spaces,1,kulkas2pintu/wan555,853,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-07-28,Spaces,2,webml-community/bonsai-webgpu-kernels,372,,Text Generation,https://huggingface.co/spaces/webml-community/bonsai-webgpu-kernels
+2026-07-28,Spaces,3,cinderholm/wan2-2-i2v-v3,124,,Video Generation,https://huggingface.co/spaces/cinderholm/wan2-2-i2v-v3
+2026-07-28,Spaces,4,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2051,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-07-28,Spaces,5,microsoft/mage-flow,71,,Image Generation,https://huggingface.co/spaces/microsoft/mage-flow
+2026-07-28,Spaces,6,pliny-the-prompter/obliteratus,471,,Chatbots,https://huggingface.co/spaces/pliny-the-prompter/obliteratus
+2026-07-28,Spaces,7,ICML-2026-agent-repro/challenge,189,,Other,https://huggingface.co/spaces/ICML-2026-agent-repro/challenge
+2026-07-28,Spaces,8,conradlocke/krea2-identity-edit,149,,Image Editing,https://huggingface.co/spaces/conradlocke/krea2-identity-edit
+2026-07-28,Spaces,9,baidu/Unlimited-OCR,315,,OCR,https://huggingface.co/spaces/baidu/Unlimited-OCR
+2026-07-28,Spaces,10,selfit-camera/Omni-Image-Editor,2239,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor

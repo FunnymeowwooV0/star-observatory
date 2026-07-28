@@ -219,3 +219,13 @@ date,rank,title,points,comments,hn_url,url
 2026-07-27,8,Go Analysis Framework: modular static analysis by go team,187,45,https://news.ycombinator.com/item?id=49057398,https://pkg.go.dev/golang.org/x/tools/go/analysis
 2026-07-27,9,"I learned PCB design, 3D printing and C just to listen to music",187,35,https://news.ycombinator.com/item?id=49022355,https://pentaton.app/blog/2026-07-12-introducing-pentaton-lp/
 2026-07-27,10,The New AI Superpowers: Focus and Followthrough,174,50,https://news.ycombinator.com/item?id=49057877,https://www.rickmanelius.com/p/the-new-ai-superpowers-focus-and
+2026-07-28,1,Our position on open-weights models,574,810,https://news.ycombinator.com/item?id=49076057,https://www.anthropic.com/news/position-open-weights-models
+2026-07-28,2,Netflix employee fired for sharing personal details in retreat trust exercise,205,150,https://news.ycombinator.com/item?id=49076923,https://nypost.com/2026/07/26/us-news/netflix-exec-goes-ballistic-after-being-fired-for-stunning-trust-exercise-confession-at-retreat-suit/
+2026-07-28,3,Paged Out #9 [pdf],191,22,https://news.ycombinator.com/item?id=49070138,https://pagedout.institute/download/PagedOut_009.pdf
+2026-07-28,4,A missing underscore sent innocent man to prison for 18 months,189,100,https://news.ycombinator.com/item?id=49076116,https://arstechnica.com/tech-policy/2026/07/police-missed-one-underscore-and-sent-the-wrong-man-to-prison/
+2026-07-28,5,The computer that helped win World War II,182,73,https://news.ycombinator.com/item?id=49012309,https://spectrum.ieee.org/colossus-computer-ieee-milestone
+2026-07-28,6,Watching Go's new garbage collector move through the heap,182,17,https://news.ycombinator.com/item?id=49045474,https://theconsensus.dev/p/2026/07/19/observing-gos-garbage-collector-old-and-new.html
+2026-07-28,7,Benchmarking Opus 5 on SlopCodeBench,176,41,https://news.ycombinator.com/item?id=49076391,https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/benchmarking-opus-5-on-slop-code-bench.md
+2026-07-28,8,Glue bonds to nonstick surfaces and wipes clean with ethanol,160,89,https://news.ycombinator.com/item?id=49020993,https://cen.acs.org/materials/adhesives/glue-bonds-nonstick-surfaces-wipes-clean/104/web/2026/07
+2026-07-28,9,Exploiting Volvo/Eicher's fleet platform to gain control over all users/vehicles,143,47,https://news.ycombinator.com/item?id=49070756,https://eaton-works.com/2026/07/27/my-eicher-hack/
+2026-07-28,10,Self-contained highly-portable Python distributions,125,27,https://news.ycombinator.com/item?id=49073942,https://gregoryszorc.com/docs/python-build-standalone/main/
