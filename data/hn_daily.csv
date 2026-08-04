@@ -289,3 +289,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-03,8,Note-Taking and Personal Knowledge Management,156,45,https://news.ycombinator.com/item?id=49084324,https://unattributed.cc/note-taking-and-personal-knowledge-management
 2026-08-03,9,SwiftUI After 7 Years,135,119,https://news.ycombinator.com/item?id=49147263,https://ykvm.com/2026/07/swiftui-a-story-of-mediocrity/
 2026-08-03,10,My personal AI benchmark: “Generate an SVG of a frog with a Habsburg jaw”,122,56,https://news.ycombinator.com/item?id=49147622,https://frogs.vaguespac.es/
+2026-08-04,1,LLMs reward expertise,583,250,https://news.ycombinator.com/item?id=49161518,https://www.seangoedecke.com/llms-reward-expertise/
+2026-08-04,2,Devtools must be open source,531,189,https://news.ycombinator.com/item?id=49156111,https://blog.exe.dev/devtools-must-be-open-source
+2026-08-04,3,Ten advances in mathematics and theoretical computer science,472,747,https://news.ycombinator.com/item?id=49157930,https://openai.com/index/ten-advances-in-mathematics/
+2026-08-04,4,Prevent cognitive debt by manually retyping LLM-generated code,413,348,https://news.ycombinator.com/item?id=49153374,https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code/
+2026-08-04,5,Bonsai: Janestreet's UI Library,315,134,https://news.ycombinator.com/item?id=49152842,https://github.com/janestreet/bonsai
+2026-08-04,6,Andy Pavlo joins ClickHouse to establish ClickHouse Labs,285,61,https://news.ycombinator.com/item?id=49156011,https://clickhouse.com/blog/andy-pavlo-joins-clickhouse
+2026-08-04,7,"MiniMax H3 Day-0 Support in ComfyUI: Open Weights, Native Audio, and 2K Video",271,81,https://news.ycombinator.com/item?id=49155629,https://blog.comfy.org/p/minimax-h3-day-0-support-in-comfyui
+2026-08-04,8,200 Milliseconds,216,64,https://news.ycombinator.com/item?id=49132992,https://200ms.thenodebook.com
+2026-08-04,9,Decades-old fish sauce at abandoned factory in Canada finally being removed,210,228,https://news.ycombinator.com/item?id=49125168,https://defector.com/abandoned-fish-sauce-canada-interview
+2026-08-04,10,AirLLM 70B inference with single 4GB GPU,199,76,https://news.ycombinator.com/item?id=49154228,https://github.com/lyogavin/airllm
