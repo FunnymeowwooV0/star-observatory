@@ -644,3 +644,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-04,Spaces,8,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,165,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
 2026-08-04,Spaces,9,selfit-camera/Omni-Image-Editor,2298,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
 2026-08-04,Spaces,10,Fighterdan/LTX-2.3-10Eros_I2V,175,,Video Generation,https://huggingface.co/spaces/Fighterdan/LTX-2.3-10Eros_I2V
+2026-08-05,模型,1,deepseek-ai/DeepSeek-V4-Flash-0731,2330,433284,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+2026-08-05,模型,2,MiniMaxAI/MiniMax-H3,2068,0,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-05,模型,3,moonshotai/Kimi-K3,10022,1125935,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3
+2026-08-05,模型,4,Comfy-Org/MiniMax-H3,627,2,,https://huggingface.co/Comfy-Org/MiniMax-H3
+2026-08-05,模型,5,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,1523,1633405,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-08-05,模型,6,unsloth/DeepSeek-V4-Flash-0731-GGUF,477,111678,,https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF
+2026-08-05,模型,7,baidu/Unlimited-OCR,3885,2703366,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR
+2026-08-05,模型,8,thinkingmachines/Inkling-Small,290,15500,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling-Small
+2026-08-05,模型,9,Audio8/Audio8-TTS-Preview-0.6b,253,11276,text-to-speech,https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b
+2026-08-05,模型,10,unsloth/Kimi-K3-GGUF,308,170055,image-text-to-text,https://huggingface.co/unsloth/Kimi-K3-GGUF
+2026-08-05,資料集,1,XYZAILab/XYZ-Aquila-SFT,350,931,,https://huggingface.co/datasets/XYZAILab/XYZ-Aquila-SFT
+2026-08-05,資料集,2,HuggingFaceCode/stack-v3-train,301,143828,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-05,資料集,3,Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset,172,11590,,https://huggingface.co/datasets/Manusagents/GPT-5.5-Gemini-3.1-Pro-Grok-4-Claude-Fable-5-Mythos-5-Qwen-3.7-Max-and-more-Distillation-Dataset
+2026-08-05,資料集,4,HuggingFaceFW/fineweb,3041,532525,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-05,資料集,5,Qyrou/reasoning-corpus-4K-5M-v1,188,6212,,https://huggingface.co/datasets/Qyrou/reasoning-corpus-4K-5M-v1
+2026-08-05,資料集,6,FlyRank/internship-warehouse,436,12007,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-08-05,資料集,7,unstonio/pixelgpt-24x24-20k,59,5490,,https://huggingface.co/datasets/unstonio/pixelgpt-24x24-20k
+2026-08-05,資料集,8,rajpurkar/squad,409,212171,,https://huggingface.co/datasets/rajpurkar/squad
+2026-08-05,資料集,9,HuggingFaceH4/ultrachat_200k,793,70061,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-05,資料集,10,openai/gsm8k,1512,943769,,https://huggingface.co/datasets/openai/gsm8k
+2026-08-05,Spaces,1,cinderholm/wan2-2-i2v-v3,488,,Video Generation,https://huggingface.co/spaces/cinderholm/wan2-2-i2v-v3
+2026-08-05,Spaces,2,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2251,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-05,Spaces,3,kulkas2pintu/wan555,1041,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-05,Spaces,4,obsxrver/wan22-i2v-omni-lora,126,,Video Generation,https://huggingface.co/spaces/obsxrver/wan22-i2v-omni-lora
+2026-08-05,Spaces,5,victor/DeepSeek-V4-Flash-0731-free-endpoint,79,,Chatbots,https://huggingface.co/spaces/victor/DeepSeek-V4-Flash-0731-free-endpoint
+2026-08-05,Spaces,6,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,177,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-05,Spaces,7,acvlab/abot-world-interactive,85,,Video Generation,https://huggingface.co/spaces/acvlab/abot-world-interactive
+2026-08-05,Spaces,8,multimodalart/minimax-h3,71,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
+2026-08-05,Spaces,9,microsoft/mage-vl-demo,96,,Text Generation,https://huggingface.co/spaces/microsoft/mage-vl-demo
+2026-08-05,Spaces,10,selfit-camera/Omni-Image-Editor,2309,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
