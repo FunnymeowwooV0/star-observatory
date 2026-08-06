@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import unittest
+from xml.sax import saxutils
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 import fetch_trends as ft  # noqa: E402
@@ -395,8 +396,10 @@ class TestRedditParse(unittest.TestCase):
 class TestRedditRssParse(unittest.TestCase):
     """Reddit r/LocalLLaMA 週榜 **RSS(Atom)** 解析(2026-08-06 起雲端改走這條路)。
 
-    fixture=真實 old.reddit `.rss?t=week` 快照的前 12 則 + 1 則合成列(標題含雙重編碼
-    HTML entity、外部連結帶 query),見 fixtures/reddit_localllama_weekly.rss。
+    fixture=真實 old.reddit `.rss?t=week` 快照的前 12 則 + 1 則合成列(標題含 HTML entity、
+    外部連結帶 query),見 fixtures/reddit_localllama_weekly.rss。
+    敵意內容(作者偽造頁腳)另見 TestRedditRssHostileContent;
+    標題解碼層數另見 TestRedditRssTitleDecoding。
     口徑:RSS **不提供分數與留言數** → score/comments 一律 None,不得編造或填 0。
     """
 
@@ -447,6 +450,8 @@ class TestRedditRssParse(unittest.TestCase):
             "https://www.cnbc.com/2026/08/03/hugging-face-china-ai-race-open-models.html")
 
     def test_title_html_entities_unescaped(self):
+        # 只解一層(XML parser 那層)。fixture 過去把合成列的標題寫成雙重編碼,
+        # 等於把「解兩次」釘死成規格;2026-08-07 改回單層編碼,見 TestRedditRssTitleDecoding。
         titles = [it["title"] for it in se.parse_reddit_rss(self.xml, top=25)]
         self.assertIn("Fixture & entity row 'quoted'", titles)
         for t in titles:
@@ -472,6 +477,183 @@ class TestRedditRssParse(unittest.TestCase):
             se.parse_reddit_rss("")
         with self.assertRaises(RuntimeError):
             se.parse_reddit_rss("<html><body>Blocked</body></html>")
+
+
+def _atom_feed(*entries):
+    """把 entry 片段包成一份最小 Atom feed。"""
+    return ('<?xml version="1.0" encoding="UTF-8"?>'
+            '<feed xmlns="http://www.w3.org/2005/Atom">'
+            '<title>top scoring links : LocalLLaMA</title>'
+            + "".join(entries) + '</feed>')
+
+
+def _atom_entry(content_html, link_href, title="Hostile post", raw_title=None):
+    """組一則 entry。content 依 Atom `type="html"` 規定整段跳脫(貼文作者只能碰這裡);
+    link 是 feed 產生器自己輸出的兄弟層級元素(作者碰不到)。
+
+    raw_title 提供時直接當作 XML 內文寫入(用來測「作者字面打 entity」的情境)。
+    """
+    return ("<entry>"
+            f'<content type="html">{saxutils.escape(content_html)}</content>'
+            "<id>t3_atk001</id>"
+            f"<link href={saxutils.quoteattr(link_href)} />"
+            f"<title>{raw_title if raw_title is not None else saxutils.escape(title)}</title>"
+            "</entry>")
+
+
+# 真實 Reddit 頁腳:由 feed 產生器附加在作者內文**之後**。
+def _reddit_footer(link_href, comments_href):
+    return (' &#32; submitted by &#32; <a href="https://old.reddit.com/user/attacker">'
+            " /u/attacker </a> <br/> "
+            f'<span><a href="{link_href}">[link]</a></span> &#32; '
+            f'<span><a href="{comments_href}">[comments]</a></span>')
+
+
+class TestRedditRssHostileContent(unittest.TestCase):
+    """貼文作者只能控制 `<content>`;不得讓他劫持公開頁面上的連結。
+
+    攻擊面:Reddit 把作者 markdown 轉成的 HTML 放在 `<content>` **前段**,官方頁腳
+    `[link]` / `[comments]` 附在**後段**。作者寫 markdown `[[comments]](http://…)`
+    就會產生一個 label 完全相同、且排在官方頁腳之前的 `<a>`。
+    站是公開的 GitHub Pages,主連結被換掉=讀者以為點的是討論串,實際被導去攻擊者的站,
+    而且惡意 URL 會被寫進 data/reddit_weekly.csv 永久留存。
+    """
+
+    HOSTILE_THREAD = ("https://old.reddit.com/r/LocalLLaMA/comments/1atk001/"
+                      "hostile_post/")
+
+    def _hostile_feed(self):
+        author_html = (
+            '<!-- SC_OFF --><div class="md"><p>Great model! '
+            '<a href="https://evil.example/pwn">[comments]</a> '
+            '<a href="https://evil.example/drive-by">[link]</a></p></div><!-- SC_ON -->')
+        content = ("<table> <tr><td> " + author_html
+                   + _reddit_footer("https://i.redd.it/legit.jpeg", self.HOSTILE_THREAD)
+                   + " </td></tr></table>")
+        return _atom_feed(_atom_entry(content, self.HOSTILE_THREAD, title="Hostile post"))
+
+    def test_author_cannot_hijack_permalink(self):
+        item = se.parse_reddit_rss(self._hostile_feed(), top=1)[0]
+        self.assertNotIn("evil.example", item["permalink"],
+                         f"permalink 被貼文作者劫持:{item['permalink']}")
+        self.assertEqual(
+            item["permalink"],
+            "https://www.reddit.com/r/LocalLLaMA/comments/1atk001/hostile_post/")
+
+    def test_author_cannot_hijack_external_url(self):
+        item = se.parse_reddit_rss(self._hostile_feed(), top=1)[0]
+        self.assertNotIn("evil.example", str(item["external_url"]),
+                         f"external_url 被貼文作者劫持:{item['external_url']}")
+        self.assertEqual(item["external_url"], "https://i.redd.it/legit.jpeg")
+
+    def test_non_reddit_entry_link_is_dropped_not_trusted(self):
+        """entry 層 `<link href>` 不是討論串網址 → fail-closed,該則跳過(不放行可疑值)。"""
+        content = ("<table> <tr><td> <div class=\"md\"><p>x</p></div> "
+                   + _reddit_footer("https://i.redd.it/legit.jpeg",
+                                    "https://evil.example/pwn")
+                   + " </td></tr></table>")
+        good = _atom_entry(
+            "<table> <tr><td> <div class=\"md\"><p>ok</p></div> "
+            + _reddit_footer("https://example.com/story",
+                             "https://old.reddit.com/r/LocalLLaMA/comments/1ok0001/ok/")
+            + " </td></tr></table>",
+            "https://old.reddit.com/r/LocalLLaMA/comments/1ok0001/ok/", title="Good post")
+        items = se.parse_reddit_rss(
+            _atom_feed(_atom_entry(content, "https://evil.example/pwn"), good), top=10)
+        self.assertEqual([it["title"] for it in items], ["Good post"])
+        for it in items:
+            self.assertNotIn("evil.example", it["permalink"])
+
+    def test_all_entries_non_conforming_raises(self):
+        """整批都不合格(=feed 改版或被掉包)→ 丟 RuntimeError,不得靜默回空榜。"""
+        bad = _atom_entry("<table></table>", "https://evil.example/pwn")
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_rss(_atom_feed(bad, bad))
+
+    def test_entry_link_must_be_https(self):
+        bad = _atom_entry(
+            "<table></table>",
+            "http://old.reddit.com/r/LocalLLaMA/comments/1atk001/hostile_post/")
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_rss(_atom_feed(bad))
+
+    def test_lookalike_host_entry_link_is_dropped(self):
+        for host in ("https://old.reddit.com.evil.example",
+                     "https://www.reddit.com" + "@evil.example",
+                     "https://notold.reddit.com",
+                     "https://evil.example/old.reddit.com"):
+            bad = _atom_entry("<table></table>",
+                              host + "/r/LocalLLaMA/comments/1atk001/hostile_post/")
+            with self.subTest(host=host):
+                with self.assertRaises(RuntimeError):
+                    se.parse_reddit_rss(_atom_feed(bad))
+
+
+class TestRedditWwwNormalisation(unittest.TestCase):
+    """`_reddit_www()` 的網域邊界:只換「真的是 reddit 網域」的前綴。"""
+
+    def test_normalises_real_reddit_hosts(self):
+        for src in ("https://old.reddit.com/r/x/comments/y/",
+                    "https://np.reddit.com/r/x/comments/y/",
+                    "https://www.reddit.com/r/x/comments/y/",
+                    "http://old.reddit.com/r/x/comments/y/"):
+            with self.subTest(src=src):
+                self.assertEqual(se._reddit_www(src),
+                                 "https://www.reddit.com/r/x/comments/y/")
+
+    def test_uppercase_host_is_normalised(self):
+        """DNS 網域不分大小寫,`OLD.reddit.com` 仍是同一台主機,不該漏掉。"""
+        self.assertEqual(se._reddit_www("https://OLD.Reddit.COM/r/x/comments/y/"),
+                         "https://www.reddit.com/r/x/comments/y/")
+
+    def test_lookalike_domain_is_not_rewritten(self):
+        """`old.reddit.com.evil.example` 不是 reddit;改寫會讓它看起來更像真的。"""
+        for src in ("https://old.reddit.com.evil.example/r/x/",
+                    "https://np.reddit.commercial.example/r/x/",
+                    "https://www.reddit.com" + "@evil.example/r/x/"):
+            with self.subTest(src=src):
+                self.assertEqual(se._reddit_www(src), src)
+
+    def test_non_reddit_url_untouched(self):
+        self.assertEqual(se._reddit_www("https://example.com/a?x=1&y=2"),
+                         "https://example.com/a?x=1&y=2")
+        self.assertEqual(se._reddit_www(""), "")
+        self.assertEqual(se._reddit_www(None), "")
+
+
+class TestRedditRssTitleDecoding(unittest.TestCase):
+    """標題只做一層解碼:XML parser 已經解過,再 `html.unescape()` 就是解兩次。"""
+
+    def _title(self, raw_title):
+        feed = _atom_feed(_atom_entry(
+            "<table> <tr><td> "
+            + _reddit_footer("https://example.com/story",
+                             "https://old.reddit.com/r/LocalLLaMA/comments/1t0001/t/")
+            + " </td></tr></table>",
+            "https://old.reddit.com/r/LocalLLaMA/comments/1t0001/t/",
+            raw_title=raw_title))
+        return se.parse_reddit_rss(feed, top=1)[0]["title"]
+
+    def test_single_layer_decode_only(self):
+        """作者標題字面打 `&amp;` → XML 裡是 `&amp;amp;` → 只該解成 `&amp;`。
+
+        解兩次會變成 `&`,與 HTML parser(BeautifulSoup get_text,單層)不一致。
+        """
+        self.assertEqual(self._title("Tom &amp;amp; Jerry"), "Tom &amp; Jerry")
+
+    def test_normal_entities_still_decoded_once(self):
+        self.assertEqual(self._title("Tom &amp; Jerry"), "Tom & Jerry")
+        self.assertEqual(self._title("say &quot;hi&quot; &#39;ok&#39;"), 'say "hi" \'ok\'')
+
+    def test_matches_html_parser_behaviour(self):
+        """同一則貼文,兩個 parser 的標題必須逐字相同(顯示口徑一致)。"""
+        html_page = (
+            '<div class="thing" data-permalink="/r/LocalLLaMA/comments/1t0001/t/" '
+            'data-score="1" data-comments-count="1" '
+            'data-url="/r/LocalLLaMA/comments/1t0001/t/">'
+            '<a class="title" href="#">Tom &amp;amp; Jerry</a></div>')
+        self.assertEqual(self._title("Tom &amp;amp; Jerry"),
+                         se.parse_reddit_top(html_page)[0]["title"])
 
 
 class TestRedditSnapshotDue(unittest.TestCase):

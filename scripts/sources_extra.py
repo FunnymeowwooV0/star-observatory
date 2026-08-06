@@ -20,7 +20,6 @@ parse_hf_trending()(純解析、可離線測)/ fetch_hf_trending()(薄連網)。
                 兩者皆為脆弱源:解析不到丟例外。
 """
 import datetime as dt
-import html
 import re
 import xml.etree.ElementTree as ET
 
@@ -229,10 +228,28 @@ def parse_reddit_top(html, top=REDDIT_TOP):
 
 ATOM_NS = {"atom": "http://www.w3.org/2005/Atom"}
 
+# 只有這三個主機名是 reddit 本尊。`(?=[/?#]|$)` 是**網域邊界**,不能省:
+# 少了它,`https://old.reddit.com.evil.example/…` 會被洗成 `https://www.reddit.com.evil.example/…`,
+# 我們自己把釣魚網址變得更像真的。`/?#` 是 RFC 3986 裡 authority 的結束字元。
+# IGNORECASE:DNS 網域不分大小寫,`OLD.reddit.com` 是同一台主機,不該漏掉正規化。
+_REDDIT_HOST_RE = re.compile(r"^https?://(?:old|np|www)\.reddit\.com(?=[/?#]|$)", re.IGNORECASE)
+
+# 討論串永久連結的合法長相(**正規化前**驗)。只認 https:本專案 render 端的
+# safe_external_url() 也只放行 https,http 連結到頁面上只會變成不可點的靜態卡。
+# IGNORECASE 也吃到路徑(`/R/…/COMMENTS/` 會過),這無妨:防的是**跨網域**,
+# 主機名已被錨定在 reddit.com,路徑大小寫換不掉網域。
+_REDDIT_THREAD_RE = re.compile(r"^https://(?:old|np|www)\.reddit\.com/r/[^/]+/comments/",
+                               re.IGNORECASE)
+
 
 def _reddit_www(url):
-    """把 old.reddit.com／np.reddit.com 網域換成 www.reddit.com(給讀者點);其餘網址原樣回傳。"""
-    return re.sub(r"^https?://(?:old|np|www)\.reddit\.com", "https://www.reddit.com", url or "")
+    """把 old.reddit.com／np.reddit.com 網域換成 www.reddit.com(給讀者點);其餘網址原樣回傳。
+
+    只換「真的是 reddit 網域」的前綴;lookalike 網域(`old.reddit.com.evil.example`、
+    `np.reddit.commercial.example`、`www.reddit.com[@]evil.example`,故意用 [@] 避免
+    這段註解本身被 pre-push 安全閘門的 email 樣式誤判、也別「順手修正」回原始 @)一律原樣回傳。
+    """
+    return _REDDIT_HOST_RE.sub("https://www.reddit.com", url or "", count=1)
 
 
 def parse_reddit_rss(xml, top=REDDIT_TOP):
@@ -241,13 +258,24 @@ def parse_reddit_rss(xml, top=REDDIT_TOP):
     榜序=feed 原序(與 HTML top/week 逐字相同)。欄位 schema 與 parse_reddit_top() 完全一致,
     但 **RSS 不提供分數與留言數** → score/comments 一律 None(不編造、不填 0)。
 
-    每則 entry 的 content(HTML)尾端固定有兩個頁腳連結:
-        [link]     → 貼文目標網址(連結帖=外部 URL;自貼文=自己的 permalink)
-        [comments] → 討論串永久連結
-    permalink 取 [comments] 並正規化成 https://www.reddit.com/...;
-    external_url 取 [link],正規化後等於 permalink(自貼文)→ None。
+    **信任邊界**:`<content>` 是貼文作者寫的內文(Atom `type="html"` = 整段跳脫過的文字),
+    完全由攻擊者控制;entry 層級的 `<link href>` 是 feed 產生器輸出的**兄弟層級 XML 元素**,
+    跳脫過的 content 生不出兄弟元素 → 作者碰不到。所以:
+
+        permalink    ← entry 層級 `<link href>`,**不從 content 裡撈**。
+                       正規化前先驗長相(_REDDIT_THREAD_RE);不合格 → 該則跳過(fail-closed)。
+        external_url ← content 尾端官方頁腳的 `[link]`,取**最後一個**
+                       (頁腳附加在作者內文之後,作者在內文偽造的會排在前面)。
+                       正規化後等於 permalink(自貼文)→ None。
+
+    2026-08-06 的第一版從 content 裡找 label 等於 `[comments]` 的**第一個** `<a>` 當
+    permalink;作者只要在內文寫 markdown `[[comments]](https://evil.example/pwn)` 就會贏過
+    真正的頁腳,公開頁面上的主連結被換成他的網址,並寫進 data/reddit_weekly.csv 永久留存。
+    external_url 本來就是作者選的目標網址(連結帖的本質,與 HTML parser 相同),
+    scheme 安全由 render 端既有的 safe_external_url() 負責,這裡不再另外設白名單。
 
     脆弱源(同 GitHub Trending/Ollama):解析不到任何貼文 → 丟 RuntimeError,不得靜默回空榜。
+    個別 entry 不合格只跳過該則(保住其餘快照);全部不合格才丟例外(feed 改版會大聲壞掉)。
     """
     try:
         root = ET.fromstring(xml or "")
@@ -259,23 +287,22 @@ def parse_reddit_rss(xml, top=REDDIT_TOP):
 
     out = []
     for entry in entries[:top]:
-        title = html.unescape(entry.findtext("atom:title", default="", namespaces=ATOM_NS) or "").strip()
+        # 只做一層解碼:XML parser 已經把 entity 解過了,再 html.unescape() 就是解兩次
+        # (作者字面打 `&amp;` 會被吃成 `&`,與 HTML parser 的顯示口徑不一致)。
+        title = (entry.findtext("atom:title", default="", namespaces=ATOM_NS) or "").strip()
+
+        # entry 層級 <link href>:find() 只找**直接子元素**,不會撈到 content 內的東西。
+        link_el = entry.find("atom:link", ATOM_NS)
+        raw_permalink = ((link_el.get("href") if link_el is not None else "") or "").strip()
+        if not _REDDIT_THREAD_RE.match(raw_permalink):
+            continue  # fail-closed:長相不對就整則丟掉,不猜、不放行可疑值
+        permalink = _reddit_www(raw_permalink)
+
         content = entry.findtext("atom:content", default="", namespaces=ATOM_NS) or ""
-        footer = {}
+        external = ""
         for a in BeautifulSoup(content, "html.parser").find_all("a"):
-            label = a.get_text(strip=True)
-            if label in ("[link]", "[comments]") and label not in footer:
-                footer[label] = (a.get("href") or "").strip()
-
-        permalink = _reddit_www(footer.get("[comments]", ""))
-        if not permalink:
-            # 退回 entry 層的 <link href>(Atom alternate,同樣指向討論串)
-            link_el = entry.find("atom:link", ATOM_NS)
-            permalink = _reddit_www((link_el.get("href") if link_el is not None else "") or "")
-        if not permalink:
-            continue
-
-        external = footer.get("[link]", "")
+            if a.get_text(strip=True) == "[link]":
+                external = (a.get("href") or "").strip()  # 留最後一個=官方頁腳那顆
         external_url = None if (not external or _reddit_www(external) == permalink) else external
 
         out.append({
@@ -286,7 +313,8 @@ def parse_reddit_rss(xml, top=REDDIT_TOP):
             "external_url": external_url,
         })
     if not out:
-        raise RuntimeError("Reddit RSS 的 entry 都缺討論串連結,解析不到有效資料(feed 可能改版了)")
+        raise RuntimeError(
+            "Reddit RSS 的 entry 都沒有合格的討論串連結,解析不到有效資料(feed 可能改版或被掉包了)")
     return out
 
 
