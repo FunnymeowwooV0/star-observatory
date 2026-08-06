@@ -133,6 +133,18 @@ REDDIT_SAMPLE = [
      "external_url": None},
 ]
 
+# 2026-08-06 起雲端改抓 RSS,該來源不提供分數與留言數 → score/comments 為 None。
+REDDIT_SAMPLE_RSS = [
+    {"title": "Qwen3.8-27B announced alongside Qwen3.8-Max",
+     "score": None, "comments": None,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen/",
+     "external_url": None},
+    {"title": "Hugging Face CEO says China is winning the AI race",
+     "score": None, "comments": None,
+     "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1vd0abc/hf/",
+     "external_url": "https://www.cnbc.com/2026/08/03/hugging-face.html"},
+]
+
 
 class TestRenderHtmlTaskA(unittest.TestCase):
     def test_github_category_inference_uses_tokens_priority_and_fallback(self):
@@ -358,6 +370,56 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertEqual(len(self_row.find_all("a", recursive=False)), 1)
         self.assertIsNotNone(self_row.select_one("a.link-card"))
         self.assertIsNone(self_row.select_one("a.hn-discussion"))
+
+    def test_reddit_note_states_rss_source_and_missing_metrics(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE_RSS, reddit_snapshot_date="2026-08-10"),
+            "html.parser",
+        )
+        note = soup.select_one("#reddit .sub").get_text(" ", strip=True)
+        self.assertIn("RSS", note)
+        self.assertIn("2026-08-10", note)
+        self.assertIn("分數", note)
+        self.assertIn("留言", note)
+        self.assertNotIn("本機", note, "已改雲端自動抓取,不得再宣稱由本機每週一抓取入庫")
+
+    def test_reddit_note_for_legacy_snapshot_does_not_claim_metrics_are_missing(self):
+        # 過渡期:頁面顯示的是舊的網頁抓取快照(有數字)時，說明不得宣稱「本榜不顯示這兩個欄位」
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE, reddit_snapshot_date="2026-08-03"),
+            "html.parser",
+        )
+        note = soup.select_one("#reddit .sub").get_text(" ", strip=True)
+        self.assertIn("含分數與留言數", note)
+        self.assertNotIn("本榜不顯示這兩個欄位", note)
+
+    def test_reddit_row_without_metrics_omits_meta_line(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE_RSS, reddit_snapshot_date="2026-08-10"),
+            "html.parser",
+        )
+        rows = soup.select("#reddit li.hn-card-row")
+        self.assertEqual(len(rows), 2)
+        for row in rows:
+            self.assertIsNone(row.select_one(".link-meta"),
+                              "無分數/留言數時不得留下空的指標列")
+            body = row.select_one(".link-body").get_text(" ", strip=True)
+            self.assertNotIn("▲", body)
+            self.assertNotIn("💬", body)
+            self.assertNotIn("0", body, "缺資料不得顯示 0")
+            self.assertNotIn("—", body, "缺資料不得留破折號佔位")
+
+        # 雙入口設計仍在:連結帖有「原文」副控制,自帖只有主列
+        self.assertIsNotNone(rows[1].select_one("a.hn-discussion"))
+        self.assertIsNone(rows[0].select_one("a.hn-discussion"))
+
+    def test_reddit_row_with_metrics_still_shows_numbers(self):
+        soup = BeautifulSoup(
+            _render(reddit=REDDIT_SAMPLE, reddit_snapshot_date="2026-07-20"),
+            "html.parser",
+        )
+        metas = [m.get_text(" ", strip=True) for m in soup.select("#reddit .link-meta")]
+        self.assertEqual(metas, ["▲ 512 · 💬 88", "▲ 321 · 💬 45"])
 
     def test_accumulation_never_gains_a_reddit_source_even_with_snapshot_data(self):
         soup = BeautifulSoup(

@@ -277,9 +277,10 @@ def _openrouter_model_url(model):
 
 def _link_card_body(i, title, meta, mark="", desc=""):
     desc_html = f'<span class="link-desc">{_esc(desc)}</span>' if desc else ""
+    meta_html = f'<span class="link-meta">{meta}</span>' if meta else ""
     return (f'<span class="link-rank">{i:02d}</span><span class="link-body">'
             f'<span class="link-title">{_esc(title)}{mark}</span>'
-            f'<span class="link-meta">{meta}</span>{desc_html}</span>')
+            f'{meta_html}{desc_html}</span>')
 
 
 def _link_card_item(i, title, meta, url, mark="", desc=""):
@@ -888,9 +889,14 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
     def reddit_item(i, it):
         # HN 式雙入口卡,但主副角色與 HN 相反:主列進 Reddit 討論串(permalink),
         # 副控制「原文」進外部連結(external_url),自帖(無 external_url)時只有主列。
-        score = f'{it["score"]:,}' if isinstance(it["score"], int) else "—"
-        comments = f'{it["comments"]:,}' if isinstance(it["comments"], int) else "—"
-        body = _link_card_body(i, it["title"], f'▲ {score} · 💬 {comments}')
+        # RSS 來源沒有分數/留言數 → 整條指標列省略(不顯示 0,也不留空欄位);
+        # 舊的網頁抓取快照有數字,照舊顯示。
+        metrics = []
+        if isinstance(it["score"], int):
+            metrics.append(f'▲ {it["score"]:,}')
+        if isinstance(it["comments"], int):
+            metrics.append(f'💬 {it["comments"]:,}')
+        body = _link_card_body(i, it["title"], " · ".join(metrics))
         permalink = safe_external_url(it.get("permalink") or "")
         if permalink:
             main = (f'<a class="link-card" href="{_esc(permalink)}" target="_blank" '
@@ -986,10 +992,17 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
             ol_body,
         ))
     if reddit_body:
+        # 誠實界線:說明必須描述「眼前這份快照」。舊的網頁抓取快照有分數/留言數，
+        # 新的 RSS 快照沒有，兩種情況不能共用同一句話。
+        if any(isinstance(it.get("score"), int) for it in reddit):
+            reddit_note = ("此快照來自網頁抓取，含分數與留言數；"
+                           "新快照改用 Reddit 官方 RSS，該來源不提供這兩個欄位。")
+        else:
+            reddit_note = "資料取自 Reddit 官方 RSS，該來源不提供分數與留言數，故本榜不顯示這兩個欄位。"
         source_specs.append((
             "reddit", "Reddit", f"r/LocalLLaMA 本週熱帖 Top {len(reddit)}",
-            f"r/LocalLLaMA 本週熱帖（週榜視窗）。Reddit 封鎖雲端機房 IP，"
-            f"本榜由本機每週一抓取後入庫；目前顯示 {reddit_snapshot_date} 抓取的快照。",
+            f"r/LocalLLaMA 本週熱帖（週榜視窗），每週自動更新一次；"
+            f"目前顯示 {reddit_snapshot_date} 抓取的快照。{reddit_note}",
             reddit_body,
         ))
 
@@ -1114,14 +1127,59 @@ def _csv_int(s):
         return None
 
 
-def load_reddit_snapshot():
-    """讀 data/reddit_weekly.csv(scripts/reddit_weekly.py --save 本機每週寫入),取最新一次快照。
+REDDIT_CSV_PATH = "data/reddit_weekly.csv"
+REDDIT_CSV_HEADER = ["date", "rank", "title", "score", "comments", "permalink", "external_url"]
+REDDIT_INTERVAL_DAYS = 7
 
-    這不是雲端抓取單元(reddit_weekly.py 只在本機住宅 IP 跑,見 goals/18):
-    檔案不存在/空 → 回 ([], None),run_daily() 不得把它算進 errors/attempted。
-    回傳 (items, snapshot_date);items 依 CSV 的 rank 由小到大排序。
+
+def build_reddit_save_rows(items, date, existing_rows):
+    """純函式(離線可測):算今天要 append 進 data/reddit_weekly.csv 的列。
+
+    冪等:existing_rows 裡已有 date == 今天的列 → 回空 list(跳過寫入)。
+    score/comments 缺值(RSS 來源沒有)寫**空字串**:欄位保留、schema 不變,
+    不得寫成 "None" 或 0(舊快照的真實數字仍原樣留在檔裡)。
     """
-    rows = hi.dedupe_daily_rows(read_csv_rows("data/reddit_weekly.csv"), ["rank"])
+    if any(r.get("date") == date for r in existing_rows):
+        return []
+    return [
+        [date, i,
+         it["title"],
+         it["score"] if it["score"] is not None else "",
+         it["comments"] if it["comments"] is not None else "",
+         it["permalink"],
+         it["external_url"] or ""]
+        for i, it in enumerate(items, start=1)
+    ]
+
+
+def reddit_snapshot_due(rows, today, interval_days=REDDIT_INTERVAL_DAYS):
+    """純函式:今天該不該抓 Reddit 週榜?(週期由**資料**控制,不靠排程)
+
+    最新快照距今 < interval_days 天 → False(跳過,不算失敗);>= → True。
+    沒有任何可解析日期(首次/檔案壞掉)→ True,不得永久卡住。
+    好處:仍是每週一次,但抓失敗隔天會自動重試,也不依賴 workflow 的星期判斷。
+    """
+    latest = None
+    for r in rows:
+        try:
+            d = dt.datetime.strptime((r.get("date") or "").strip(), "%Y-%m-%d").date()
+        except ValueError:
+            continue
+        if latest is None or d > latest:
+            latest = d
+    if latest is None:
+        return True
+    return (dt.datetime.strptime(today, "%Y-%m-%d").date() - latest).days >= interval_days
+
+
+def load_reddit_snapshot():
+    """讀 data/reddit_weekly.csv,取最新一次快照(items 依 rank 由小到大)。
+
+    寫入者有兩個:雲端每日管線每 7 天抓一次 RSS(無分數/留言數),
+    以及本機每週導讀 CLI `scripts/reddit_weekly.py --save`(HTML,有分數/留言數)。
+    檔案不存在/空 → 回 ([], None);此函式本身不連網,不算抓取單元。
+    """
+    rows = hi.dedupe_daily_rows(read_csv_rows(REDDIT_CSV_PATH), ["rank"])
     if not rows:
         return [], None
     latest = max(r.get("date") or "" for r in rows)
@@ -1197,8 +1255,17 @@ def run_daily(now):
     if ollama:
         ollama_deltas = se.compute_pull_deltas(ollama, read_csv_rows("data/ollama_daily.csv"), date)
 
-    # Reddit(本機每週一 --save 寫入 data/reddit_weekly.csv,雲端只讀最新快照,不連 reddit.com)。
-    # 不是雲端抓取單元:檔案不存在/空 不算 error、不進 attempted(見 goals/18)。
+    # Reddit r/LocalLLaMA 週榜(第 9 個抓取單元)。走官方 Atom feed:HTML 頁面被機房 IP 擋,
+    # 但 .rss 端點在 Actions 上實測可用(2026-08-06);代價是 RSS 不含分數與留言數。
+    # 週期由資料控制:最新快照距今 < 7 天就跳過,不算失敗、不計入 attempted。
+    reddit_rows = read_csv_rows(REDDIT_CSV_PATH)
+    if reddit_snapshot_due(reddit_rows, date):
+        attempted += 1
+        try:
+            append_csv(REDDIT_CSV_PATH, REDDIT_CSV_HEADER,
+                       build_reddit_save_rows(se.fetch_reddit_top_rss(), date, reddit_rows))
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"Reddit 週榜抓取失敗:{e}")
     reddit, reddit_snapshot_date = load_reddit_snapshot()
 
     # 組 markdown 內文

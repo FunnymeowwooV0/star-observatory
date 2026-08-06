@@ -12,12 +12,17 @@ parse_hf_trending()(純解析、可離線測)/ fetch_hf_trending()(薄連網)。
     - Product Hunt 官方 GraphQL,過去 24h AI 主題貼文 Top 10(token 只從環境變數,無 token 由呼叫端 skip)
     - Ollama    公開 HTML(ollama.com/library?sort=popular),popular 榜前 10(脆弱源:解析不到丟例外)
                 每模型帶官方一句描述;Pulls 累計數,delta 由 compute_pull_deltas 純函式算「今日新增」
-    - Reddit    公開 HTML(old.reddit.com/r/LocalLLaMA/top/?t=week),週榜前 10(脆弱源:解析不到丟例外)
-                **不進 GitHub Actions**(資料中心 IP 可能被擋),只給本機每週導讀 CLI 用,見
-                scripts/reddit_weekly.py 與 goals/05-reddit週熱帖.md。
+    - Reddit    兩條路,同一份 dict schema:
+                (a) 雲端每週一次:官方 Atom feed(old.reddit.com/r/LocalLLaMA/top/.rss?t=week),
+                    機房 IP 可用(2026-08-06 探針:HTML 403、RSS 200);**不含分數與留言數**。
+                (b) 本機每週導讀 CLI:公開 HTML(同路徑不加 .rss),住宅 IP 可用,有分數與留言數,
+                    見 scripts/reddit_weekly.py 與 goals/05-reddit週熱帖.md。
+                兩者皆為脆弱源:解析不到丟例外。
 """
 import datetime as dt
+import html
 import re
+import xml.etree.ElementTree as ET
 
 import requests
 from bs4 import BeautifulSoup
@@ -222,6 +227,69 @@ def parse_reddit_top(html, top=REDDIT_TOP):
     return out
 
 
+ATOM_NS = {"atom": "http://www.w3.org/2005/Atom"}
+
+
+def _reddit_www(url):
+    """把 old.reddit.com／np.reddit.com 網域換成 www.reddit.com(給讀者點);其餘網址原樣回傳。"""
+    return re.sub(r"^https?://(?:old|np|www)\.reddit\.com", "https://www.reddit.com", url or "")
+
+
+def parse_reddit_rss(xml, top=REDDIT_TOP):
+    """把 old.reddit r/LocalLLaMA 週榜的 Atom feed(`.rss?t=week`)解析成 list[dict]。
+
+    榜序=feed 原序(與 HTML top/week 逐字相同)。欄位 schema 與 parse_reddit_top() 完全一致,
+    但 **RSS 不提供分數與留言數** → score/comments 一律 None(不編造、不填 0)。
+
+    每則 entry 的 content(HTML)尾端固定有兩個頁腳連結:
+        [link]     → 貼文目標網址(連結帖=外部 URL;自貼文=自己的 permalink)
+        [comments] → 討論串永久連結
+    permalink 取 [comments] 並正規化成 https://www.reddit.com/...;
+    external_url 取 [link],正規化後等於 permalink(自貼文)→ None。
+
+    脆弱源(同 GitHub Trending/Ollama):解析不到任何貼文 → 丟 RuntimeError,不得靜默回空榜。
+    """
+    try:
+        root = ET.fromstring(xml or "")
+    except ET.ParseError as e:
+        raise RuntimeError(f"Reddit RSS 不是合法的 XML(可能被擋或改版了):{e}") from e
+    entries = root.findall("atom:entry", ATOM_NS)
+    if not entries:
+        raise RuntimeError("Reddit RSS 沒解析到任何 entry(feed 可能被擋或改版了)")
+
+    out = []
+    for entry in entries[:top]:
+        title = html.unescape(entry.findtext("atom:title", default="", namespaces=ATOM_NS) or "").strip()
+        content = entry.findtext("atom:content", default="", namespaces=ATOM_NS) or ""
+        footer = {}
+        for a in BeautifulSoup(content, "html.parser").find_all("a"):
+            label = a.get_text(strip=True)
+            if label in ("[link]", "[comments]") and label not in footer:
+                footer[label] = (a.get("href") or "").strip()
+
+        permalink = _reddit_www(footer.get("[comments]", ""))
+        if not permalink:
+            # 退回 entry 層的 <link href>(Atom alternate,同樣指向討論串)
+            link_el = entry.find("atom:link", ATOM_NS)
+            permalink = _reddit_www((link_el.get("href") if link_el is not None else "") or "")
+        if not permalink:
+            continue
+
+        external = footer.get("[link]", "")
+        external_url = None if (not external or _reddit_www(external) == permalink) else external
+
+        out.append({
+            "title": title,
+            "score": None,
+            "comments": None,
+            "permalink": permalink,
+            "external_url": external_url,
+        })
+    if not out:
+        raise RuntimeError("Reddit RSS 的 entry 都缺討論串連結,解析不到有效資料(feed 可能改版了)")
+    return out
+
+
 def compute_pull_deltas(today_items, csv_rows, today):
     """純函式:算每個模型的「今日新增下載」(pulls_delta)。
 
@@ -327,9 +395,23 @@ def fetch_reddit_top():
     """抓 old.reddit r/LocalLLaMA 週榜(公開 HTML,免金鑰)再解析。抓/解析失敗丟例外。
 
     刻意用 old.reddit(`.json` 後門與 www 版都被擋,見 goals/05-reddit週熱帖.md 的踩坑紀錄)。
-    只給本機呼叫(住宅 IP);不進 GitHub Actions(資料中心 IP 可能被擋)。
+    只給本機呼叫(住宅 IP);不進 GitHub Actions(資料中心 IP 被擋,2026-08-06 探針複驗仍 403)。
     """
     url = "https://old.reddit.com/r/LocalLLaMA/top/?t=week"
     resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
     resp.raise_for_status()
     return parse_reddit_top(resp.text)
+
+
+def fetch_reddit_top_rss():
+    """抓 old.reddit r/LocalLLaMA 週榜的 Atom feed 再解析。抓/解析失敗丟例外。
+
+    HTML 頁面被 Reddit 依 IP 擋(機房 IP 一律 403,換 UA 無效),但同站的 `.rss` 端點
+    在 GitHub Actions 上實測 200(2026-08-06 探針)→ 雲端走這條。
+    代價:RSS 不含分數與留言數(score/comments 為 None)。
+    (requests 會自動處理 gzip 回應,不需額外設定。)
+    """
+    url = "https://old.reddit.com/r/LocalLLaMA/top/.rss?t=week"
+    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp.raise_for_status()
+    return parse_reddit_rss(resp.text)

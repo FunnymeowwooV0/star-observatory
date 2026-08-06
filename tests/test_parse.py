@@ -392,6 +392,121 @@ class TestRedditParse(unittest.TestCase):
             se.parse_reddit_top("")
 
 
+class TestRedditRssParse(unittest.TestCase):
+    """Reddit r/LocalLLaMA 週榜 **RSS(Atom)** 解析(2026-08-06 起雲端改走這條路)。
+
+    fixture=真實 old.reddit `.rss?t=week` 快照的前 12 則 + 1 則合成列(標題含雙重編碼
+    HTML entity、外部連結帶 query),見 fixtures/reddit_localllama_weekly.rss。
+    口徑:RSS **不提供分數與留言數** → score/comments 一律 None,不得編造或填 0。
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(FIX, "reddit_localllama_weekly.rss"), encoding="utf-8") as f:
+            cls.xml = f.read()
+
+    def test_default_top_is_ten_even_though_feed_has_more(self):
+        self.assertEqual(len(se.parse_reddit_rss(self.xml)), 10)
+
+    def test_capped_by_top_and_full_feed_reachable(self):
+        self.assertEqual(len(se.parse_reddit_rss(self.xml, top=3)), 3)
+        self.assertEqual(len(se.parse_reddit_rss(self.xml, top=25)), 13)
+
+    def test_order_follows_feed_order(self):
+        items = se.parse_reddit_rss(self.xml, top=3)
+        self.assertEqual(items[0]["title"], "Qwen3.8-27B announced alongside Qwen3.8-Max")
+        self.assertEqual(
+            items[1]["title"],
+            "Daniel Han of Unsloth validates Qwen3.8-27B will run only 17GB VRAM")
+
+    def test_score_and_comments_are_always_none(self):
+        for it in se.parse_reddit_rss(self.xml, top=25):
+            self.assertIsNone(it["score"], "RSS 沒有分數,不得編造")
+            self.assertIsNone(it["comments"], "RSS 沒有留言數,不得編造")
+
+    def test_permalink_normalized_to_www(self):
+        for it in se.parse_reddit_rss(self.xml, top=25):
+            self.assertRegex(it["permalink"], r"^https://www\.reddit\.com/r/LocalLLaMA/comments/",
+                             f"permalink 未正規化成 www.reddit.com:{it['permalink']}")
+
+    def test_self_post_has_no_external_url(self):
+        items = {it["title"]: it for it in se.parse_reddit_rss(self.xml, top=25)}
+        # 自貼文:RSS 的 [link] 與 [comments] 指向同一個 permalink
+        self.assertIsNone(items["Qwen3.8-27B announced alongside Qwen3.8-Max"]["external_url"])
+        self.assertIsNone(items[
+            "I CANNOT believe I've got DeepSeek-V4-Flash-0731, a frontier model, "
+            "running on my home PC. Insane!"]["external_url"])
+
+    def test_link_post_keeps_external_url(self):
+        items = {it["title"]: it for it in se.parse_reddit_rss(self.xml, top=25)}
+        self.assertEqual(
+            items["Daniel Han of Unsloth validates Qwen3.8-27B will run only 17GB VRAM"]["external_url"],
+            "https://i.redd.it/kabmtuygn3hh1.jpeg")
+        self.assertEqual(
+            items["Hugging Face CEO says China is winning the AI race and dominating on open models"]["external_url"],
+            "https://www.cnbc.com/2026/08/03/hugging-face-china-ai-race-open-models.html")
+
+    def test_title_html_entities_unescaped(self):
+        titles = [it["title"] for it in se.parse_reddit_rss(self.xml, top=25)]
+        self.assertIn("Fixture & entity row 'quoted'", titles)
+        for t in titles:
+            self.assertNotIn("&amp;", t)
+            self.assertNotIn("&#39;", t)
+
+    def test_external_url_query_string_preserved(self):
+        items = {it["title"]: it for it in se.parse_reddit_rss(self.xml, top=25)}
+        self.assertEqual(items["Fixture & entity row 'quoted'"]["external_url"],
+                         "https://example.com/a?x=1&y=2")
+
+    def test_field_shape_matches_html_parser_schema(self):
+        for it in se.parse_reddit_rss(self.xml, top=25):
+            self.assertEqual(set(it), {"title", "score", "comments", "permalink", "external_url"})
+            self.assertTrue(it["title"], "標題不得為空")
+
+    def test_empty_or_broken_feed_raises(self):
+        empty_feed = ('<?xml version="1.0" encoding="UTF-8"?>'
+                      '<feed xmlns="http://www.w3.org/2005/Atom"><title>x</title></feed>')
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_rss(empty_feed)
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_rss("")
+        with self.assertRaises(RuntimeError):
+            se.parse_reddit_rss("<html><body>Blocked</body></html>")
+
+
+class TestRedditSnapshotDue(unittest.TestCase):
+    """雲端每日管線的「週期用資料控制」閘門:最新快照距今 < 7 天就跳過。"""
+
+    def test_no_rows_is_due(self):
+        self.assertTrue(ft.reddit_snapshot_due([], "2026-08-07"))
+
+    def test_same_day_is_not_due(self):
+        rows = [{"date": "2026-08-07"}]
+        self.assertFalse(ft.reddit_snapshot_due(rows, "2026-08-07"))
+
+    def test_six_days_old_is_not_due(self):
+        rows = [{"date": "2026-08-01"}]
+        self.assertFalse(ft.reddit_snapshot_due(rows, "2026-08-07"))
+
+    def test_exactly_seven_days_old_is_due(self):
+        rows = [{"date": "2026-07-31"}]
+        self.assertTrue(ft.reddit_snapshot_due(rows, "2026-08-07"))
+
+    def test_eight_days_old_is_due(self):
+        rows = [{"date": "2026-07-30"}]
+        self.assertTrue(ft.reddit_snapshot_due(rows, "2026-08-07"))
+
+    def test_latest_date_wins_over_older_rows(self):
+        rows = [{"date": "2026-07-01"}, {"date": "2026-08-05"}, {"date": "2026-07-20"}]
+        self.assertFalse(ft.reddit_snapshot_due(rows, "2026-08-07"))
+
+    def test_unparsable_dates_ignored(self):
+        rows = [{"date": ""}, {"date": "n/a"}, {"date": "2026-07-30"}]
+        self.assertTrue(ft.reddit_snapshot_due(rows, "2026-08-07"))
+        self.assertTrue(ft.reddit_snapshot_due([{"date": "n/a"}], "2026-08-07"),
+                        "完全讀不出日期時要當成該抓,不得永久卡住")
+
+
 class TestRedditSave(unittest.TestCase):
     """reddit_weekly.build_save_rows 純函式:同日冪等/新日寫入/欄位形狀(離線,零連網、零檔案 IO)。"""
 
@@ -413,9 +528,15 @@ class TestRedditSave(unittest.TestCase):
         self.assertEqual(rows, [
             ["2026-07-23", 1, "Post A", 512, 88,
              "https://www.reddit.com/r/LocalLLaMA/comments/a/", "https://example.com/a"],
-            ["2026-07-23", 2, "Post B", None, None,
+            ["2026-07-23", 2, "Post B", "", "",
              "https://www.reddit.com/r/LocalLLaMA/comments/b/", ""],
         ])
+
+    def test_missing_score_and_comments_written_as_empty_string(self):
+        # RSS 沒有分數/留言數 → 欄位保留(不改 schema)但寫空字串,不得寫成 "None" 或 0
+        rows = self.rw.build_save_rows(self.ITEMS, "2026-07-23", existing_rows=[])
+        self.assertEqual(rows[1][3], "")
+        self.assertEqual(rows[1][4], "")
 
     def test_same_day_already_present_skips_write(self):
         existing = [{"date": "2026-07-23", "rank": "1", "title": "Post A"}]

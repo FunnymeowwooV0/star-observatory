@@ -17,10 +17,13 @@ import datetime as dt
 import sys
 
 from sources_extra import fetch_reddit_top
-from fetch_trends import TZ, append_csv, read_csv_rows
+from fetch_trends import (TZ, append_csv, build_reddit_save_rows, read_csv_rows,
+                          REDDIT_CSV_HEADER, REDDIT_CSV_PATH)
 
-CSV_PATH = "data/reddit_weekly.csv"
-CSV_HEADER = ["date", "rank", "title", "score", "comments", "permalink", "external_url"]
+# CSV 正本(路徑/欄位/冪等規則)在 fetch_trends.py,雲端管線與本 CLI 共用同一份,不各寫一套。
+CSV_PATH = REDDIT_CSV_PATH
+CSV_HEADER = REDDIT_CSV_HEADER
+build_save_rows = build_reddit_save_rows
 
 
 def render_markdown(items):
@@ -33,21 +36,6 @@ def render_markdown(items):
             title_link += f" [[原文]]({it['external_url']})"
         lines.append(f"| {i} | {title_link} | {score} | {comments} |")
     return "\n".join(lines)
-
-
-def build_save_rows(items, date, existing_rows):
-    """純函式(離線可測):算今天要 append 的 CSV 列。
-
-    冪等:existing_rows 裡已有 date == 今天的列 → 回空 list(跳過寫入)。
-    否則把 items 依原序編號 1..N,轉成 CSV_HEADER 對應的列。
-    """
-    if any(r.get("date") == date for r in existing_rows):
-        return []
-    return [
-        [date, i, it["title"], it["score"], it["comments"], it["permalink"],
-         it["external_url"] or ""]
-        for i, it in enumerate(items, start=1)
-    ]
 
 
 def save_snapshot(items, date=None):
