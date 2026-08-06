@@ -27,6 +27,10 @@ import requests
 from bs4 import BeautifulSoup
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trend-radar-bot"
+# 2026-08-06 GitHub Actions 探針(run 31099951168 第 5 步)實測:old.reddit `.rss` 端點
+# 對這個誠實 UA 從機房 IP 回 200。共用的 UA 冒充瀏覽器,在該端點從未被驗證過,
+# 且 Reddit 不鼓勵冒充瀏覽器的 UA,因此 RSS 抓取改送這個經驗證的字串。
+REDDIT_RSS_UA = "star-observatory/1.0 (personal trend dashboard)"
 HN_TOP = 10
 OR_TOP = 10
 PH_TOP = 10
@@ -440,6 +444,6 @@ def fetch_reddit_top_rss():
     (requests 會自動處理 gzip 回應,不需額外設定。)
     """
     url = "https://old.reddit.com/r/LocalLLaMA/top/.rss?t=week"
-    resp = requests.get(url, headers={"User-Agent": UA}, timeout=30)
+    resp = requests.get(url, headers={"User-Agent": REDDIT_RSS_UA}, timeout=30)
     resp.raise_for_status()
     return parse_reddit_rss(resp.text)

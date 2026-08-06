@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import unittest
+import unittest.mock
 from xml.sax import saxutils
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
@@ -477,6 +478,47 @@ class TestRedditRssParse(unittest.TestCase):
             se.parse_reddit_rss("")
         with self.assertRaises(RuntimeError):
             se.parse_reddit_rss("<html><body>Blocked</body></html>")
+
+
+class TestFetchRedditUserAgents(unittest.TestCase):
+    """fetch_reddit_top_rss()／fetch_reddit_top() 送出的 User-Agent(離線,mock requests.get,零連網)。
+
+    背景:2026-08-06 Actions 探針證實 old.reddit `.rss` 端點在機房 IP 對誠實 UA
+    (`star-observatory/1.0 (personal trend dashboard)`)回 200;但正式程式碼原本共用
+    `UA`(冒充瀏覽器)從未在該端點被驗證過。RSS 路徑改用經驗證的字串,HTML 路徑
+    (本機、住宅 IP)維持共用 UA 不動。
+    """
+
+    def test_fetch_reddit_top_rss_sends_verified_ua(self):
+        with unittest.mock.patch.object(se, "requests") as mock_requests:
+            mock_resp = unittest.mock.Mock()
+            mock_resp.text = open(
+                os.path.join(FIX, "reddit_localllama_weekly.rss"), encoding="utf-8"
+            ).read()
+            mock_resp.raise_for_status = lambda: None
+            mock_requests.get.return_value = mock_resp
+
+            se.fetch_reddit_top_rss()
+
+            _, kwargs = mock_requests.get.call_args
+            self.assertEqual(kwargs["headers"]["User-Agent"], se.REDDIT_RSS_UA)
+
+    def test_reddit_rss_ua_does_not_impersonate_a_browser(self):
+        self.assertNotIn("Mozilla", se.REDDIT_RSS_UA)
+
+    def test_fetch_reddit_top_html_still_sends_shared_ua(self):
+        with unittest.mock.patch.object(se, "requests") as mock_requests:
+            mock_resp = unittest.mock.Mock()
+            mock_resp.text = open(
+                os.path.join(FIX, "reddit_localllama_weekly.html"), encoding="utf-8"
+            ).read()
+            mock_resp.raise_for_status = lambda: None
+            mock_requests.get.return_value = mock_resp
+
+            se.fetch_reddit_top()
+
+            _, kwargs = mock_requests.get.call_args
+            self.assertEqual(kwargs["headers"]["User-Agent"], se.UA)
 
 
 def _atom_feed(*entries):
