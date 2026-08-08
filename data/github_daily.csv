@@ -339,3 +339,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-07,8,addyosmani/agent-skills,593,83062,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
 2026-08-07,9,tirth8205/code-review-graph,237,29101,Python,https://github.com/tirth8205/code-review-graph,"Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows."
 2026-08-07,10,goauthentik/authentik,138,23189,Python,https://github.com/goauthentik/authentik,The authentication glue you need.
+2026-08-08,1,PrimeIntellect-ai/prime-agent,2293,6715,TypeScript,https://github.com/PrimeIntellect-ai/prime-agent,A self-improving RLM agent for coding workflows and long-running autonomous tasks.
+2026-08-08,2,mattpocock/skills,2152,208927,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-08,3,addyosmani/agent-skills,1131,83950,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-08-08,4,cloudflare/computer,872,5812,TypeScript,https://github.com/cloudflare/computer,Give your agent a computer 👾
+2026-08-08,5,obra/superpowers,782,268789,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-08-08,6,goauthentik/authentik,530,23639,Python,https://github.com/goauthentik/authentik,The authentication glue you need.
+2026-08-08,7,denoland/celld,516,2232,Rust,https://github.com/denoland/celld,"self-hosted, distributed Durable Objects"
+2026-08-08,8,Significant-Gravitas/AutoGPT,355,186346,Python,https://github.com/Significant-Gravitas/AutoGPT,"AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
+2026-08-08,9,google/skills,327,16286,Python,https://github.com/google/skills,Agent Skills for Google products and technologies
+2026-08-08,10,pranshuparmar/witr,234,19797,Go,https://github.com/pranshuparmar/witr,"Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI."

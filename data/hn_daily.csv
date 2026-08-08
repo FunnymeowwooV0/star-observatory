@@ -329,3 +329,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-07,8,Quake – 30th Anniversary Update,235,115,https://news.ycombinator.com/item?id=49201930,https://slayersclub.bethesda.net/en-US/news/quake-30th-anniversary-update
 2026-08-07,9,Pareto Front,227,95,https://news.ycombinator.com/item?id=49096439,https://en.wikipedia.org/wiki/Pareto_front
 2026-08-07,10,Launch HN: ProvenMetal (YC S26) delivers circuit boards in days instead of weeks,187,134,https://news.ycombinator.com/item?id=49198464,https://provenmetal.com
+2026-08-08,1,AMD acquires Taalas to boost inference performance by etching models in silicon,890,668,https://news.ycombinator.com/item?id=49201970,https://www.theregister.com/systems/2026/08/06/amd-acquires-ai-chip-startup-taalas-to-boost-inference-performance-by-etching-models-into-silicon/5284344
+2026-08-08,2,New Mexico court orders Meta to pay $567m over harms to children’s mental health,732,396,https://news.ycombinator.com/item?id=49204352,https://www.theguardian.com/technology/2026/aug/06/new-mexico-court-meta
+2026-08-08,3,DeepSeek V4 Flash 0731,486,293,https://news.ycombinator.com/item?id=49214008,https://arcprize.org/results/deepseek-v4-flash-0731
+2026-08-08,4,What happens if an entire class of workers loses faith in their careers,450,558,https://news.ycombinator.com/item?id=49209539,https://www.noemamag.com/why-is-everyone-in-tech-so-sad/
+2026-08-08,5,Oracle bans AI-generated code from OpenJDK,399,269,https://news.ycombinator.com/item?id=49213754,https://app.dealroom.co/news/feed/oracle-bans-ai-generated-code-from-openjdk-despite-ellison-s-claim-oracle-isn-t-writing-its-own-code
+2026-08-08,6,A year of fighting scrapers on my 1.5 million-page website,385,362,https://news.ycombinator.com/item?id=49211386,https://patronview.com/news/99-percent-of-my-website-traffic-is-bots/
+2026-08-08,7,Assembly Hall of Shame,266,65,https://news.ycombinator.com/item?id=49214098,https://github.com/xoreaxeaxeax/asm-hall-of-shame
+2026-08-08,8,2027 memory capacity is reportedly sold out,262,245,https://news.ycombinator.com/item?id=49207236,https://www.ign.com/articles/ramageddon-continues-another-year-as-2027-memory-capacity-is-reportedly-sold-out
+2026-08-08,9,"Making Postgres 300x faster for analytics: batching, operator fusion, and SIMD",256,120,https://news.ycombinator.com/item?id=49208535,https://malisper.me/how-we-made-postgres-hundreds-of-times-faster-the-query-engine/
+2026-08-08,10,Show HN: Wyzer Programming Language,177,100,https://news.ycombinator.com/item?id=49209385,https://github.com/Wyzer-Lang/wyzer
