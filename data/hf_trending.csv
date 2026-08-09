@@ -764,3 +764,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-08,Spaces,8,victor/DeepSeek-V4-Flash-0731-free-endpoint,87,,Chatbots,https://huggingface.co/spaces/victor/DeepSeek-V4-Flash-0731-free-endpoint
 2026-08-08,Spaces,9,Danny-Lynote/humanizer-lite,105,,Text Generation,https://huggingface.co/spaces/Danny-Lynote/humanizer-lite
 2026-08-08,Spaces,10,selfit-camera/Omni-Image-Editor,2331,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-08-09,模型,1,MiniMaxAI/MiniMax-H3,3118,26693,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-09,模型,2,deepseek-ai/DeepSeek-V4-Flash-0731,2860,785771,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+2026-08-09,模型,3,Comfy-Org/MiniMax-H3,1009,3943176,,https://huggingface.co/Comfy-Org/MiniMax-H3
+2026-08-09,模型,4,moonshotai/Kimi-K3,10345,1388105,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3
+2026-08-09,模型,5,larryvrh/MiniMax-H3-Turbo-Lora,492,0,text-to-video,https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora
+2026-08-09,模型,6,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,1762,2345190,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-08-09,模型,7,LiquidAI/LFM2.5-2.6B,419,81522,text-generation,https://huggingface.co/LiquidAI/LFM2.5-2.6B
+2026-08-09,模型,8,ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot,405,0,image-text-to-text,https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot
+2026-08-09,模型,9,unsloth/DeepSeek-V4-Flash-0731-GGUF,608,175093,,https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF
+2026-08-09,模型,10,deepgrove/maple-preview,256,896,text-generation,https://huggingface.co/deepgrove/maple-preview
+2026-08-09,資料集,1,HuggingFaceFW/fineweb,3125,373804,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-09,資料集,2,HuggingFaceH4/ultrachat_200k,855,70664,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-09,資料集,3,rajpurkar/squad,456,206548,,https://huggingface.co/datasets/rajpurkar/squad
+2026-08-09,資料集,4,Anthropic/hh-rlhf,1924,34792,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-09,資料集,5,stanfordnlp/imdb,467,186081,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-08-09,資料集,6,openai/gsm8k,1554,938787,,https://huggingface.co/datasets/openai/gsm8k
+2026-08-09,資料集,7,tatsu-lab/alpaca,1087,80933,,https://huggingface.co/datasets/tatsu-lab/alpaca
+2026-08-09,資料集,8,databricks/databricks-dolly-15k,1070,43349,,https://huggingface.co/datasets/databricks/databricks-dolly-15k
+2026-08-09,資料集,9,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,50,994,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-09,資料集,10,HuggingFaceCode/stack-v3-train,318,174592,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-09,Spaces,1,cinderholm/wan2-2-i2v-v3,701,,Video Generation,https://huggingface.co/spaces/cinderholm/wan2-2-i2v-v3
+2026-08-09,Spaces,2,multimodalart/minimax-h3,184,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
+2026-08-09,Spaces,3,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2359,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-09,Spaces,4,obsxrver/wan22-i2v-omni-lora,204,,Video Generation,https://huggingface.co/spaces/obsxrver/wan22-i2v-omni-lora
+2026-08-09,Spaces,5,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,235,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-09,Spaces,6,kulkas2pintu/wan555,1093,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-09,Spaces,7,Alissonerdx/charactersheet-lora-demo,97,,Image Generation,https://huggingface.co/spaces/Alissonerdx/charactersheet-lora-demo
+2026-08-09,Spaces,8,Danny-Lynote/humanizer-lite,106,,Text Generation,https://huggingface.co/spaces/Danny-Lynote/humanizer-lite
+2026-08-09,Spaces,9,selfit-camera/Omni-Image-Editor,2342,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-08-09,Spaces,10,multimodalart/minimax-h3-reference,61,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3-reference

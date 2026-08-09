@@ -349,3 +349,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-08,8,Significant-Gravitas/AutoGPT,355,186346,Python,https://github.com/Significant-Gravitas/AutoGPT,"AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
 2026-08-08,9,google/skills,327,16286,Python,https://github.com/google/skills,Agent Skills for Google products and technologies
 2026-08-08,10,pranshuparmar/witr,234,19797,Go,https://github.com/pranshuparmar/witr,"Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI."
+2026-08-09,1,PrimeIntellect-ai/prime-agent,2483,9114,TypeScript,https://github.com/PrimeIntellect-ai/prime-agent,A self-improving RLM agent for coding workflows and long-running autonomous tasks.
+2026-08-09,2,mattpocock/skills,1359,210125,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-09,3,addyosmani/agent-skills,779,84623,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-08-09,4,google/skills,481,16782,Python,https://github.com/google/skills,Agent Skills for Google products and technologies
+2026-08-09,5,goauthentik/authentik,467,24000,Python,https://github.com/goauthentik/authentik,The authentication glue you need.
+2026-08-09,6,denoland/celld,432,2617,Rust,https://github.com/denoland/celld,"self-hosted, distributed Durable Objects"
+2026-08-09,7,TauricResearch/TradingAgents,153,96536,Python,https://github.com/TauricResearch/TradingAgents,TradingAgents: Multi-Agents LLM Financial Trading Framework
+2026-08-09,8,TapXWorld/ChinaTextbook,118,77977,Roff,https://github.com/TapXWorld/ChinaTextbook,所有小初高、大学PDF教材。
+2026-08-09,9,bannedbook/fanqiang,101,49930,Kotlin,https://github.com/bannedbook/fanqiang,翻墙-科学上网
+2026-08-09,10,google/guava,93,51862,Java,https://github.com/google/guava,Google core libraries for Java
