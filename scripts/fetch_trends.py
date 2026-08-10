@@ -1128,7 +1128,7 @@ def _csv_int(s):
 
 
 REDDIT_CSV_PATH = "data/reddit_weekly.csv"
-REDDIT_CSV_HEADER = ["date", "rank", "title", "score", "comments", "permalink", "external_url"]
+REDDIT_CSV_HEADER = ["date", "rank", "title", "score", "comments", "permalink", "external_url", "body"]
 REDDIT_INTERVAL_DAYS = 7
 
 
@@ -1136,8 +1136,9 @@ def build_reddit_save_rows(items, date, existing_rows):
     """純函式(離線可測):算今天要 append 進 data/reddit_weekly.csv 的列。
 
     冪等:existing_rows 裡已有 date == 今天的列 → 回空 list(跳過寫入)。
-    score/comments 缺值(RSS 來源沒有)寫**空字串**:欄位保留、schema 不變,
+    score/comments 缺值(RSS 來源沒有)寫**空字串**:欄位保留,
     不得寫成 "None" 或 0(舊快照的真實數字仍原樣留在檔裡)。
+    body 只保留 RSS/Atom 已取得的正文；HTML 路徑為空，不另爬討論串。
     """
     if any(r.get("date") == date for r in existing_rows):
         return []
@@ -1147,7 +1148,8 @@ def build_reddit_save_rows(items, date, existing_rows):
          it["score"] if it["score"] is not None else "",
          it["comments"] if it["comments"] is not None else "",
          it["permalink"],
-         it["external_url"] or ""]
+         it["external_url"] or "",
+         it.get("body") or ""]
         for i, it in enumerate(items, start=1)
     ]
 
@@ -1191,6 +1193,7 @@ def load_reddit_snapshot():
         "comments": _csv_int(r.get("comments")),
         "permalink": r.get("permalink") or "",
         "external_url": r.get("external_url") or None,
+        "body": r.get("body") or "",
     } for r in latest_rows]
     return items, latest
 
@@ -1323,8 +1326,8 @@ def run_daily(now):
                [[date, i + 1, m["model"], m["total_tokens"], m["prompt_tokens"], m["completion_tokens"]]
                 for i, m in enumerate(openrouter)])
     append_csv("data/ph_daily.csv",
-               ["date", "rank", "name", "tagline", "votes", "url"],
-               [[date, i + 1, p["name"], p["tagline"], p["votes"], p["url"]]
+               ["date", "rank", "name", "tagline", "votes", "url", "description"],
+               [[date, i + 1, p["name"], p["tagline"], p["votes"], p["url"], p["description"]]
                 for i, p in enumerate(ph)])
     append_csv("data/ollama_daily.csv",
                ["date", "rank", "model", "pulls", "pulls_delta", "caps", "updated", "url", "desc"],

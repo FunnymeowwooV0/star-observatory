@@ -36,6 +36,7 @@ OR_TOP = 10
 PH_TOP = 10
 OL_TOP = 10
 REDDIT_TOP = 10
+REDDIT_BODY_MAX_CHARS = 1500
 
 
 # ----------------------------- 解析(純函式,可離線測試) -----------------------------
@@ -113,6 +114,7 @@ def parse_ph_posts(data, top=PH_TOP):
         out.append({
             "name": node.get("name") or "",
             "tagline": node.get("tagline") or "",
+            "description": node.get("description") or "",
             "votes": node.get("votesCount"),
             "url": node.get("url") or "",
         })
@@ -224,6 +226,8 @@ def parse_reddit_top(html, top=REDDIT_TOP):
             "comments": comments,
             "permalink": f"https://www.reddit.com{permalink_path}",
             "external_url": external_url,
+            # 本機 HTML 榜只有列表頁，這輪不進討論串抓第二層內文。
+            "body": "",
         })
     if not out:
         raise RuntimeError("Reddit 週榜頁面貼文都缺 permalink,解析不到有效資料(版面可能改了)")
@@ -254,6 +258,21 @@ def _reddit_www(url):
     這段註解本身被 pre-push 安全閘門的 email 樣式誤判、也別「順手修正」回原始 @)一律原樣回傳。
     """
     return _REDDIT_HOST_RE.sub("https://www.reddit.com", url or "", count=1)
+
+
+def _reddit_feed_body(content_soup, max_chars=REDDIT_BODY_MAX_CHARS):
+    """只保留 Atom `<content>` 裡原本就有的作者正文；不追內文連結。"""
+    body_node = content_soup.select_one("div.md")
+    if body_node is None:
+        return ""
+    for node in body_node.select("script, style, noscript, template"):
+        node.decompose()
+    body = re.sub(r"\s+", " ", body_node.get_text(" ", strip=True)).strip()
+    if len(body) <= max_chars:
+        return body
+    if max_chars <= 1:
+        return "…" if max_chars == 1 else ""
+    return body[:max_chars - 1].rstrip() + "…"
 
 
 def parse_reddit_rss(xml, top=REDDIT_TOP):
@@ -303,8 +322,10 @@ def parse_reddit_rss(xml, top=REDDIT_TOP):
         permalink = _reddit_www(raw_permalink)
 
         content = entry.findtext("atom:content", default="", namespaces=ATOM_NS) or ""
+        content_soup = BeautifulSoup(content, "html.parser")
+        body = _reddit_feed_body(content_soup)
         external = ""
-        for a in BeautifulSoup(content, "html.parser").find_all("a"):
+        for a in content_soup.find_all("a"):
             if a.get_text(strip=True) == "[link]":
                 external = (a.get("href") or "").strip()  # 留最後一個=官方頁腳那顆
         external_url = None if (not external or _reddit_www(external) == permalink) else external
@@ -315,6 +336,7 @@ def parse_reddit_rss(xml, top=REDDIT_TOP):
             "comments": None,
             "permalink": permalink,
             "external_url": external_url,
+            "body": body,
         })
     if not out:
         raise RuntimeError(
@@ -387,7 +409,7 @@ def fetch_ph_posts(token, posted_after=None, posted_before=None):
         query = """
         query($after: DateTime!, $first: Int!) {
           posts(topic: "artificial-intelligence", order: VOTES, postedAfter: $after, first: $first) {
-            edges { node { name tagline votesCount url } }
+            edges { node { name tagline description votesCount url } }
           }
         }
         """
@@ -396,7 +418,7 @@ def fetch_ph_posts(token, posted_after=None, posted_before=None):
         query = """
         query($after: DateTime!, $before: DateTime!, $first: Int!) {
           posts(topic: "artificial-intelligence", order: VOTES, postedAfter: $after, postedBefore: $before, first: $first) {
-            edges { node { name tagline votesCount url } }
+            edges { node { name tagline description votesCount url } }
           }
         }
         """

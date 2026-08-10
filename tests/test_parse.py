@@ -218,8 +218,27 @@ class TestPhParse(unittest.TestCase):
         for it in items:
             self.assertIsInstance(it["name"], str)
             self.assertIsInstance(it["tagline"], str)
+            self.assertIsInstance(it["description"], str)
+            self.assertTrue(it["description"], f"{it['name']} 缺 Product Hunt description")
             self.assertIsInstance(it["votes"], int)
             self.assertTrue(it["url"].startswith("https://"), it["url"])
+
+    def test_description_is_preserved_verbatim(self):
+        items = {it["name"]: it for it in se.parse_ph_posts(self.data, top=10)}
+        self.assertEqual(
+            items["Zeta Copilot"]["description"],
+            "A terminal assistant that explains commands, drafts shell workflows, and keeps "
+            "generated operations visible before the user runs them.",
+        )
+
+    def test_fetch_query_requests_description_in_existing_post_query(self):
+        response = unittest.mock.Mock()
+        response.raise_for_status.return_value = None
+        response.json.return_value = self.data
+        with unittest.mock.patch.object(se.requests, "post", return_value=response) as post:
+            se.fetch_ph_posts("fixture-token", posted_after="2026-08-08T01:00:00Z")
+        query = post.call_args.kwargs["json"]["query"]
+        self.assertIn("description", query)
 
     def test_empty_input_returns_empty(self):
         self.assertEqual(se.parse_ph_posts({}), [])
@@ -363,6 +382,7 @@ class TestRedditParse(unittest.TestCase):
             self.assertTrue(it["comments"] is None or isinstance(it["comments"], int))
             self.assertTrue(it["permalink"].startswith("https://www.reddit.com/r/LocalLLaMA/"),
                              f"permalink 未正規化成 www.reddit.com:{it['permalink']}")
+            self.assertEqual(it["body"], "", "HTML 週榜不新爬內文，只有 feed 現有正文可用")
 
     def test_self_post_has_no_external_url(self):
         items = {it["title"]: it for it in se.parse_reddit_top(self.html, top=10)}
@@ -464,9 +484,32 @@ class TestRedditRssParse(unittest.TestCase):
         self.assertEqual(items["Fixture & entity row 'quoted'"]["external_url"],
                          "https://example.com/a?x=1&y=2")
 
+    def test_existing_feed_body_is_clean_plain_text(self):
+        items = {it["title"]: it for it in se.parse_reddit_rss(self.xml, top=25)}
+        body = items["Kimi K3 full model running on 16x GB10 cluster at 20+tps"]["body"]
+        self.assertIn("38tps peak, 750tps prefill", body)
+        self.assertIn("publish the vllm image and instructions", body)
+        self.assertNotIn("<p>", body)
+        self.assertNotIn("submitted by", body)
+
+    def test_body_is_capped_as_light_material(self):
+        author_html = '<div class="md"><p>' + ("useful context " * 300) + "</p></div>"
+        content = ("<table><tr><td>" + author_html
+                   + _reddit_footer(
+                       "https://old.reddit.com/r/LocalLLaMA/comments/1cap001/capped/",
+                       "https://old.reddit.com/r/LocalLLaMA/comments/1cap001/capped/")
+                   + "</td></tr></table>")
+        item = se.parse_reddit_rss(_atom_feed(_atom_entry(
+            content,
+            "https://old.reddit.com/r/LocalLLaMA/comments/1cap001/capped/",
+            title="Capped body")), top=1)[0]
+        self.assertLessEqual(len(item["body"]), 1500)
+        self.assertTrue(item["body"].endswith("…"))
+
     def test_field_shape_matches_html_parser_schema(self):
         for it in se.parse_reddit_rss(self.xml, top=25):
-            self.assertEqual(set(it), {"title", "score", "comments", "permalink", "external_url"})
+            self.assertEqual(
+                set(it), {"title", "score", "comments", "permalink", "external_url", "body"})
             self.assertTrue(it["title"], "標題不得為空")
 
     def test_empty_or_broken_feed_raises(self):
@@ -587,6 +630,12 @@ class TestRedditRssHostileContent(unittest.TestCase):
         self.assertNotIn("evil.example", str(item["external_url"]),
                          f"external_url 被貼文作者劫持:{item['external_url']}")
         self.assertEqual(item["external_url"], "https://i.redd.it/legit.jpeg")
+
+    def test_author_body_is_data_only_and_does_not_include_feed_footer(self):
+        item = se.parse_reddit_rss(self._hostile_feed(), top=1)[0]
+        self.assertIn("Great model!", item["body"])
+        self.assertNotIn("<a ", item["body"])
+        self.assertNotIn("submitted by", item["body"])
 
     def test_non_reddit_entry_link_is_dropped_not_trusted(self):
         """entry 層 `<link href>` 不是討論串網址 → fail-closed,該則跳過(不放行可疑值)。"""
@@ -741,20 +790,23 @@ class TestRedditSave(unittest.TestCase):
     ITEMS = [
         {"title": "Post A", "score": 512, "comments": 88,
          "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/a/",
-         "external_url": "https://example.com/a"},
+         "external_url": "https://example.com/a", "body": "Post A body"},
         {"title": "Post B", "score": None, "comments": None,
          "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/b/",
-         "external_url": None},
+         "external_url": None, "body": ""},
     ]
 
     def test_new_date_writes_all_rows_in_order(self):
         rows = self.rw.build_save_rows(self.ITEMS, "2026-07-23", existing_rows=[])
         self.assertEqual(rows, [
             ["2026-07-23", 1, "Post A", 512, 88,
-             "https://www.reddit.com/r/LocalLLaMA/comments/a/", "https://example.com/a"],
+             "https://www.reddit.com/r/LocalLLaMA/comments/a/", "https://example.com/a", "Post A body"],
             ["2026-07-23", 2, "Post B", "", "",
-             "https://www.reddit.com/r/LocalLLaMA/comments/b/", ""],
+             "https://www.reddit.com/r/LocalLLaMA/comments/b/", "", ""],
         ])
+
+    def test_future_csv_schema_has_body_column(self):
+        self.assertEqual(self.rw.CSV_HEADER[-1], "body")
 
     def test_missing_score_and_comments_written_as_empty_string(self):
         # RSS 沒有分數/留言數 → 欄位保留(不改 schema)但寫空字串,不得寫成 "None" 或 0
