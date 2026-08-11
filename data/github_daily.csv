@@ -369,3 +369,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-10,8,pranshuparmar/witr,210,20773,Go,https://github.com/pranshuparmar/witr,"Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI."
 2026-08-10,9,pingdotgg/t3code,163,17708,TypeScript,https://github.com/pingdotgg/t3code,
 2026-08-10,10,vitali87/code-graph-rag,96,3100,Python,https://github.com/vitali87/code-graph-rag,"The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs"
+2026-08-11,1,PrimeIntellect-ai/prime-agent,2642,13199,TypeScript,https://github.com/PrimeIntellect-ai/prime-agent,A self-improving RLM agent for coding workflows and long-running autonomous tasks.
+2026-08-11,2,msitarzewski/agency-agents,1349,141905,Shell,https://github.com/msitarzewski/agency-agents,"A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+2026-08-11,3,semantica-agi/semantica,970,4225,Python,https://github.com/semantica-agi/semantica,Graph-Native Infrastructure for Context and Accountable AI Systems
+2026-08-11,4,Comfy-Org/ComfyUI,922,126396,Python,https://github.com/Comfy-Org/ComfyUI,"The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface."
+2026-08-11,5,firecrawl/firecrawl,835,165171,TypeScript,https://github.com/firecrawl/firecrawl,"The context API to search, scrape, and interact with the web at scale. 🔥"
+2026-08-11,6,vitali87/code-graph-rag,682,3569,Python,https://github.com/vitali87/code-graph-rag,"The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs"
+2026-08-11,7,addyosmani/agent-skills,659,85808,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-08-11,8,pingdotgg/t3code,389,18053,TypeScript,https://github.com/pingdotgg/t3code,
+2026-08-11,9,google-deepmind/weathernext,325,7377,Python,https://github.com/google-deepmind/weathernext,
+2026-08-11,10,danielmiessler/LifeOS,315,17980,TypeScript,https://github.com/danielmiessler/LifeOS,⛰️A General Hill-climbing AI harness that helps you move from Current State to Ideal State in both Life and Work.
