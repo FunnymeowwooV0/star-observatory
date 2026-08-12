@@ -854,3 +854,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-11,Spaces,8,mrfakename/minimax-h3-ultra-fast,66,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
 2026-08-11,Spaces,9,Lynote/free-ai-humanizer,110,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
 2026-08-11,Spaces,10,wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow,60,,Video Generation,https://huggingface.co/spaces/wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow
+2026-08-12,模型,1,MiniMaxAI/MiniMax-H3,3591,59368,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-12,模型,2,meta-models/Muse-Glimmer-30B,1113,0,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-12,模型,3,deepseek-ai/DeepSeek-V4-Flash-0731,3162,1048685,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+2026-08-12,模型,4,larryvrh/MiniMax-H3-Turbo-Lora,656,0,text-to-video,https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora
+2026-08-12,模型,5,Comfy-Org/MiniMax-H3,1216,6798796,,https://huggingface.co/Comfy-Org/MiniMax-H3
+2026-08-12,模型,6,moonshotai/Kimi-K3,10532,1565484,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3
+2026-08-12,模型,7,LiquidAI/LFM2.5-2.6B,555,93668,text-generation,https://huggingface.co/LiquidAI/LFM2.5-2.6B
+2026-08-12,模型,8,DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF,1907,2521093,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF
+2026-08-12,模型,9,lightx2v/Minimax-h3-Turbo,353,20376,image-to-video,https://huggingface.co/lightx2v/Minimax-h3-Turbo
+2026-08-12,模型,10,unsloth/Muse-Glimmer-30B-GGUF,311,0,image-text-to-text,https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF
+2026-08-12,資料集,1,HuggingFaceFW/fineweb,3157,398446,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-12,資料集,2,HuggingFaceH4/ultrachat_200k,869,73327,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-12,資料集,3,Anthropic/hh-rlhf,1946,33956,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-12,資料集,4,rajpurkar/squad,461,212020,,https://huggingface.co/datasets/rajpurkar/squad
+2026-08-12,資料集,5,stanfordnlp/imdb,472,180584,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-08-12,資料集,6,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,58,1486,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-12,資料集,7,tatsu-lab/alpaca,1089,81297,,https://huggingface.co/datasets/tatsu-lab/alpaca
+2026-08-12,資料集,8,openai/gsm8k,1557,960715,,https://huggingface.co/datasets/openai/gsm8k
+2026-08-12,資料集,9,databricks/databricks-dolly-15k,1072,43155,,https://huggingface.co/datasets/databricks/databricks-dolly-15k
+2026-08-12,資料集,10,HuggingFaceCode/stack-v3-train,330,197489,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-12,Spaces,1,cinderholm/wan2-2-i2v-v3,868,,Video Generation,https://huggingface.co/spaces/cinderholm/wan2-2-i2v-v3
+2026-08-12,Spaces,2,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2455,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-12,Spaces,3,multimodalart/minimax-h3,228,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
+2026-08-12,Spaces,4,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,269,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-12,Spaces,5,obsxrver/wan22-i2v-omni-lora,219,,Video Generation,https://huggingface.co/spaces/obsxrver/wan22-i2v-omni-lora
+2026-08-12,Spaces,6,wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow,84,,Video Generation,https://huggingface.co/spaces/wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow
+2026-08-12,Spaces,7,Alissonerdx/charactersheet-lora-demo,122,,Image Generation,https://huggingface.co/spaces/Alissonerdx/charactersheet-lora-demo
+2026-08-12,Spaces,8,mrfakename/minimax-h3-ultra-fast,76,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
+2026-08-12,Spaces,9,Lynote/free-ai-humanizer,117,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
+2026-08-12,Spaces,10,kulkas2pintu/wan555,1115,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
