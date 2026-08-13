@@ -884,3 +884,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-12,Spaces,8,mrfakename/minimax-h3-ultra-fast,76,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
 2026-08-12,Spaces,9,Lynote/free-ai-humanizer,117,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
 2026-08-12,Spaces,10,kulkas2pintu/wan555,1115,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-13,模型,1,meta-models/Muse-Glimmer-30B,1307,0,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-13,模型,2,MiniMaxAI/MiniMax-H3,3724,83484,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-13,模型,3,larryvrh/MiniMax-H3-Turbo-Lora,702,0,text-to-video,https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora
+2026-08-13,模型,4,deepseek-ai/DeepSeek-V4-Flash-0731,3249,1048685,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+2026-08-13,模型,5,Qwen/Qwen3.8-2.4T-A95B,553,978,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-13,模型,6,Lightricks/LTX-2.5,580,39,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-13,模型,7,Comfy-Org/MiniMax-H3,1261,6798796,,https://huggingface.co/Comfy-Org/MiniMax-H3
+2026-08-13,模型,8,lightx2v/Minimax-h3-Turbo,413,20376,image-to-video,https://huggingface.co/lightx2v/Minimax-h3-Turbo
+2026-08-13,模型,9,unsloth/Muse-Glimmer-30B-GGUF,364,0,image-text-to-text,https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF
+2026-08-13,模型,10,moonshotai/Kimi-K3,10585,1565484,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3
+2026-08-13,資料集,1,HuggingFaceFW/fineweb,3170,398446,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-13,資料集,2,Anthropic/hh-rlhf,1955,33956,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-13,資料集,3,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,77,1486,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-13,資料集,4,MatrAIx2026/MatrAIx_Persona_1M,38,4869,,https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M
+2026-08-13,資料集,5,ostris/minimax_h3_1k,25,1490,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-13,資料集,6,HuggingFaceH4/ultrachat_200k,871,73327,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-13,資料集,7,HuggingFaceCode/stack-v3-train,335,197489,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-13,資料集,8,biglam/british-library-book-images,21,1077,,https://huggingface.co/datasets/biglam/british-library-book-images
+2026-08-13,資料集,9,FlyRank/internship-warehouse,473,16216,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-08-13,資料集,10,r0b0tlab/qwen3.8-max-distillation-50k,87,2035,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-distillation-50k
+2026-08-13,Spaces,1,cinderholm/wan2-2-i2v-v3,915,,Video Generation,https://huggingface.co/spaces/cinderholm/wan2-2-i2v-v3
+2026-08-13,Spaces,2,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2478,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-13,Spaces,3,multimodalart/minimax-h3,236,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
+2026-08-13,Spaces,4,Lynote/free-ai-detector,211,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-13,Spaces,5,wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow,93,,Video Generation,https://huggingface.co/spaces/wank3r/Wan_2.2_I2V_14B_Custom_Lora_Wow
+2026-08-13,Spaces,6,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,276,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-13,Spaces,7,Lynote/free-ai-humanizer,121,,Text Editing,https://huggingface.co/spaces/Lynote/free-ai-humanizer
+2026-08-13,Spaces,8,mrfakename/minimax-h3-ultra-fast,85,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
+2026-08-13,Spaces,9,Alissonerdx/charactersheet-lora-demo,127,,Image Generation,https://huggingface.co/spaces/Alissonerdx/charactersheet-lora-demo
+2026-08-13,Spaces,10,obsxrver/wan22-i2v-omni-lora,220,,Video Generation,https://huggingface.co/spaces/obsxrver/wan22-i2v-omni-lora

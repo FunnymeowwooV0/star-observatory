@@ -379,3 +379,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-12,8,London Underground begins scanning passengers' faces,243,260,https://news.ycombinator.com/item?id=49255496,https://www.btp.police.uk/news/btp/news/england/btp-expands-live-facial-recognition-lfr-trial-into-london-underground-stations/
 2026-08-12,9,"Show HN: iPhone app takes simultaneous images from 2 lenses, fuses into 1 photo",223,225,https://news.ycombinator.com/item?id=49226623,https://photosynthesis.camera
 2026-08-12,10,Nvidia Nemotron 3.5 Lightning and NeMo Switchyard,191,98,https://news.ycombinator.com/item?id=49263340,https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/
+2026-08-13,1,Tailscale Traces Database Corruption to 16y/o SQLite WAL-Reset Bug,851,162,https://news.ycombinator.com/item?id=49272832,https://tailscale.com/blog/sqlite-wal-reset-bug
+2026-08-13,2,DeepSeek V4 Pro 0813,786,300,https://news.ycombinator.com/item?id=49274600,https://openrouter.ai/deepseek/deepseek-v4-pro-0813
+2026-08-13,3,AI is removing the middle class of software engineering?,754,690,https://news.ycombinator.com/item?id=49271994,https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html
+2026-08-13,4,Qwen3.8-2.4T,521,115,https://news.ycombinator.com/item?id=49273478,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-13,5,2026 Eclipse Webcams,459,124,https://news.ycombinator.com/item?id=49270953,https://jonty.github.io/2026_eclipse_webcams/
+2026-08-13,6,Delta,435,146,https://news.ycombinator.com/item?id=49276574,https://zed.dev/blog/introducing-delta
+2026-08-13,7,Grok 4.6,432,423,https://news.ycombinator.com/item?id=49274027,https://x.ai/news/grok-4-6
+2026-08-13,8,uBlock Origin Is Giving Up the Fight to Keep Ads Off Facebook,325,453,https://news.ycombinator.com/item?id=49270726,https://digitalescapetools.com/2026/08/ublock-origin-stops-chasing-facebook-ads.html
+2026-08-13,9,Why tiny JPEGs look different in Chrome,267,59,https://news.ycombinator.com/item?id=49272549,https://guillaumetech.github.io/posts/jpg-scaling-chrome/
+2026-08-13,10,"Tim King, AmigaDOS developer, has died",242,30,https://news.ycombinator.com/item?id=49272655,https://amiga-news.de/en/news/AN-2026-08-00070-EN.html

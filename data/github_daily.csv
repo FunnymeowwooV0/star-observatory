@@ -389,3 +389,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-12,8,anthropics/skills,485,168211,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
 2026-08-12,9,calesthio/OpenMontage,458,47432,Python,https://github.com/calesthio/OpenMontage,"World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio."
 2026-08-12,10,practical-tutorials/project-based-learning,401,278526,Python,https://github.com/practical-tutorials/project-based-learning,Curated list of project-based tutorials
+2026-08-13,1,cathrynlavery/diagram-design,2855,11047,HTML,https://github.com/cathrynlavery/diagram-design,"29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop."
+2026-08-13,2,msitarzewski/agency-agents,1873,144661,Shell,https://github.com/msitarzewski/agency-agents,"A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+2026-08-13,3,stablyai/orca,1235,44054,TypeScript,https://github.com/stablyai/orca,"Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS."
+2026-08-13,4,semantica-agi/semantica,845,5824,Python,https://github.com/semantica-agi/semantica,Graph-Native Infrastructure for Context and Accountable AI Systems
+2026-08-13,5,paperclipai/paperclip,571,77797,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-08-13,6,hugohe3/ppt-master,476,45799,Python,https://github.com/hugohe3/ppt-master,"AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He"
+2026-08-13,7,NVIDIA-NeMo/Switchyard,421,893,Rust,https://github.com/NVIDIA-NeMo/Switchyard,
+2026-08-13,8,cactus-compute/needle,315,4324,Python,https://github.com/cactus-compute/needle,"14MB foundation model for tiny devices; phones, wearables, smart home, and robots."
+2026-08-13,9,shiyu-coder/Kronos,266,36969,Python,https://github.com/shiyu-coder/Kronos,Kronos: A Foundation Model for the Language of Financial Markets
+2026-08-13,10,macro-inc/macro,227,1959,Rust,https://github.com/macro-inc/macro,"Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory."
