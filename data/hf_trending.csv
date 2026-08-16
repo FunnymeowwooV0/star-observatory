@@ -974,3 +974,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-15,Spaces,8,kulkas2pintu/wan555,1148,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
 2026-08-15,Spaces,9,agent-memory-leaderboard/leaderboard,233,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
 2026-08-15,Spaces,10,zai-org/OpenVuln,51,,Text Analysis,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-16,模型,1,Qwen/Qwen3.8-27B,9820,91917,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-16,模型,2,meta-models/Muse-Glimmer-30B,1582,246454,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-16,模型,3,unsloth/Qwen3.8-27B-GGUF,1245,867963,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-16,模型,4,Qwen/Qwen3.8-2.4T-A95B,974,6381,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-16,模型,5,Lightricks/LTX-2.5,949,378439,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-16,模型,6,MiniMaxAI/MiniMax-Music3,772,5079,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-16,模型,7,MiniMaxAI/MiniMax-H3,3979,2212155,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-16,模型,8,deepseek-ai/DeepSeek-V4-Pro-0813,496,19945,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+2026-08-16,模型,9,deepseek-ai/DeepSeek-V4-Flash-0731,3425,1798247,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
+2026-08-16,模型,10,unsloth/Muse-Glimmer-30B-GGUF,438,682188,image-text-to-text,https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF
+2026-08-16,資料集,1,HuggingFaceFW/fineweb,3211,418229,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-16,資料集,2,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,101,3233,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-16,資料集,3,Anthropic/hh-rlhf,1976,33738,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-16,資料集,4,ostris/minimax_h3_1k,31,5172,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-16,資料集,5,HuggingFaceCode/stack-v3-train,344,237737,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-16,資料集,6,MatrAIx2026/MatrAIx_Persona_1M,43,11740,,https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M
+2026-08-16,資料集,7,HuggingFaceH4/ultrachat_200k,874,79784,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-16,資料集,8,FINAL-Bench/AX-RAY,33,89,,https://huggingface.co/datasets/FINAL-Bench/AX-RAY
+2026-08-16,資料集,9,ulamai/UnsolvedMath,41,1030,,https://huggingface.co/datasets/ulamai/UnsolvedMath
+2026-08-16,資料集,10,nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1,15,445,,https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1
+2026-08-16,Spaces,1,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2557,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-16,Spaces,2,MiniMaxAI/MiniMax-H3-Turbo-Lora,145,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-16,Spaces,3,MiniMaxAI/MiniMax-Music3,115,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-16,Spaces,4,Lynote/free-ai-detector,223,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-16,Spaces,5,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,314,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-16,Spaces,6,kulkas2pintu/wan555,1179,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-16,Spaces,7,zai-org/OpenVuln,73,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-16,Spaces,8,mrfakename/minimax-h3-ultra-fast,108,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
+2026-08-16,Spaces,9,multimodalart/minimax-h3,255,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
+2026-08-16,Spaces,10,agent-memory-leaderboard/leaderboard,353,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
