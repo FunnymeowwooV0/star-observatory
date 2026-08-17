@@ -1004,3 +1004,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-16,Spaces,8,mrfakename/minimax-h3-ultra-fast,108,,Video Generation,https://huggingface.co/spaces/mrfakename/minimax-h3-ultra-fast
 2026-08-16,Spaces,9,multimodalart/minimax-h3,255,,Video Generation,https://huggingface.co/spaces/multimodalart/minimax-h3
 2026-08-16,Spaces,10,agent-memory-leaderboard/leaderboard,353,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-17,模型,1,Qwen/Qwen3.8-27B,10316,267725,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-17,模型,2,meta-models/Muse-Glimmer-30B,1634,292973,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-17,模型,3,unsloth/Qwen3.8-27B-GGUF,1469,1945635,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-17,模型,4,Qwen/Qwen3.8-2.4T-A95B,1012,7932,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-17,模型,5,Lightricks/LTX-2.5,1031,424099,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-17,模型,6,MiniMaxAI/MiniMax-Music3,846,8639,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-17,模型,7,MiniMaxAI/MiniMax-H3,4031,2307541,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-17,模型,8,deepseek-ai/DeepSeek-V4-Pro-0813,539,21873,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+2026-08-17,模型,9,Qwen/Qwen3.8-27B-FP8,487,352971,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B-FP8
+2026-08-17,模型,10,unsloth/Muse-Glimmer-30B-GGUF,458,718178,image-text-to-text,https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF
+2026-08-17,資料集,1,HuggingFaceFW/fineweb,3220,401921,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-17,資料集,2,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,112,3819,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-17,資料集,3,ostris/minimax_h3_1k,47,5279,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-17,資料集,4,Anthropic/hh-rlhf,1985,34002,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-17,資料集,5,HuggingFaceCode/stack-v3-train,344,244453,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-17,資料集,6,MatrAIx2026/MatrAIx_Persona_1M,44,12232,,https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M
+2026-08-17,資料集,7,nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1,16,544,,https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1
+2026-08-17,資料集,8,r0b0tlab/qwen3.8-max-distillation-50k,94,2469,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-distillation-50k
+2026-08-17,資料集,9,HuggingFaceH4/ultrachat_200k,875,82426,,https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k
+2026-08-17,資料集,10,scholarweave/arxiv-latex,131,16391,,https://huggingface.co/datasets/scholarweave/arxiv-latex
+2026-08-17,Spaces,1,MiniMaxAI/MiniMax-H3-Turbo-Lora,173,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-17,Spaces,2,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2580,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-17,Spaces,3,MiniMaxAI/MiniMax-Music3,129,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-17,Spaces,4,Lynote/free-ai-detector,227,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-17,Spaces,5,kulkas2pintu/wan555,1201,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-17,Spaces,6,zai-org/OpenVuln,78,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-17,Spaces,7,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,323,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-17,Spaces,8,thornmaze/reel-lab,75,,Video Generation,https://huggingface.co/spaces/thornmaze/reel-lab
+2026-08-17,Spaces,9,agent-memory-leaderboard/leaderboard,441,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-17,Spaces,10,2i/pornmaster-krea2,73,,Image Generation,https://huggingface.co/spaces/2i/pornmaster-krea2
