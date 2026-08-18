@@ -436,3 +436,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-17,5,cactus-compute/needle,443,6635,Python,https://github.com/cactus-compute/needle,"14MB foundation model for tiny devices; phones, wearables, smart home, and robots."
 2026-08-17,6,basecamp/omarchy,270,25449,Shell,https://github.com/basecamp/omarchy,"Beautiful, Modern & Opinionated Linux"
 2026-08-17,7,OpenCut-app/OpenCut,150,83956,TypeScript,https://github.com/OpenCut-app/OpenCut,The open-source CapCut alternative
+2026-08-18,1,harry0703/MoneyPrinterTurbo,1189,106225,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+2026-08-18,2,cordiverse/cordis,957,5646,TypeScript,https://github.com/cordiverse/cordis,Meta-Framework of Spatiotemporal Composability
+2026-08-18,3,usestrix/strix,598,54267,Python,https://github.com/usestrix/strix,Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.
+2026-08-18,4,agalwood/Motrix,344,53134,TypeScript,https://github.com/agalwood/Motrix,A full-featured download manager.
+2026-08-18,5,santifer/career-ops,218,64743,JavaScript,https://github.com/santifer/career-ops,"Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)"
+2026-08-18,6,akitaonrails/ai-memory,207,2132,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
+2026-08-18,7,mukul975/Anthropic-Cybersecurity-Skills,198,28484,Python,https://github.com/mukul975/Anthropic-Cybersecurity-Skills,"817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0"
+2026-08-18,8,AlexsJones/llmfit,198,32332,Rust,https://github.com/AlexsJones/llmfit,Hundreds of models & providers. One command to find what runs on your hardware.
+2026-08-18,9,immich-app/immich,175,111208,TypeScript,https://github.com/immich-app/immich,High performance self-hosted photo and video management solution.
+2026-08-18,10,nautechsystems/nautilus_trader,120,25966,Rust,https://github.com/nautechsystems/nautilus_trader,Production-grade Rust-native trading engine with deterministic event-driven architecture

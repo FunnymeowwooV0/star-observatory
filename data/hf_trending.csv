@@ -1034,3 +1034,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-17,Spaces,8,thornmaze/reel-lab,75,,Video Generation,https://huggingface.co/spaces/thornmaze/reel-lab
 2026-08-17,Spaces,9,agent-memory-leaderboard/leaderboard,441,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
 2026-08-17,Spaces,10,2i/pornmaster-krea2,73,,Image Generation,https://huggingface.co/spaces/2i/pornmaster-krea2
+2026-08-18,模型,1,Qwen/Qwen3.8-27B,10732,415039,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-18,模型,2,unsloth/Qwen3.8-27B-GGUF,1639,2727609,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-18,模型,3,Qwen/Qwen3.8-2.4T-A95B,1042,9465,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-18,模型,4,Lightricks/LTX-2.5,1114,465529,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-18,模型,5,MiniMaxAI/MiniMax-Music3,907,10375,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-18,模型,6,meta-models/Muse-Glimmer-30B,1662,334099,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-18,模型,7,MiniMaxAI/MiniMax-H3,4088,2403238,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-18,模型,8,deepseek-ai/DeepSeek-V4-Pro-0813,574,25006,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+2026-08-18,模型,9,Qwen/Qwen3.8-27B-FP8,532,495646,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B-FP8
+2026-08-18,模型,10,orcarouter/Qwen3.8-27B-Uncensored-FP8,444,15812,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-18,資料集,1,HuggingFaceFW/fineweb,3229,402264,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-18,資料集,2,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,131,4060,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-18,資料集,3,Anthropic/hh-rlhf,1991,34314,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-18,資料集,4,ostris/minimax_h3_1k,60,6523,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-18,資料集,5,ChartGalaxy/ChartGalaxy,57,109487,,https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy
+2026-08-18,資料集,6,HuggingFaceCode/stack-v3-train,346,250906,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-18,資料集,7,nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1,18,609,,https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1
+2026-08-18,資料集,8,MatrAIx2026/MatrAIx_Persona_1M,46,12919,,https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M
+2026-08-18,資料集,9,ulamai/UnsolvedMath,49,2039,,https://huggingface.co/datasets/ulamai/UnsolvedMath
+2026-08-18,資料集,10,saidutta69/fable-5-premium,18,1243,,https://huggingface.co/datasets/saidutta69/fable-5-premium
+2026-08-18,Spaces,1,MiniMaxAI/MiniMax-H3-Turbo-Lora,201,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-18,Spaces,2,MiniMaxAI/MiniMax-Music3,147,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-18,Spaces,3,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2601,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-18,Spaces,4,kulkas2pintu/wan555,1224,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-18,Spaces,5,zai-org/OpenVuln,86,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-18,Spaces,6,2i/pornmaster-krea2,104,,Image Generation,https://huggingface.co/spaces/2i/pornmaster-krea2
+2026-08-18,Spaces,7,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,340,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-18,Spaces,8,thornmaze/reel-lab,99,,Video Generation,https://huggingface.co/spaces/thornmaze/reel-lab
+2026-08-18,Spaces,9,agent-memory-leaderboard/leaderboard,554,,Model Benchmarking,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-18,Spaces,10,Lynote/free-ai-detector,228,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector

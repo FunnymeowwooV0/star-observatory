@@ -7,124 +7,127 @@
 
 ---
 
-## 今日榜單 · 2026-08-17
-_更新於 2026-08-17 10:17 UTC+08:00_
+## 今日榜單 · 2026-08-18
+_更新於 2026-08-18 10:12 UTC+08:00_
 
-### 🐙 GitHub 本日新增星 Top 7
+### 🐙 GitHub 本日新增星 Top 10
 
 | # | Repo | ⭐ 新增 | 總星 | 語言 | 說明 |
 |:-:|------|-------:|-----:|:----:|------|
-| 1 | [public-apis/public-apis](https://github.com/public-apis/public-apis) | +1,588 | 461,883 | Python | A collective list of free APIs |
-| 2 | [cordiverse/cordis](https://github.com/cordiverse/cordis) | +720 | 4,844 | TypeScript | Meta-Framework of Spatiotemporal Composability |
-| 3 | [unslothai/unsloth](https://github.com/unslothai/unsloth) | +572 | 72,655 | Python | Local UI to run and train LLMs and diffusion models, including Qwen3.8,  |
-| 4 | [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet) | +452 | 40,084 | JavaScript | ToolJet is the open-source foundation of ToolJet AI - the enterprise app |
-| 5 | [cactus-compute/needle](https://github.com/cactus-compute/needle) | +443 | 6,635 | Python | 14MB foundation model for tiny devices; phones, wearables, smart home, a |
-| 6 | [basecamp/omarchy](https://github.com/basecamp/omarchy) | +270 | 25,449 | Shell | Beautiful, Modern & Opinionated Linux |
-| 7 | [OpenCut-app/OpenCut](https://github.com/OpenCut-app/OpenCut) | +150 | 83,956 | TypeScript | The open-source CapCut alternative |
+| 1 | [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo) | +1,189 | 106,225 | Python | 利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic |
+| 2 | [cordiverse/cordis](https://github.com/cordiverse/cordis) | +957 | 5,646 | TypeScript | Meta-Framework of Spatiotemporal Composability |
+| 3 | [usestrix/strix](https://github.com/usestrix/strix) | +598 | 54,267 | Python | Open-source AI penetration testing tool to find and fix your app’s vulne |
+| 4 | [agalwood/Motrix](https://github.com/agalwood/Motrix) | +344 | 53,134 | TypeScript | A full-featured download manager. |
+| 5 | [santifer/career-ops](https://github.com/santifer/career-ops) | +218 | 64,743 | JavaScript | Open-source AI job search: scan job portals, evaluate listings with a st |
+| 6 | [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) | +207 | 2,132 | Rust | Solution for long term memory for agent coding CLIs and to facilitate ha |
+| 7 | [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) | +198 | 28,484 | Python | 817 structured cybersecurity skills for AI agents · Mapped to 6 framewor |
+| 8 | [AlexsJones/llmfit](https://github.com/AlexsJones/llmfit) | +198 | 32,332 | Rust | Hundreds of models & providers. One command to find what runs on your ha |
+| 9 | [immich-app/immich](https://github.com/immich-app/immich) | +175 | 111,208 | TypeScript | High performance self-hosted photo and video management solution. |
+| 10 | [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader) | +120 | 25,966 | Rust | Production-grade Rust-native trading engine with deterministic event-dri |
 
 ### 🤗 Hugging Face 熱門模型 Top 10
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [Qwen/Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) | 10,316 | 267,725 | image-text-to-text |
-| 2 | [meta-models/Muse-Glimmer-30B](https://huggingface.co/meta-models/Muse-Glimmer-30B) | 1,634 | 292,973 | image-text-to-text |
-| 3 | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) | 1,469 | 1,945,635 | — |
-| 4 | [Qwen/Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) | 1,012 | 7,932 | text-generation |
-| 5 | [Lightricks/LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) | 1,031 | 424,099 | image-to-video |
-| 6 | [MiniMaxAI/MiniMax-Music3](https://huggingface.co/MiniMaxAI/MiniMax-Music3) | 846 | 8,639 | text-to-audio |
-| 7 | [MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) | 4,031 | 2,307,541 | image-text-to-video |
-| 8 | [deepseek-ai/DeepSeek-V4-Pro-0813](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813) | 539 | 21,873 | text-generation |
-| 9 | [Qwen/Qwen3.8-27B-FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8) | 487 | 352,971 | image-text-to-text |
-| 10 | [unsloth/Muse-Glimmer-30B-GGUF](https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF) | 458 | 718,178 | image-text-to-text |
+| 1 | [Qwen/Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) | 10,732 | 415,039 | image-text-to-text |
+| 2 | [unsloth/Qwen3.8-27B-GGUF](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF) | 1,639 | 2,727,609 | — |
+| 3 | [Qwen/Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) | 1,042 | 9,465 | text-generation |
+| 4 | [Lightricks/LTX-2.5](https://huggingface.co/Lightricks/LTX-2.5) | 1,114 | 465,529 | image-to-video |
+| 5 | [MiniMaxAI/MiniMax-Music3](https://huggingface.co/MiniMaxAI/MiniMax-Music3) | 907 | 10,375 | text-to-audio |
+| 6 | [meta-models/Muse-Glimmer-30B](https://huggingface.co/meta-models/Muse-Glimmer-30B) | 1,662 | 334,099 | image-text-to-text |
+| 7 | [MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) | 4,088 | 2,403,238 | image-text-to-video |
+| 8 | [deepseek-ai/DeepSeek-V4-Pro-0813](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813) | 574 | 25,006 | text-generation |
+| 9 | [Qwen/Qwen3.8-27B-FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8) | 532 | 495,646 | image-text-to-text |
+| 10 | [orcarouter/Qwen3.8-27B-Uncensored-FP8](https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8) | 444 | 15,812 | image-text-to-text |
 
 ### 🤗 Hugging Face 熱門資料集 Top 10
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [HuggingFaceFW/fineweb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) | 3,220 | 401,921 | — |
-| 2 | [r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation](https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation) | 112 | 3,819 | — |
-| 3 | [ostris/minimax_h3_1k](https://huggingface.co/datasets/ostris/minimax_h3_1k) | 47 | 5,279 | — |
-| 4 | [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf) | 1,985 | 34,002 | — |
-| 5 | [HuggingFaceCode/stack-v3-train](https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train) | 344 | 244,453 | — |
-| 6 | [MatrAIx2026/MatrAIx_Persona_1M](https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M) | 44 | 12,232 | — |
-| 7 | [nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1](https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1) | 16 | 544 | — |
-| 8 | [r0b0tlab/qwen3.8-max-distillation-50k](https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-distillation-50k) | 94 | 2,469 | — |
-| 9 | [HuggingFaceH4/ultrachat_200k](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k) | 875 | 82,426 | — |
-| 10 | [scholarweave/arxiv-latex](https://huggingface.co/datasets/scholarweave/arxiv-latex) | 131 | 16,391 | — |
+| 1 | [HuggingFaceFW/fineweb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) | 3,229 | 402,264 | — |
+| 2 | [r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation](https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation) | 131 | 4,060 | — |
+| 3 | [Anthropic/hh-rlhf](https://huggingface.co/datasets/Anthropic/hh-rlhf) | 1,991 | 34,314 | — |
+| 4 | [ostris/minimax_h3_1k](https://huggingface.co/datasets/ostris/minimax_h3_1k) | 60 | 6,523 | — |
+| 5 | [ChartGalaxy/ChartGalaxy](https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy) | 57 | 109,487 | — |
+| 6 | [HuggingFaceCode/stack-v3-train](https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train) | 346 | 250,906 | — |
+| 7 | [nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1](https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1) | 18 | 609 | — |
+| 8 | [MatrAIx2026/MatrAIx_Persona_1M](https://huggingface.co/datasets/MatrAIx2026/MatrAIx_Persona_1M) | 46 | 12,919 | — |
+| 9 | [ulamai/UnsolvedMath](https://huggingface.co/datasets/ulamai/UnsolvedMath) | 49 | 2,039 | — |
+| 10 | [saidutta69/fable-5-premium](https://huggingface.co/datasets/saidutta69/fable-5-premium) | 18 | 1,243 | — |
 
 ### 🤗 Hugging Face 熱門Spaces Top 10
 
 | # | 名稱 | ❤️ Likes | ⬇️ 下載 | 類型 |
 |:-:|------|--------:|-------:|:----:|
-| 1 | [MiniMaxAI/MiniMax-H3-Turbo-Lora](https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora) | 173 | — | Video Generation |
-| 2 | [prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast](https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast) | 2,580 | — | Image Editing |
-| 3 | [MiniMaxAI/MiniMax-Music3](https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3) | 129 | — | Music Generation |
-| 4 | [Lynote/free-ai-detector](https://huggingface.co/spaces/Lynote/free-ai-detector) | 227 | — | Text Analysis |
-| 5 | [kulkas2pintu/wan555](https://huggingface.co/spaces/kulkas2pintu/wan555) | 1,201 | — | Video Generation |
-| 6 | [zai-org/OpenVuln](https://huggingface.co/spaces/zai-org/OpenVuln) | 78 | — | Other |
-| 7 | [cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo](https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo) | 323 | — | Image Editing |
-| 8 | [thornmaze/reel-lab](https://huggingface.co/spaces/thornmaze/reel-lab) | 75 | — | Video Generation |
-| 9 | [agent-memory-leaderboard/leaderboard](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard) | 441 | — | Data Visualization |
-| 10 | [2i/pornmaster-krea2](https://huggingface.co/spaces/2i/pornmaster-krea2) | 73 | — | Image Generation |
+| 1 | [MiniMaxAI/MiniMax-H3-Turbo-Lora](https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora) | 201 | — | Video Generation |
+| 2 | [MiniMaxAI/MiniMax-Music3](https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3) | 147 | — | Music Generation |
+| 3 | [prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast](https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast) | 2,601 | — | Image Editing |
+| 4 | [kulkas2pintu/wan555](https://huggingface.co/spaces/kulkas2pintu/wan555) | 1,224 | — | Video Generation |
+| 5 | [zai-org/OpenVuln](https://huggingface.co/spaces/zai-org/OpenVuln) | 86 | — | Other |
+| 6 | [2i/pornmaster-krea2](https://huggingface.co/spaces/2i/pornmaster-krea2) | 104 | — | Image Generation |
+| 7 | [cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo](https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo) | 340 | — | Image Editing |
+| 8 | [thornmaze/reel-lab](https://huggingface.co/spaces/thornmaze/reel-lab) | 99 | — | Video Generation |
+| 9 | [agent-memory-leaderboard/leaderboard](https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard) | 554 | — | Model Benchmarking |
+| 10 | [Lynote/free-ai-detector](https://huggingface.co/spaces/Lynote/free-ai-detector) | 228 | — | Text Analysis |
 
 ### 📰 Hacker News 頭版 Top 10(按分數)
 
 | # | 標題 | ▲ 分數 | 💬 留言 | 連結 |
 |:-:|------|-------:|-------:|:----:|
-| 1 | [Claude: System Prompts](https://platform.claude.com/docs/en/release-notes/system-prompts) | 549 | 230 | [HN](https://news.ycombinator.com/item?id=49319556) |
-| 2 | [Firefox for iOS now has a native adblocker](https://support.mozilla.org/en-US/kb/block-ads-firefox-ios) | 543 | 222 | [HN](https://news.ycombinator.com/item?id=49319633) |
-| 3 | [A 3rd World Embedded Engineer Responds to "RISC-V They Should Have Known](https://rvembedded.com/blog_post/12/) | 378 | 204 | [HN](https://news.ycombinator.com/item?id=49321717) |
-| 4 | [Tell HN: Cloudflare silently injects its analytics when you switch names](https://news.ycombinator.com/item?id=49322107) | 294 | 71 | [HN](https://news.ycombinator.com/item?id=49322107) |
-| 5 | [Models Are Getting Dumber on Purpose](https://w4g1.dev/blog/models-are-getting-dumber-on-purpose) | 275 | 154 | [HN](https://news.ycombinator.com/item?id=49322695) |
-| 6 | [The AI Credit Resale Economy](https://vectoral.com/blog/who-are-the-token-brokers) | 229 | 89 | [HN](https://news.ycombinator.com/item?id=49320611) |
-| 7 | [Stripe Clinches over $7B Deal to Buy AI Firm OpenRouter](https://www.bloomberg.com/news/articles/2026-08-16/stripe-nears-deal-to-buy-ai-firm-openrouter-for-over-7-billion) | 207 | 146 | [HN](https://news.ycombinator.com/item?id=49323381) |
-| 8 | [St Lucie Nuclear Reactor Unit 1 manually shutdown, 3 control rods drop i](https://www.wptv.com/news/treasure-coast/region-st-lucie-county/saint-lucie-nuclear-power-plant-unit-1-manually-shut-down-after-3-control-rods-drop-into-reactor-core) | 160 | 125 | [HN](https://news.ycombinator.com/item?id=49320856) |
-| 9 | [Protobuf has LSP support. You're welcome](https://buf.build/blog/protobuf-lsp) | 114 | 81 | [HN](https://news.ycombinator.com/item?id=49322573) |
-| 10 | [Nvidia dramatically reduces amount of OpenAI infra financing it may guar](https://www.reuters.com/business/nvidia-scales-back-250-billion-openai-data-center-guarantee-wsj-reports-2026-08-14/) | 106 | 35 | [HN](https://news.ycombinator.com/item?id=49323686) |
+| 1 | [AI;DR (AI; Didn't Read)](https://www.rickmanelius.com/p/aidr-ai-didnt-read) | 605 | 379 | [HN](https://news.ycombinator.com/item?id=49336573) |
+| 2 | [A Preview of DuckDB v2.0](https://duckdb.org/2026/08/17/duckdb-20-highlights) | 546 | 97 | [HN](https://news.ycombinator.com/item?id=49330781) |
+| 3 | [Ask HN: Alternatives to GitHub](https://news.ycombinator.com/item?id=49331033) | 498 | 319 | [HN](https://news.ycombinator.com/item?id=49331033) |
+| 4 | [Olo (Color)](https://en.wikipedia.org/wiki/Olo_(color)) | 324 | 64 | [HN](https://news.ycombinator.com/item?id=49270194) |
+| 5 | [AI-Generated GitHub Copilot “Autofix” Allowed Compromise of Snowflake's ](https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug) | 318 | 125 | [HN](https://news.ycombinator.com/item?id=49331423) |
+| 6 | [GPT 5.6 Sol is the best "vision" model OpenAI ever released](https://blog.roboflow.com/openai-gpt-5-6/) | 303 | 154 | [HN](https://news.ycombinator.com/item?id=49329575) |
+| 7 | [How to disable or avoid intrusive AI](https://www.librarian.net/notoai/) | 257 | 156 | [HN](https://news.ycombinator.com/item?id=49331220) |
+| 8 | [How Bluesky draws its logo on screenshots](https://timmarinin.net/2026/bluesky-screenshots/) | 235 | 161 | [HN](https://news.ycombinator.com/item?id=49338459) |
+| 9 | [Sun Clock](https://sunclock.net/) | 176 | 56 | [HN](https://news.ycombinator.com/item?id=49333824) |
+| 10 | [GPU Offload in Rust: Portable, Safe, and Fast](https://arxiv.org/abs/2608.13759) | 165 | 36 | [HN](https://news.ycombinator.com/item?id=49334991) |
 
 ### 🧮 OpenRouter 最新一日模型用量 Top 10
 
 | # | 模型 | Σ tokens | prompt | completion |
 |:-:|------|---------:|-------:|-----------:|
-| 1 | deepseek/deepseek-v4-flash-20260731 | 11,180,294,337,316 | 10,811,697,598,760 | 368,596,738,556 |
-| 2 | tencent/hy3-20260706 | 9,953,312,056,288 | 9,795,655,436,457 | 157,656,619,831 |
-| 3 | openai/gpt-5.6-luna-20260709 | 5,311,546,835,062 | 5,202,191,787,604 | 109,355,047,458 |
-| 4 | deepseek/deepseek-v4-flash-20260423 | 4,830,210,441,044 | 4,555,966,485,562 | 274,243,955,482 |
-| 5 | z-ai/glm-5.2-20260616 | 4,328,945,053,561 | 4,257,885,980,822 | 71,059,072,739 |
-| 6 | xiaomi/mimo-v2.5-20260422 | 3,791,573,036,238 | 3,757,408,405,651 | 34,164,630,587 |
-| 7 | deepseek/deepseek-v4-pro-20260423 | 2,735,410,078,617 | 2,614,324,835,065 | 121,085,243,552 |
-| 8 | anthropic/claude-opus-5-20260723 | 2,669,114,173,940 | 2,588,825,504,835 | 80,288,669,105 |
-| 9 | google/gemini-3.6-flash-20260721 | 2,284,299,245,580 | 2,258,882,956,541 | 25,416,289,039 |
-| 10 | nvidia/nemotron-3-ultra-550b-a55b-20260604 | 2,201,801,110,191 | 2,181,018,924,219 | 20,782,185,972 |
+| 1 | deepseek/deepseek-v4-flash-20260731 | 11,295,219,517,497 | 10,935,877,954,372 | 359,341,563,125 |
+| 2 | tencent/hy3-20260706 | 9,704,303,977,221 | 9,553,531,936,618 | 150,772,040,603 |
+| 3 | openai/gpt-5.6-luna-20260709 | 5,568,367,190,581 | 5,460,123,804,531 | 108,243,386,050 |
+| 4 | xiaomi/mimo-v2.5-20260422 | 4,992,337,388,894 | 4,948,960,292,237 | 43,377,096,657 |
+| 5 | deepseek/deepseek-v4-flash-20260423 | 4,773,538,485,237 | 4,497,142,102,899 | 276,396,382,338 |
+| 6 | z-ai/glm-5.2-20260616 | 4,408,691,186,329 | 4,336,717,746,959 | 71,973,439,370 |
+| 7 | google/gemini-3.6-flash-20260721 | 2,768,943,740,921 | 2,742,474,751,221 | 26,468,989,700 |
+| 8 | anthropic/claude-opus-5-20260723 | 2,702,930,905,348 | 2,621,909,546,913 | 81,021,358,435 |
+| 9 | deepseek/deepseek-v4-pro-20260423 | 2,656,665,251,268 | 2,542,288,419,898 | 114,376,831,370 |
+| 10 | nvidia/nemotron-3-ultra-550b-a55b-20260604 | 2,443,845,829,921 | 2,422,462,661,247 | 21,383,168,674 |
 
 ### 🚀 Product Hunt AI 主題 24h 票選 Top 10
 
 | # | 名稱 | 一句話 | ▲ 票數 |
 |:-:|------|--------|-------:|
-| 1 | [HarnessRouter Community Edition](https://www.producthunt.com/products/epsilla?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Open-source unified interface for agent harnesses | 243 |
-| 2 | [Vidaya](https://www.producthunt.com/products/vidaya?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Healthspan score from your wearables, labs, and DNA. | 197 |
-| 3 | [Chert](https://www.producthunt.com/products/chert?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Vapi for FaceTime: AI video agents in a few lines | 170 |
-| 4 | [CostLogic](https://www.producthunt.com/products/costlogic?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | AI-powered construction takeoffs, estimates, and invoices | 106 |
-| 5 | [Assetli.app](https://www.producthunt.com/products/assetli-app?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Personal finance & net worth, wired to your AI | 12 |
-| 6 | [Scaloom](https://www.producthunt.com/products/scaloom?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | AI-powered Reddit marketing for Google & AI search | 8 |
-| 7 | [Interview Agent by NexI](https://www.producthunt.com/products/interview-agent-by-nexi?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | AI interviews that screen, score, and shortlist talent | 6 |
-| 8 | [ShouldBuild](https://www.producthunt.com/products/shouldbuild?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Find out what your market wants before you waste months | 6 |
-| 9 | [AlsonAI Poetry](https://www.producthunt.com/products/alsonai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Turn poetry and spoken word into illustrated books. | 5 |
-| 10 | [AgentOS](https://www.producthunt.com/products/agentos-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Rust runtime for AI agents with time-travel replay | 3 |
+| 1 | [Omni by xpander](https://www.producthunt.com/products/omni-by-xpander?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Stop babysitting your AI agents | 311 |
+| 2 | [Clears](https://www.producthunt.com/products/clears?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Move beyond AI coding to Agentic Software Delivery | 281 |
+| 3 | [Scholé Scenarios](https://www.producthunt.com/products/schole-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Learn by doing | 155 |
+| 4 | [OpenTrade](https://www.producthunt.com/products/opentrade?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Open-source trading harness for Claude Code / Codex. | 141 |
+| 5 | [Treg](https://www.producthunt.com/products/treg-openrouter-for-tools?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | OpenRouter for tools with 2,600 APIs, 0% markup | 138 |
+| 6 | [Samepage Artifacts](https://www.producthunt.com/products/samepage-signals?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | A context-aware, connected writing surface for product teams | 113 |
+| 7 | [Bulbthings](https://www.producthunt.com/products/bulbthings?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | The AI platform to track and manage your physical assets | 95 |
+| 8 | [TinyFish](https://www.producthunt.com/products/tinyfish-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | The web operating layer for AI agents | 86 |
+| 9 | [Blender Agent Bridge](https://www.producthunt.com/products/blender-agent-bridge?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | Open-source MCP bridge for Blender AI workflows | 79 |
+| 10 | [Talentz](https://www.producthunt.com/products/talentz?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+star-observatory+%28ID%3A+294245%29) | The signal layer for hiring. | 25 |
 
 ### 🦙 Ollama 熱門模型 Top 10
 
 | # | 模型 | Pulls(累計) | 今日新增 | 功能 |
 |:-:|------|----------:|--------:|------|
 | 1 | [llama3.1](https://ollama.com/library/llama3.1) | 118,500,000 | +0 | Llama 3.1 is a new state-of-the-art model from Meta available in 8B, 70B |
-| 2 | [deepseek-r1](https://ollama.com/library/deepseek-r1) | 91,400,000 | +0 | DeepSeek-R1 is a family of open reasoning models with performance approa |
-| 3 | [nomic-embed-text](https://ollama.com/library/nomic-embed-text) | 82,600,000 | +100,000 | A high-performing open embedding model with a large token context window |
-| 4 | [llama3.2](https://ollama.com/library/llama3.2) | 80,300,000 | +100,000 | Meta's Llama 3.2 goes small with 1B and 3B models. |
-| 5 | [gemma3](https://ollama.com/library/gemma3) | 39,600,000 | +100,000 | The current, most capable model that runs on a single GPU. |
-| 6 | [qwen2.5](https://ollama.com/library/qwen2.5) | 37,000,000 | +0 | Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, e |
-| 7 | [qwen3](https://ollama.com/library/qwen3) | 34,500,000 | +200,000 | Qwen3 is the latest generation of large language models in Qwen series,  |
-| 8 | [mistral](https://ollama.com/library/mistral) | 31,900,000 | +0 | The 7B model released by Mistral AI, updated to version 0.3. |
-| 9 | [gemma2](https://ollama.com/library/gemma2) | 30,300,000 | +0 | Google Gemma 2 is a high-performing and efficient model available in thr |
+| 2 | [deepseek-r1](https://ollama.com/library/deepseek-r1) | 91,500,000 | +100,000 | DeepSeek-R1 is a family of open reasoning models with performance approa |
+| 3 | [nomic-embed-text](https://ollama.com/library/nomic-embed-text) | 82,700,000 | +100,000 | A high-performing open embedding model with a large token context window |
+| 4 | [llama3.2](https://ollama.com/library/llama3.2) | 80,400,000 | +100,000 | Meta's Llama 3.2 goes small with 1B and 3B models. |
+| 5 | [gemma3](https://ollama.com/library/gemma3) | 39,600,000 | +0 | The current, most capable model that runs on a single GPU. |
+| 6 | [qwen2.5](https://ollama.com/library/qwen2.5) | 37,100,000 | +100,000 | Qwen2.5 models are pretrained on Alibaba's latest large-scale dataset, e |
+| 7 | [qwen3](https://ollama.com/library/qwen3) | 34,600,000 | +100,000 | Qwen3 is the latest generation of large language models in Qwen series,  |
+| 8 | [mistral](https://ollama.com/library/mistral) | 32,000,000 | +100,000 | The 7B model released by Mistral AI, updated to version 0.3. |
+| 9 | [gemma2](https://ollama.com/library/gemma2) | 30,400,000 | +100,000 | Google Gemma 2 is a high-performing and efficient model available in thr |
 | 10 | [llama3](https://ollama.com/library/llama3) | 25,000,000 | +0 | Meta Llama 3: The most capable openly available LLM to date |
 
 > ⚠️ 本次部分來源抓取失敗:
