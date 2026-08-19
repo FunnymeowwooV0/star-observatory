@@ -1064,3 +1064,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-18,Spaces,8,thornmaze/reel-lab,99,,Video Generation,https://huggingface.co/spaces/thornmaze/reel-lab
 2026-08-18,Spaces,9,agent-memory-leaderboard/leaderboard,554,,Model Benchmarking,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
 2026-08-18,Spaces,10,Lynote/free-ai-detector,228,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-19,模型,1,Qwen/Qwen3.8-27B,11152,665513,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-19,模型,2,unsloth/Qwen3.8-27B-GGUF,1826,3561466,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-19,模型,3,Qwen/Qwen3.8-2.4T-A95B,1066,11212,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-19,模型,4,MiniMaxAI/MiniMax-Music3,966,11745,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-19,模型,5,Lightricks/LTX-2.5,1229,503632,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-19,模型,6,deepseek-ai/DeepSeek-V4-Pro-0813,603,30985,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+2026-08-19,模型,7,Qwen/Qwen3.8-27B-FP8,564,741011,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B-FP8
+2026-08-19,模型,8,meta-models/Muse-Glimmer-30B,1682,384097,image-text-to-text,https://huggingface.co/meta-models/Muse-Glimmer-30B
+2026-08-19,模型,9,MiniMaxAI/MiniMax-H3,4147,2855539,image-text-to-video,https://huggingface.co/MiniMaxAI/MiniMax-H3
+2026-08-19,模型,10,orcarouter/Qwen3.8-27B-Uncensored-FP8,535,45465,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-19,資料集,1,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,144,4436,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-19,資料集,2,HuggingFaceFW/fineweb,3234,404981,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-19,資料集,3,ChartGalaxy/ChartGalaxy,68,109764,,https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy
+2026-08-19,資料集,4,ostris/minimax_h3_1k,65,7216,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-19,資料集,5,Anthropic/hh-rlhf,1994,34700,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-19,資料集,6,HuggingFaceCode/stack-v3-train,351,257555,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-19,資料集,7,ulamai/UnsolvedMath,51,3080,,https://huggingface.co/datasets/ulamai/UnsolvedMath
+2026-08-19,資料集,8,saidutta69/fable-5-premium,19,1722,,https://huggingface.co/datasets/saidutta69/fable-5-premium
+2026-08-19,資料集,9,nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1,22,657,,https://huggingface.co/datasets/nvidia/Nemotron-RL-Agentic-Terminal-Pivot-v1
+2026-08-19,資料集,10,fka/prompts.chat,9789,31618,,https://huggingface.co/datasets/fka/prompts.chat
+2026-08-19,Spaces,1,MiniMaxAI/MiniMax-Music3,175,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-19,Spaces,2,agent-memory-leaderboard/leaderboard,663,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-19,Spaces,3,MiniMaxAI/MiniMax-H3-Turbo-Lora,217,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-19,Spaces,4,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2617,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-19,Spaces,5,thornmaze/reel-lab,125,,Video Generation,https://huggingface.co/spaces/thornmaze/reel-lab
+2026-08-19,Spaces,6,kulkas2pintu/wan555,1250,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-19,Spaces,7,2i/pornmaster-krea2,126,,Image Generation,https://huggingface.co/spaces/2i/pornmaster-krea2
+2026-08-19,Spaces,8,zai-org/OpenVuln,97,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-19,Spaces,9,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,351,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-19,Spaces,10,Saravutw/Omni-videos-custom,68,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
