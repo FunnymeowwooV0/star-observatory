@@ -456,3 +456,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-19,8,basecamp/omarchy,356,26458,Shell,https://github.com/basecamp/omarchy,"Beautiful, Modern & Opinionated Linux"
 2026-08-19,9,chaitanyagiri/munder-difflin,306,2092,TypeScript,https://github.com/chaitanyagiri/munder-difflin,local multi-agent harness
 2026-08-19,10,volcengine/OpenViking,213,29462,Python,https://github.com/volcengine/OpenViking,"Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills."
+2026-08-20,1,harry0703/MoneyPrinterTurbo,2221,110886,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+2026-08-20,2,mattpocock/skills,1894,223918,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-20,3,amadeusprotocol/node,1397,4581,Rust,https://github.com/amadeusprotocol/node,
+2026-08-20,4,volcengine/OpenViking,804,30266,Python,https://github.com/volcengine/OpenViking,"Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills."
+2026-08-20,5,chaitanyagiri/munder-difflin,795,2725,TypeScript,https://github.com/chaitanyagiri/munder-difflin,local multi-agent harness
+2026-08-20,6,mukul975/Anthropic-Cybersecurity-Skills,766,29878,Python,https://github.com/mukul975/Anthropic-Cybersecurity-Skills,"817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF & MITRE F3 (Fight Fraud) · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 29 security domains · Apache 2.0"
+2026-08-20,7,obra/superpowers,557,274322,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-08-20,8,jundot/omlx,472,19857,Python,https://github.com/jundot/omlx,LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+2026-08-20,9,genlayerlabs/genlayer-project-boilerplate,430,16227,TypeScript,https://github.com/genlayerlabs/genlayer-project-boilerplate,
+2026-08-20,10,santifer/career-ops,198,65842,JavaScript,https://github.com/santifer/career-ops,"Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)"

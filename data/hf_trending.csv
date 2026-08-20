@@ -1094,3 +1094,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-19,Spaces,8,zai-org/OpenVuln,97,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
 2026-08-19,Spaces,9,cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,351,,Image Editing,https://huggingface.co/spaces/cruisewagner2220/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
 2026-08-19,Spaces,10,Saravutw/Omni-videos-custom,68,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-20,模型,1,Qwen/Qwen3.8-27B,11492,1006235,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-20,模型,2,unsloth/Qwen3.8-27B-GGUF,2093,4318134,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-20,模型,3,MiniMaxAI/MiniMax-Music3,1042,13138,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-20,模型,4,deepseek-ai/DeepSeek-V4-Pro-0813,637,37583,text-generation,https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
+2026-08-20,模型,5,Qwen/Qwen3.8-27B-FP8,601,1063646,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B-FP8
+2026-08-20,模型,6,Qwen/Qwen3.8-2.4T-A95B,1100,12699,text-generation,https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+2026-08-20,模型,7,orcarouter/Qwen3.8-27B-Uncensored-FP8,617,60078,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-20,模型,8,Lightricks/LTX-2.5,1326,555993,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-20,模型,9,orcarouter/Qwen3.8-27B-Uncensored-MLX,603,27,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX
+2026-08-20,模型,10,JonathanColetti/Qwen3.8-27B-Uncensored-GGUF,467,766812,text-generation,https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF
+2026-08-20,資料集,1,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,158,4875,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-20,資料集,2,HuggingFaceFW/fineweb,3239,407892,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-20,資料集,3,Anthropic/claude-protein-binder-design,53,1636,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-08-20,資料集,4,ostris/minimax_h3_1k,73,7448,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-20,資料集,5,ChartGalaxy/ChartGalaxy,74,110729,,https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy
+2026-08-20,資料集,6,Anthropic/hh-rlhf,2000,34769,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-08-20,資料集,7,biglam/british-library-book-images,45,2428,,https://huggingface.co/datasets/biglam/british-library-book-images
+2026-08-20,資料集,8,FINAL-Bench/AX-RAY,44,210,,https://huggingface.co/datasets/FINAL-Bench/AX-RAY
+2026-08-20,資料集,9,HuggingFaceCode/stack-v3-train,359,263908,,https://huggingface.co/datasets/HuggingFaceCode/stack-v3-train
+2026-08-20,資料集,10,FlyRank/internship-warehouse,512,19170,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-08-20,Spaces,1,MiniMaxAI/MiniMax-Music3,199,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-20,Spaces,2,agent-memory-leaderboard/leaderboard,697,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-20,Spaces,3,MiniMaxAI/MiniMax-H3-Turbo-Lora,231,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-20,Spaces,4,kulkas2pintu/wan555,1277,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-20,Spaces,5,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2627,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-20,Spaces,6,zai-org/OpenVuln,107,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-08-20,Spaces,7,Saravutw/Omni-videos-custom,87,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-20,Spaces,8,victor/Qwen3.8-27B-free-endpoint,67,,Text Generation,https://huggingface.co/spaces/victor/Qwen3.8-27B-free-endpoint
+2026-08-20,Spaces,9,Lynote/free-ai-humanizer,229,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
+2026-08-20,Spaces,10,microsoft/TRELLIS.2,2007,,3D Modeling,https://huggingface.co/spaces/microsoft/TRELLIS.2
