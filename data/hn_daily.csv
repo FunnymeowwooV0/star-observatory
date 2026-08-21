@@ -459,3 +459,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-20,8,Casio F-B100W-1A,278,227,https://news.ycombinator.com/item?id=49362887,https://www.casio.com/uk/watches/casio/product.F-B100W-1A/
 2026-08-20,9,Air Theremin – A browser theremin you play by waving at your webcam,250,86,https://news.ycombinator.com/item?id=49359425,https://theremin.bizibah.com/
 2026-08-20,10,Unsloth Dynamic 3.0 GGUFs,188,72,https://news.ycombinator.com/item?id=49365443,https://unsloth.ai/docs/basics/dynamic-3.0-ggufs
+2026-08-21,1,"Aaron Swartz was prosecuted for scraping, while Meta does it without consequence",1023,231,https://news.ycombinator.com/item?id=49379550,https://blog.curiousquail.com/im-upset-again-about-a-co-creator-of-rss-being-prosecuted-for-something-meta-is-doing-with-little-consequence/
+2026-08-21,2,AliExpress runs silent WebAudio fingerprinting that breaks Bluetooth multipoint,896,292,https://news.ycombinator.com/item?id=49372583,https://blog.laserphile.com/2026/08/aliexpress-webpage-keeping-multipoint.html
+2026-08-21,3,HTML Can Do That,587,164,https://news.ycombinator.com/item?id=49362689,https://chrisburnell.com/html-can-do-that/
+2026-08-21,4,I like 'em thick: an apology to my English teachers,569,260,https://news.ycombinator.com/item?id=49347543,https://www.experimental-history.com/p/i-like-em-thick
+2026-08-21,5,Show HN: I trained a 125M model to autocomplete piano on-device,510,106,https://news.ycombinator.com/item?id=49373456,https://simedw.com/2026/08/20/midi-autocomplete/
+2026-08-21,6,Malicious Rust crate Arrayref runs a build-time payload,403,365,https://news.ycombinator.com/item?id=49374269,https://safedep.io/arrayref-proc-macro1-rust-build-time-malware/
+2026-08-21,7,Mojo is now open source,349,78,https://news.ycombinator.com/item?id=49348079,https://www.modular.com/blog/mojo-open-source
+2026-08-21,8,CIA funding helped keep NeXT afloat in the 80s,340,210,https://news.ycombinator.com/item?id=49368886,https://www.wsj.com/tech/steve-jobs-apple-next-cia-161b65f9?st=NWWds1&reflink=desktopwebshare_permalink
+2026-08-21,9,"The August 17 outage, and the work ahead",337,373,https://news.ycombinator.com/item?id=49378957,https://github.blog/news-insights/company-news/the-august-17-outage-and-the-work-ahead/
+2026-08-21,10,Git at any scale,281,93,https://news.ycombinator.com/item?id=49348141,https://cursor.com/blog/git-at-any-scale
