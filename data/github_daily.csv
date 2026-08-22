@@ -476,3 +476,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-21,8,chaitanyagiri/munder-difflin,507,3142,TypeScript,https://github.com/chaitanyagiri/munder-difflin,local multi-agent harness
 2026-08-21,9,cursor/plugins,449,4108,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
 2026-08-21,10,akitaonrails/ai-memory,332,3652,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
+2026-08-22,1,mattpocock/skills,3362,229622,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-22,2,AprilNEA/OpenLogi,1380,12988,Rust,https://github.com/AprilNEA/OpenLogi,"⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry."
+2026-08-22,3,harry0703/MoneyPrinterTurbo,1201,113971,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+2026-08-22,4,mahlernim/google-timeline-visualizer,1053,2245,Kotlin,https://github.com/mahlernim/google-timeline-visualizer,Visualize your year in travel using your Google Location History (Timeline) data
+2026-08-22,5,santifer/career-ops,921,67475,JavaScript,https://github.com/santifer/career-ops,"Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)"
+2026-08-22,6,modular/modular,913,28698,Mojo,https://github.com/modular/modular,The Modular Platform (includes MAX & Mojo)
+2026-08-22,7,obra/superpowers,790,275676,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-08-22,8,cursor/plugins,388,4420,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
+2026-08-22,9,affaan-m/ECC,357,241811,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-08-22,10,PostHog/posthog,335,38305,Python,https://github.com/PostHog/posthog,"🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP."
