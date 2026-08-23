@@ -486,3 +486,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-22,8,cursor/plugins,388,4420,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
 2026-08-22,9,affaan-m/ECC,357,241811,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
 2026-08-22,10,PostHog/posthog,335,38305,Python,https://github.com/PostHog/posthog,"🦔 PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more – capture all the context agents need to diagnose problems, uncover opportunities, and ship fixes. Steer it all from Slack, web, desktop, or the MCP."
+2026-08-23,1,mattpocock/skills,2683,232179,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-23,2,openai/codex,1544,113538,Rust,https://github.com/openai/codex,Lightweight coding agent that runs in your terminal
+2026-08-23,3,AprilNEA/OpenLogi,959,13991,Rust,https://github.com/AprilNEA/OpenLogi,"⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry."
+2026-08-23,4,ripienaar/free-for-dev,829,133939,HTML,https://github.com/ripienaar/free-for-dev,"A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev"
+2026-08-23,5,obra/superpowers,592,276212,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-08-23,6,mahlernim/google-timeline-visualizer,441,2578,Kotlin,https://github.com/mahlernim/google-timeline-visualizer,Visualize your year in travel using your Google Location History (Timeline) data
+2026-08-23,7,affaan-m/ECC,411,242193,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-08-23,8,modular/modular,395,28854,Mojo,https://github.com/modular/modular,The Modular Platform (includes MAX & Mojo)
+2026-08-23,9,multica-ai/andrej-karpathy-skills,315,205337,,https://github.com/multica-ai/andrej-karpathy-skills,"A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls."
+2026-08-23,10,cursor/plugins,286,4680,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
