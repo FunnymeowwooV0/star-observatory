@@ -496,3 +496,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-23,8,modular/modular,395,28854,Mojo,https://github.com/modular/modular,The Modular Platform (includes MAX & Mojo)
 2026-08-23,9,multica-ai/andrej-karpathy-skills,315,205337,,https://github.com/multica-ai/andrej-karpathy-skills,"A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls."
 2026-08-23,10,cursor/plugins,286,4680,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
+2026-08-24,1,openai/codex,2715,115436,Rust,https://github.com/openai/codex,Lightweight coding agent that runs in your terminal
+2026-08-24,2,mattpocock/skills,2447,233967,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-08-24,3,Alishahryar1/free-claude-code,1081,48024,Python,https://github.com/Alishahryar1/free-claude-code,"Use Claude Code, Codex, Pi, and OpenCode for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)"
+2026-08-24,4,AprilNEA/OpenLogi,1009,15017,Rust,https://github.com/AprilNEA/OpenLogi,"⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry."
+2026-08-24,5,basecamp/omarchy,750,29191,Shell,https://github.com/basecamp/omarchy,"Beautiful, Modern & Opinionated Linux"
+2026-08-24,6,ripienaar/free-for-dev,615,134475,HTML,https://github.com/ripienaar/free-for-dev,"A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev"
+2026-08-24,7,NousResearch/hermes-agent,454,235051,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-08-24,8,affaan-m/ECC,427,242584,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-08-24,9,virgiliojr94/book-to-skill,417,24711,Python,https://github.com/virgiliojr94/book-to-skill,"Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work."
+2026-08-24,10,block/buzz,410,30147,Rust,https://github.com/block/buzz,A hive mind communication platform

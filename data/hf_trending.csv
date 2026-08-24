@@ -1214,3 +1214,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-23,Spaces,8,victor/Qwen3.8-27B-free-endpoint,83,,Text Generation,https://huggingface.co/spaces/victor/Qwen3.8-27B-free-endpoint
 2026-08-23,Spaces,9,Lynote/free-ai-humanizer,240,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
 2026-08-23,Spaces,10,amisima/LTX-2.3-10Eros_I2V,59,,Video Generation,https://huggingface.co/spaces/amisima/LTX-2.3-10Eros_I2V
+2026-08-24,模型,1,Qwen/Qwen3.8-27B,12328,2358347,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-24,模型,2,unsloth/Qwen3.8-27B-GGUF,2741,6674515,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-24,模型,3,orcarouter/Qwen3.8-27B-Uncensored-MLX,960,47098,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX
+2026-08-24,模型,4,OBLITERATUS/Qwen3.8-27B-OBLITERATED,638,244834,text-generation,https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED
+2026-08-24,模型,5,orcarouter/Qwen3.8-27B-Uncensored-FP8,1051,190062,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-24,模型,6,HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF,539,676697,image-text-to-text,https://huggingface.co/HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF
+2026-08-24,模型,7,Lightricks/LTX-2.5,1643,738345,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-24,模型,8,JonathanColetti/Qwen3.8-27B-Uncensored-GGUF,651,1334820,text-generation,https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF
+2026-08-24,模型,9,ornith-ai/Ornith-1.5-35B-A3B,367,23516,text-generation,https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B
+2026-08-24,模型,10,MiniMaxAI/MiniMax-Music3,1207,17421,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-24,資料集,1,openbmb/Ultra-FineWeb-L1,134,8981,,https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L1
+2026-08-24,資料集,2,Anthropic/claude-protein-binder-design,111,22084,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-08-24,資料集,3,malcolmrey/various,113,22164,,https://huggingface.co/datasets/malcolmrey/various
+2026-08-24,資料集,4,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,198,6540,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-24,資料集,5,markov-ai/cad-1000-hours,76,9305,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-08-24,資料集,6,ChartGalaxy/ChartGalaxy,84,112898,,https://huggingface.co/datasets/ChartGalaxy/ChartGalaxy
+2026-08-24,資料集,7,ostris/minimax_h3_1k,87,8679,,https://huggingface.co/datasets/ostris/minimax_h3_1k
+2026-08-24,資料集,8,saidutta69/fable-5-premium,44,3914,,https://huggingface.co/datasets/saidutta69/fable-5-premium
+2026-08-24,資料集,9,biglam/british-library-book-images,56,3305,,https://huggingface.co/datasets/biglam/british-library-book-images
+2026-08-24,資料集,10,HuggingFaceFW/fineweb,3251,429716,,https://huggingface.co/datasets/HuggingFaceFW/fineweb
+2026-08-24,Spaces,1,kulkas2pintu/wan555,1395,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-24,Spaces,2,ReverseFaceSearch/Reverse-Face-Search,225,,Face Recognition,https://huggingface.co/spaces/ReverseFaceSearch/Reverse-Face-Search
+2026-08-24,Spaces,3,agent-memory-leaderboard/leaderboard,726,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-24,Spaces,4,MiniMaxAI/MiniMax-Music3,263,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-24,Spaces,5,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2658,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-24,Spaces,6,MiniMaxAI/MiniMax-H3-Turbo-Lora,274,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-24,Spaces,7,Saravutw/Omni-videos-custom,145,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-24,Spaces,8,amisima/LTX-2.3-10Eros_I2V,74,,Video Generation,https://huggingface.co/spaces/amisima/LTX-2.3-10Eros_I2V
+2026-08-24,Spaces,9,Lynote/free-ai-humanizer,241,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
+2026-08-24,Spaces,10,pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,73,,Image Editing,https://huggingface.co/spaces/pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
