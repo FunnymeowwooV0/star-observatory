@@ -506,3 +506,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-24,8,affaan-m/ECC,427,242584,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
 2026-08-24,9,virgiliojr94/book-to-skill,417,24711,Python,https://github.com/virgiliojr94/book-to-skill,"Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work."
 2026-08-24,10,block/buzz,410,30147,Rust,https://github.com/block/buzz,A hive mind communication platform
+2026-08-25,1,freestylefly/awesome-gpt-image-2,2449,15665,JavaScript,https://github.com/freestylefly/awesome-gpt-image-2,Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中
+2026-08-25,2,openai/codex,1994,117162,Rust,https://github.com/openai/codex,Lightweight coding agent that runs in your terminal
+2026-08-25,3,AprilNEA/OpenLogi,1097,15918,Rust,https://github.com/AprilNEA/OpenLogi,"⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry."
+2026-08-25,4,basecamp/omarchy,1056,30223,Shell,https://github.com/basecamp/omarchy,"Beautiful, Modern & Opinionated Linux"
+2026-08-25,5,NousResearch/hermes-agent,896,235852,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-08-25,6,Alishahryar1/free-claude-code,891,49060,Python,https://github.com/Alishahryar1/free-claude-code,"Use Claude Code, Codex, Pi, and OpenCode for free (1.3B+ free tokens) from your terminal, app, IDE, or phone like OpenClaw (voice supported + ToS friendly)"
+2026-08-25,7,VoltAgent/awesome-agent-skills,602,31921,,https://github.com/VoltAgent/awesome-agent-skills,"A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more."
+2026-08-25,8,multica-ai/andrej-karpathy-skills,588,206576,,https://github.com/multica-ai/andrej-karpathy-skills,"A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls."
+2026-08-25,9,tinyhumansai/openhuman,515,37296,Rust,https://github.com/tinyhumansai/openhuman,"Your Personal AI super intelligence. A brain that builds a local-first memory of your life, a fantastic orchestrator of agent fleets and workflows, and a deep researcher."
+2026-08-25,10,anthropics/claude-plugins-community,489,1378,Python,https://github.com/anthropics/claude-plugins-community,Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.
