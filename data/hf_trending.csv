@@ -1274,3 +1274,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-25,Spaces,8,MiniMaxAI/MiniMax-H3-Turbo-Lora,279,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
 2026-08-25,Spaces,9,M3st3rJ4k3l/FLUX.2-Klein-Multi-LoRA,453,,Image Generation,https://huggingface.co/spaces/M3st3rJ4k3l/FLUX.2-Klein-Multi-LoRA
 2026-08-25,Spaces,10,selfit-camera/Omni-Image-Editor,2443,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-08-26,模型,1,Qwen/Qwen3.8-27B,12722,2945415,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-26,模型,2,unsloth/Qwen3.8-27B-GGUF,2919,7334695,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-26,模型,3,OBLITERATUS/Qwen3.8-27B-OBLITERATED,752,389747,text-generation,https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED
+2026-08-26,模型,4,orcarouter/Qwen3.8-27B-Uncensored-MLX,1098,68855,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX
+2026-08-26,模型,5,orcarouter/Qwen3.8-27B-Uncensored-FP8,1149,249744,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-26,模型,6,ornith-ai/Ornith-1.5-35B-A3B,420,70158,text-generation,https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B
+2026-08-26,模型,7,HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF,623,832185,image-text-to-text,https://huggingface.co/HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF
+2026-08-26,模型,8,Lightricks/LTX-2.5,1800,833845,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-26,模型,9,ornith-ai/Ornith-1.5-35B-A3B-GGUF,297,1156903,text-generation,https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B-GGUF
+2026-08-26,模型,10,MiniMaxAI/MiniMax-Music3,1246,18705,text-to-audio,https://huggingface.co/MiniMaxAI/MiniMax-Music3
+2026-08-26,資料集,1,openbmb/Ultra-FineWeb-L1,160,11243,,https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L1
+2026-08-26,資料集,2,Anthropic/claude-protein-binder-design,143,23990,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-08-26,資料集,3,markov-ai/cad-1000-hours,109,25906,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-08-26,資料集,4,malcolmrey/various,123,28531,,https://huggingface.co/datasets/malcolmrey/various
+2026-08-26,資料集,5,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,208,6790,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-26,資料集,6,hamzabagirsakci/turkish-court-decisions,62,370,,https://huggingface.co/datasets/hamzabagirsakci/turkish-court-decisions
+2026-08-26,資料集,7,LightwheelAI/EgoStandard,35,4883,,https://huggingface.co/datasets/LightwheelAI/EgoStandard
+2026-08-26,資料集,8,saidutta69/fable-5-premium,53,4335,,https://huggingface.co/datasets/saidutta69/fable-5-premium
+2026-08-26,資料集,9,biglam/british-library-book-images,59,4656,,https://huggingface.co/datasets/biglam/british-library-book-images
+2026-08-26,資料集,10,nvidia/Cosmos3-DROID,41,37186,,https://huggingface.co/datasets/nvidia/Cosmos3-DROID
+2026-08-26,Spaces,1,kulkas2pintu/wan555,1452,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-26,Spaces,2,agent-memory-leaderboard/leaderboard,764,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
+2026-08-26,Spaces,3,pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,103,,Image Editing,https://huggingface.co/spaces/pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-26,Spaces,4,Saravutw/Omni-videos-custom,181,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-26,Spaces,5,MiniMaxAI/MiniMax-Music3,278,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-26,Spaces,6,Lynote/free-ai-humanizer,246,,Text Generation,https://huggingface.co/spaces/Lynote/free-ai-humanizer
+2026-08-26,Spaces,7,mpasila/Krea-2-Turbo_I2I,82,,Image Generation,https://huggingface.co/spaces/mpasila/Krea-2-Turbo_I2I
+2026-08-26,Spaces,8,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2668,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
+2026-08-26,Spaces,9,MiniMaxAI/MiniMax-H3-Turbo-Lora,287,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-08-26,Spaces,10,selfit-camera/Omni-Image-Editor,2451,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
