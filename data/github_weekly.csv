@@ -59,3 +59,13 @@ week,date,rank,repo,new_stars,total_stars,language,url,description
 2026-W35,2026-08-24,8,cursor/plugins,1761,4829,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
 2026-W35,2026-08-24,9,jundot/omlx,1671,20452,Python,https://github.com/jundot/omlx,LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
 2026-W35,2026-08-24,10,apache/maka,859,2380,TypeScript,https://github.com/apache/maka,"Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log."
+2026-W35,2026-08-27,1,openai/codex,12120,119047,Rust,https://github.com/openai/codex,Lightweight coding agent that runs in your terminal
+2026-W35,2026-08-27,2,freestylefly/awesome-gpt-image-2,9477,22353,JavaScript,https://github.com/freestylefly/awesome-gpt-image-2,Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中
+2026-W35,2026-08-27,3,harry0703/MoneyPrinterTurbo,7232,117075,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+2026-W35,2026-08-27,4,AprilNEA/OpenLogi,7078,16993,Rust,https://github.com/AprilNEA/OpenLogi,"⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry."
+2026-W35,2026-08-27,5,public-apis/public-apis,5585,471317,Python,https://github.com/public-apis/public-apis,A collective list of free APIs
+2026-W35,2026-08-27,6,basecamp/omarchy,5186,32300,Shell,https://github.com/basecamp/omarchy,"Beautiful, Modern & Opinionated Linux"
+2026-W35,2026-08-27,7,volcengine/OpenViking,3691,33738,Python,https://github.com/volcengine/OpenViking,"Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills."
+2026-W35,2026-08-27,8,apache/maka,2217,3688,TypeScript,https://github.com/apache/maka,"Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log."
+2026-W35,2026-08-27,9,chaitanyagiri/munder-difflin,2192,4929,JavaScript,https://github.com/chaitanyagiri/munder-difflin,local multi-agent harness
+2026-W35,2026-08-27,10,modular/modular,1984,29236,Mojo,https://github.com/modular/modular,The Modular Platform (includes MAX & Mojo)
