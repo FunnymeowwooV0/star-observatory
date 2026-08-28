@@ -549,3 +549,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-28,8,Gemini-3.5-Transcribe,232,70,https://news.ycombinator.com/item?id=49468818,https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/
 2026-08-28,9,"Suica, Japan's First IC Transit Card",224,196,https://news.ycombinator.com/item?id=49466894,https://www.tokyodev.com/articles/the-story-of-suica
 2026-08-28,10,Gemini Omni 1.1 Flash,220,156,https://news.ycombinator.com/item?id=49467922,https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
+2026-08-28,1,Nvidia agrees to acquire Hugging Face for $13B,1908,886,https://news.ycombinator.com/item?id=49458161,https://www.businessinsider.com/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars-2026-8
+2026-08-28,2,Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache,807,239,https://news.ycombinator.com/item?id=49468083,https://blog.cloudflare.com/dns-cache-memory-optimization-1111/
+2026-08-28,3,Microduck,697,219,https://news.ycombinator.com/item?id=49462763,https://pollen-robotics.com/microduck/
+2026-08-28,4,Small Models Have Arrived,686,304,https://news.ycombinator.com/item?id=49466917,https://calv.info/small-models-have-arrived
+2026-08-28,5,507 Mechanical Movements,603,76,https://news.ycombinator.com/item?id=49465169,https://507movements.com/
+2026-08-28,6,Show HN: The load-bearing vocabulary of Claude,567,276,https://news.ycombinator.com/item?id=49461817,https://louisabraham.github.io/load-bearing/
+2026-08-28,7,The turbulent AI era is here,322,573,https://news.ycombinator.com/item?id=49447057,https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make
+2026-08-28,8,Gemini-3.5-Transcribe,315,103,https://news.ycombinator.com/item?id=49468818,https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/
+2026-08-28,9,Gemini Omni 1.1 Flash,275,201,https://news.ycombinator.com/item?id=49467922,https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
+2026-08-28,10,We found a division by zero bug in FFmpeg with a vibecoded fuzzer,265,217,https://news.ycombinator.com/item?id=49468642,https://code.ffmpeg.org/FFmpeg/FFmpeg/issues/24290
