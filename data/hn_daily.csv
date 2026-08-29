@@ -559,3 +559,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-28,8,Gemini-3.5-Transcribe,315,103,https://news.ycombinator.com/item?id=49468818,https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/
 2026-08-28,9,Gemini Omni 1.1 Flash,275,201,https://news.ycombinator.com/item?id=49467922,https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/
 2026-08-28,10,We found a division by zero bug in FFmpeg with a vibecoded fuzzer,265,217,https://news.ycombinator.com/item?id=49468642,https://code.ffmpeg.org/FFmpeg/FFmpeg/issues/24290
+2026-08-29,1,GUIs should be fully keyboard-driven,749,378,https://news.ycombinator.com/item?id=49479837,https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html
+2026-08-29,2,GLM-5.3 is now open-weight,672,224,https://news.ycombinator.com/item?id=49479878,https://huggingface.co/zai-org/GLM-5.3
+2026-08-29,3,Htmx 4.0,624,153,https://news.ycombinator.com/item?id=49478178,https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released
+2026-08-29,4,U.S. sanctions against the A/I Collective,562,558,https://news.ycombinator.com/item?id=49477854,https://www.inventati.org/
+2026-08-29,5,Inception-style curved map for turn-by-turn directions,482,159,https://news.ycombinator.com/item?id=49477564,https://www.orbify.eu/demo/
+2026-08-29,6,Our decision on Cursor following its acquisition by SpaceX,445,213,https://news.ycombinator.com/item?id=49486172,https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/
+2026-08-29,7,Just the rumour of a bug is enough to find an exploit these days,300,104,https://news.ycombinator.com/item?id=49480466,https://anil.recoil.org/notes/rumour-is-the-exploit
+2026-08-29,8,The Twelve-Factor App (2025),260,139,https://news.ycombinator.com/item?id=49472216,https://12factor.net/
+2026-08-29,9,Boot a Virtual iPhone via Apple's Virtualization.framework,235,69,https://news.ycombinator.com/item?id=49485267,https://github.com/Lakr233/vphone-cli
+2026-08-29,10,Migrating to HTTPX2,191,82,https://news.ycombinator.com/item?id=49477212,https://github.com/openai/openai-python/blob/main/httpx2.md

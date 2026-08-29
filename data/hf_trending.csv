@@ -1424,3 +1424,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-28,Spaces,8,MiniMaxAI/MiniMax-Music3,293,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
 2026-08-28,Spaces,9,prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast,2680,,Image Editing,https://huggingface.co/spaces/prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast
 2026-08-28,Spaces,10,Lynote/free-ai-detector,340,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-29,模型,1,Qwen/Qwen3.8-Flash-Next,4185,4810,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+2026-08-29,模型,2,zai-org/GLM-5.3-Flash,1535,34,text-generation,https://huggingface.co/zai-org/GLM-5.3-Flash
+2026-08-29,模型,3,zai-org/GLM-5.3,1180,0,text-generation,https://huggingface.co/zai-org/GLM-5.3
+2026-08-29,模型,4,Qwen/Qwen3.8-27B,13169,3457687,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-29,模型,5,unsloth/Qwen3.8-Flash-Next-GGUF,531,4354,image-text-to-text,https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF
+2026-08-29,模型,6,unsloth/Qwen3.8-27B-GGUF,3159,7758790,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-29,模型,7,OBLITERATUS/Qwen3.8-27B-OBLITERATED,885,509270,text-generation,https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED
+2026-08-29,模型,8,Lightricks/LTX-2.5,2034,912729,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-29,模型,9,orcarouter/Qwen3.8-27B-Uncensored-MLX,1194,83352,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-MLX
+2026-08-29,模型,10,orcarouter/Qwen3.8-27B-Uncensored-FP8,1238,273577,image-text-to-text,https://huggingface.co/orcarouter/Qwen3.8-27B-Uncensored-FP8
+2026-08-29,資料集,1,markov-ai/cad-1000-hours,203,56917,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-08-29,資料集,2,hamzabagirsakci/turkish-court-decisions,94,1230,,https://huggingface.co/datasets/hamzabagirsakci/turkish-court-decisions
+2026-08-29,資料集,3,Anthropic/claude-protein-binder-design,166,32643,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-08-29,資料集,4,openbmb/Ultra-FineWeb-L1,180,20675,,https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L1
+2026-08-29,資料集,5,malcolmrey/various,130,30942,,https://huggingface.co/datasets/malcolmrey/various
+2026-08-29,資料集,6,biglam/britannica-illustrated-pages,41,2175,,https://huggingface.co/datasets/biglam/britannica-illustrated-pages
+2026-08-29,資料集,7,SageBio/mva-hackathon-2026-data,70,208,,https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data
+2026-08-29,資料集,8,inclusionAI/ConceptEdit-12M,34,1645,,https://huggingface.co/datasets/inclusionAI/ConceptEdit-12M
+2026-08-29,資料集,9,LightwheelAI/EgoStandard,47,4999,,https://huggingface.co/datasets/LightwheelAI/EgoStandard
+2026-08-29,資料集,10,r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation,219,7511,,https://huggingface.co/datasets/r0b0tlab/qwen3.8-max-glm5.2-kimi-k3-distillation
+2026-08-29,Spaces,1,kulkas2pintu/wan555,1561,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-29,Spaces,2,pollen-robotics/microduck-simulator,137,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-08-29,Spaces,3,mpasila/Krea-2-Turbo_I2I,160,,Image Generation,https://huggingface.co/spaces/mpasila/Krea-2-Turbo_I2I
+2026-08-29,Spaces,4,pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,159,,Image Editing,https://huggingface.co/spaces/pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-29,Spaces,5,Saravutw/Omni-videos-custom,230,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-29,Spaces,6,wank3r/Wan_2.2_I2V_14B-Clean,111,,Video Generation,https://huggingface.co/spaces/wank3r/Wan_2.2_I2V_14B-Clean
+2026-08-29,Spaces,7,MiniMaxAI/MiniMax-Music3,298,,Music Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-Music3
+2026-08-29,Spaces,8,Lynote/free-ai-detector,341,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-29,Spaces,9,SageBio/rare-disease-real-kid-mva-hackathon-2026,57,,Other,https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026
+2026-08-29,Spaces,10,hugging-apps/sensenova-sensenova-u1-5-8b-mot,75,,Image Generation,https://huggingface.co/spaces/hugging-apps/sensenova-sensenova-u1-5-8b-mot
