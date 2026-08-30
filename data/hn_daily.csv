@@ -569,3 +569,13 @@ date,rank,title,points,comments,hn_url,url
 2026-08-29,8,The Twelve-Factor App (2025),260,139,https://news.ycombinator.com/item?id=49472216,https://12factor.net/
 2026-08-29,9,Boot a Virtual iPhone via Apple's Virtualization.framework,235,69,https://news.ycombinator.com/item?id=49485267,https://github.com/Lakr233/vphone-cli
 2026-08-29,10,Migrating to HTTPX2,191,82,https://news.ycombinator.com/item?id=49477212,https://github.com/openai/openai-python/blob/main/httpx2.md
+2026-08-30,1,"Tether: iMessage, SMS, etc. on Linux",416,165,https://news.ycombinator.com/item?id=49415386,https://zackbartel.com/blog/2026/08/tether/
+2026-08-30,2,Boot a Virtual iPhone via Apple's Virtualization.framework,394,106,https://news.ycombinator.com/item?id=49485267,https://github.com/Lakr233/vphone-cli
+2026-08-30,3,"DHS is using obscure law to snoop on journalists, non-profits, unions",375,69,https://news.ycombinator.com/item?id=49492219,https://www.theguardian.com/us-news/2026/aug/29/trump-dhs-1509-summons-records-journalists-nonprofits
+2026-08-30,4,EVE Online moves to Python 3,331,178,https://news.ycombinator.com/item?id=49433328,https://www.eveonline.com/news/view/the-move-to-python-3-begins
+2026-08-30,5,"Good Culture Is the Biggest Productivity Hack, Not AI",329,77,https://news.ycombinator.com/item?id=49491568,https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity
+2026-08-30,6,Glacier Mice,280,54,https://news.ycombinator.com/item?id=49424320,https://en.wikipedia.org/wiki/Glacier_mice
+2026-08-30,7,Samsung's Processing-in-Memory (PIM),255,97,https://news.ycombinator.com/item?id=49487341,https://chipsandcheese.com/p/hot-chips-2026-samsungs-processing
+2026-08-30,8,Hy4 preview,251,145,https://news.ycombinator.com/item?id=49492632,https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/
+2026-08-30,9,Lawmakers added $1 to car insurance policies. That money paid for Flock cameras,230,112,https://news.ycombinator.com/item?id=49494182,https://www.texastribune.org/2026/08/28/texas-flock-cameras-auto-insurance-fee-mvcpa-grants/
+2026-08-30,10,SQLite as a Document Database (2020),192,47,https://news.ycombinator.com/item?id=49426995,https://dgl.cx/2020/06/sqlite-json-support
