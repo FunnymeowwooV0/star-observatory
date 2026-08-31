@@ -586,3 +586,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-08-30,8,every-app/open-seo,517,14745,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
 2026-08-30,9,anthropics/claude-plugins-official,358,35495,Python,https://github.com/anthropics/claude-plugins-official,"Official, Anthropic-managed directory of high quality Claude Code Plugins."
 2026-08-30,10,JetBrains/go-modern-guidelines,303,2914,Go,https://github.com/JetBrains/go-modern-guidelines,Help AI coding agents write modern Go
+2026-08-31,1,tt-a1i/archify,3722,35815,JavaScript,https://github.com/tt-a1i/archify,"Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export."
+2026-08-31,2,THU-MAIC/OpenMAIC,1370,24900,TypeScript,https://github.com/THU-MAIC/OpenMAIC,"Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click"
+2026-08-31,3,K-Dense-AI/scientific-agent-skills,1114,39801,Python,https://github.com/K-Dense-AI/scientific-agent-skills,"Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard."
+2026-08-31,4,tashfeenahmed/freellmapi,504,23001,TypeScript,https://github.com/tashfeenahmed/freellmapi,"7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only."
+2026-08-31,5,every-app/open-seo,469,15334,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
+2026-08-31,6,p-e-w/heretic,369,29306,Python,https://github.com/p-e-w/heretic,Fully automatic censorship removal for language models
+2026-08-31,7,Lakr233/vphone-cli,361,9810,Swift,https://github.com/Lakr233/vphone-cli,
+2026-08-31,8,mvanhorn/last30days-skill,230,60641,Python,https://github.com/mvanhorn/last30days-skill,"AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+2026-08-31,9,unclecode/crawl4ai,221,80400,Python,https://github.com/unclecode/crawl4ai,"🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here:https://discord.gg/jP8KfhDhyN"
+2026-08-31,10,NationalSecurityAgency/ghidra,198,74024,Java,https://github.com/NationalSecurityAgency/ghidra,Ghidra is a software reverse engineering (SRE) framework

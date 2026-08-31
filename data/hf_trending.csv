@@ -1484,3 +1484,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-08-30,Spaces,8,Lynote/free-ai-detector,347,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
 2026-08-30,Spaces,9,hugging-apps/sensenova-sensenova-u1-5-8b-mot,86,,Image Generation,https://huggingface.co/spaces/hugging-apps/sensenova-sensenova-u1-5-8b-mot
 2026-08-30,Spaces,10,Lynote/free-ai-image-detector,108,,Image,https://huggingface.co/spaces/Lynote/free-ai-image-detector
+2026-08-31,模型,1,Qwen/Qwen3.8-Flash-Next,4407,121976,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+2026-08-31,模型,2,zai-org/GLM-5.3-Flash,1737,346516,text-generation,https://huggingface.co/zai-org/GLM-5.3-Flash
+2026-08-31,模型,3,zai-org/GLM-5.3,1364,50116,text-generation,https://huggingface.co/zai-org/GLM-5.3
+2026-08-31,模型,4,Qwen/Qwen3.8-27B,13369,4511348,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-08-31,模型,5,unsloth/Qwen3.8-Flash-Next-GGUF,607,328195,image-text-to-text,https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF
+2026-08-31,模型,6,unsloth/Qwen3.8-27B-GGUF,3254,8839153,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-08-31,模型,7,Lightricks/LTX-2.5,2288,1137181,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-08-31,模型,8,tencent/Hy4-preview,325,2123,text-generation,https://huggingface.co/tencent/Hy4-preview
+2026-08-31,模型,9,unsloth/GLM-5.3-Flash-GGUF,293,45936,text-generation,https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF
+2026-08-31,模型,10,OBLITERATUS/Qwen3.8-27B-OBLITERATED,955,725757,text-generation,https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED
+2026-08-31,資料集,1,markov-ai/cad-1000-hours,241,76013,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-08-31,資料集,2,hamzabagirsakci/turkish-court-decisions,108,2209,,https://huggingface.co/datasets/hamzabagirsakci/turkish-court-decisions
+2026-08-31,資料集,3,rajpurkar/squad,517,214128,,https://huggingface.co/datasets/rajpurkar/squad
+2026-08-31,資料集,4,Anthropic/claude-protein-binder-design,182,43864,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-08-31,資料集,5,stanfordnlp/imdb,518,173123,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-08-31,資料集,6,openbmb/Ultra-FineWeb-L1,183,29453,,https://huggingface.co/datasets/openbmb/Ultra-FineWeb-L1
+2026-08-31,資料集,7,biglam/britannica-illustrated-pages,44,5018,,https://huggingface.co/datasets/biglam/britannica-illustrated-pages
+2026-08-31,資料集,8,inclusionAI/ConceptEdit-12M,40,14388,,https://huggingface.co/datasets/inclusionAI/ConceptEdit-12M
+2026-08-31,資料集,9,SageBio/mva-hackathon-2026-data,87,944,,https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data
+2026-08-31,資料集,10,nyu-mll/glue,562,531981,,https://huggingface.co/datasets/nyu-mll/glue
+2026-08-31,Spaces,1,pollen-robotics/microduck-simulator,216,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-08-31,Spaces,2,kulkas2pintu/wan555,1619,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-08-31,Spaces,3,pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo,186,,Image Editing,https://huggingface.co/spaces/pnemrow/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental-neo
+2026-08-31,Spaces,4,Saravutw/Omni-videos-custom,243,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-08-31,Spaces,5,wank3r/Wan_2.2_I2V_14B-Clean,128,,Video Generation,https://huggingface.co/spaces/wank3r/Wan_2.2_I2V_14B-Clean
+2026-08-31,Spaces,6,SageBio/rare-disease-real-kid-mva-hackathon-2026,67,,Other,https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026
+2026-08-31,Spaces,7,Lynote/free-ai-detector,348,,Text Analysis,https://huggingface.co/spaces/Lynote/free-ai-detector
+2026-08-31,Spaces,8,Lynote/free-ai-image-detector,109,,Image,https://huggingface.co/spaces/Lynote/free-ai-image-detector
+2026-08-31,Spaces,9,kulkas2pintu/QWEN_EDIT_IMAGE,81,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-08-31,Spaces,10,hugging-apps/sensenova-sensenova-u1-5-8b-mot,91,,Image Generation,https://huggingface.co/spaces/hugging-apps/sensenova-sensenova-u1-5-8b-mot
