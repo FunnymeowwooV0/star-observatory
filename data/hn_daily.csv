@@ -599,3 +599,13 @@ date,rank,title,points,comments,hn_url,url
 2026-09-01,8,ChatGPT Work Tool and Skill Reference,207,53,https://news.ycombinator.com/item?id=49510000,https://codex-tool-reference.simonw.chatgpt.site/
 2026-09-01,9,Run macOS Software on Linux,188,60,https://news.ycombinator.com/item?id=49515830,https://www.darlinghq.org/
 2026-09-01,10,"RavynOS: Pre-alpha open-source OS based on Darwin, FreeBSD, Apple open-source",187,106,https://news.ycombinator.com/item?id=49511534,https://ravynos.com/
+2026-09-02,1,Claude Fable 5.1 and Claude Mythos 5.1,1055,984,https://news.ycombinator.com/item?id=49525378,https://www.anthropic.com/claude-fable-and-mythos-5-1
+2026-09-02,2,How accurate have Ed Zitron's AI skeptic predictions been?,551,638,https://news.ycombinator.com/item?id=49526069,https://danluu.com/zitron/
+2026-09-02,3,Introducing Ad Blocker for Firefox on iOS,369,125,https://news.ycombinator.com/item?id=49521973,https://blog.mozilla.org/en/firefox/ad-blocker-on-ios/
+2026-09-02,4,The ChatGPT/Codex app bundles a full copy of LibreOffice,317,146,https://news.ycombinator.com/item?id=49527396,https://simonwillison.net/2026/Sep/1/codex-libreoffice/
+2026-09-02,5,Ambient CSS v3 – Blender meets CSS,221,69,https://news.ycombinator.com/item?id=49523387,https://ambientcss.vercel.app/
+2026-09-02,6,The creator of Jujutsu has joined ERSC,209,153,https://news.ycombinator.com/item?id=49525297,https://ersc.io/blog/martin-joins-ersc
+2026-09-02,7,Ask HN: Who is hiring? (September 2026),204,218,https://news.ycombinator.com/item?id=49522897,https://news.ycombinator.com/item?id=49522897
+2026-09-02,8,"Movie Scene Map – 13,312 films, series, games, anime and manga",186,30,https://news.ycombinator.com/item?id=49524320,https://moviescenemap.com/
+2026-09-02,9,Atlas: A World Model for Spatial Intelligence,184,43,https://news.ycombinator.com/item?id=49525160,https://www.worldlabs.ai/blog/atlas
+2026-09-02,10,Show HN: Running 104GB Qwen3.8-Flash-Next on 48GB Mac with at ~12 tok/s,182,91,https://news.ycombinator.com/item?id=49524447,https://github.com/carloslfu/slotstream
