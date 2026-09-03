@@ -616,3 +616,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-02,8,browser-use/video-use,472,23119,Python,https://github.com/browser-use/video-use,Edit videos with coding agents
 2026-09-02,9,VoltAgent/awesome-design-md,323,113039,,https://github.com/VoltAgent/awesome-design-md,A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.
 2026-09-02,10,Imbad0202/academic-research-skills,193,45092,Python,https://github.com/Imbad0202/academic-research-skills,Academic Research Skills for Claude Code: research → write → review → revise → finalize
+2026-09-03,1,DietrichGebert/ponytail,1354,122059,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-09-03,2,mattpocock/skills,1166,245499,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-09-03,3,pacifio/atlas,888,2997,Rust,https://github.com/pacifio/atlas,"Source control for agents. Use multiple coding agents, track their changes and query them in one place"
+2026-09-03,4,debpalash/VoiceStudio,832,15128,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-03,5,Imbad0202/academic-research-skills,799,45668,Python,https://github.com/Imbad0202/academic-research-skills,Academic Research Skills for Claude Code: research → write → review → revise → finalize
+2026-09-03,6,Gitlawb/openclaude,775,32064,TypeScript,https://github.com/Gitlawb/openclaude,runs anywhere. uses anything
+2026-09-03,7,firecrawl/pdf-inspector,586,18605,Rust,https://github.com/firecrawl/pdf-inspector,"Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions."
+2026-09-03,8,NousResearch/hermes-agent,533,240261,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-09-03,9,affaan-m/ECC,516,246481,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-09-03,10,blader/humanizer,374,40642,Python,https://github.com/blader/humanizer,Agent skill that removes signs of AI-generated writing from text
