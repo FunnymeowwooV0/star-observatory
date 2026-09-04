@@ -626,3 +626,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-03,8,NousResearch/hermes-agent,533,240261,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
 2026-09-03,9,affaan-m/ECC,516,246481,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
 2026-09-03,10,blader/humanizer,374,40642,Python,https://github.com/blader/humanizer,Agent skill that removes signs of AI-generated writing from text
+2026-09-04,1,DietrichGebert/ponytail,2128,123762,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-09-04,2,debpalash/VoiceStudio,1672,16529,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-04,3,google-research/timesfm,1618,30765,Python,https://github.com/google-research/timesfm,TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.
+2026-09-04,4,mattpocock/skills,1601,247891,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-09-04,5,blader/humanizer,1208,41716,Python,https://github.com/blader/humanizer,Agent skill that removes signs of AI-generated writing from text
+2026-09-04,6,fmtlib/fmt,963,25203,C++,https://github.com/fmtlib/fmt,A modern formatting library
+2026-09-04,7,NousResearch/hermes-agent,774,240986,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-09-04,8,affaan-m/ECC,751,247395,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-09-04,9,JuliusBrussee/caveman,543,103193,Go,https://github.com/JuliusBrussee/caveman,🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
+2026-09-04,10,bannedbook/fanqiang,522,52365,Kotlin,https://github.com/bannedbook/fanqiang,翻墙-科学上网
