@@ -636,3 +636,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-04,8,affaan-m/ECC,751,247395,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
 2026-09-04,9,JuliusBrussee/caveman,543,103193,Go,https://github.com/JuliusBrussee/caveman,🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
 2026-09-04,10,bannedbook/fanqiang,522,52365,Kotlin,https://github.com/bannedbook/fanqiang,翻墙-科学上网
+2026-09-05,1,mattpocock/skills,2758,250699,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-09-05,2,DietrichGebert/ponytail,1679,126445,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-09-05,3,debpalash/VoiceStudio,1345,18220,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-05,4,affaan-m/ECC,1135,248671,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-09-05,5,blader/humanizer,1130,42858,Python,https://github.com/blader/humanizer,Agent skill that removes signs of AI-generated writing from text
+2026-09-05,6,bannedbook/fanqiang,730,52854,Kotlin,https://github.com/bannedbook/fanqiang,翻墙-科学上网
+2026-09-05,7,NousResearch/hermes-agent,720,241590,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-09-05,8,fmtlib/fmt,688,25493,C++,https://github.com/fmtlib/fmt,A modern formatting library
+2026-09-05,9,anthropics/skills,511,174202,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
+2026-09-05,10,JuliusBrussee/caveman,501,103632,Go,https://github.com/JuliusBrussee/caveman,🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman

@@ -1634,3 +1634,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-04,Spaces,8,SageBio/rare-disease-real-kid-mva-hackathon-2026,96,,Other,https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026
 2026-09-04,Spaces,9,hugging-apps/sensenova-sensenova-u1-5-8b-mot,110,,Image Generation,https://huggingface.co/spaces/hugging-apps/sensenova-sensenova-u1-5-8b-mot
 2026-09-04,Spaces,10,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,78,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-05,模型,1,deepseek-ai/DeepSeek-V4-Flash-Vision-Exp,613,133024,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+2026-09-05,模型,2,Qwen/Qwen3.8-27B,13963,5739341,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-05,模型,3,Qwen/Qwen3.8-Flash-Next,4881,351374,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+2026-09-05,模型,4,zai-org/GLM-5.3-Flash,2053,654957,image-text-to-text,https://huggingface.co/zai-org/GLM-5.3-Flash
+2026-09-05,模型,5,zai-org/GLM-5.3,1708,303534,text-generation,https://huggingface.co/zai-org/GLM-5.3
+2026-09-05,模型,6,XHToken/Spark-X2.5-4B,483,3524,text-generation,https://huggingface.co/XHToken/Spark-X2.5-4B
+2026-09-05,模型,7,google/timesfm-3.0-pytorch,432,105304,time-series-forecasting,https://huggingface.co/google/timesfm-3.0-pytorch
+2026-09-05,模型,8,Lightricks/LTX-2.5,2804,1399511,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-09-05,模型,9,ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF,318,206575,image-text-to-text,https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF
+2026-09-05,模型,10,unsloth/Qwen3.8-27B-GGUF,3514,9951693,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-09-05,資料集,1,rajpurkar/squad,666,264632,,https://huggingface.co/datasets/rajpurkar/squad
+2026-09-05,資料集,2,stanfordnlp/imdb,658,181487,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-09-05,資料集,3,nyu-mll/glue,696,755188,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-05,資料集,4,markov-ai/cad-1000-hours,361,101777,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-05,資料集,5,kuben-developer/tiktok-videos-4b,89,3072,,https://huggingface.co/datasets/kuben-developer/tiktok-videos-4b
+2026-09-05,資料集,6,hamzabagirsakci/turkish-court-decisions,131,3374,,https://huggingface.co/datasets/hamzabagirsakci/turkish-court-decisions
+2026-09-05,資料集,7,llm-jp/AnswerCarefully,131,10852,,https://huggingface.co/datasets/llm-jp/AnswerCarefully
+2026-09-05,資料集,8,FlyRank/internship-warehouse,583,19265,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-09-05,資料集,9,junchaoh-cs/SolarWM-Data,21,4343,,https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data
+2026-09-05,資料集,10,Anthropic/claude-protein-binder-design,192,54024,,https://huggingface.co/datasets/Anthropic/claude-protein-binder-design
+2026-09-05,Spaces,1,pollen-robotics/microduck-simulator,410,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-09-05,Spaces,2,kulkas2pintu/wan555,1765,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-09-05,Spaces,3,kulkas2pintu/QWEN_EDIT_IMAGE,157,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-05,Spaces,4,AimeeBingmouQu/ProtectBirds,1024,,Image Analysis,https://huggingface.co/spaces/AimeeBingmouQu/ProtectBirds
+2026-09-05,Spaces,5,MiniMaxAI/MiniMax-H3-Turbo-Lora,372,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
+2026-09-05,Spaces,6,multimodalart/h3-acceleration-arena,63,,Other,https://huggingface.co/spaces/multimodalart/h3-acceleration-arena
+2026-09-05,Spaces,7,Saravutw/Omni-videos-custom,307,,Video Generation,https://huggingface.co/spaces/Saravutw/Omni-videos-custom
+2026-09-05,Spaces,8,MrdDickDickenson/Krea-2-Turbo_I2I,63,,Image Generation,https://huggingface.co/spaces/MrdDickDickenson/Krea-2-Turbo_I2I
+2026-09-05,Spaces,9,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,92,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
+2026-09-05,Spaces,10,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,85,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
