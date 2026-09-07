@@ -656,3 +656,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-06,8,NousResearch/hermes-agent,575,242093,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
 2026-09-06,9,anthropics/skills,475,174635,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
 2026-09-06,10,humanlayer/skills,442,2798,TypeScript,https://github.com/humanlayer/skills,
+2026-09-07,1,mattpocock/skills,2207,255039,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-09-07,2,DietrichGebert/ponytail,1539,129770,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-09-07,3,affaan-m/ECC,1485,251735,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-09-07,4,blader/humanizer,748,44487,Python,https://github.com/blader/humanizer,Agent skill that removes signs of AI-generated writing from text
+2026-09-07,5,cathrynlavery/diagram-design,620,32641,HTML,https://github.com/cathrynlavery/diagram-design,"38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-09-07,6,magnitudedev/magnitude,604,3781,TypeScript,https://github.com/magnitudedev/magnitude,"Open source inference server that runs the best local models for your hardware, plugged into the agent you already use. Works with Pi, OpenCode, Hermes, OpenClaw, Codex, Claude Code, Oh My Pi, and Cline."
+2026-09-07,7,anomalyco/opencode,551,205385,TypeScript,https://github.com/anomalyco/opencode,The open source coding agent.
+2026-09-07,8,NousResearch/hermes-agent,520,242667,Python,https://github.com/NousResearch/hermes-agent,The agent that grows with you
+2026-09-07,9,humanlayer/skills,451,3245,TypeScript,https://github.com/humanlayer/skills,
+2026-09-07,10,BraveOPotato/FckSignups,436,3417,TypeScript,https://github.com/BraveOPotato/FckSignups,"A list of tools that are open-source, in-browser, and require no-signups!"
