@@ -686,3 +686,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-09,8,mksglu/context-mode,651,21481,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
 2026-09-09,9,MoonTechLab/LunaTV,505,10265,TypeScript,https://github.com/MoonTechLab/LunaTV,本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源
 2026-09-09,10,The-Swarm-Corporation/AutoHedge,494,5800,Python,https://github.com/The-Swarm-Corporation/AutoHedge,"Build your autonomous hedge fund in minutes. AutoHedge harnesses the power of swarm intelligence and AI agents to automate market analysis, risk management, and trade execution."
+2026-09-10,1,ayghri/i-have-adhd,4650,35355,Python,https://github.com/ayghri/i-have-adhd,A skill to stop your coding agent from burying the answer. ADHD-friendly output.
+2026-09-10,2,cathrynlavery/diagram-design,2249,36870,HTML,https://github.com/cathrynlavery/diagram-design,"38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-09-10,3,liquidslr/system-design-notes,1397,18185,,https://github.com/liquidslr/system-design-notes,Notes of the book System Desgin Interview - An Insider's Guide
+2026-09-10,4,affaan-m/ECC,1133,255328,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-09-10,5,freestylefly/awesome-gpt-image-2,705,30265,JavaScript,https://github.com/freestylefly/awesome-gpt-image-2,Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中
+2026-09-10,6,obra/superpowers,688,284149,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-09-10,7,Tencent/teamai-cli,556,3222,TypeScript,https://github.com/Tencent/teamai-cli,Make Every Team AI Native
+2026-09-10,8,openai/plugins,498,6266,JavaScript,https://github.com/openai/plugins,OpenAI Plugins
+2026-09-10,9,vastsa/PI-Desktop,417,1820,TypeScript,https://github.com/vastsa/PI-Desktop,Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
+2026-09-10,10,TauricResearch/TradingAgents,367,104144,Python,https://github.com/TauricResearch/TradingAgents,TradingAgents: Multi-Agents LLM Financial Trading Framework
