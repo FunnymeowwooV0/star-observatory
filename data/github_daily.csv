@@ -696,3 +696,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-10,8,openai/plugins,498,6266,JavaScript,https://github.com/openai/plugins,OpenAI Plugins
 2026-09-10,9,vastsa/PI-Desktop,417,1820,TypeScript,https://github.com/vastsa/PI-Desktop,Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
 2026-09-10,10,TauricResearch/TradingAgents,367,104144,Python,https://github.com/TauricResearch/TradingAgents,TradingAgents: Multi-Agents LLM Financial Trading Framework
+2026-09-11,1,ayghri/i-have-adhd,3882,38941,Python,https://github.com/ayghri/i-have-adhd,A skill to stop your coding agent from burying the answer. ADHD-friendly output.
+2026-09-11,2,bilawalsidhu/gods-eye-view,1762,24904,JavaScript,https://github.com/bilawalsidhu/gods-eye-view,"A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe."
+2026-09-11,3,cathrynlavery/diagram-design,1294,37971,HTML,https://github.com/cathrynlavery/diagram-design,"38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-09-11,4,freestylefly/awesome-gpt-image-2,962,31036,JavaScript,https://github.com/freestylefly/awesome-gpt-image-2,Prompt as Code | GPT Image 2 / 2.5 提示词与案例库，530+ 个案例、20+ 套工业级模板与可复用 Skills，新增 2.5 同提示词对比专区，附完整提示词与生成记录，持续更新。
+2026-09-11,5,liquidslr/system-design-notes,900,18965,,https://github.com/liquidslr/system-design-notes,Notes of the book System Desgin Interview - An Insider's Guide
+2026-09-11,6,Tencent/teamai-cli,841,3930,TypeScript,https://github.com/Tencent/teamai-cli,Make Every Team AI Native
+2026-09-11,7,THU-MAIC/OpenMAIC,837,35506,TypeScript,https://github.com/THU-MAIC/OpenMAIC,"Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click"
+2026-09-11,8,obra/superpowers,732,284833,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-09-11,9,diegosouzapw/OmniRoute,626,64401,TypeScript,https://github.com/diegosouzapw/OmniRoute,"Never stop coding. Free MIT AI gateway: one endpoint, 352 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 550+ contributors"
+2026-09-11,10,vastsa/PI-Desktop,624,2422,TypeScript,https://github.com/vastsa/PI-Desktop,Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins
