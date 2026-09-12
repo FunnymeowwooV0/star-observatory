@@ -458,14 +458,22 @@ def fetch_reddit_top():
 
 
 def fetch_reddit_top_rss():
-    """抓 old.reddit r/LocalLLaMA 週榜的 Atom feed 再解析。抓/解析失敗丟例外。
+    """抓 www.reddit r/LocalLLaMA 週榜的 Atom feed 再解析。抓/解析失敗丟例外。
 
     HTML 頁面被 Reddit 依 IP 擋(機房 IP 一律 403,換 UA 無效),但同站的 `.rss` 端點
     在 GitHub Actions 上實測 200(2026-08-06 探針)→ 雲端走這條。
     代價:RSS 不含分數與留言數(score/comments 為 None)。
     (requests 會自動處理 gzip 回應,不需額外設定。)
+
+    2026-09-12 改用 www 子網域:`old.` 從 2026-09-06 前後開始被 Reddit 302 導到
+    `/login/?reason=lor2`,回的是登入頁 HTML,解析時炸成
+    「不是合法的 XML … line 21, column 195」——週榜因此連續失敗十幾天。
+    同日實測(主理人家用 IP,同一個 REDDIT_RSS_UA):
+      old. → 302→login,拿到 HTML;www. → 200、62,953B、`<feed xmlns=…Atom>`、25 則。
+    且用本檔自己的 parse_reddit_rss() 解 www 版可正常解出 10 則。
+    ⚠️ 家用 IP 與 GitHub Actions 的機房 IP 不同,雲端是否同樣可用需由探針實測。
     """
-    url = "https://old.reddit.com/r/LocalLLaMA/top/.rss?t=week"
+    url = "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week"
     resp = requests.get(url, headers={"User-Agent": REDDIT_RSS_UA}, timeout=30)
     resp.raise_for_status()
     return parse_reddit_rss(resp.text)
