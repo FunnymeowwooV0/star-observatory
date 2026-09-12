@@ -637,14 +637,35 @@ class TestRenderHtmlTaskA(unittest.TestCase):
         self.assertIn("非精確", text)
 
     def test_partial_source_errors_are_a_visible_alert_and_escaped(self):
+        """橫幅仍然要出現(壞了要看得見),但只講「哪個來源」,不把例外細節丟給訪客。
+
+        2026-09-12 改:原本會把 Python 的解析器錯誤(含行號欄號)整段印在公開頁上,
+        對讀者沒有意義。完整訊息改為只留在 Actions 執行紀錄與每日 Issue 裡。
+        **跳脫這件事沒有放鬆**:下面仍然斷言 payload 不得以原樣 HTML 出現。
+        """
         raw_html = _render(errors=['HF 模型抓取失敗:<bad & "unsafe">'])
         soup = BeautifulSoup(raw_html, "html.parser")
         alert = soup.select_one('.err[role="alert"]')
 
         self.assertIsNotNone(alert)
-        self.assertIn('HF 模型抓取失敗:<bad & "unsafe">', alert.get_text(strip=True))
-        self.assertIn("稍後重新整理", alert.get_text(strip=True))
+        alert_text = alert.get_text(strip=True)
+        # 看得見:講得出是哪個來源沒更新
+        self.assertIn("HF 模型抓取失敗", alert_text)
+        # 但不把例外細節給訪客
+        self.assertNotIn('<bad & "unsafe">', alert_text)
+        self.assertNotIn("稍後重新整理", alert_text)
+        # 跳脫仍然成立:原樣的危險字串絕不得進 HTML
         self.assertNotIn("<bad", raw_html)
+
+    def test_alert_escapes_a_payload_that_lands_in_the_source_label(self):
+        """來源標籤本身若帶危險字串(錯誤訊息沒有冒號時整串都會變成標籤),一樣要被跳脫。"""
+        raw_html = _render(errors=['<script>alert(1)</script>'])
+        soup = BeautifulSoup(raw_html, "html.parser")
+        alert = soup.select_one('.err[role="alert"]')
+
+        self.assertIsNotNone(alert)
+        self.assertNotIn("<script>", raw_html)
+        self.assertIn("alert(1)", alert.get_text(strip=True))
 
     def test_external_links_have_no_decorative_arrows_and_keep_noopener(self):
         raw_html = _render(snapshot_date="2026-07-22")

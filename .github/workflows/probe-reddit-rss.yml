@@ -28,6 +28,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      # 探針會 import scripts/sources_extra.py 來用專案自己的解析函式,
+      # 而那支檔案頂層 import requests,所以依賴要先裝(第一次跑就是漏了這步)。
+      - run: pip install --require-hashes -r requirements.lock
+
       - name: 探針:兩個子網域各打一次,並用本專案自己的解析函式驗
         run: |
           python - <<'PY'
