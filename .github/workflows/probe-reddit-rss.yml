@@ -1,0 +1,89 @@
+name: probe-reddit-rss
+
+# 一次性探針:回答「Reddit 的 .rss 端點從 GitHub Actions 的機房 IP 打得通嗎」。
+# 2026-09-06 前後 old.reddit.com 的 .rss 開始被 302 導到 /login/,回的是登入頁 HTML,
+# 解析時炸成「不是合法的 XML」,週榜因此連續失敗十幾天。
+# 主理人家用 IP 實測 www. 可以(200、Atom feed、25 則),但家用 IP ≠ 機房 IP,
+# 而本專案的註解自己記過「HTML 頁面機房 IP 一律 403」——所以必須在 Actions 上實測。
+#
+# 刻意只在這個分支跑、只做 HTTP GET:不寫檔、不 commit、不開 Issue、不要任何權限。
+# 問題回答完就把這個檔連同分支一起刪掉。
+
+on:
+  push:
+    branches:
+      - fix/reddit-www-rss
+
+permissions: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: 探針:兩個子網域各打一次,並用本專案自己的解析函式驗
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.error, sys, importlib.util
+
+          UA = "star-observatory/1.0 (personal trend dashboard)"
+          URLS = {
+              "old": "https://old.reddit.com/r/LocalLLaMA/top/.rss?t=week",
+              "www": "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=week",
+          }
+
+          spec = importlib.util.spec_from_file_location("se", "scripts/sources_extra.py")
+          se = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(se)
+
+          results = {}
+          for name, url in URLS.items():
+              print(f"\n===== {name}: {url} =====")
+              req = urllib.request.Request(url, headers={"User-Agent": UA})
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      body = resp.read().decode("utf-8", "replace")
+                      final = resp.geturl()
+                      code = resp.status
+              except urllib.error.HTTPError as e:
+                  print(f"  HTTP {e.code} {e.reason}")
+                  results[name] = f"HTTP {e.code}"
+                  continue
+              except Exception as e:  # noqa: BLE001
+                  print(f"  例外 {type(e).__name__}: {e}")
+                  results[name] = f"例外 {type(e).__name__}"
+                  continue
+
+              print(f"  HTTP {code}  bytes={len(body)}")
+              print(f"  最終網址 {final}")
+              redirected = final != url
+              print(f"  有沒有被重導 {redirected}")
+              is_feed = body.lstrip()[:200].find("<feed") >= 0 or body.lstrip()[:200].find("<rss") >= 0
+              print(f"  看起來是 feed 嗎 {is_feed}")
+              if not is_feed:
+                  print(f"  開頭 200 字: {body.lstrip()[:200]!r}")
+                  results[name] = "不是 feed(可能是登入頁)"
+                  continue
+              try:
+                  items = se.parse_reddit_rss(body)
+              except Exception as e:  # noqa: BLE001
+                  print(f"  專案自己的 parse_reddit_rss 解不動: {type(e).__name__}: {e}")
+                  results[name] = "feed 但解不動"
+                  continue
+              print(f"  parse_reddit_rss 解出 {len(items)} 則")
+              for it in items[:3]:
+                  print(f"    - {str(it.get('title'))[:60]}")
+              results[name] = f"OK,{len(items)} 則"
+
+          print("\n\n=========== 結論 ===========")
+          for k, v in results.items():
+              print(f"  {k}: {v}")
+          print("============================")
+          PY

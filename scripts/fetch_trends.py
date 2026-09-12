@@ -1040,9 +1040,19 @@ def render_html(date, stamp, gh, hf, errors, hn=None, openrouter=None, ph=None, 
                 f'{leaderboard_tab}</div>{switcher_html}</nav>'
                 f'<div class="subnav-wrap">{source_tabs_html}{period_tabs_html}</div></div>')
 
-    err_html = ('<div class="err" role="alert">⚠️ 部分來源抓取失敗:'
-                + "；".join(_esc(e) for e in errors)
-                + '。可稍後重新整理；若持續發生，請查看 Actions 執行紀錄。</div>') if errors else ""
+    # 公開頁只講「哪個來源沒更新」,不把例外訊息丟給訪客——之前這裡會直接印出
+    # 「not well-formed (invalid token): line 21, column 195」這種解析器錯誤,
+    # 對讀者沒有意義,也等於把內部細節攤在公開頁上。
+    # 完整訊息仍保留在 Actions 執行紀錄與每日 Issue(下方 parts.append)裡,
+    # 所以「壞了要看得見」這件事沒有被弱化,只是換了觀眾。
+    _err_sources = []
+    for _e in errors:
+        _label = _e.split(":", 1)[0].strip() or "部分來源"
+        if _label not in _err_sources:
+            _err_sources.append(_label)
+    err_html = ('<div class="err" role="alert">⚠️ '
+                + "；".join(_esc(x) for x in _err_sources)
+                + '。其餘榜單不受影響，該來源會在恢復後自動補上。</div>') if errors else ""
     return (f'<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">'
             f'<meta http-equiv="Content-Security-Policy" content="'
             f"default-src 'self'; "
