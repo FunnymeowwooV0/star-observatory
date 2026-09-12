@@ -1814,3 +1814,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-10,Spaces,8,Xenova/fruit-fly-simulation,45,,Other,https://huggingface.co/spaces/Xenova/fruit-fly-simulation
 2026-09-10,Spaces,9,MiniMaxAI/MiniMax-H3-Turbo-Lora,405,,Video Generation,https://huggingface.co/spaces/MiniMaxAI/MiniMax-H3-Turbo-Lora
 2026-09-10,Spaces,10,selfit-camera/Omni-Image-Editor,2553,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
+2026-09-12,模型,1,deepseek-ai/DeepSeek-V4.1-Flash,1817,75774,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+2026-09-12,模型,2,openbmb/MiniCPM5-2B,1199,67550,text-generation,https://huggingface.co/openbmb/MiniCPM5-2B
+2026-09-12,模型,3,XHToken/Spark-X2.5-4B,1109,17712,text-generation,https://huggingface.co/XHToken/Spark-X2.5-4B
+2026-09-12,模型,4,nex-agi/Nex-N2.5-mini,695,3121,text-generation,https://huggingface.co/nex-agi/Nex-N2.5-mini
+2026-09-12,模型,5,Qwen/Qwen3.8-27B,14769,7563763,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-12,模型,6,ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF,842,682187,image-text-to-text,https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF
+2026-09-12,模型,7,nex-agi/Nex-N2.5-Pro,599,12260,text-generation,https://huggingface.co/nex-agi/Nex-N2.5-Pro
+2026-09-12,模型,8,Lightricks/LTX-2.5,3510,1669564,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-09-12,模型,9,unsloth/Qwen3.8-27B-GGUF,3904,11339637,,https://huggingface.co/unsloth/Qwen3.8-27B-GGUF
+2026-09-12,模型,10,WarmBloodAban/Minimax-h3_Singularity,302,103178,image-to-video,https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity
+2026-09-12,資料集,1,stanfordnlp/imdb,910,198487,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-09-12,資料集,2,openbmb/UltraData-SFT-Agent-2609,125,5838,,https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+2026-09-12,資料集,3,openbmb/UltraData-RL-2609,113,4915,,https://huggingface.co/datasets/openbmb/UltraData-RL-2609
+2026-09-12,資料集,4,openbmb/UltraData-Code,110,8720,,https://huggingface.co/datasets/openbmb/UltraData-Code
+2026-09-12,資料集,5,rajpurkar/squad,922,258280,,https://huggingface.co/datasets/rajpurkar/squad
+2026-09-12,資料集,6,nyu-mll/glue,946,794946,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-12,資料集,7,markov-ai/cad-1000-hours,426,130445,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-12,資料集,8,malcolmrey/various,182,53192,,https://huggingface.co/datasets/malcolmrey/various
+2026-09-12,資料集,9,IFM/Code-Reasoning,40,13356,,https://huggingface.co/datasets/IFM/Code-Reasoning
+2026-09-12,資料集,10,Anthropic/hh-rlhf,2040,39636,,https://huggingface.co/datasets/Anthropic/hh-rlhf
+2026-09-12,Spaces,1,kulkas2pintu/wan555,2022,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan555
+2026-09-12,Spaces,2,ravenrose996688/Krea-2-Turbo_I2I,150,,Image Generation,https://huggingface.co/spaces/ravenrose996688/Krea-2-Turbo_I2I
+2026-09-12,Spaces,3,kulkas2pintu/QWEN_EDIT_IMAGE,262,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-12,Spaces,4,pollen-robotics/microduck-simulator,504,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-09-12,Spaces,5,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,170,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-12,Spaces,6,Xenova/fruit-fly-simulation,71,,Other,https://huggingface.co/spaces/Xenova/fruit-fly-simulation
+2026-09-12,Spaces,7,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,155,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
+2026-09-12,Spaces,8,Cockdaddyfuck/Wan_2.2_I2V_14B_Custom_Lora_Wow,91,,Video Generation,https://huggingface.co/spaces/Cockdaddyfuck/Wan_2.2_I2V_14B_Custom_Lora_Wow
+2026-09-12,Spaces,9,STCM/wan2-2-fp8da-aoti-preview-2c-finishing,78,,Video Generation,https://huggingface.co/spaces/STCM/wan2-2-fp8da-aoti-preview-2c-finishing
+2026-09-12,Spaces,10,selfit-camera/Omni-Image-Editor,2570,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
