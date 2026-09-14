@@ -89,3 +89,13 @@ week,date,rank,repo,new_stars,total_stars,language,url,description
 2026-W37,2026-09-07,8,google-research/timesfm,3203,31690,Python,https://github.com/google-research/timesfm,TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.
 2026-W37,2026-09-07,9,every-app/open-seo,2503,17559,TypeScript,https://github.com/every-app/open-seo,Open source alternative to Semrush and Ahrefs
 2026-W37,2026-09-07,10,tailscale/tailcat,2467,6595,Go,https://github.com/tailscale/tailcat,"like netcat, but over Tailscale's data plane, without Tailscale's control plane"
+2026-W38,2026-09-14,1,ayghri/i-have-adhd,16740,44612,Python,https://github.com/ayghri/i-have-adhd,A skill to stop your coding agent from burying the answer. ADHD-friendly output.
+2026-W38,2026-09-14,2,bilawalsidhu/gods-eye-view,12931,32353,JavaScript,https://github.com/bilawalsidhu/gods-eye-view,"A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe."
+2026-W38,2026-09-14,3,tt-a1i/archify,10132,61170,JavaScript,https://github.com/tt-a1i/archify,"Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export."
+2026-W38,2026-09-14,4,DietrichGebert/ponytail,8444,137571,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-W38,2026-09-14,5,affaan-m/ECC,7264,257881,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-W38,2026-09-14,6,cathrynlavery/diagram-design,7129,39370,HTML,https://github.com/cathrynlavery/diagram-design,"38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-W38,2026-09-14,7,microsoft/markitdown,5191,183700,Python,https://github.com/microsoft/markitdown,Python tool for converting files and office documents to Markdown.
+2026-W38,2026-09-14,8,heygen-com/hyperframes,5146,49717,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
+2026-W38,2026-09-14,9,THU-MAIC/OpenMAIC,4202,36579,TypeScript,https://github.com/THU-MAIC/OpenMAIC,"Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click"
+2026-W38,2026-09-14,10,obra/superpowers,4068,286311,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
