@@ -719,3 +719,13 @@ date,rank,title,points,comments,hn_url,url
 2026-09-13,8,LG Says We're Fake News [video],224,105,https://news.ycombinator.com/item?id=49676324,https://www.youtube.com/watch?v=ToP9xfLDSME
 2026-09-13,9,Android NAT-T keepalive offload bypasses VPN lockdown,186,45,https://news.ycombinator.com/item?id=49665502,https://supuk.ch/papers/android-natt-keepalive-vpn-bypass
 2026-09-13,10,"Real-SWE: Benchmarking AI models on private, real-world, enterprise codebases",183,98,https://news.ycombinator.com/item?id=49676820,https://withspecific.com/benchmarks/real-swe
+2026-09-14,1,Why is Google still serving dodgy ads?,714,328,https://news.ycombinator.com/item?id=49686445,https://www.atomic14.com/2026/09/13/why-is-google-still-serving-dodgy-ads
+2026-09-14,2,"Fable 5.1 Solves the Cyphral Distich, a 370-year-old cipher",689,298,https://news.ycombinator.com/item?id=49688695,https://www.vals.ai/blogs/fable-solves-cyphral-distich
+2026-09-14,3,Astra and Fable still hack on simple variants of alignment evals from 2025,410,183,https://news.ycombinator.com/item?id=49684393,https://www.lesswrong.com/posts/munJKF7iWMsWJLAH2/astra-and-fable-still-hack-on-simple-variants-of-alignment
+2026-09-14,4,Data collected by cars and sold to third parties,363,192,https://news.ycombinator.com/item?id=49683953,https://www.theverge.com/column/994172/your-car-is-selling-your-data
+2026-09-14,5,Why is the x86 undefined instruction called ud2? Why 2?,236,55,https://news.ycombinator.com/item?id=49683262,https://devblogs.microsoft.com/oldnewthing/20260910-00/?p=112689
+2026-09-14,6,Making Startups Powerful,188,84,https://news.ycombinator.com/item?id=49684196,https://paulgraham.com/powerful.html
+2026-09-14,7,Julia 1.13 highlights,187,16,https://news.ycombinator.com/item?id=49642645,https://julialang.org/blog/2026/09/julia-1.13-highlights/
+2026-09-14,8,Registration without a phone number on Signal will use zero-knowledge proofs,166,76,https://news.ycombinator.com/item?id=49689048,https://community.signalusers.org/t/registration-without-a-phone-number/2222?page=10
+2026-09-14,9,CUDA for AMD on Windows,148,76,https://news.ycombinator.com/item?id=49684356,https://github.com/Speedstu/CUDA-for-AMD-Windows
+2026-09-14,10,Ask HN: What are you working on? (September 2026),122,327,https://news.ycombinator.com/item?id=49686380,https://news.ycombinator.com/item?id=49686380
