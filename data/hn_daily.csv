@@ -749,3 +749,13 @@ date,rank,title,points,comments,hn_url,url
 2026-09-16,8,Show HN: Capsule – Single-file web apps that save their data into SQLite,312,123,https://news.ycombinator.com/item?id=49712278,https://withcapsule.app/
 2026-09-16,9,Most people prefer traditional architecture,295,256,https://news.ycombinator.com/item?id=49697496,https://www.worksinprogress.news/p/do-people-prefer-traditional-architecture
 2026-09-16,10,We got admin access to Baseten's production GitHub,257,141,https://news.ycombinator.com/item?id=49716476,https://www.strix.ai/blog/baseten-harbor-github-pat-takeover
+2026-09-17,1,Show HN: An e-ink frame that hears birds and draws them as 1800s illustrations,2127,240,https://news.ycombinator.com/item?id=49711544,https://github.com/arnegiacomo/fugleramme
+2026-09-17,2,Hackers Got Inside a Flock Camera,508,232,https://news.ycombinator.com/item?id=49726586,https://www.wired.com/story/hackers-flock-camera-data-shows-how-system-works/
+2026-09-17,3,Nvidia announces native GPU programming in Rust,495,179,https://news.ycombinator.com/item?id=49724881,https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/
+2026-09-17,4,Training a 4B model to produce 81% faster query plans than Postgres,475,96,https://news.ycombinator.com/item?id=49731285,https://rohanbansal.com/qorl
+2026-09-17,5,Small programming tricks,460,204,https://news.ycombinator.com/item?id=49729000,https://will-keleher.com/posts/small-programming-tricks-matter/
+2026-09-17,6,Xiaomi Mimo 2.6 live post-training dashboard,356,90,https://news.ycombinator.com/item?id=49732270,https://mimo.xiaomi.com/rl/
+2026-09-17,7,AWS says it can't restore some data from mideast facilities struck by Iran,321,246,https://news.ycombinator.com/item?id=49719249,https://www.wsj.com/world/middle-east/aws-says-it-cant-restore-some-data-from-mideast-facilities-struck-by-iran-ddcb7e5d
+2026-09-17,8,Performance Improvements in .NET 11,238,42,https://news.ycombinator.com/item?id=49711424,https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/
+2026-09-17,9,Dream-RSI: Recursive Self-Improvement through Evolving Worlds,191,49,https://news.ycombinator.com/item?id=49726955,https://arxiv.org/abs/2609.14858
+2026-09-17,10,Reversing Factorio's RNG,173,21,https://news.ycombinator.com/item?id=49674451,https://gegell.github.io/posts/factorio-rng/
