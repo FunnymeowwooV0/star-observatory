@@ -1994,3 +1994,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-17,Spaces,8,Xenova/fruit-fly-simulation,119,,Other,https://huggingface.co/spaces/Xenova/fruit-fly-simulation
 2026-09-17,Spaces,9,selfit-camera/Omni-Image-Editor,2618,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
 2026-09-17,Spaces,10,huawei-bayerlab/marigold-v2-web,72,,Image,https://huggingface.co/spaces/huawei-bayerlab/marigold-v2-web
+2026-09-18,模型,1,Edge0/Edge0-35B-A3B-preview,3318,37131,text-generation,https://huggingface.co/Edge0/Edge0-35B-A3B-preview
+2026-09-18,模型,2,deepseek-ai/DeepSeek-V4.1-Flash,3035,390657,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+2026-09-18,模型,3,Qwen/Qwen3.8-27B,15557,7456257,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-18,模型,4,m-a-p/YuE2-3B,737,11626,text-to-audio,https://huggingface.co/m-a-p/YuE2-3B
+2026-09-18,模型,5,TokenRhythm/NeoHorse-1-4B,2350,19789,text-generation,https://huggingface.co/TokenRhythm/NeoHorse-1-4B
+2026-09-18,模型,6,ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF,1270,1027602,image-text-to-text,https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF
+2026-09-18,模型,7,Lightricks/LTX-2.5,4249,1602865,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-09-18,模型,8,ukisai/Swift-Qwen3.8-27b,404,3221,image-text-to-text,https://huggingface.co/ukisai/Swift-Qwen3.8-27b
+2026-09-18,模型,9,openbmb/MiniCPM5-2B,1543,329713,text-generation,https://huggingface.co/openbmb/MiniCPM5-2B
+2026-09-18,模型,10,DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF,858,1116038,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF
+2026-09-18,資料集,1,nyu-mll/glue,1063,850020,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-18,資料集,2,stanfordnlp/imdb,1007,203779,,https://huggingface.co/datasets/stanfordnlp/imdb
+2026-09-18,資料集,3,rajpurkar/squad,993,263793,,https://huggingface.co/datasets/rajpurkar/squad
+2026-09-18,資料集,4,openbmb/UltraData-SFT-Agent-2609,184,15292,,https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+2026-09-18,資料集,5,openbmb/UltraData-RL-2609,145,12251,,https://huggingface.co/datasets/openbmb/UltraData-RL-2609
+2026-09-18,資料集,6,openbmb/UltraData-Code,139,24344,,https://huggingface.co/datasets/openbmb/UltraData-Code
+2026-09-18,資料集,7,markov-ai/cad-1000-hours,467,151238,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-18,資料集,8,wikimedia/wikipedia,1476,259684,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-09-18,資料集,9,MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x,64,1250,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x
+2026-09-18,資料集,10,Yootta/World-SimReady-Home,37,424,,https://huggingface.co/datasets/Yootta/World-SimReady-Home
+2026-09-18,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,413,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-18,Spaces,2,kulkas2pintu/QWEN_EDIT_IMAGE,385,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-18,Spaces,3,Lynote/ai-notes,121,,Text Generation,https://huggingface.co/spaces/Lynote/ai-notes
+2026-09-18,Spaces,4,mrfakename/yue2-3b,107,,Music Generation,https://huggingface.co/spaces/mrfakename/yue2-3b
+2026-09-18,Spaces,5,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,225,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
+2026-09-18,Spaces,6,observantdistressed/wan2-2-i2v-v3,88,,Video Generation,https://huggingface.co/spaces/observantdistressed/wan2-2-i2v-v3
+2026-09-18,Spaces,7,Xenova/fruit-fly-simulation,128,,Other,https://huggingface.co/spaces/Xenova/fruit-fly-simulation
+2026-09-18,Spaces,8,tencent/AuK,87,,Speech Synthesis,https://huggingface.co/spaces/tencent/AuK
+2026-09-18,Spaces,9,victor/MiniCPM5-2B-WebGPU-Pi,60,,Chatbots,https://huggingface.co/spaces/victor/MiniCPM5-2B-WebGPU-Pi
+2026-09-18,Spaces,10,selfit-camera/Omni-Image-Editor,2628,,Image Editing,https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor
