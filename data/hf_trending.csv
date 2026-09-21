@@ -2084,3 +2084,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-20,Spaces,8,victor/MiniCPM5-2B-WebGPU-Pi,77,,Chatbots,https://huggingface.co/spaces/victor/MiniCPM5-2B-WebGPU-Pi
 2026-09-20,Spaces,9,webml-community/ternary-bonsai-2-webgpu-kernels,76,,Chatbots,https://huggingface.co/spaces/webml-community/ternary-bonsai-2-webgpu-kernels
 2026-09-20,Spaces,10,stepfun-ai/StepAudio-3-Music,84,,Music Generation,https://huggingface.co/spaces/stepfun-ai/StepAudio-3-Music
+2026-09-21,模型,1,prism-ml/Ternary-Bonsai-2-27B-gguf,1546,1908396,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf
+2026-09-21,模型,2,convaiinnovations/laya,1236,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-09-21,模型,3,Qwen/Qwen-Image-2.1,933,183,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-09-21,模型,4,deepseek-ai/DeepSeek-V4.1-Flash,3451,496684,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+2026-09-21,模型,5,XingChen-AGI/Xing4.0-29B-A4B,938,12617,text-generation,https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B
+2026-09-21,模型,6,Qwen/Qwen3.8-27B,15880,7331932,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-21,模型,7,ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF,1491,1217204,image-text-to-text,https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF
+2026-09-21,模型,8,m-a-p/YuE2-3B,923,17403,text-to-audio,https://huggingface.co/m-a-p/YuE2-3B
+2026-09-21,模型,9,harshatheg/Qwen-2.5-1B-RLCD,484,0,text-generation,https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD
+2026-09-21,模型,10,Lightricks/LTX-2.5,4574,1609559,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-09-21,資料集,1,secemp9/arxiv-complete,270,1992,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-09-21,資料集,2,openbmb/UltraData-SFT-Agent-2609,206,18261,,https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+2026-09-21,資料集,3,Yootta/World-SimReady-Home,54,11454,,https://huggingface.co/datasets/Yootta/World-SimReady-Home
+2026-09-21,資料集,4,markov-ai/cad-1000-hours,492,155080,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-21,資料集,5,MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x,84,1689,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x
+2026-09-21,資料集,6,wikimedia/wikipedia,1491,258176,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-09-21,資料集,7,nyu-mll/glue,1077,852505,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-21,資料集,8,zgcagi/ZGCM-1-Data,37,16585,,https://huggingface.co/datasets/zgcagi/ZGCM-1-Data
+2026-09-21,資料集,9,malcolmrey/various,225,56474,,https://huggingface.co/datasets/malcolmrey/various
+2026-09-21,資料集,10,openbmb/UltraData-Code,150,27524,,https://huggingface.co/datasets/openbmb/UltraData-Code
+2026-09-21,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,549,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-21,Spaces,2,observantdistressed/wan2-2-i2v-v3,262,,Video Generation,https://huggingface.co/spaces/observantdistressed/wan2-2-i2v-v3
+2026-09-21,Spaces,3,kulkas2pintu/QWEN_EDIT_IMAGE,452,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-21,Spaces,4,Lynote/ai-notes,141,,Text Generation,https://huggingface.co/spaces/Lynote/ai-notes
+2026-09-21,Spaces,5,mrfakename/yue2-3b,145,,Music Generation,https://huggingface.co/spaces/mrfakename/yue2-3b
+2026-09-21,Spaces,6,webml-community/ternary-bonsai-2-webgpu-kernels,93,,Chatbots,https://huggingface.co/spaces/webml-community/ternary-bonsai-2-webgpu-kernels
+2026-09-21,Spaces,7,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,263,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
+2026-09-21,Spaces,8,kulkas2pintu/wan777,104,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-09-21,Spaces,9,stepfun-ai/StepAudio-3-Music,96,,Music Generation,https://huggingface.co/spaces/stepfun-ai/StepAudio-3-Music
+2026-09-21,Spaces,10,victor/MiniCPM5-2B-WebGPU-Pi,83,,Chatbots,https://huggingface.co/spaces/victor/MiniCPM5-2B-WebGPU-Pi
