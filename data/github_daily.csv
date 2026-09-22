@@ -806,3 +806,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-21,8,coder/coder,379,16149,Go,https://github.com/coder/coder,Secure environments for developers and their agents
 2026-09-21,9,vercel-labs/json-render,291,17524,TypeScript,https://github.com/vercel-labs/json-render,The Generative UI framework
 2026-09-21,10,anthropics/financial-services,260,35477,Python,https://github.com/anthropics/financial-services,
+2026-09-22,1,Open-Dev-Society/OpenStock,844,17971,TypeScript,https://github.com/Open-Dev-Society/OpenStock,"OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free."
+2026-09-22,2,trycua/cua,609,25796,HTML,https://github.com/trycua/cua,"Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation."
+2026-09-22,3,BuilderIO/agent-native,607,6071,TypeScript,https://github.com/BuilderIO/agent-native,A framework for building agentic apps
+2026-09-22,4,coder/coder,460,16494,Go,https://github.com/coder/coder,Secure environments for developers and their agents
+2026-09-22,5,anthropics/financial-services,424,35923,Python,https://github.com/anthropics/financial-services,
+2026-09-22,6,Crosstalk-Solutions/project-nomad,394,37964,TypeScript,https://github.com/Crosstalk-Solutions/project-nomad,"Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required."
+2026-09-22,7,zhouxiaoka/autoclip,250,8421,Python,https://github.com/zhouxiaoka/autoclip,AutoClip : AI-powered video clipping and highlight generation · 一款智能高光提取与剪辑的二创工具
+2026-09-22,8,ruanyf/weekly,182,104176,,https://github.com/ruanyf/weekly,科技爱好者周刊，每周五发布
+2026-09-22,9,mvt-project/mvt,169,13688,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
+2026-09-22,10,akitaonrails/ai-memory,167,7819,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors

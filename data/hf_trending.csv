@@ -2114,3 +2114,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-21,Spaces,8,kulkas2pintu/wan777,104,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
 2026-09-21,Spaces,9,stepfun-ai/StepAudio-3-Music,96,,Music Generation,https://huggingface.co/spaces/stepfun-ai/StepAudio-3-Music
 2026-09-21,Spaces,10,victor/MiniCPM5-2B-WebGPU-Pi,83,,Chatbots,https://huggingface.co/spaces/victor/MiniCPM5-2B-WebGPU-Pi
+2026-09-22,模型,1,convaiinnovations/laya,1928,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-09-22,模型,2,prism-ml/Ternary-Bonsai-2-27B-gguf,1760,2227879,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf
+2026-09-22,模型,3,Qwen/Qwen-Image-2.1,1523,6523,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-09-22,模型,4,XingChen-AGI/Xing4.0-29B-A4B,1166,18394,text-generation,https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B
+2026-09-22,模型,5,deepseek-ai/DeepSeek-V4.1-Flash,3547,512120,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+2026-09-22,模型,6,abenzerps/Qwen-Image-2.1-GGUF,701,33232,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-GGUF
+2026-09-22,模型,7,Qwen/Qwen3.8-27B,15983,7153238,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-22,模型,8,harshatheg/Qwen-2.5-1B-RLCD,522,0,text-generation,https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD
+2026-09-22,模型,9,Comfy-Org/Qwen-Image-2.1,467,535365,,https://huggingface.co/Comfy-Org/Qwen-Image-2.1
+2026-09-22,模型,10,ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF,1543,1292471,image-text-to-text,https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF
+2026-09-22,資料集,1,secemp9/arxiv-complete,362,9861,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-09-22,資料集,2,MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x,103,1823,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x
+2026-09-22,資料集,3,Yootta/World-SimReady-Home,62,15392,,https://huggingface.co/datasets/Yootta/World-SimReady-Home
+2026-09-22,資料集,4,openbmb/UltraData-SFT-Agent-2609,211,19410,,https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+2026-09-22,資料集,5,markov-ai/cad-1000-hours,499,150551,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-22,資料集,6,zgcagi/ZGCM-1-Data,50,19935,,https://huggingface.co/datasets/zgcagi/ZGCM-1-Data
+2026-09-22,資料集,7,wikimedia/wikipedia,1502,261987,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-09-22,資料集,8,nyu-mll/glue,1083,847657,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-22,資料集,9,malcolmrey/various,228,53257,,https://huggingface.co/datasets/malcolmrey/various
+2026-09-22,資料集,10,openbmb/UltraData-Code,158,28729,,https://huggingface.co/datasets/openbmb/UltraData-Code
+2026-09-22,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,608,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-22,Spaces,2,observantdistressed/wan2-2-i2v-v3,329,,Video Generation,https://huggingface.co/spaces/observantdistressed/wan2-2-i2v-v3
+2026-09-22,Spaces,3,kulkas2pintu/QWEN_EDIT_IMAGE,475,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-22,Spaces,4,Lynote/ai-notes,147,,Text Generation,https://huggingface.co/spaces/Lynote/ai-notes
+2026-09-22,Spaces,5,convaiinnovations/laya-demo,113,,Text Analysis,https://huggingface.co/spaces/convaiinnovations/laya-demo
+2026-09-22,Spaces,6,Qwen/Qwen-Image-2.1,110,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-09-22,Spaces,7,webml-community/ternary-bonsai-2-webgpu-kernels,110,,Chatbots,https://huggingface.co/spaces/webml-community/ternary-bonsai-2-webgpu-kernels
+2026-09-22,Spaces,8,multimodalart/jev-reproductions-tracker,96,,Other,https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker
+2026-09-22,Spaces,9,kulkas2pintu/wan777,117,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-09-22,Spaces,10,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,274,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
