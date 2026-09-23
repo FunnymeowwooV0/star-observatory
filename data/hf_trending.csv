@@ -2144,3 +2144,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-22,Spaces,8,multimodalart/jev-reproductions-tracker,96,,Other,https://huggingface.co/spaces/multimodalart/jev-reproductions-tracker
 2026-09-22,Spaces,9,kulkas2pintu/wan777,117,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
 2026-09-22,Spaces,10,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,274,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental
+2026-09-23,模型,1,convaiinnovations/laya,2647,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-09-23,模型,2,prism-ml/Ternary-Bonsai-2-27B-gguf,1899,2569604,text-generation,https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf
+2026-09-23,模型,3,Qwen/Qwen-Image-2.1,1832,16242,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-09-23,模型,4,XingChen-AGI/Xing4.0-29B-A4B,1420,30627,text-generation,https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B
+2026-09-23,模型,5,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,1188,182313,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-09-23,模型,6,deepseek-ai/DeepSeek-V4.1-Flash,3624,542014,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+2026-09-23,模型,7,Qwen/Qwen3.8-27B,16083,7079646,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-09-23,模型,8,Comfy-Org/Qwen-Image-2.1,575,1429925,,https://huggingface.co/Comfy-Org/Qwen-Image-2.1
+2026-09-23,模型,9,harshatheg/Qwen-2.5-1B-RLCD,549,0,text-generation,https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD
+2026-09-23,模型,10,Altworld/Hemmingway-1,508,2745,text-generation,https://huggingface.co/Altworld/Hemmingway-1
+2026-09-23,資料集,1,secemp9/arxiv-complete,396,19589,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-09-23,資料集,2,MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x,123,2085,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-5000x
+2026-09-23,資料集,3,openbmb/UltraData-SFT-Agent-2609,221,20635,,https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609
+2026-09-23,資料集,4,wikimedia/wikipedia,1519,268649,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-09-23,資料集,5,Yootta/World-SimReady-Home,73,19065,,https://huggingface.co/datasets/Yootta/World-SimReady-Home
+2026-09-23,資料集,6,markov-ai/cad-1000-hours,505,142962,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-09-23,資料集,7,zgcagi/ZGCM-1-Data,58,23718,,https://huggingface.co/datasets/zgcagi/ZGCM-1-Data
+2026-09-23,資料集,8,nyu-mll/glue,1092,859185,,https://huggingface.co/datasets/nyu-mll/glue
+2026-09-23,資料集,9,DeepMostInnovations/saas-sales-conversations,46,728,,https://huggingface.co/datasets/DeepMostInnovations/saas-sales-conversations
+2026-09-23,資料集,10,FlyRank/internship-warehouse,679,12580,,https://huggingface.co/datasets/FlyRank/internship-warehouse
+2026-09-23,Spaces,1,observantdistressed/wan2-2-i2v-v3,394,,Video Generation,https://huggingface.co/spaces/observantdistressed/wan2-2-i2v-v3
+2026-09-23,Spaces,2,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,654,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-23,Spaces,3,convaiinnovations/laya-demo,154,,Text Analysis,https://huggingface.co/spaces/convaiinnovations/laya-demo
+2026-09-23,Spaces,4,kulkas2pintu/QWEN_EDIT_IMAGE,504,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-23,Spaces,5,multimodalart/jev-decision-index,141,,Model Benchmarking,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-09-23,Spaces,6,Qwen/Qwen-Image-2.1,148,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-09-23,Spaces,7,webml-community/ternary-bonsai-2-webgpu-kernels,121,,Chatbots,https://huggingface.co/spaces/webml-community/ternary-bonsai-2-webgpu-kernels
+2026-09-23,Spaces,8,kulkas2pintu/wan777,127,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-09-23,Spaces,9,mrfakename/yue2-3b,166,,Music Generation,https://huggingface.co/spaces/mrfakename/yue2-3b
+2026-09-23,Spaces,10,observantdistressed/minimax-h3,114,,Image Generation,https://huggingface.co/spaces/observantdistressed/minimax-h3

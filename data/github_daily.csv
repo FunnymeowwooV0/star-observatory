@@ -816,3 +816,11 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-22,8,ruanyf/weekly,182,104176,,https://github.com/ruanyf/weekly,科技爱好者周刊，每周五发布
 2026-09-22,9,mvt-project/mvt,169,13688,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
 2026-09-22,10,akitaonrails/ai-memory,167,7819,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
+2026-09-23,1,google/ax,2305,7908,Go,https://github.com/google/ax,Google's open agentic orchestration runtime
+2026-09-23,2,mvt-project/mvt,441,14214,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
+2026-09-23,3,anthropics/financial-services,438,36499,Python,https://github.com/anthropics/financial-services,
+2026-09-23,4,dream-num/univer,255,15722,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-23,5,agent-substrate/substrate,245,3083,Go,https://github.com/agent-substrate/substrate,Agent Substrate: the core system
+2026-09-23,6,superdesigndev/treg,230,2317,Python,https://github.com/superdesigndev/treg,OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn
+2026-09-23,7,browser-use/video-use,191,26014,Python,https://github.com/browser-use/video-use,Edit videos with coding agents
+2026-09-23,8,davila7/claude-code-templates,64,31205,Python,https://github.com/davila7/claude-code-templates,CLI tool for configuring and monitoring Claude Code
