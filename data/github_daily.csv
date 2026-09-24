@@ -824,3 +824,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-23,6,superdesigndev/treg,230,2317,Python,https://github.com/superdesigndev/treg,OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn
 2026-09-23,7,browser-use/video-use,191,26014,Python,https://github.com/browser-use/video-use,Edit videos with coding agents
 2026-09-23,8,davila7/claude-code-templates,64,31205,Python,https://github.com/davila7/claude-code-templates,CLI tool for configuring and monitoring Claude Code
+2026-09-24,1,google/ax,1543,9341,Go,https://github.com/google/ax,Google's open agentic orchestration runtime
+2026-09-24,2,dream-num/univer,1142,16484,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-24,3,browser-use/video-use,746,26608,Python,https://github.com/browser-use/video-use,Edit videos with coding agents
+2026-09-24,4,anthropics/financial-services,664,37056,Python,https://github.com/anthropics/financial-services,
+2026-09-24,5,agent-substrate/substrate,558,3574,Go,https://github.com/agent-substrate/substrate,Agent Substrate: the core system
+2026-09-24,6,mvt-project/mvt,543,14525,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
+2026-09-24,7,superdesigndev/treg,506,2821,Python,https://github.com/superdesigndev/treg,OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn
+2026-09-24,8,obra/superpowers,474,290805,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-09-24,9,davila7/claude-code-templates,389,31581,Python,https://github.com/davila7/claude-code-templates,CLI tool for configuring and monitoring Claude Code
+2026-09-24,10,Open-Dev-Society/OpenStock,344,18943,TypeScript,https://github.com/Open-Dev-Society/OpenStock,"OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free."
