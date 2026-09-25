@@ -834,3 +834,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-24,8,obra/superpowers,474,290805,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
 2026-09-24,9,davila7/claude-code-templates,389,31581,Python,https://github.com/davila7/claude-code-templates,CLI tool for configuring and monitoring Claude Code
 2026-09-24,10,Open-Dev-Society/OpenStock,344,18943,TypeScript,https://github.com/Open-Dev-Society/OpenStock,"OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free."
+2026-09-25,1,vectorize-io/hindsight,1668,28129,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-09-25,2,google/ax,1373,10702,Go,https://github.com/google/ax,Google's open agentic orchestration runtime
+2026-09-25,3,dream-num/univer,1082,17947,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-25,4,obra/superpowers,611,291298,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-09-25,5,anthropics/financial-services,509,37416,Python,https://github.com/anthropics/financial-services,
+2026-09-25,6,superdesigndev/treg,468,3220,Python,https://github.com/superdesigndev/treg,OpenRouter for agent tools. Join community here:https://discord.gg/6mQYYfFMAn
+2026-09-25,7,strands-agents/harness-sdk,455,8324,Python,https://github.com/strands-agents/harness-sdk,"Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python & TypeScript - any model, any cloud."
+2026-09-25,8,HKUDS/CLI-Anything,413,50394,Python,https://github.com/HKUDS/CLI-Anything,"""CLI-Anything: Making ALL Software Agent-Native"" -- CLI-Hub:https://clianything.cc/"
+2026-09-25,9,rohitg00/ai-engineering-from-scratch,347,56786,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-09-25,10,mvt-project/mvt,272,14760,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
