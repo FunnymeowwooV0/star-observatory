@@ -844,3 +844,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-25,8,HKUDS/CLI-Anything,413,50394,Python,https://github.com/HKUDS/CLI-Anything,"""CLI-Anything: Making ALL Software Agent-Native"" -- CLI-Hub:https://clianything.cc/"
 2026-09-25,9,rohitg00/ai-engineering-from-scratch,347,56786,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
 2026-09-25,10,mvt-project/mvt,272,14760,Python,https://github.com/mvt-project/mvt,MVT (Mobile Verification Toolkit) helps with conducting forensics of mobile devices in order to find signs of a potential compromise.
+2026-09-26,1,paperclipai/paperclip,2109,85349,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-09-26,2,vectorize-io/hindsight,1653,30120,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-09-26,3,google/ax,1379,11615,Go,https://github.com/google/ax,Google's open agentic orchestration runtime
+2026-09-26,4,rohitg00/ai-engineering-from-scratch,1177,57692,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-09-26,5,dream-num/univer,1050,18781,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-26,6,mattpocock/skills,583,269823,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-09-26,7,obra/superpowers,468,291726,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-09-26,8,NVIDIA/Model-Optimizer,359,4529,Python,https://github.com/NVIDIA/Model-Optimizer,"A unified library of SOTA model optimization techniques like quantization, distillation, pruning, neural architecture search, speculative decoding, etc. It compresses deep learning models for downstream deployment frameworks like TensorRT-LLM, TensorRT, vLLM, etc. to optimize inference speed."
+2026-09-26,9,pbakaus/impeccable,306,71279,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-09-26,10,anthropics/skills,189,178395,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
