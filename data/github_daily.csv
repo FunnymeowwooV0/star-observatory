@@ -864,3 +864,12 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-27,8,block/buzz,339,34878,Rust,https://github.com/block/buzz,A hive mind communication platform
 2026-09-27,9,mobile-next/mobile-mcp,168,7477,TypeScript,https://github.com/mobile-next/mobile-mcp,"Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real Devices)"
 2026-09-27,10,microsoft/vscode,95,193103,TypeScript,https://github.com/microsoft/vscode,Visual Studio Code
+2026-09-28,1,vectorize-io/hindsight,4520,38284,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-09-28,2,debpalash/VoiceStudio,3086,40809,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-28,3,paperclipai/paperclip,2401,90676,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-09-28,4,dream-num/univer,895,20762,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-28,5,rohitg00/ai-engineering-from-scratch,790,59675,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-09-28,6,InfinityLoop1308/PipePipe,242,6683,Shell,https://github.com/InfinityLoop1308/PipePipe,An open-source Android app to let you browse YouTube and other services freely.
+2026-09-28,7,mvschwarz/openrig,114,1163,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
+2026-09-28,8,vercel-labs/scriptc,102,5490,TypeScript,https://github.com/vercel-labs/scriptc,TypeScript-to-Native Compiler
+2026-09-28,9,willfaust/Madeira,83,879,C,https://github.com/willfaust/Madeira,Run x86-64 Windows PC games on jailed iOS via FEX-Emu + Wine + DXMT
