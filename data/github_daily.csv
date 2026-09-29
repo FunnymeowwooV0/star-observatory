@@ -873,3 +873,11 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-28,7,mvschwarz/openrig,114,1163,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
 2026-09-28,8,vercel-labs/scriptc,102,5490,TypeScript,https://github.com/vercel-labs/scriptc,TypeScript-to-Native Compiler
 2026-09-28,9,willfaust/Madeira,83,879,C,https://github.com/willfaust/Madeira,Run x86-64 Windows PC games on jailed iOS via FEX-Emu + Wine + DXMT
+2026-09-29,1,vectorize-io/hindsight,4561,41500,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-09-29,2,debpalash/VoiceStudio,3221,45133,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-29,3,paperclipai/paperclip,3197,93356,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-09-29,4,dream-num/univer,1099,21441,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-29,5,mvschwarz/openrig,734,1909,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
+2026-09-29,6,byoungd/up,327,65005,JavaScript,https://github.com/byoungd/up,An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语
+2026-09-29,7,cs341-illinois/coursebook,195,2638,TeX,https://github.com/cs341-illinois/coursebook,Open Source Introductory Systems Programming Textbook for the University of Illinois
+2026-09-29,8,NawfalMotii79/PLFM_RADAR,158,25871,PLSQL,https://github.com/NawfalMotii79/PLFM_RADAR,"Open-source, low-cost 10.5 GHz PLFM phased array RADAR system"
