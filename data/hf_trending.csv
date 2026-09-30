@@ -2354,3 +2354,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-09-29,Spaces,8,observantdistressed/minimax-h3,200,,Image Generation,https://huggingface.co/spaces/observantdistressed/minimax-h3
 2026-09-29,Spaces,9,hugging-apps/qwen-image-2-1,167,,Image Generation,https://huggingface.co/spaces/hugging-apps/qwen-image-2-1
 2026-09-29,Spaces,10,Jackiesixnine/Krea-2-Turbo_v2,172,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
+2026-09-30,模型,1,convaiinnovations/laya,4536,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-09-30,模型,2,Edge0/Audio8-ASR-Infinite,1552,23674,automatic-speech-recognition,https://huggingface.co/Edge0/Audio8-ASR-Infinite
+2026-09-30,模型,3,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,2459,1152523,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-09-30,模型,4,XingChen-AGI/TeleOCR,888,30354,image-text-to-text,https://huggingface.co/XingChen-AGI/TeleOCR
+2026-09-30,模型,5,Qwen/Qwen-Image-2.1,2670,64362,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-09-30,模型,6,Contrastive-LM/CLM-v0.1-8B,532,1910,text-ranking,https://huggingface.co/Contrastive-LM/CLM-v0.1-8B
+2026-09-30,模型,7,nvidia/Nemotron-3-Diarization,521,30931,voice-activity-detection,https://huggingface.co/nvidia/Nemotron-3-Diarization
+2026-09-30,模型,8,TaichuAI/ZDTaichu5.0-9B,2000,11836,image-text-to-text,https://huggingface.co/TaichuAI/ZDTaichu5.0-9B
+2026-09-30,模型,9,XingChen-AGI/Xing4.0-29B-A4B,1809,46557,text-generation,https://huggingface.co/XingChen-AGI/Xing4.0-29B-A4B
+2026-09-30,模型,10,Viggle/Qwen-Image-2.1-viggle-turbo,429,190649,text-to-image,https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-09-30,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,554,40036,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-09-30,資料集,2,secemp9/arxiv-complete,509,104376,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-09-30,資料集,3,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,215,3849,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-09-30,資料集,4,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,72,417,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-09-30,資料集,5,espnet/yodas3,72,17831,,https://huggingface.co/datasets/espnet/yodas3
+2026-09-30,資料集,6,wikimedia/wikipedia,1596,278922,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-09-30,資料集,7,FineEnvs/SmolDataEnvs,61,2965,,https://huggingface.co/datasets/FineEnvs/SmolDataEnvs
+2026-09-30,資料集,8,LocalLLaMA/typed-decisions,71,17946,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-09-30,資料集,9,Harland/OmniVChat,47,3137,,https://huggingface.co/datasets/Harland/OmniVChat
+2026-09-30,資料集,10,genrobot2025/Gen-HumanEgo,43,251179,,https://huggingface.co/datasets/genrobot2025/Gen-HumanEgo
+2026-09-30,Spaces,1,multimodalart/jev-decision-index,331,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-09-30,Spaces,2,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,881,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-09-30,Spaces,3,Qwen/Qwen-Image-2.1,306,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-09-30,Spaces,4,Viggle/Qwen-Image-2.1-viggle-turbo,126,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-09-30,Spaces,5,arudradey/qwen-image-2.1-uncensored-gguf,135,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-09-30,Spaces,6,convaiinnovations/laya-demo,250,,Text Analysis,https://huggingface.co/spaces/convaiinnovations/laya-demo
+2026-09-30,Spaces,7,observantdistressed/minimax-h3,208,,Image Generation,https://huggingface.co/spaces/observantdistressed/minimax-h3
+2026-09-30,Spaces,8,nvidia/nemotron-diarization,90,,Other,https://huggingface.co/spaces/nvidia/nemotron-diarization
+2026-09-30,Spaces,9,kulkas2pintu/QWEN_EDIT_IMAGE,601,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-09-30,Spaces,10,Jackiesixnine/Krea-2-Turbo_v2,185,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2

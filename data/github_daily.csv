@@ -881,3 +881,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-29,6,byoungd/up,327,65005,JavaScript,https://github.com/byoungd/up,An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语
 2026-09-29,7,cs341-illinois/coursebook,195,2638,TeX,https://github.com/cs341-illinois/coursebook,Open Source Introductory Systems Programming Textbook for the University of Illinois
 2026-09-29,8,NawfalMotii79/PLFM_RADAR,158,25871,PLSQL,https://github.com/NawfalMotii79/PLFM_RADAR,"Open-source, low-cost 10.5 GHz PLFM phased array RADAR system"
+2026-09-30,1,debpalash/VoiceStudio,4758,48820,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-09-30,2,vectorize-io/hindsight,2575,43160,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-09-30,3,paperclipai/paperclip,2458,94728,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-09-30,4,NVIDIA/OpenShell,990,10869,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-09-30,5,VectifyAI/PageIndex,835,37598,Python,https://github.com/VectifyAI/PageIndex,"📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+2026-09-30,6,rohitg00/ai-engineering-from-scratch,786,61678,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-09-30,7,mvschwarz/openrig,737,2562,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
+2026-09-30,8,dream-num/univer,696,21979,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
+2026-09-30,9,cs341-illinois/coursebook,572,3202,TeX,https://github.com/cs341-illinois/coursebook,Open Source Introductory Systems Programming Textbook for the University of Illinois
+2026-09-30,10,oblien/openship,437,13987,TypeScript,https://github.com/oblien/openship,Self-hosted deployment platform
