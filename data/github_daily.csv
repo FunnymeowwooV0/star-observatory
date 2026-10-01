@@ -891,3 +891,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-09-30,8,dream-num/univer,696,21979,TypeScript,https://github.com/dream-num/univer,"The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime."
 2026-09-30,9,cs341-illinois/coursebook,572,3202,TeX,https://github.com/cs341-illinois/coursebook,Open Source Introductory Systems Programming Textbook for the University of Illinois
 2026-09-30,10,oblien/openship,437,13987,TypeScript,https://github.com/oblien/openship,Self-hosted deployment platform
+2026-10-01,1,debpalash/VoiceStudio,3483,50753,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-10-01,2,NVIDIA/OpenShell,1281,13161,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-10-01,3,t8y2/dbx,1138,23403,Rust,https://github.com/t8y2/dbx,"25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。"
+2026-10-01,4,VectifyAI/PageIndex,1097,38244,Python,https://github.com/VectifyAI/PageIndex,"📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG"
+2026-10-01,5,mattpocock/skills,876,273199,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-10-01,6,DietrichGebert/ponytail,743,149466,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-10-01,7,byoungd/up,743,66502,JavaScript,https://github.com/byoungd/up,An advanced guide which might benefit you a lot 🎉 . 韩先凯的人生进阶指南 人生进阶指南 离谱的人生 人生进阶 AI学习 AI指南 韩先凯的AI学习指南 英语学习指南/英语学习教程/英语学习/学英语
+2026-10-01,8,mvschwarz/openrig,624,3187,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
+2026-10-01,9,harry0703/MoneyPrinterTurbo,431,127684,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+2026-10-01,10,heygen-com/hyperframes,349,54881,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
