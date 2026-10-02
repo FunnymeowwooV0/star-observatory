@@ -2414,3 +2414,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-01,Spaces,8,convaiinnovations/laya-demo,257,,Text Analysis,https://huggingface.co/spaces/convaiinnovations/laya-demo
 2026-10-01,Spaces,9,Jackiesixnine/Krea-2-Turbo_v2,198,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
 2026-10-01,Spaces,10,kulkas2pintu/wan777,220,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-02,模型,1,convaiinnovations/laya,4876,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-10-02,模型,2,XingChen-AGI/TeleOCR,1236,31584,image-text-to-text,https://huggingface.co/XingChen-AGI/TeleOCR
+2026-10-02,模型,3,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,2729,1303476,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-02,模型,4,Contrastive-LM/CLM-v0.1-8B,628,2720,text-ranking,https://huggingface.co/Contrastive-LM/CLM-v0.1-8B
+2026-10-02,模型,5,Qwen/Qwen-Image-2.1,2799,76938,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-10-02,模型,6,Cloudflare/clef,416,18,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-02,模型,7,Lightricks/LTX-2.5,5880,1588619,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-02,模型,8,Qwen/Qwen3.8-27B,16736,6950834,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-02,模型,9,SupersonicLabs/Julia-1,346,2556,text-classification,https://huggingface.co/SupersonicLabs/Julia-1
+2026-10-02,模型,10,Viggle/Qwen-Image-2.1-viggle-turbo,507,217638,text-to-image,https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-02,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,684,53053,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-02,資料集,2,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,182,859,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-02,資料集,3,espnet/yodas3,149,56558,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-02,資料集,4,secemp9/arxiv-complete,575,122248,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-02,資料集,5,FineEnvs/SmolDataEnvs,76,3808,,https://huggingface.co/datasets/FineEnvs/SmolDataEnvs
+2026-10-02,資料集,6,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,246,4386,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-02,資料集,7,LocalLLaMA/typed-decisions,93,21940,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-02,資料集,8,wikimedia/wikipedia,1613,275609,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-10-02,資料集,9,Zaevlad/audit-findings-dataset,80,1014,,https://huggingface.co/datasets/Zaevlad/audit-findings-dataset
+2026-10-02,資料集,10,LightwheelAI/EgoPro,107,35375,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-02,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,980,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-02,Spaces,2,multimodalart/jev-decision-index,370,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-02,Spaces,3,arudradey/qwen-image-2.1-uncensored-gguf,201,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-02,Spaces,4,Qwen/Qwen-Image-2.1,337,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-10-02,Spaces,5,Viggle/Qwen-Image-2.1-viggle-turbo,147,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-02,Spaces,6,kulkas2pintu/QWEN_EDIT_IMAGE,629,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-10-02,Spaces,7,kulkas2pintu/wan777,241,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-02,Spaces,8,Jackiesixnine/Krea-2-Turbo_v2,212,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
+2026-10-02,Spaces,9,observantdistressed/minimax-h3,228,,Image Generation,https://huggingface.co/spaces/observantdistressed/minimax-h3
+2026-10-02,Spaces,10,FineEnvs/MiMo-RL-Envs-Explorer,68,,Agent Environment,https://huggingface.co/spaces/FineEnvs/MiMo-RL-Envs-Explorer

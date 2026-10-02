@@ -899,3 +899,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-01,8,Why the Bronze Age Collapsed,172,85,https://news.ycombinator.com/item?id=49890732,https://www.worksinprogress.news/p/why-really-caused-the-bronze-age
 2026-10-01,9,Surprisingly complex waves reveal the brain's inner workings,165,53,https://news.ycombinator.com/item?id=49912955,https://www.quantamagazine.org/surprisingly-complex-waves-reveal-the-brains-inner-workings-20260930/
 2026-10-01,10,LinkedIn Larpmaxxing,161,159,https://news.ycombinator.com/item?id=49904314,https://hereticpleb.vercel.app/blog/linkedin-larpmaxxing/
+2026-10-02,1,Pi 1.0,1056,330,https://news.ycombinator.com/item?id=49926069,https://earendil.com/posts/pi-1-0/
+2026-10-02,2,StreetComplete on iOS is now in public beta,549,144,https://news.ycombinator.com/item?id=49920160,https://github.com/streetcomplete/StreetComplete/issues/5421
+2026-10-02,3,"Clef: Open-weight decision models, and new RL fine-tuning platform",480,171,https://news.ycombinator.com/item?id=49923692,https://blog.cloudflare.com/clef-decision-models/
+2026-10-02,4,Pi Durable,318,38,https://news.ycombinator.com/item?id=49925969,https://earendil.com/posts/pi-durable/
+2026-10-02,5,Git 3.0's upcoming SHA-256 default will be a costly mistake,308,302,https://news.ycombinator.com/item?id=49924179,https://blog.gitbutler.com/git-3-sha-256
+2026-10-02,6,"RIP, vector database",303,82,https://news.ycombinator.com/item?id=49923466,https://turbopuffer.com/blog/rip-vector-database
+2026-10-02,7,How to speed up the Rust compiler in September 2026,243,131,https://news.ycombinator.com/item?id=49920896,https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html
+2026-10-02,8,Cloudflare K2: serverless event streams,226,89,https://news.ycombinator.com/item?id=49921923,https://blog.cloudflare.com/cloudflare-k2-streams/
+2026-10-02,9,Several vulnerabilities have been discovered in the Linux kernel,224,149,https://news.ycombinator.com/item?id=49928121,https://lwn.net/Articles/1097401/
+2026-10-02,10,SvelteKit 3,211,69,https://news.ycombinator.com/item?id=49926536,https://svelte.dev/blog/sveltekit-3-is-here

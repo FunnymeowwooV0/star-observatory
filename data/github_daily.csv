@@ -901,3 +901,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-01,8,mvschwarz/openrig,624,3187,TypeScript,https://github.com/mvschwarz/openrig,Multi-agent harness that runs Claude Code and Codex together as one system
 2026-10-01,9,harry0703/MoneyPrinterTurbo,431,127684,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
 2026-10-01,10,heygen-com/hyperframes,349,54881,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
+2026-10-02,1,NVIDIA/OpenShell,2456,14126,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-10-02,2,DietrichGebert/ponytail,1194,150836,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-10-02,3,mattpocock/skills,883,274113,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-10-02,4,mvschwarz/openrig,642,3858,TypeScript,https://github.com/mvschwarz/openrig,"Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work."
+2026-10-02,5,heygen-com/hyperframes,627,55474,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
+2026-10-02,6,pbakaus/impeccable,495,73840,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-10-02,7,obra/superpowers,455,294085,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-10-02,8,HunxByts/GhostTrack,368,16519,Python,https://github.com/HunxByts/GhostTrack,Useful tool to track location or mobile number
+2026-10-02,9,mksglu/context-mode,362,24847,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
+2026-10-02,10,pablostanley/yoinks,361,3068,TypeScript,https://github.com/pablostanley/yoinks,yoink any video from your terminal. no shady ads.
