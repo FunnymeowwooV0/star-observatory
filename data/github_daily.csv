@@ -911,3 +911,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-02,8,HunxByts/GhostTrack,368,16519,Python,https://github.com/HunxByts/GhostTrack,Useful tool to track location or mobile number
 2026-10-02,9,mksglu/context-mode,362,24847,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
 2026-10-02,10,pablostanley/yoinks,361,3068,TypeScript,https://github.com/pablostanley/yoinks,yoink any video from your terminal. no shady ads.
+2026-10-03,1,DietrichGebert/ponytail,1435,152030,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-10-03,2,mattpocock/skills,955,274834,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-10-03,3,pbakaus/impeccable,722,74464,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-10-03,4,Panniantong/Agent-Reach,696,88944,Python,https://github.com/Panniantong/Agent-Reach,"Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
+2026-10-03,5,mvschwarz/openrig,683,4435,TypeScript,https://github.com/mvschwarz/openrig,"Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work."
+2026-10-03,6,pablostanley/yoinks,623,3599,TypeScript,https://github.com/pablostanley/yoinks,yoink any video from your terminal. no shady ads.
+2026-10-03,7,NVIDIA/OpenShell,594,14502,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-10-03,8,heygen-com/hyperframes,580,55985,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
+2026-10-03,9,obra/superpowers,556,294547,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-10-03,10,mksglu/context-mode,282,25089,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."

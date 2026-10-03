@@ -2444,3 +2444,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-02,Spaces,8,Jackiesixnine/Krea-2-Turbo_v2,212,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
 2026-10-02,Spaces,9,observantdistressed/minimax-h3,228,,Image Generation,https://huggingface.co/spaces/observantdistressed/minimax-h3
 2026-10-02,Spaces,10,FineEnvs/MiMo-RL-Envs-Explorer,68,,Agent Environment,https://huggingface.co/spaces/FineEnvs/MiMo-RL-Envs-Explorer
+2026-10-03,模型,1,convaiinnovations/laya,5009,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-10-03,模型,2,Cloudflare/clef,824,824,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-03,模型,3,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,2853,1376248,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-03,模型,4,Contrastive-LM/CLM-v0.1-8B,673,2951,text-ranking,https://huggingface.co/Contrastive-LM/CLM-v0.1-8B
+2026-10-03,模型,5,Lightricks/LTX-2.5,6009,1584129,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-03,模型,6,Qwen/Qwen-Image-2.1,2848,81738,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-10-03,模型,7,SupersonicLabs/Julia-1,373,2909,text-classification,https://huggingface.co/SupersonicLabs/Julia-1
+2026-10-03,模型,8,Qwen/Qwen3.8-27B,16813,6934867,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-03,模型,9,Cloudflare/clef-flash,278,1303,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-03,模型,10,Viggle/Qwen-Image-2.1-viggle-turbo,544,240660,text-to-image,https://huggingface.co/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-03,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,745,57802,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-03,資料集,2,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,218,1092,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-03,資料集,3,espnet/yodas3,167,73793,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-03,資料集,4,secemp9/arxiv-complete,595,129821,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-03,資料集,5,LocalLLaMA/typed-decisions,98,23615,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-03,資料集,6,Zaevlad/audit-findings-dataset,88,1110,,https://huggingface.co/datasets/Zaevlad/audit-findings-dataset
+2026-10-03,資料集,7,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,249,4479,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-03,資料集,8,wikimedia/wikipedia,1613,272539,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-10-03,資料集,9,FineEnvs/SmolDataEnvs,78,4281,,https://huggingface.co/datasets/FineEnvs/SmolDataEnvs
+2026-10-03,資料集,10,LightwheelAI/EgoPro,111,35382,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-03,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1023,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-03,Spaces,2,multimodalart/jev-decision-index,398,,Other,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-03,Spaces,3,arudradey/qwen-image-2.1-uncensored-gguf,239,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-03,Spaces,4,Qwen/Qwen-Image-2.1,351,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-10-03,Spaces,5,kulkas2pintu/wan777,265,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-03,Spaces,6,Viggle/Qwen-Image-2.1-viggle-turbo,163,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-03,Spaces,7,arudradey/qwen-image-2.1-uncensored-aio-loras,107,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-03,Spaces,8,Jackiesixnine/Krea-2-Turbo_v2,222,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
+2026-10-03,Spaces,9,kulkas2pintu/QWEN_EDIT_IMAGE,635,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
+2026-10-03,Spaces,10,FineEnvs/MiMo-RL-Envs-Explorer,72,,Agent Environment,https://huggingface.co/spaces/FineEnvs/MiMo-RL-Envs-Explorer
