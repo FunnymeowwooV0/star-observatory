@@ -2474,3 +2474,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-03,Spaces,8,Jackiesixnine/Krea-2-Turbo_v2,222,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
 2026-10-03,Spaces,9,kulkas2pintu/QWEN_EDIT_IMAGE,635,,Image Editing,https://huggingface.co/spaces/kulkas2pintu/QWEN_EDIT_IMAGE
 2026-10-03,Spaces,10,FineEnvs/MiMo-RL-Envs-Explorer,72,,Agent Environment,https://huggingface.co/spaces/FineEnvs/MiMo-RL-Envs-Explorer
+2026-10-04,模型,1,Cloudflare/clef,1031,2620,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-04,模型,2,convaiinnovations/laya,5089,0,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-10-04,模型,3,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,2954,1455921,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-04,模型,4,Lightricks/LTX-2.5,6167,1629984,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-04,模型,5,Cloudflare/clef-flash,371,4310,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-04,模型,6,Qwen/Qwen-Image-2.1,2910,85895,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-10-04,模型,7,Qwen/Qwen3.8-27B,16893,6895117,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-04,模型,8,Contrastive-LM/CLM-v0.1-8B,694,3190,text-ranking,https://huggingface.co/Contrastive-LM/CLM-v0.1-8B
+2026-10-04,模型,9,SupersonicLabs/Julia-1,402,3251,text-classification,https://huggingface.co/SupersonicLabs/Julia-1
+2026-10-04,模型,10,PSRben/VisionHOPE,392,1338,image-classification,https://huggingface.co/PSRben/VisionHOPE
+2026-10-04,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,763,65274,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-04,資料集,2,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,232,1390,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-04,資料集,3,espnet/yodas3,175,95934,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-04,資料集,4,secemp9/arxiv-complete,601,137451,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-04,資料集,5,Zaevlad/audit-findings-dataset,90,1164,,https://huggingface.co/datasets/Zaevlad/audit-findings-dataset
+2026-10-04,資料集,6,LocalLLaMA/typed-decisions,104,25325,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-04,資料集,7,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,256,4516,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-04,資料集,8,LightwheelAI/EgoPro,115,35390,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-04,資料集,9,wikimedia/wikipedia,1617,270172,,https://huggingface.co/datasets/wikimedia/wikipedia
+2026-10-04,資料集,10,Cirquar-Tech/wm_imagined,41,6983,,https://huggingface.co/datasets/Cirquar-Tech/wm_imagined
+2026-10-04,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1059,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-04,Spaces,2,multimodalart/jev-decision-index,414,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-04,Spaces,3,arudradey/qwen-image-2.1-uncensored-gguf,259,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-04,Spaces,4,kulkas2pintu/wan777,275,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-04,Spaces,5,Qwen/Qwen-Image-2.1,363,,Image Generation,https://huggingface.co/spaces/Qwen/Qwen-Image-2.1
+2026-10-04,Spaces,6,arudradey/qwen-image-2.1-uncensored-aio-loras,124,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-04,Spaces,7,FineEnvs/multi-harness-rl,87,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-04,Spaces,8,Viggle/Qwen-Image-2.1-viggle-turbo,171,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-04,Spaces,9,Jackiesixnine/Krea-2-Turbo_v2,239,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
+2026-10-04,Spaces,10,zai-org/OpenVuln,205,,Other,https://huggingface.co/spaces/zai-org/OpenVuln

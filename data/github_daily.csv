@@ -921,3 +921,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-03,8,heygen-com/hyperframes,580,55985,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
 2026-10-03,9,obra/superpowers,556,294547,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
 2026-10-03,10,mksglu/context-mode,282,25089,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
+2026-10-04,1,Panniantong/Agent-Reach,1696,90035,Python,https://github.com/Panniantong/Agent-Reach,"Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
+2026-10-04,2,DietrichGebert/ponytail,1281,153768,JavaScript,https://github.com/DietrichGebert/ponytail,Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
+2026-10-04,3,affaan-m/ECC,897,272412,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-10-04,4,mattpocock/skills,751,275499,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-10-04,5,pbakaus/impeccable,699,75537,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-10-04,6,obra/superpowers,577,294982,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-10-04,7,JuliusBrussee/caveman,507,109621,Go,https://github.com/JuliusBrussee/caveman,🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.
+2026-10-04,8,earendil-works/pi,408,112247,TypeScript,https://github.com/earendil-works/pi,"AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
+2026-10-04,9,Effect-TS/effect,302,16879,TypeScript,https://github.com/Effect-TS/effect,Build production-ready applications in TypeScript
+2026-10-04,10,mksglu/context-mode,256,25297,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
