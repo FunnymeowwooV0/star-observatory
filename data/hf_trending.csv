@@ -2504,3 +2504,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-04,Spaces,8,Viggle/Qwen-Image-2.1-viggle-turbo,171,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
 2026-10-04,Spaces,9,Jackiesixnine/Krea-2-Turbo_v2,239,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
 2026-10-04,Spaces,10,zai-org/OpenVuln,205,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-10-05,模型,1,Cloudflare/clef,1257,4214,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-05,模型,2,convaiinnovations/laya,5174,3752,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-10-05,模型,3,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,3162,1553744,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-05,模型,4,Lightricks/LTX-2.5,6348,1626951,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-05,模型,5,Aleph-Alpha/Kolibri-1,435,1135,text-generation,https://huggingface.co/Aleph-Alpha/Kolibri-1
+2026-10-05,模型,6,Cloudflare/clef-flash,440,6372,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-05,模型,7,Qwen/Qwen3.8-27B,16954,6821761,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-05,模型,8,Venastine-Research/Xing4.0-29B-A4B-GGUF,326,14361,text-generation,https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF
+2026-10-05,模型,9,Qwen/Qwen-Image-2.1,2955,90003,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1
+2026-10-05,模型,10,PSRben/VisionHOPE,405,1516,image-classification,https://huggingface.co/PSRben/VisionHOPE
+2026-10-05,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,798,69711,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-05,資料集,2,espnet/yodas3,190,112775,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-05,資料集,3,secemp9/arxiv-complete,616,145230,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-05,資料集,4,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,246,2177,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-05,資料集,5,Zaevlad/audit-findings-dataset,93,1094,,https://huggingface.co/datasets/Zaevlad/audit-findings-dataset
+2026-10-05,資料集,6,LightwheelAI/EgoPro,119,35395,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-05,資料集,7,LocalLLaMA/typed-decisions,108,26430,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-05,資料集,8,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,266,4544,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-05,資料集,9,ankitjh4/bharat-government-documents,44,364,,https://huggingface.co/datasets/ankitjh4/bharat-government-documents
+2026-10-05,資料集,10,Cirquar-Tech/wm_imagined,43,6998,,https://huggingface.co/datasets/Cirquar-Tech/wm_imagined
+2026-10-05,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1097,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-05,Spaces,2,arudradey/qwen-image-2.1-uncensored-gguf,291,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-05,Spaces,3,multimodalart/jev-decision-index,435,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-05,Spaces,4,kulkas2pintu/wan777,298,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-05,Spaces,5,FineEnvs/multi-harness-rl,106,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-05,Spaces,6,arudradey/qwen-image-2.1-uncensored-aio-loras,147,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-05,Spaces,7,Viggle/Qwen-Image-2.1-viggle-turbo,179,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-05,Spaces,8,Jackiesixnine/Krea-2-Turbo_v2,253,,Image Generation,https://huggingface.co/spaces/Jackiesixnine/Krea-2-Turbo_v2
+2026-10-05,Spaces,9,zai-org/OpenVuln,206,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
+2026-10-05,Spaces,10,mlabonne/chessfly,119,,Other,https://huggingface.co/spaces/mlabonne/chessfly
