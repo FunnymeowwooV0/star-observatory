@@ -119,3 +119,13 @@ week,date,rank,repo,new_stars,total_stars,language,url,description
 2026-W40,2026-09-28,8,Tencent/WeKnora,2705,30734,Go,https://github.com/Tencent/WeKnora,"Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki."
 2026-W40,2026-09-28,9,anthropics/financial-services,2606,37915,Python,https://github.com/anthropics/financial-services,
 2026-W40,2026-09-28,10,anthropics/claude-code,1493,148382,TypeScript,https://github.com/anthropics/claude-code,"Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands."
+2026-W41,2026-10-05,1,debpalash/VoiceStudio,14689,53311,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-W41,2026-10-05,2,vectorize-io/hindsight,10623,45599,Python,https://github.com/vectorize-io/hindsight,Hindsight: Agent Memory That Learns
+2026-W41,2026-10-05,3,paperclipai/paperclip,8732,97293,TypeScript,https://github.com/paperclipai/paperclip,The open-source app everyone uses to manage agents at work
+2026-W41,2026-10-05,4,NVIDIA/OpenShell,5996,14909,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-W41,2026-10-05,5,rohitg00/ai-engineering-from-scratch,4904,64088,Python,https://github.com/rohitg00/ai-engineering-from-scratch,Learn it. Build it. Ship it for others.
+2026-W41,2026-10-05,6,Panniantong/Agent-Reach,4789,91170,Python,https://github.com/Panniantong/Agent-Reach,"Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
+2026-W41,2026-10-05,7,mvschwarz/openrig,4251,5030,TypeScript,https://github.com/mvschwarz/openrig,"Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work."
+2026-W41,2026-10-05,8,pbakaus/impeccable,4242,76510,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-W41,2026-10-05,9,heygen-com/hyperframes,3096,56896,TypeScript,https://github.com/heygen-com/hyperframes,Write HTML. Render video. Built for agents.
+2026-W41,2026-10-05,10,pablostanley/yoinks,2361,4455,TypeScript,https://github.com/pablostanley/yoinks,yoink any video from your terminal. no shady ads.
