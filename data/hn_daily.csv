@@ -949,3 +949,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-06,8,Example.com just launched the biggest redesign in decades,185,103,https://news.ycombinator.com/item?id=49971921,https://www.debugbear.com/blog/example-dot-com-redesign-history
 2026-10-06,9,Texas city demands $2M for public records on Flock usage,178,28,https://news.ycombinator.com/item?id=49971523,https://arstechnica.com/tech-policy/2026/10/texas-city-demands-2m-for-public-records-on-flock-usage/
 2026-10-06,10,The lamps in my house,177,80,https://news.ycombinator.com/item?id=49965152,https://arslan.io/2026/10/05/the-lamps-in-my-house/
+2026-10-07,1,Mistral Large 4,1711,1005,https://news.ycombinator.com/item?id=49977979,https://mistral.ai/news/mistral-large-4/\
+2026-10-07,2,Sharing AI progress in mathematics,752,674,https://news.ycombinator.com/item?id=49984923,https://openai.com/index/sharing-ai-progress-in-mathematics/
+2026-10-07,3,"EmbeddingGemma 2: An open, lightweight multimodal embedding model",292,31,https://news.ycombinator.com/item?id=49980487,https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
+2026-10-07,4,"OpenTPU – An open-source AI accelerator, developed by AI",273,329,https://news.ycombinator.com/item?id=49980715,https://github.com/FeSens/openTPU
+2026-10-07,5,Decisions API is in public beta,236,109,https://news.ycombinator.com/item?id=49984025,https://developers.openai.com/api/docs/guides/decisions
+2026-10-07,6,What's Earth's dominant species by mass?,205,137,https://news.ycombinator.com/item?id=49977531,https://signoregalilei.com/2026/09/27/whats-earths-dominant-species-by-mass/
+2026-10-07,7,AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped),200,156,https://news.ycombinator.com/item?id=49985664,https://github.com/boykopovar/AnyPS5
+2026-10-07,8,Claude Code’s suggested message feature: I think the real customer is the model,169,91,https://news.ycombinator.com/item?id=49981905,https://www.zohaib.cc/blog/smartest-claude-code-feature
+2026-10-07,9,Penguin Mail – open-source Rust email client for Linux with AI,146,75,https://news.ycombinator.com/item?id=49984716,https://penguin-mail.com/
+2026-10-07,10,Benchmark in Milliseconds,135,43,https://news.ycombinator.com/item?id=49967427,https://matklad.github.io/2026/10/05/benchmark-milliseconds.html

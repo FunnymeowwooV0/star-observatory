@@ -2564,3 +2564,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-06,Spaces,8,zai-org/OpenVuln,209,,Other,https://huggingface.co/spaces/zai-org/OpenVuln
 2026-10-06,Spaces,9,mlabonne/chessfly,131,,Other,https://huggingface.co/spaces/mlabonne/chessfly
 2026-10-06,Spaces,10,autotrust/JEV-27B-Demo,93,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
+2026-10-07,模型,1,Cloudflare/clef,1718,7255,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-07,模型,2,autotrust/JEV-27B-VL,1099,1525286,image-text-to-text,https://huggingface.co/autotrust/JEV-27B-VL
+2026-10-07,模型,3,Aleph-Alpha/Kolibri-1,732,4138,text-generation,https://huggingface.co/Aleph-Alpha/Kolibri-1
+2026-10-07,模型,4,autotrust/GEV-26B-Decide,821,854574,text-classification,https://huggingface.co/autotrust/GEV-26B-Decide
+2026-10-07,模型,5,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,3470,1721760,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-07,模型,6,google/embeddinggemma-2,638,364,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-07,模型,7,Cloudflare/clef-flash,616,10638,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-07,模型,8,Venastine-Research/Xing4.0-29B-A4B-GGUF,556,30585,text-generation,https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF
+2026-10-07,模型,9,convaiinnovations/laya,5296,20386,text-classification,https://huggingface.co/convaiinnovations/laya
+2026-10-07,模型,10,Lightricks/LTX-2.5,6695,1679035,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-07,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,843,87536,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-07,資料集,2,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,267,2823,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-07,資料集,3,datasocial/tiktok-5.6B-videos,74,1181,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-07,資料集,4,espnet/yodas3,214,141303,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-07,資料集,5,ankitjh4/bharat-government-documents,52,520,,https://huggingface.co/datasets/ankitjh4/bharat-government-documents
+2026-10-07,資料集,6,secemp9/arxiv-complete,628,153405,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-07,資料集,7,aidigestorg/ai-village,114,1786,,https://huggingface.co/datasets/aidigestorg/ai-village
+2026-10-07,資料集,8,cloud0day3/alania-synthetic-speech-tr,42,2087,,https://huggingface.co/datasets/cloud0day3/alania-synthetic-speech-tr
+2026-10-07,資料集,9,Cirquar-Tech/wm_imagined,47,7161,,https://huggingface.co/datasets/Cirquar-Tech/wm_imagined
+2026-10-07,資料集,10,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,276,4801,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-07,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1183,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-07,Spaces,2,FineEnvs/multi-harness-rl,179,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-07,Spaces,3,arudradey/qwen-image-2.1-uncensored-gguf,339,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-07,Spaces,4,multimodalart/jev-decision-index,478,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-07,Spaces,5,kulkas2pintu/wan777,357,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-07,Spaces,6,arudradey/qwen-image-2.1-uncensored-aio-loras,184,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-07,Spaces,7,tardellirs/model-pulse,102,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-07,Spaces,8,Viggle/Qwen-Image-2.1-viggle-turbo,208,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-07,Spaces,9,autotrust/JEV-27B-Demo,94,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
+2026-10-07,Spaces,10,mlabonne/chessfly,134,,Other,https://huggingface.co/spaces/mlabonne/chessfly

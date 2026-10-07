@@ -951,3 +951,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-06,8,caddyserver/caddy,515,77265,Go,https://github.com/caddyserver/caddy,Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
 2026-10-06,9,pingdotgg/t3code,485,25710,TypeScript,https://github.com/pingdotgg/t3code,
 2026-10-06,10,earthtojake/text-to-cad,437,17568,Python,https://github.com/earthtojake/text-to-cad,Give your agent CAD superpowers.
+2026-10-07,1,morluto/rea,2956,10573,TypeScript,https://github.com/morluto/rea,"Reverse engineer anything with agents, from app behavior down to native binaries."
+2026-10-07,2,tester-army/e2e,1725,6616,TypeScript,https://github.com/tester-army/e2e,Next generation e2e testing framework for web and mobile apps.
+2026-10-07,3,DuarteSantos8/openGym,1419,6009,JavaScript,https://github.com/DuarteSantos8/openGym,"Self-hosted gym & body-weight tracker — plan routines, log workouts (supersets, warm-ups, cardio), see which muscles are trained, fatigued or detrained, import from FitNotes/Strong/Hevy, passkey login. Your data, your server."
+2026-10-07,4,boykopovar/AnyPS5,949,7057,C++,https://github.com/boykopovar/AnyPS5,Tool for automatic PS5 executables porting to Linux and Windows
+2026-10-07,5,mattpocock/skills,889,278456,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-10-07,6,msitarzewski/agency-agents,623,157991,Shell,https://github.com/msitarzewski/agency-agents,"A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables."
+2026-10-07,7,earthtojake/text-to-cad,619,18113,Python,https://github.com/earthtojake/text-to-cad,Give your agent CAD superpowers.
+2026-10-07,8,pbakaus/impeccable,616,77883,JavaScript,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-10-07,9,thedotmack/claude-mem,534,97298,TypeScript,https://github.com/thedotmack/claude-mem,"Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More"
+2026-10-07,10,ayghri/i-have-adhd,326,54559,Python,https://github.com/ayghri/i-have-adhd,A skill to stop your coding agent from burying the answer. ADHD-friendly output.
