@@ -2594,3 +2594,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-07,Spaces,8,Viggle/Qwen-Image-2.1-viggle-turbo,208,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
 2026-10-07,Spaces,9,autotrust/JEV-27B-Demo,94,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
 2026-10-07,Spaces,10,mlabonne/chessfly,134,,Other,https://huggingface.co/spaces/mlabonne/chessfly
+2026-10-08,模型,1,autotrust/JEV-27B-VL,2272,1529210,image-text-to-text,https://huggingface.co/autotrust/JEV-27B-VL
+2026-10-08,模型,2,Cloudflare/clef,1842,9513,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-08,模型,3,autotrust/GEV-26B-Decide,1472,895867,text-classification,https://huggingface.co/autotrust/GEV-26B-Decide
+2026-10-08,模型,4,google/embeddinggemma-2,1036,7562,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-08,模型,5,Aleph-Alpha/Kolibri-1,790,5775,text-generation,https://huggingface.co/Aleph-Alpha/Kolibri-1
+2026-10-08,模型,6,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,3604,1820627,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-08,模型,7,Cloudflare/clef-flash,667,15722,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-08,模型,8,Venastine-Research/Xing4.0-29B-A4B-GGUF,636,33633,text-generation,https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF
+2026-10-08,模型,9,Lightricks/LTX-2.5,6833,1674291,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-08,模型,10,jialinyyzz/humanizer,517,19483,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-08,資料集,1,XiaomiMiMo/MiMo-V2.6-RL-oss,864,91097,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-08,資料集,2,datasocial/tiktok-5.6B-videos,114,3436,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-08,資料集,3,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,272,2989,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-08,資料集,4,ankitjh4/bharat-government-documents,55,611,,https://huggingface.co/datasets/ankitjh4/bharat-government-documents
+2026-10-08,資料集,5,espnet/yodas3,220,153909,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-08,資料集,6,secemp9/arxiv-complete,641,157480,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-08,資料集,7,LightwheelAI/EgoStandard,184,386,,https://huggingface.co/datasets/LightwheelAI/EgoStandard
+2026-10-08,資料集,8,aidigestorg/ai-village,119,1835,,https://huggingface.co/datasets/aidigestorg/ai-village
+2026-10-08,資料集,9,bakrianoo/jabarti-llm-dataset,40,904,,https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset
+2026-10-08,資料集,10,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,280,4878,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-08,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1229,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-08,Spaces,2,FineEnvs/multi-harness-rl,196,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-08,Spaces,3,multimodalart/jev-decision-index,517,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-08,Spaces,4,arudradey/qwen-image-2.1-uncensored-gguf,364,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-08,Spaces,5,kulkas2pintu/wan777,374,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-08,Spaces,6,tardellirs/model-pulse,129,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-08,Spaces,7,arudradey/qwen-image-2.1-uncensored-aio-loras,208,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-08,Spaces,8,hugging-apps/bfs-best-face-swap,119,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-08,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,215,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-08,Spaces,10,autotrust/JEV-27B-Demo,97,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
