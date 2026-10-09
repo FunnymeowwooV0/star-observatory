@@ -2624,3 +2624,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-08,Spaces,8,hugging-apps/bfs-best-face-swap,119,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
 2026-10-08,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,215,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
 2026-10-08,Spaces,10,autotrust/JEV-27B-Demo,97,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
+2026-10-09,模型,1,autotrust/JEV-27B-VL,3128,1533034,image-text-to-text,https://huggingface.co/autotrust/JEV-27B-VL
+2026-10-09,模型,2,autotrust/GEV-26B-Decide,1957,903866,text-classification,https://huggingface.co/autotrust/GEV-26B-Decide
+2026-10-09,模型,3,Cloudflare/clef,1900,10874,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-09,模型,4,google/embeddinggemma-2,1237,21148,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-09,模型,5,Aleph-Alpha/Kolibri-1,819,6777,text-generation,https://huggingface.co/Aleph-Alpha/Kolibri-1
+2026-10-09,模型,6,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,3699,1933066,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-09,模型,7,jialinyyzz/humanizer,665,23439,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-09,模型,8,Venastine-Research/Xing4.0-29B-A4B-GGUF,670,36481,text-generation,https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF
+2026-10-09,模型,9,Lightricks/LTX-2.5,6971,1688807,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-09,模型,10,Cloudflare/clef-flash,699,17587,image-text-to-text,https://huggingface.co/Cloudflare/clef-flash
+2026-10-09,資料集,1,datasocial/tiktok-5.6B-videos,145,5827,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-09,資料集,2,XiaomiMiMo/MiMo-V2.6-RL-oss,883,99283,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-09,資料集,3,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,281,3180,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-09,資料集,4,LightwheelAI/EgoStandard,188,388,,https://huggingface.co/datasets/LightwheelAI/EgoStandard
+2026-10-09,資料集,5,espnet/yodas3,226,169145,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-09,資料集,6,secemp9/arxiv-complete,648,164344,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-09,資料集,7,bakrianoo/jabarti-llm-dataset,46,998,,https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset
+2026-10-09,資料集,8,witfoo/precinct6-cybersecurity,45,2203,,https://huggingface.co/datasets/witfoo/precinct6-cybersecurity
+2026-10-09,資料集,9,aidigestorg/ai-village,122,1918,,https://huggingface.co/datasets/aidigestorg/ai-village
+2026-10-09,資料集,10,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,287,4984,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-09,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1285,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-09,Spaces,2,FineEnvs/multi-harness-rl,210,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-09,Spaces,3,multimodalart/jev-decision-index,540,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-09,Spaces,4,arudradey/qwen-image-2.1-uncensored-gguf,387,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-09,Spaces,5,tardellirs/model-pulse,148,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-09,Spaces,6,kulkas2pintu/wan777,394,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-09,Spaces,7,arudradey/qwen-image-2.1-uncensored-aio-loras,235,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-09,Spaces,8,hugging-apps/bfs-best-face-swap,135,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-09,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,230,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-09,Spaces,10,autotrust/JEV-27B-Demo,104,,Other,https://huggingface.co/spaces/autotrust/JEV-27B-Demo
