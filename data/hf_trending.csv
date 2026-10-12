@@ -2714,3 +2714,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-11,Spaces,8,hugging-apps/bfs-best-face-swap,164,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
 2026-10-11,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,247,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
 2026-10-11,Spaces,10,00000tt/LTX-2.3-10Eros,194,,Video Generation,https://huggingface.co/spaces/00000tt/LTX-2.3-10Eros
+2026-10-12,模型,1,google/embeddinggemma-2,1762,98829,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-12,模型,2,jialinyyzz/humanizer,1146,37647,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-12,模型,3,Cloudflare/clef,2033,14351,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-12,模型,4,abenzerps/Qwen-Image-2.1-Uncensored-GGUF,4010,2188658,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-GGUF
+2026-10-12,模型,5,Qwen/Qwen-Image-2.1-Turbo,558,4702,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo
+2026-10-12,模型,6,Lightricks/LTX-2.5,7343,1726683,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-12,模型,7,Aleph-Alpha/Kolibri-1,889,12550,text-generation,https://huggingface.co/Aleph-Alpha/Kolibri-1
+2026-10-12,模型,8,Qwen/Qwen3.8-27B,17521,6843108,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-12,模型,9,Venastine-Research/Xing4.0-29B-A4B-GGUF,691,48389,text-generation,https://huggingface.co/Venastine-Research/Xing4.0-29B-A4B-GGUF
+2026-10-12,模型,10,canberkkkkkk/ema-lightning,359,18079,text-to-speech,https://huggingface.co/canberkkkkkk/ema-lightning
+2026-10-12,資料集,1,datasocial/tiktok-5.6B-videos,227,12263,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-12,資料集,2,XiaomiMiMo/MiMo-V2.6-RL-oss,911,113898,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-12,資料集,3,LightwheelAI/EgoDemo,190,61148,,https://huggingface.co/datasets/LightwheelAI/EgoDemo
+2026-10-12,資料集,4,LightwheelAI/EgoPro,179,34529,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-12,資料集,5,FineEnvs/openai-math,41,1810,,https://huggingface.co/datasets/FineEnvs/openai-math
+2026-10-12,資料集,6,espnet/yodas3,233,225009,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-12,資料集,7,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,306,5286,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-12,資料集,8,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,296,3501,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-12,資料集,9,bakrianoo/jabarti-llm-dataset,66,1592,,https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset
+2026-10-12,資料集,10,docling-project/DeskForge-1M,36,5457,,https://huggingface.co/datasets/docling-project/DeskForge-1M
+2026-10-12,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1433,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-12,Spaces,2,multimodalart/jev-decision-index,590,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-12,Spaces,3,kulkas2pintu/wan777,458,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-12,Spaces,4,FineEnvs/multi-harness-rl,231,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-12,Spaces,5,tardellirs/model-pulse,185,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-12,Spaces,6,arudradey/qwen-image-2.1-uncensored-gguf,411,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-12,Spaces,7,arudradey/qwen-image-2.1-uncensored-aio-loras,270,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-12,Spaces,8,hugging-apps/bfs-best-face-swap,184,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-12,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,264,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-12,Spaces,10,00000tt/LTX-2.3-10Eros,203,,Video Generation,https://huggingface.co/spaces/00000tt/LTX-2.3-10Eros
