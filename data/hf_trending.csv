@@ -2744,3 +2744,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-12,Spaces,8,hugging-apps/bfs-best-face-swap,184,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
 2026-10-12,Spaces,9,Viggle/Qwen-Image-2.1-viggle-turbo,264,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
 2026-10-12,Spaces,10,00000tt/LTX-2.3-10Eros,203,,Video Generation,https://huggingface.co/spaces/00000tt/LTX-2.3-10Eros
+2026-10-13,模型,1,google/embeddinggemma-2,1982,115763,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-13,模型,2,jialinyyzz/humanizer,1361,46070,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-13,模型,3,Qwen/Qwen-Image-2.1-Turbo,661,6787,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo
+2026-10-13,模型,4,abenzerps/Qwen-Image-2.1-Uncensored-Quantized,4128,2188658,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized
+2026-10-13,模型,5,Cloudflare/clef,2105,15064,image-text-to-text,https://huggingface.co/Cloudflare/clef
+2026-10-13,模型,6,Lightricks/LTX-2.5,7516,1719766,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-13,模型,7,ConwayResearch/Underdog-Saluki-27B-1.0,383,242329,text-generation,https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0
+2026-10-13,模型,8,Qwen/Qwen3.8-27B,17594,6895303,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-13,模型,9,LiquidAI/d1-3B,356,11866,image-text-to-text,https://huggingface.co/LiquidAI/d1-3B
+2026-10-13,模型,10,AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF,382,161715,text-to-image,https://huggingface.co/AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF
+2026-10-13,資料集,1,datasocial/tiktok-5.6B-videos,257,14099,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-13,資料集,2,XiaomiMiMo/MiMo-V2.6-RL-oss,925,117469,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-13,資料集,3,FineEnvs/openai-math,62,2587,,https://huggingface.co/datasets/FineEnvs/openai-math
+2026-10-13,資料集,4,LightwheelAI/EgoDemo,194,61116,,https://huggingface.co/datasets/LightwheelAI/EgoDemo
+2026-10-13,資料集,5,LightwheelAI/EgoPro,187,34402,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-13,資料集,6,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,315,5415,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-13,資料集,7,bakrianoo/jabarti-llm-dataset,78,1768,,https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset
+2026-10-13,資料集,8,espnet/yodas3,244,266728,,https://huggingface.co/datasets/espnet/yodas3
+2026-10-13,資料集,9,nisten/opus5-5-doctor-patient-conversations-all-human-diseases,305,3613,,https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases
+2026-10-13,資料集,10,secemp9/arxiv-complete,669,180968,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-13,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1473,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-13,Spaces,2,multimodalart/jev-decision-index,616,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-13,Spaces,3,kulkas2pintu/wan777,477,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-13,Spaces,4,tardellirs/model-pulse,201,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-13,Spaces,5,hugging-apps/bfs-best-face-swap,199,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-13,Spaces,6,arudradey/qwen-image-2.1-uncensored-aio-loras,278,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-aio-loras
+2026-10-13,Spaces,7,FineEnvs/multi-harness-rl,241,,Agent Environment,https://huggingface.co/spaces/FineEnvs/multi-harness-rl
+2026-10-13,Spaces,8,Viggle/Qwen-Image-2.1-viggle-turbo,283,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-13,Spaces,9,arudradey/qwen-image-2.1-uncensored-gguf,414,,Image Generation,https://huggingface.co/spaces/arudradey/qwen-image-2.1-uncensored-gguf
+2026-10-13,Spaces,10,aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental,442,,Image Editing,https://huggingface.co/spaces/aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental

@@ -1008,3 +1008,12 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-12,6,lyogavin/airllm,548,36766,Jupyter Notebook,https://github.com/lyogavin/airllm,AirLLM 70B inference with single 4GB GPU
 2026-10-12,7,chrislgarry/Apollo-11,466,74417,Assembly,https://github.com/chrislgarry/Apollo-11,Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.
 2026-10-12,8,pytorch/pytorch,315,104630,Python,https://github.com/pytorch/pytorch,Tensors and Dynamic neural networks in Python with strong GPU acceleration
+2026-10-13,1,morluto/rea,45327,174724,TypeScript,https://github.com/morluto/rea,"Reverse engineer anything with agents, from app behavior down to native binaries."
+2026-10-13,2,storytold/artcraft,4095,23159,Rust,https://github.com/storytold/artcraft,"ArtCraft is an intentional crafting engine for artists, designers, and filmmakers"
+2026-10-13,3,cathrynlavery/diagram-design,2081,53087,HTML,https://github.com/cathrynlavery/diagram-design,"Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-10-13,4,bilawalsidhu/gods-eye-view,1895,54194,JavaScript,https://github.com/bilawalsidhu/gods-eye-view,"A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe."
+2026-10-13,5,lyogavin/airllm,879,37776,Jupyter Notebook,https://github.com/lyogavin/airllm,AirLLM 2.8T LLM inference with single 4GB GPU
+2026-10-13,6,Alishahryar1/free-claude-code,626,59531,Python,https://github.com/Alishahryar1/free-claude-code,"Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)"
+2026-10-13,7,mksglu/context-mode,246,27567,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
+2026-10-13,8,open-webui/open-webui,157,155340,Python,https://github.com/open-webui/open-webui,"User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
+2026-10-13,9,microsoft/BitNet,97,41029,C++,https://github.com/microsoft/BitNet,Official inference framework for 1-bit LLMs
