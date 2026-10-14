@@ -1017,3 +1017,12 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-13,7,mksglu/context-mode,246,27567,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
 2026-10-13,8,open-webui/open-webui,157,155340,Python,https://github.com/open-webui/open-webui,"User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
 2026-10-13,9,microsoft/BitNet,97,41029,C++,https://github.com/microsoft/BitNet,Official inference framework for 1-bit LLMs
+2026-10-14,1,morluto/rea,54679,216202,TypeScript,https://github.com/morluto/rea,"Reverse engineer anything with agents, from app behavior down to native binaries."
+2026-10-14,2,storytold/artcraft,4081,26289,Rust,https://github.com/storytold/artcraft,"ArtCraft is an intentional crafting engine for artists, designers, and filmmakers"
+2026-10-14,3,bilawalsidhu/gods-eye-view,1961,55751,JavaScript,https://github.com/bilawalsidhu/gods-eye-view,"A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe."
+2026-10-14,4,cathrynlavery/diagram-design,1815,54524,HTML,https://github.com/cathrynlavery/diagram-design,"Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+2026-10-14,5,debpalash/VoiceStudio,1748,64014,Python,https://github.com/debpalash/VoiceStudio,"VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages."
+2026-10-14,6,xtool-org/xtool,1198,9698,Swift,https://github.com/xtool-org/xtool,"Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS."
+2026-10-14,7,lyogavin/airllm,1001,38454,Jupyter Notebook,https://github.com/lyogavin/airllm,AirLLM 2.8T LLM inference with single 4GB GPU
+2026-10-14,8,mksglu/context-mode,969,28437,TypeScript,https://github.com/mksglu/context-mode,"Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks."
+2026-10-14,9,vercel-labs/skills,190,34681,TypeScript,https://github.com/vercel-labs/skills,The open agent skills tool - npx skills
