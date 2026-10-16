@@ -2834,3 +2834,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-15,Spaces,8,vclnhihihi/qwen-image-21-uncensored,74,,Image Generation,https://huggingface.co/spaces/vclnhihihi/qwen-image-21-uncensored
 2026-10-15,Spaces,9,00000tt/LTX-2.3-10Eros,233,,Video Generation,https://huggingface.co/spaces/00000tt/LTX-2.3-10Eros
 2026-10-15,Spaces,10,Aura1in/Krea-2-Turbo_v2,104,,Image Generation,https://huggingface.co/spaces/Aura1in/Krea-2-Turbo_v2
+2026-10-16,模型,1,google/embeddinggemma-2,2423,144280,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-16,模型,2,jialinyyzz/humanizer,1757,75253,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-16,模型,3,Qwen/Qwen-Image-2.1-Turbo,892,15315,text-to-image,https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo
+2026-10-16,模型,4,openbmb/MiniCPM-V-4.7-35B-A3B,803,9278,image-text-to-text,https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B
+2026-10-16,模型,5,abenzerps/Qwen-Image-2.1-Uncensored-Quantized,4397,2415278,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized
+2026-10-16,模型,6,fishaudio/drama-3,494,4048,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-16,模型,7,Lightricks/LTX-2.5,7972,1866657,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-16,模型,8,AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF,501,296253,text-to-image,https://huggingface.co/AtomicChat/Qwen-Image-2.1-Turbo-Uncensored-GGUF
+2026-10-16,模型,9,LiquidAI/LFM2.5-24B-A2B,393,6286,text-generation,https://huggingface.co/LiquidAI/LFM2.5-24B-A2B
+2026-10-16,模型,10,ConwayResearch/Underdog-Saluki-27B-1.0,501,344177,text-generation,https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0
+2026-10-16,資料集,1,datasocial/tiktok-5.6B-videos,318,18324,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-16,資料集,2,FineEnvs/openai-math,93,5800,,https://huggingface.co/datasets/FineEnvs/openai-math
+2026-10-16,資料集,3,LightwheelAI/EgoDemo,213,31806,,https://huggingface.co/datasets/LightwheelAI/EgoDemo
+2026-10-16,資料集,4,XiaomiMiMo/MiMo-V2.6-RL-oss,958,146133,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-16,資料集,5,LightwheelAI/EgoPro,194,34555,,https://huggingface.co/datasets/LightwheelAI/EgoPro
+2026-10-16,資料集,6,LightwheelAI/EgoStandard,255,6274,,https://huggingface.co/datasets/LightwheelAI/EgoStandard
+2026-10-16,資料集,7,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,340,5589,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-16,資料集,8,bakrianoo/jabarti-llm-dataset,89,2240,,https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset
+2026-10-16,資料集,9,LocalLLaMA/typed-decisions,192,46815,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-16,資料集,10,secemp9/arxiv-complete,689,209755,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-16,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1614,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-16,Spaces,2,multimodalart/jev-decision-index,685,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-16,Spaces,3,kulkas2pintu/wan777,569,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-16,Spaces,4,hugging-apps/bfs-best-face-swap,280,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-16,Spaces,5,vclnhihihi/qwen-image-21-uncensored,104,,Image Generation,https://huggingface.co/spaces/vclnhihihi/qwen-image-21-uncensored
+2026-10-16,Spaces,6,autotrust/shorts,151,,Other,https://huggingface.co/spaces/autotrust/shorts
+2026-10-16,Spaces,7,Viggle/Qwen-Image-2.1-viggle-turbo,320,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo
+2026-10-16,Spaces,8,autotrust/news,155,,Other,https://huggingface.co/spaces/autotrust/news
+2026-10-16,Spaces,9,tardellirs/model-pulse,221,,Data Visualization,https://huggingface.co/spaces/tardellirs/model-pulse
+2026-10-16,Spaces,10,Aura1in/Krea-2-Turbo_v2,117,,Image Generation,https://huggingface.co/spaces/Aura1in/Krea-2-Turbo_v2
