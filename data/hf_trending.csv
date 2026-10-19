@@ -2924,3 +2924,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-18,Spaces,8,autotrust/news,170,,Other,https://huggingface.co/spaces/autotrust/news
 2026-10-18,Spaces,9,AST-1320/Qwen-2511-Plus-Flux.2-klein-9B,127,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein-9B
 2026-10-18,Spaces,10,fishaudio/Drama-3,78,,Speech Synthesis,https://huggingface.co/spaces/fishaudio/Drama-3
+2026-10-19,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,1413,10233,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-19,模型,2,openbmb/MiniCPM-V-4.7-35B-A3B,1019,57935,image-text-to-text,https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B
+2026-10-19,模型,3,google/embeddinggemma-2,2673,164339,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-19,模型,4,fishaudio/drama-3,708,9620,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-19,模型,5,jialinyyzz/humanizer,1954,103709,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-19,模型,6,black-forest-labs/flux-3-image-klein-comfy,834,338036,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-19,模型,7,meta-models/Muse-Spark-Open-816B-A42B,550,1809,image-text-to-text,https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B
+2026-10-19,模型,8,LiquidAI/LFM2.5-24B-A2B,475,13007,text-generation,https://huggingface.co/LiquidAI/LFM2.5-24B-A2B
+2026-10-19,模型,9,Lightricks/LTX-2.5,8393,2012496,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-19,模型,10,black-forest-labs/flux-3-image-klein,494,52315,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein
+2026-10-19,資料集,1,DeepLethe/FDE-Gym,429,203,,https://huggingface.co/datasets/DeepLethe/FDE-Gym
+2026-10-19,資料集,2,datasocial/tiktok-5.6B-videos,359,22810,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-19,資料集,3,FineEnvs/openai-math,108,8010,,https://huggingface.co/datasets/FineEnvs/openai-math
+2026-10-19,資料集,4,nvidia/Nemotron-Personas-Vietnam,136,5578,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-19,資料集,5,XiaomiMiMo/MiMo-V2.6-RL-oss,975,172249,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-19,資料集,6,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,357,5597,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-19,資料集,7,LocalLLaMA/typed-decisions,208,50135,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-19,資料集,8,Vyber07/cyber-security,182,3254,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-19,資料集,9,secemp9/arxiv-complete,700,235187,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-19,資料集,10,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,308,140039,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-19,Spaces,1,Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED,1729,,Video Generation,https://huggingface.co/spaces/Pepe104/MiniMax-H3-Turbo-Lora-UNCENSORED
+2026-10-19,Spaces,2,vclnhihihi/qwen-image-21-uncensored,259,,Image Generation,https://huggingface.co/spaces/vclnhihihi/qwen-image-21-uncensored
+2026-10-19,Spaces,3,kulkas2pintu/wan777,664,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-19,Spaces,4,multimodalart/jev-decision-index,721,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-19,Spaces,5,hugging-apps/bfs-best-face-swap,341,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-19,Spaces,6,black-forest-labs/flux-3-image-klein,106,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-19,Spaces,7,fishaudio/Drama-3,82,,Speech Synthesis,https://huggingface.co/spaces/fishaudio/Drama-3
+2026-10-19,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,139,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-19,Spaces,9,OpenMOSS-Team/MOSS-Image,74,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image
+2026-10-19,Spaces,10,pablodawson/minimax-h3-360-orbit,107,,Video Generation,https://huggingface.co/spaces/pablodawson/minimax-h3-360-orbit

@@ -1069,3 +1069,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-18,8,Making chicken transparent using Dorito dust,281,71,https://news.ycombinator.com/item?id=50131213,https://chillphysicsenjoyer.substack.com/p/making-chicken-transparent-using
 2026-10-18,9,Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware,269,78,https://news.ycombinator.com/item?id=50127979,https://llmspeed.dev/
 2026-10-18,10,Dam removals are bringing fish back across the northeastern United States,243,60,https://news.ycombinator.com/item?id=50126312,https://www.smithsonianmag.com/science-nature/dam-removals-are-bringing-fish-back-across-the-northeastern-united-states-striking-down-one-tiny-barrier-at-a-time-180989679/
+2026-10-19,1,Someone behind the software,379,150,https://news.ycombinator.com/item?id=50142573,https://karrisaarinen.com/posts/someone-behind-the-software/
+2026-10-19,2,RepRapMicron,359,56,https://news.ycombinator.com/item?id=50141076,https://github.com/VikOlliver/RepRapMicron/wiki
+2026-10-19,3,"Hybrid Reasoning Agents: LLM agents that think in latent space, act through text",300,162,https://news.ycombinator.com/item?id=50145337,https://arxiv.org/abs/2610.18861
+2026-10-19,4,There's never been a better time to go into math (by: 3blue1brown) [video],265,315,https://news.ycombinator.com/item?id=50136150,https://www.youtube.com/watch?v=LKrwhjOI8Nc
+2026-10-19,5,Open MicroManipulator – A sub-micrometer 3D motion control plattform,182,14,https://news.ycombinator.com/item?id=50140001,https://github.com/0x23/MicroManipulatorStepper
+2026-10-19,6,Dogs seem to agree with humans that 'bouba' is round and 'kiki' is spiky,179,106,https://news.ycombinator.com/item?id=50136979,https://www.sciencealert.com/dogs-seem-to-agree-with-humans-that-bouba-is-round-and-kiki-is-spiky
+2026-10-19,7,Java sealed classes and exhaustive pattern matching,154,108,https://news.ycombinator.com/item?id=50141579,https://neilmadden.blog/2026/04/24/java-sealed-classes-and-exhaustive-pattern-matching/
+2026-10-19,8,"""I'm on a war footing"": Terry Tao and the crisis in math",135,236,https://news.ycombinator.com/item?id=50118165,https://www.nytimes.com/2026/10/16/us/math-ai-terence-tao.html
+2026-10-19,9,Free Pascal compiler now supports dynamic packages,135,29,https://news.ycombinator.com/item?id=50144066,https://www.getlazarus.org/dynamic/
+2026-10-19,10,I built a programming language that LLMs can't use,126,98,https://news.ycombinator.com/item?id=50135762,https://blog.picheta.me/post/killswitch-lang/
