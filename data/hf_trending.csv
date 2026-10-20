@@ -2954,3 +2954,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-19,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,139,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
 2026-10-19,Spaces,9,OpenMOSS-Team/MOSS-Image,74,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image
 2026-10-19,Spaces,10,pablodawson/minimax-h3-360-orbit,107,,Video Generation,https://huggingface.co/spaces/pablodawson/minimax-h3-360-orbit
+2026-10-20,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,1738,17924,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-20,模型,2,black-forest-labs/flux-3-image-klein-comfy,989,393062,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-20,模型,3,fishaudio/drama-3,778,11795,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-20,模型,4,openbmb/MiniCPM-V-4.7-35B-A3B,1071,76410,image-text-to-text,https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B
+2026-10-20,模型,5,google/embeddinggemma-2,2733,167750,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-20,模型,6,jialinyyzz/humanizer,1996,109937,text-generation,https://huggingface.co/jialinyyzz/humanizer
+2026-10-20,模型,7,meta-models/Muse-Spark-Open-816B-A42B,585,2109,image-text-to-text,https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B
+2026-10-20,模型,8,LiquidAI/LFM2.5-24B-A2B,501,14151,text-generation,https://huggingface.co/LiquidAI/LFM2.5-24B-A2B
+2026-10-20,模型,9,black-forest-labs/flux-3-image-klein,530,62006,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein
+2026-10-20,模型,10,Lightricks/LTX-2.5,8507,2019834,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-20,資料集,1,datasocial/tiktok-5.6B-videos,371,23417,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-20,資料集,2,nvidia/Nemotron-Personas-Vietnam,163,8276,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-20,資料集,3,FineEnvs/openai-math,109,8419,,https://huggingface.co/datasets/FineEnvs/openai-math
+2026-10-20,資料集,4,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,345,144623,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-20,資料集,5,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,361,5564,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-20,資料集,6,XiaomiMiMo/MiMo-V2.6-RL-oss,976,183421,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-20,資料集,7,DeepLethe/FDE-Gym,57,295,,https://huggingface.co/datasets/DeepLethe/FDE-Gym
+2026-10-20,資料集,8,Vyber07/cyber-security,195,3431,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-20,資料集,9,LocalLLaMA/typed-decisions,213,50733,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-20,資料集,10,markov-ai/cad-1000-hours,576,138287,,https://huggingface.co/datasets/markov-ai/cad-1000-hours
+2026-10-20,Spaces,1,kulkas2pintu/wan777,696,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-20,Spaces,2,hugging-apps/bfs-best-face-swap,365,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-20,Spaces,3,multimodalart/jev-decision-index,734,,Model Benchmarking,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-20,Spaces,4,black-forest-labs/flux-3-image-klein,120,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-20,Spaces,5,OpenMOSS-Team/MOSS-Image,97,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image
+2026-10-20,Spaces,6,fishaudio/Drama-3,92,,Speech Synthesis,https://huggingface.co/spaces/fishaudio/Drama-3
+2026-10-20,Spaces,7,AST-1320/Qwen-2511-Plus-Flux.2-klein,159,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-20,Spaces,8,pablodawson/minimax-h3-360-orbit,119,,Video Generation,https://huggingface.co/spaces/pablodawson/minimax-h3-360-orbit
+2026-10-20,Spaces,9,hugging-apps/qwen-qwen-image-2-1-turbo,119,,Image Generation,https://huggingface.co/spaces/hugging-apps/qwen-qwen-image-2-1-turbo
+2026-10-20,Spaces,10,Viggle/Qwen-Image-2.1-viggle-turbo,351,,Image Generation,https://huggingface.co/spaces/Viggle/Qwen-Image-2.1-viggle-turbo

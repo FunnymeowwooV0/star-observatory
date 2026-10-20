@@ -1076,3 +1076,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-19,8,akitaonrails/ai-memory,512,10669,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
 2026-10-19,9,android/skills,375,8872,Kotlin,https://github.com/android/skills,
 2026-10-19,10,cursor/plugins,350,12829,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
+2026-10-20,1,MadsLorentzen/ai-job-search,3856,58005,Python,https://github.com/MadsLorentzen/ai-job-search,"The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it."
+2026-10-20,2,stablyai/orca,1590,98575,TypeScript,https://github.com/stablyai/orca,"Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime."
+2026-10-20,3,anomalyco/opencode,1311,218042,TypeScript,https://github.com/anomalyco/opencode,The open source coding agent.
+2026-10-20,4,Comfy-Org/ComfyUI,1011,139979,Python,https://github.com/Comfy-Org/ComfyUI,"The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world."
+2026-10-20,5,akitaonrails/ai-memory,666,11521,Rust,https://github.com/akitaonrails/ai-memory,Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
+2026-10-20,6,HKUDS/CLI-Anything,606,55379,Python,https://github.com/HKUDS/CLI-Anything,"""CLI-Anything: Making ALL Software Agent-Native"" -- CLI-Hub:https://clianything.cc/"
+2026-10-20,7,ruvnet/ruflo,564,77341,TypeScript,https://github.com/ruvnet/ruflo,"🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated"
+2026-10-20,8,Kruk2/jasna,498,3015,Python,https://github.com/Kruk2/jasna,Video restoration tool
+2026-10-20,9,shiyu-coder/Kronos,363,41828,Python,https://github.com/shiyu-coder/Kronos,Kronos: A Foundation Model for the Language of Financial Markets
+2026-10-20,10,headroomlabs-ai/headroom,310,76361,Python,https://github.com/headroomlabs-ai/headroom,"Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server."
