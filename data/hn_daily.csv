@@ -1099,3 +1099,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-21,8,Google Cloud outage affects almost all banking and other operations in Europe,369,182,https://news.ycombinator.com/item?id=50163961,https://www.neowin.net/news/google-cloud-outage-takes-down-hsbc-revolut-bank-of-scotland-llyods-equifax-more/
 2026-10-21,9,Ofcom concedes defeat in 4chan case,363,270,https://news.ycombinator.com/item?id=50167028,https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/
 2026-10-21,10,What shall I teach my son?,333,401,https://news.ycombinator.com/item?id=50169707,https://stevekrouse.com/ends
+2026-10-22,1,PHP 8.2.35,993,535,https://news.ycombinator.com/item?id=50180873,https://github.com/php/php-src/releases/tag/php-8.2.35
+2026-10-22,2,"Today's PHP security release, and how we're strengthening security",705,346,https://news.ycombinator.com/item?id=50182987,https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/
+2026-10-22,3,Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor,471,160,https://news.ycombinator.com/item?id=50181114,https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/
+2026-10-22,4,Meta ordered to pay $25B penalty in New Mexico Cambridge Analytica case,469,292,https://news.ycombinator.com/item?id=50184820,https://www.cnbc.com/2026/10/21/meta-new-mexico-cambridge-analytica-penalty.html
+2026-10-22,5,Security Disclosure,391,230,https://news.ycombinator.com/item?id=50188228,https://blog.railway.com/p/security-disclosure-wednesday-october-21st
+2026-10-22,6,DuckDB 2.0.0 LTS “Cinnamon Teal”,389,50,https://news.ycombinator.com/item?id=50181136,https://duckdb.org/2026/10/21/announcing-duckdb-200
+2026-10-22,7,mitmproxy adds --emudhra option,363,95,https://news.ycombinator.com/item?id=50189232,https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b
+2026-10-22,8,There isn't an easy exploit for this PHP vulnerability,346,156,https://news.ycombinator.com/item?id=50188948,https://eliastaylor.com/noexploit/
+2026-10-22,9,GitLab critical patch release,295,71,https://news.ycombinator.com/item?id=50185869,https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/
+2026-10-22,10,PingCap TiDB Leaks,281,42,https://news.ycombinator.com/item?id=50173716,https://fulcrumsec.vg/pingcap/
