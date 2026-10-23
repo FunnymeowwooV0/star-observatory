@@ -3044,3 +3044,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-22,Spaces,8,raubatz/qwen-image-2.1-uncensored-aio-loras,141,,Image Generation,https://huggingface.co/spaces/raubatz/qwen-image-2.1-uncensored-aio-loras
 2026-10-22,Spaces,9,wank3r/minimax-h3,142,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
 2026-10-22,Spaces,10,fishaudio/Drama-3,119,,Speech Synthesis,https://huggingface.co/spaces/fishaudio/Drama-3
+2026-10-23,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,2402,51911,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-23,模型,2,black-forest-labs/flux-3-image-klein-comfy,1320,512524,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-23,模型,3,RecursiveSI/flint,573,420,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-23,模型,4,OpenMOSS-Team/MOSS-Image-SFT,597,6890,text-to-image,https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT
+2026-10-23,模型,5,OpenMOSS-Team/MOSS-Image-Base,496,5013,text-to-image,https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base
+2026-10-23,模型,6,Lightricks/LTX-2.5,8919,2054990,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-23,模型,7,fishaudio/drama-3,924,16305,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-23,模型,8,Comfy-Org/MOSS-Image,375,1463386,,https://huggingface.co/Comfy-Org/MOSS-Image
+2026-10-23,模型,9,google/embeddinggemma-2,2849,185259,feature-extraction,https://huggingface.co/google/embeddinggemma-2
+2026-10-23,模型,10,meta-models/Muse-Spark-Open-816B-A42B,662,3163,image-text-to-text,https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B
+2026-10-23,資料集,1,nvidia/Nemotron-Personas-Vietnam,203,14999,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-23,資料集,2,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,415,154013,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-23,資料集,3,Vyber07/cyber-security,260,3818,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-23,資料集,4,datasocial/tiktok-5.6B-videos,409,28621,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-23,資料集,5,DeepLethe/FDE-Gym,63,371,,https://huggingface.co/datasets/DeepLethe/FDE-Gym
+2026-10-23,資料集,6,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,384,5338,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-23,資料集,7,LocalLLaMA/typed-decisions,238,47682,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-23,資料集,8,nvidia/Nemotron-Personas-Germany,36,480,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Germany
+2026-10-23,資料集,9,MaziyarPanahi/Jev-RAG-Claim-Verification-130K,36,217,,https://huggingface.co/datasets/MaziyarPanahi/Jev-RAG-Claim-Verification-130K
+2026-10-23,資料集,10,XiaomiMiMo/MiMo-V2.6-RL-oss,998,212436,,https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss
+2026-10-23,Spaces,1,kulkas2pintu/wan777,850,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-23,Spaces,2,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,201,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-23,Spaces,3,hugging-apps/bfs-best-face-swap,458,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-23,Spaces,4,black-forest-labs/flux-3-image-klein,191,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-23,Spaces,5,OpenMOSS-Team/MOSS-Image,142,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image
+2026-10-23,Spaces,6,AST-1320/Qwen-2511-Plus-Flux.2-klein,224,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-23,Spaces,7,raubatz/qwen-image-2.1-uncensored-aio-loras,160,,Image Generation,https://huggingface.co/spaces/raubatz/qwen-image-2.1-uncensored-aio-loras
+2026-10-23,Spaces,8,multimodalart/jev-decision-index,784,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-23,Spaces,9,wank3r/minimax-h3,157,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-10-23,Spaces,10,hitman911/wan2-2-fp8da-aoti-preview-2c-finishing,127,,Video Generation,https://huggingface.co/spaces/hitman911/wan2-2-fp8da-aoti-preview-2c-finishing
