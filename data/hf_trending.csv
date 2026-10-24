@@ -3074,3 +3074,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-23,Spaces,8,multimodalart/jev-decision-index,784,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
 2026-10-23,Spaces,9,wank3r/minimax-h3,157,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
 2026-10-23,Spaces,10,hitman911/wan2-2-fp8da-aoti-preview-2c-finishing,127,,Video Generation,https://huggingface.co/spaces/hitman911/wan2-2-fp8da-aoti-preview-2c-finishing
+2026-10-24,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,2605,57715,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-24,模型,2,RecursiveSI/flint,696,1904,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-24,模型,3,black-forest-labs/flux-3-image-klein-comfy,1419,534837,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-24,模型,4,OpenMOSS-Team/MOSS-Image-SFT,659,7658,text-to-image,https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT
+2026-10-24,模型,5,Lightricks/LTX-2.5,9054,2026951,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-24,模型,6,XHToken/Spark-X2.6-4B,421,1060,text-generation,https://huggingface.co/XHToken/Spark-X2.6-4B
+2026-10-24,模型,7,fishaudio/drama-3,952,17017,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-24,模型,8,OpenMOSS-Team/MOSS-Image-Base,523,5618,text-to-image,https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base
+2026-10-24,模型,9,abenzerps/Qwen-Image-2.1-Uncensored-Quantized,4914,2398071,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized
+2026-10-24,模型,10,Qwen/Qwen3.8-27B,18299,7710011,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-24,資料集,1,nvidia/Nemotron-Personas-Vietnam,212,17464,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-24,資料集,2,Vyber07/cyber-security,299,3931,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-24,資料集,3,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,433,155100,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-24,資料集,4,scenario-labs/3d-collection,80,693,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-10-24,資料集,5,datasocial/tiktok-5.6B-videos,415,29634,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-24,資料集,6,nvidia/Nemotron-Personas-Germany,43,810,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Germany
+2026-10-24,資料集,7,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,389,5145,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-24,資料集,8,LocalLLaMA/typed-decisions,244,46376,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-24,資料集,9,nvidia/simready-assets,54,215679,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-10-24,資料集,10,MaziyarPanahi/Jev-RAG-Claim-Verification-130K,37,251,,https://huggingface.co/datasets/MaziyarPanahi/Jev-RAG-Claim-Verification-130K
+2026-10-24,Spaces,1,kulkas2pintu/wan777,888,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-24,Spaces,2,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,244,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-24,Spaces,3,hugging-apps/bfs-best-face-swap,480,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-24,Spaces,4,black-forest-labs/flux-3-image-klein,199,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-24,Spaces,5,OpenMOSS-Team/MOSS-Image,152,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image
+2026-10-24,Spaces,6,AST-1320/Qwen-2511-Plus-Flux.2-klein,231,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-24,Spaces,7,fishpasters/uncensored-imageTOimage2Ref,122,,Image Generation,https://huggingface.co/spaces/fishpasters/uncensored-imageTOimage2Ref
+2026-10-24,Spaces,8,wank3r/minimax-h3,169,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-10-24,Spaces,9,multimodalart/jev-decision-index,794,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-24,Spaces,10,dlouapre/nlp-before-llms,77,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms

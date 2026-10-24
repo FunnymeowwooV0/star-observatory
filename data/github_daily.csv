@@ -1115,3 +1115,11 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-23,7,luongnv89/claude-howto,177,43452,Python,https://github.com/luongnv89/claude-howto,"A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value."
 2026-10-23,8,Meloong-Git/PCL,119,8770,Visual Basic .NET,https://github.com/Meloong-Git/PCL,Minecraft 启动器 Plain Craft Launcher（PCL）。
 2026-10-23,9,fastapi/fastapi,101,103893,Python,https://github.com/fastapi/fastapi,"FastAPI framework, high performance, easy to learn, fast to code, ready for production"
+2026-10-24,1,cloudflare/security-audit-skill,2716,42479,JavaScript,https://github.com/cloudflare/security-audit-skill,"A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+2026-10-24,2,NVIDIA/OpenShell,1119,18920,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-10-24,3,php/php-src,716,41597,C,https://github.com/php/php-src,The PHP Interpreter
+2026-10-24,4,anthropics/knowledge-work-plugins,635,32330,Python,https://github.com/anthropics/knowledge-work-plugins,Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork
+2026-10-24,5,Renhuai123/ziwei-doushu,546,6999,TypeScript,https://github.com/Renhuai123/ziwei-doushu,紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据
+2026-10-24,6,SnailSploit/Claude-Red,226,8608,Python,https://github.com/SnailSploit/Claude-Red,"claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development."
+2026-10-24,7,OpenBMB/VoxCPM,150,40349,Python,https://github.com/OpenBMB/VoxCPM,"VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning"
+2026-10-24,8,nodejs/node,66,122940,JavaScript,https://github.com/nodejs/node,Node.js JavaScript runtime ✨🐢🚀✨
