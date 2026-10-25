@@ -1123,3 +1123,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-24,6,SnailSploit/Claude-Red,226,8608,Python,https://github.com/SnailSploit/Claude-Red,"claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development."
 2026-10-24,7,OpenBMB/VoxCPM,150,40349,Python,https://github.com/OpenBMB/VoxCPM,"VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning"
 2026-10-24,8,nodejs/node,66,122940,JavaScript,https://github.com/nodejs/node,Node.js JavaScript runtime ✨🐢🚀✨
+2026-10-25,1,cloudflare/security-audit-skill,2264,45057,JavaScript,https://github.com/cloudflare/security-audit-skill,"A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+2026-10-25,2,NVIDIA/OpenShell,896,19594,Rust,https://github.com/NVIDIA/OpenShell,"OpenShell is the safe, private runtime for autonomous AI agents."
+2026-10-25,3,pbakaus/impeccable,619,86601,Rust,https://github.com/pbakaus/impeccable,The design language that makes your AI harness better at design.
+2026-10-25,4,makecindy/cindy,477,4221,TypeScript,https://github.com/makecindy/cindy,Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。
+2026-10-25,5,Nutlope/hallmark,455,32399,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-10-25,6,luongnv89/claude-howto,392,44691,Python,https://github.com/luongnv89/claude-howto,"A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value."
+2026-10-25,7,pollen-robotics/microduck,319,11111,Rust,https://github.com/pollen-robotics/microduck,A Tiny biped duck robot 🦆
+2026-10-25,8,jbiaojerry/ebook-treasure-chest,227,22802,Python,https://github.com/jbiaojerry/ebook-treasure-chest,欢迎来到电子书下载宝库，一个汇聚了各类电子书下载链接的地方。无论你是喜欢阅读经典文学、经管励志、终身学习、职场创业、技术手册还是其他类型的书籍，这里都能满足你的需求。 该库涵盖了帆书app(原樊登读书)、微信读书、京东读书、喜马拉雅等读书app的大部分电子书。
+2026-10-25,9,google-gemini/gemini-cli,44,108196,TypeScript,https://github.com/google-gemini/gemini-cli,An open-source AI agent that brings the power of Gemini directly into your terminal.
+2026-10-25,10,aws/agent-toolkit-for-aws,13,3192,Python,https://github.com/aws/agent-toolkit-for-aws,"Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS"

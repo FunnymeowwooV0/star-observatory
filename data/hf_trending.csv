@@ -3104,3 +3104,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-24,Spaces,8,wank3r/minimax-h3,169,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
 2026-10-24,Spaces,9,multimodalart/jev-decision-index,794,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
 2026-10-24,Spaces,10,dlouapre/nlp-before-llms,77,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
+2026-10-25,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,2829,73215,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-25,模型,2,RecursiveSI/flint,785,4795,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-25,模型,3,black-forest-labs/flux-3-image-klein-comfy,1518,590742,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-25,模型,4,XHToken/Spark-X2.6-4B,458,2537,text-generation,https://huggingface.co/XHToken/Spark-X2.6-4B
+2026-10-25,模型,5,Lightricks/LTX-2.5,9204,2087721,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-25,模型,6,OpenMOSS-Team/MOSS-Image-SFT,703,9717,text-to-image,https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT
+2026-10-25,模型,7,fishaudio/drama-3,994,19831,text-to-speech,https://huggingface.co/fishaudio/drama-3
+2026-10-25,模型,8,abenzerps/Qwen-Image-2.1-Uncensored-Quantized,4984,2303585,text-to-image,https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized
+2026-10-25,模型,9,MiniMaxAI/MiniMax-M3.1-Flash,321,5789,image-text-to-text,https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash
+2026-10-25,模型,10,Qwen/Qwen3.8-27B,18355,7851161,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-25,資料集,1,scenario-labs/3d-collection,181,6797,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-10-25,資料集,2,Vyber07/cyber-security,322,4262,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-25,資料集,3,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,451,171306,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-25,資料集,4,nvidia/Nemotron-Personas-Vietnam,222,19643,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-25,資料集,5,nvidia/simready-assets,103,235040,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-10-25,資料集,6,datasocial/tiktok-5.6B-videos,417,29890,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-25,資料集,7,nvidia/Nemotron-Personas-Germany,43,1239,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Germany
+2026-10-25,資料集,8,MaziyarPanahi/Jev-RAG-Claim-Verification-130K,39,275,,https://huggingface.co/datasets/MaziyarPanahi/Jev-RAG-Claim-Verification-130K
+2026-10-25,資料集,9,LocalLLaMA/typed-decisions,246,45329,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-25,資料集,10,Sharpa-Robotics/SharpaDex-v1.0,47,103076,,https://huggingface.co/datasets/Sharpa-Robotics/SharpaDex-v1.0
+2026-10-25,Spaces,1,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,315,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-25,Spaces,2,kulkas2pintu/wan777,925,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-25,Spaces,3,fishpasters/uncensored-imageTOimage2Ref,181,,Image Generation,https://huggingface.co/spaces/fishpasters/uncensored-imageTOimage2Ref
+2026-10-25,Spaces,4,hugging-apps/bfs-best-face-swap,502,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-25,Spaces,5,black-forest-labs/flux-3-image-klein,211,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-25,Spaces,6,AST-1320/Qwen-2511-Plus-Flux.2-klein,240,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-25,Spaces,7,wank3r/minimax-h3,180,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-10-25,Spaces,8,multimodalart/jev-decision-index,802,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-25,Spaces,9,dlouapre/nlp-before-llms,87,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
+2026-10-25,Spaces,10,OpenMOSS-Team/MOSS-Image,158,,Image Generation,https://huggingface.co/spaces/OpenMOSS-Team/MOSS-Image

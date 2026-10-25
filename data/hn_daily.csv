@@ -1129,3 +1129,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-24,8,Is this the new cyber normal?,151,168,https://news.ycombinator.com/item?id=50207115,https://drew.silcock.dev/blog/is-this-the-new-cyber-normal/
 2026-10-24,9,CVE Tracker,136,55,https://news.ycombinator.com/item?id=50215530,https://cve.0xosprey.com/
 2026-10-24,10,"Evolving Threat: http2shell is an RCE in Node, Python, and more",129,70,https://news.ycombinator.com/item?id=50216791,https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8
+2026-10-25,1,"Local Wikipedia: Wikipedia, but only for things a half hour walk from you",1562,245,https://news.ycombinator.com/item?id=50202285,https://edjefferson.com/localwiki/
+2026-10-25,2,Show HN: Steal My Bitcoin,443,268,https://news.ycombinator.com/item?id=50224916,https://stealmybitcoin.com/
+2026-10-25,3,The Goose Programming Language,311,199,https://news.ycombinator.com/item?id=50224100,https://aardappel.github.io/goose/
+2026-10-25,4,"Node2Shell evolves to HTTP2Shell, blast radius affects many HTTP libs and apps",294,141,https://news.ycombinator.com/item?id=50219177,https://www.aikido.dev/blog/python-packages-vulnerable-node2shell-brotli-cve-2026-111497
+2026-10-25,5,I don't understand quantum physics (2018),293,236,https://news.ycombinator.com/item?id=50219666,https://www.southampton.ac.uk/~doug/quantum_physics/index.html
+2026-10-25,6,We should be more ambitious with the software we build,288,250,https://news.ycombinator.com/item?id=50225695,https://danluu.com/ambitious/
+2026-10-25,7,Roku developer repositories moved from GitHub to GitLab,274,189,https://news.ycombinator.com/item?id=50222622,https://blog.roku.com/developer/gitlab-move
+2026-10-25,8,FreeDNS,269,67,https://news.ycombinator.com/item?id=50222133,https://freedns.afraid.org/
+2026-10-25,9,"America has lost 200k of jobs in media, film and the arts. How much is AI?",266,275,https://news.ycombinator.com/item?id=50226419,https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class
+2026-10-25,10,GPU-unlock: FP/BF16 instruction issue rate on Nvidia 3000's cards,212,67,https://news.ycombinator.com/item?id=50219700,https://github.com/Zagitta/gpu-unlock
