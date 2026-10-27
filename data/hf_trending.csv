@@ -3164,3 +3164,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-26,Spaces,8,wank3r/minimax-h3,186,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
 2026-10-26,Spaces,9,dlouapre/nlp-before-llms,88,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
 2026-10-26,Spaces,10,multimodalart/jev-decision-index,809,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
+2026-10-27,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,3224,95889,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-27,模型,2,RecursiveSI/flint,932,8470,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-27,模型,3,Nanbeige/Nanbeige4.3-33B,610,2787,text-generation,https://huggingface.co/Nanbeige/Nanbeige4.3-33B
+2026-10-27,模型,4,XHToken/Spark-X2.6-4B,694,4726,text-generation,https://huggingface.co/XHToken/Spark-X2.6-4B
+2026-10-27,模型,5,black-forest-labs/flux-3-image-klein-comfy,1714,700652,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-27,模型,6,Lightricks/LTX-2.5,9478,2117147,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-27,模型,7,MiniMaxAI/MiniMax-M3.1-Flash,389,8782,image-text-to-text,https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash
+2026-10-27,模型,8,ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF,353,891147,text-generation,https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF
+2026-10-27,模型,9,Qwen/Qwen3.8-27B,18472,7608285,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-10-27,模型,10,InternScience/Sage-A1.5,319,5235,text-generation,https://huggingface.co/InternScience/Sage-A1.5
+2026-10-27,資料集,1,nvidia/simready-assets,533,393196,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-10-27,資料集,2,scenario-labs/3d-collection,277,20299,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-10-27,資料集,3,Vyber07/cyber-security,387,4823,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-27,資料集,4,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,486,174535,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-27,資料集,5,datasocial/tiktok-5.6B-videos,432,30649,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-27,資料集,6,nvidia/Nemotron-Personas-Vietnam,226,21173,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-27,資料集,7,nvidia/Nemotron-Personas-Germany,51,1892,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Germany
+2026-10-27,資料集,8,CohereLabs/10-2026-qwen-investigation-traces,37,0,,https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces
+2026-10-27,資料集,9,CohereLabsCommunity/CulturalRiddles,30,354,,https://huggingface.co/datasets/CohereLabsCommunity/CulturalRiddles
+2026-10-27,資料集,10,LocalLLaMA/typed-decisions,250,43341,,https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+2026-10-27,Spaces,1,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,434,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-27,Spaces,2,kulkas2pintu/wan777,1006,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-27,Spaces,3,fishpasters/uncensored-imageTOimage2Ref,245,,Image Generation,https://huggingface.co/spaces/fishpasters/uncensored-imageTOimage2Ref
+2026-10-27,Spaces,4,nvidia/simready-central,158,,Other,https://huggingface.co/spaces/nvidia/simready-central
+2026-10-27,Spaces,5,hugging-apps/bfs-best-face-swap,554,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-27,Spaces,6,dlouapre/nlp-before-llms,103,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
+2026-10-27,Spaces,7,wank3r/minimax-h3,200,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-10-27,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,263,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-27,Spaces,9,black-forest-labs/flux-3-image-klein,228,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-27,Spaces,10,multimodalart/jev-decision-index,818,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
