@@ -1153,3 +1153,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-27,8,pollen-robotics/microduck,843,12527,Rust,https://github.com/pollen-robotics/microduck,A Tiny biped duck robot 🦆
 2026-10-27,9,Panniantong/Agent-Reach,746,104011,Python,https://github.com/Panniantong/Agent-Reach,"Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
 2026-10-27,10,multica-ai/andrej-karpathy-skills,638,224868,,https://github.com/multica-ai/andrej-karpathy-skills,"A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls."
+2026-10-28,1,Nutlope/hallmark,2830,39437,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-10-28,2,HKUDS/DeepTutor,1598,46536,Python,https://github.com/HKUDS/DeepTutor,DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.
+2026-10-28,3,makecindy/cindy,1465,7679,TypeScript,https://github.com/makecindy/cindy,Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。
+2026-10-28,4,pbakaus/impeccable,1449,90961,Rust,https://github.com/pbakaus/impeccable,"The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships."
+2026-10-28,5,elayadesign/ai-design-skills,1395,9948,,https://github.com/elayadesign/ai-design-skills,
+2026-10-28,6,JetBrains/thinkrail,1204,4321,TypeScript,https://github.com/JetBrains/thinkrail,"Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need"
+2026-10-28,7,affaan-m/ECC,1165,291105,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-10-28,8,gitroomhq/postiz-app,951,39622,TypeScript,https://github.com/gitroomhq/postiz-app,📨 The ultimate agentic social media scheduling tool 🤖
+2026-10-28,9,togg53192-cmd/jailbreaks,902,5955,,https://github.com/togg53192-cmd/jailbreaks,LIST OF ALL MY JAILBREAKS
+2026-10-28,10,nightly-labs/openbot,777,2670,TypeScript,https://github.com/nightly-labs/openbot,"A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration."
