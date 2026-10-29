@@ -1163,3 +1163,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-10-28,8,gitroomhq/postiz-app,951,39622,TypeScript,https://github.com/gitroomhq/postiz-app,📨 The ultimate agentic social media scheduling tool 🤖
 2026-10-28,9,togg53192-cmd/jailbreaks,902,5955,,https://github.com/togg53192-cmd/jailbreaks,LIST OF ALL MY JAILBREAKS
 2026-10-28,10,nightly-labs/openbot,777,2670,TypeScript,https://github.com/nightly-labs/openbot,"A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration."
+2026-10-29,1,HKUDS/DeepTutor,2371,48556,Python,https://github.com/HKUDS/DeepTutor,DeepTutor: Lifelong Personalized Tutoring.https://deeptutor.info/.
+2026-10-29,2,elayadesign/ai-design-skills,2139,11429,,https://github.com/elayadesign/ai-design-skills,
+2026-10-29,3,Nutlope/hallmark,2110,41059,CSS,https://github.com/Nutlope/hallmark,"Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
+2026-10-29,4,hmjz100/LinkSwift,1616,35486,JavaScript,https://github.com/hmjz100/LinkSwift,一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘
+2026-10-29,5,togg53192-cmd/jailbreaks,1477,7527,,https://github.com/togg53192-cmd/jailbreaks,LIST OF ALL MY JAILBREAKS
+2026-10-29,6,pbakaus/impeccable,1472,93431,Rust,https://github.com/pbakaus/impeccable,"The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships."
+2026-10-29,7,obra/superpowers,1095,307666,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-10-29,8,JetBrains/thinkrail,1068,5376,TypeScript,https://github.com/JetBrains/thinkrail,"Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need"
+2026-10-29,9,nightly-labs/openbot,1054,3440,TypeScript,https://github.com/nightly-labs/openbot,"A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration."
+2026-10-29,10,makecindy/cindy,728,8302,TypeScript,https://github.com/makecindy/cindy,Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。

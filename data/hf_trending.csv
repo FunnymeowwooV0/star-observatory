@@ -3224,3 +3224,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-28,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,274,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
 2026-10-28,Spaces,9,multimodalart/jev-decision-index,831,,Data Visualization,https://huggingface.co/spaces/multimodalart/jev-decision-index
 2026-10-28,Spaces,10,black-forest-labs/flux-3-image-klein,242,,Image Generation,https://huggingface.co/spaces/black-forest-labs/flux-3-image-klein
+2026-10-29,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,3627,116770,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-29,模型,2,Nanbeige/Nanbeige4.3-33B,742,7412,text-generation,https://huggingface.co/Nanbeige/Nanbeige4.3-33B
+2026-10-29,模型,3,RecursiveSI/flint,1209,14047,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-29,模型,4,XHToken/Spark-X2.6-4B,876,8222,text-generation,https://huggingface.co/XHToken/Spark-X2.6-4B
+2026-10-29,模型,5,MiniMaxAI/MiniMax-M3.1-Flash,469,13247,image-text-to-text,https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash
+2026-10-29,模型,6,tencent/Hy-SimulMT-30B-A3B-FP8,421,165,translation,https://huggingface.co/tencent/Hy-SimulMT-30B-A3B-FP8
+2026-10-29,模型,7,LiquidAI/LFM3-1.7B,417,8892,text-generation,https://huggingface.co/LiquidAI/LFM3-1.7B
+2026-10-29,模型,8,ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF,454,1377570,text-generation,https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF
+2026-10-29,模型,9,Lightricks/LTX-2.5,9755,2234788,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-29,模型,10,black-forest-labs/flux-3-image-klein-comfy,1977,798943,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-29,資料集,1,nvidia/simready-assets,851,779464,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-10-29,資料集,2,scenario-labs/3d-collection,315,31454,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-10-29,資料集,3,Vyber07/cyber-security,456,5203,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-29,資料集,4,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,528,176231,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-29,資料集,5,CohereLabs/10-2026-qwen-investigation-traces,75,2035,,https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces
+2026-10-29,資料集,6,nvidia/simready-central-library,73,217,,https://huggingface.co/datasets/nvidia/simready-central-library
+2026-10-29,資料集,7,datasocial/tiktok-5.6B-videos,448,32469,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-29,資料集,8,secemp9/arxiv-complete,746,174417,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-29,資料集,9,CohereLabsCommunity/CulturalRiddles,37,457,,https://huggingface.co/datasets/CohereLabsCommunity/CulturalRiddles
+2026-10-29,資料集,10,nvidia/Nemotron-Personas-Vietnam,232,22162,,https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam
+2026-10-29,Spaces,1,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,534,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-29,Spaces,2,nvidia/simready-central,260,,Other,https://huggingface.co/spaces/nvidia/simready-central
+2026-10-29,Spaces,3,kulkas2pintu/wan777,1070,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-29,Spaces,4,fishpasters/uncensored-imageTOimage2Ref,260,,Image Generation,https://huggingface.co/spaces/fishpasters/uncensored-imageTOimage2Ref
+2026-10-29,Spaces,5,hugging-apps/bfs-best-face-swap,584,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-29,Spaces,6,pollen-robotics/microduck-simulator,755,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-10-29,Spaces,7,briaai/Fibo-2.0-editing,115,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
+2026-10-29,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,278,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-10-29,Spaces,9,dlouapre/nlp-before-llms,114,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
+2026-10-29,Spaces,10,HuggingFaceBio/Carbon-X-Release,71,,Question Answering,https://huggingface.co/spaces/HuggingFaceBio/Carbon-X-Release
