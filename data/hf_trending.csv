@@ -3254,3 +3254,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-10-29,Spaces,8,AST-1320/Qwen-2511-Plus-Flux.2-klein,278,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
 2026-10-29,Spaces,9,dlouapre/nlp-before-llms,114,,Other,https://huggingface.co/spaces/dlouapre/nlp-before-llms
 2026-10-29,Spaces,10,HuggingFaceBio/Carbon-X-Release,71,,Question Answering,https://huggingface.co/spaces/HuggingFaceBio/Carbon-X-Release
+2026-10-30,模型,1,deepseek-ai/DeepSeek-V4.1-Flash-1017,3903,131062,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-10-30,模型,2,Nanbeige/Nanbeige4.3-33B,782,9655,text-generation,https://huggingface.co/Nanbeige/Nanbeige4.3-33B
+2026-10-30,模型,3,LiquidAI/LFM3-1.7B,499,15885,text-generation,https://huggingface.co/LiquidAI/LFM3-1.7B
+2026-10-30,模型,4,RecursiveSI/flint,1247,16598,text-generation,https://huggingface.co/RecursiveSI/flint
+2026-10-30,模型,5,ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF,481,1578937,text-generation,https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF
+2026-10-30,模型,6,nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B,428,4276,automatic-speech-recognition,https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+2026-10-30,模型,7,Lightricks/LTX-2.5,9882,2269999,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-10-30,模型,8,baidu/Unlimited-OCR-2,423,18141,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR-2
+2026-10-30,模型,9,XHToken/Spark-X2.6-4B,912,10163,text-generation,https://huggingface.co/XHToken/Spark-X2.6-4B
+2026-10-30,模型,10,black-forest-labs/flux-3-image-klein-comfy,2064,832197,image-to-image,https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy
+2026-10-30,資料集,1,nvidia/simready-assets,970,839384,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-10-30,資料集,2,scenario-labs/3d-collection,323,34295,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-10-30,資料集,3,Vyber07/cyber-security,484,6610,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-10-30,資料集,4,CohereLabs/10-2026-qwen-investigation-traces,82,3200,,https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces
+2026-10-30,資料集,5,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,540,178535,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-10-30,資料集,6,nvidia/simready-central-library,85,251,,https://huggingface.co/datasets/nvidia/simready-central-library
+2026-10-30,資料集,7,secemp9/arxiv-complete,761,168756,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-10-30,資料集,8,datasocial/tiktok-5.6B-videos,456,32778,,https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos
+2026-10-30,資料集,9,MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x,425,5759,,https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x
+2026-10-30,資料集,10,nvidia/Granary-v2,27,1074,,https://huggingface.co/datasets/nvidia/Granary-v2
+2026-10-30,Spaces,1,glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow,582,,Video Generation,https://huggingface.co/spaces/glitchlab/MiniMax-H3-Turbo-Lora-UNCENSORED-Workflow
+2026-10-30,Spaces,2,nvidia/simready-central,281,,Other,https://huggingface.co/spaces/nvidia/simready-central
+2026-10-30,Spaces,3,kulkas2pintu/wan777,1089,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-10-30,Spaces,4,fishpasters/uncensored-imageTOimage2Ref,263,,Image Generation,https://huggingface.co/spaces/fishpasters/uncensored-imageTOimage2Ref
+2026-10-30,Spaces,5,hugging-apps/bfs-best-face-swap,596,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-10-30,Spaces,6,briaai/Fibo-2.0-editing,126,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
+2026-10-30,Spaces,7,wank3r/qwen-image-2.1-uncensored-aio-loras-2,102,,Image Generation,https://huggingface.co/spaces/wank3r/qwen-image-2.1-uncensored-aio-loras-2
+2026-10-30,Spaces,8,pollen-robotics/microduck-simulator,763,,Other,https://huggingface.co/spaces/pollen-robotics/microduck-simulator
+2026-10-30,Spaces,9,wank3r/minimax-h3,229,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-10-30,Spaces,10,AST-1320/Qwen-2511-Plus-Flux.2-klein,289,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein

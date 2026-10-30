@@ -1179,3 +1179,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-29,8,"Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",294,69,https://news.ycombinator.com/item?id=50282838,https://divagr.com/blog/qwenputer
 2026-10-29,9,StackOverflow now gets fewer than 1000 questions a month,277,252,https://news.ycombinator.com/item?id=50282454,https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1
 2026-10-29,10,Claude Code regularly sends each background agent’s transcript to its model,223,65,https://news.ycombinator.com/item?id=50284255,https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce
+2026-10-30,1,Patrick Stewart has died,2722,581,https://news.ycombinator.com/item?id=50294702,https://www.nytimes.com/2026/10/29/arts/television/patrick-stewart-dead.html
+2026-10-30,2,We're releasing the weights of Mistral Large 4,1319,360,https://news.ycombinator.com/item?id=50289418,https://mistral.ai/news/mistral-large-4-oss/
+2026-10-30,3,Binance-hacker-1029 – $5.6B stolen from Binance,1062,636,https://news.ycombinator.com/item?id=50296470,https://arkm.com/explorer/entity/21a94755-f604-45e5-9501-6542e23005e8
+2026-10-30,4,LLM Voice,411,215,https://news.ycombinator.com/item?id=50290177,https://martinfowler.com/bliki/LLM-Voice.html
+2026-10-30,5,H.264 Is Magic (2016),380,141,https://news.ycombinator.com/item?id=50291054,https://sidbala.com/h-264-is-magic/
+2026-10-30,6,If IPv4 were land,263,362,https://news.ycombinator.com/item?id=50287775,https://iptrust.co/blog/if-ipv4-were-land
+2026-10-30,7,We ran AI agent swarms in Minecraft and Mindustry,241,82,https://news.ycombinator.com/item?id=50296486,https://labs.ycombinator.com/projects/games/index.html
+2026-10-30,8,A tiny world model running games on a Raspberry Pi Pico 2 W,180,10,https://news.ycombinator.com/item?id=50295450,https://github.com/SheepSeb/tinyworldformer
+2026-10-30,9,What we know so far about Spain train crash,176,334,https://news.ycombinator.com/item?id=50286197,https://www.bbc.com/news/articles/cm8xz7pkd0jjo
+2026-10-30,10,"Show HN: Auto Dismiss Mac OS ""Allow <app> to find devices on local networks?""",120,91,https://news.ycombinator.com/item?id=50294506,https://github.com/johncassil/dontallow
