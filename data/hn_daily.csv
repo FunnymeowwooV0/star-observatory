@@ -1199,3 +1199,13 @@ date,rank,title,points,comments,hn_url,url
 2026-10-31,8,Florilegium: Procedural Flowers in LaTeX,243,44,https://news.ycombinator.com/item?id=50305637,https://github.com/kevinraymond/florilegium
 2026-10-31,9,Breaking the open web won't stop the bad bots,234,104,https://news.ycombinator.com/item?id=50263837,https://www.techpolicy.press/breaking-the-open-web-wont-stop-the-bad-bots/
 2026-10-31,10,Show HN: A working Nintendo in ~1GB of Qwen weights,231,118,https://news.ycombinator.com/item?id=50306442,https://github.com/dbreunig/nesformer
+2026-11-01,1,HackerTube: YouTube built from videos recommended by HN,1053,319,https://news.ycombinator.com/item?id=50319510,https://karpathy.bearblog.dev/hacker-tube/
+2026-11-01,2,TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8,449,208,https://news.ycombinator.com/item?id=50319143,https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf
+2026-11-01,3,Do the math: How we took over ChatGPT accounts,318,157,https://news.ycombinator.com/item?id=50314699,https://www.parameter.ai/labs/we-found-a-gap-at-openai
+2026-11-01,4,An Italian farmer found some unknown seeds in his attic and planted them,304,86,https://news.ycombinator.com/item?id=50320963,https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/
+2026-11-01,5,Anthropic blocks users for anything touching training larger models,300,169,https://news.ycombinator.com/item?id=50319358,https://twitter.com/jiahaoshao1/status/2116475922190922088
+2026-11-01,6,Jepsen: ParticleDB 1.1.4,240,136,https://news.ycombinator.com/item?id=50316100,https://jepsen.io/analyses/particledb-1.1.4
+2026-11-01,7,Simple circuits can create complex behaviors,235,75,https://news.ycombinator.com/item?id=50261253,https://aatishb.com/myriad/lets-build-a-brain/
+2026-11-01,8,"It's the memory latency, stupid",175,48,https://news.ycombinator.com/item?id=50318720,https://pivotlake.io/blog/its-the-memory-latency-stupid/
+2026-11-01,9,Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard,173,92,https://news.ycombinator.com/item?id=50320995,https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve
+2026-11-01,10,The Duty of a Scholar,109,31,https://news.ycombinator.com/item?id=50319061,https://www.daemonology.net/blog/2026-10-31-The-Duty-of-a-Scholar.html
