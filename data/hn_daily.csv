@@ -1209,3 +1209,13 @@ date,rank,title,points,comments,hn_url,url
 2026-11-01,8,"It's the memory latency, stupid",175,48,https://news.ycombinator.com/item?id=50318720,https://pivotlake.io/blog/its-the-memory-latency-stupid/
 2026-11-01,9,Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard,173,92,https://news.ycombinator.com/item?id=50320995,https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve
 2026-11-01,10,The Duty of a Scholar,109,31,https://news.ycombinator.com/item?id=50319061,https://www.daemonology.net/blog/2026-10-31-The-Duty-of-a-Scholar.html
+2026-11-02,1,HackerTube: YouTube built from videos recommended by HN,2454,555,https://news.ycombinator.com/item?id=50319510,https://karpathy.bearblog.dev/hacker-tube/
+2026-11-02,2,"Show HN: HackerBooks – HackerTube, but for books mentioned on HN",1218,218,https://news.ycombinator.com/item?id=50326821,https://hackerbooks.org
+2026-11-02,3,An Italian farmer found some unknown seeds in his attic and planted them,789,203,https://news.ycombinator.com/item?id=50320963,https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/
+2026-11-02,4,Lenovo's 'encrypted' fingerprint USB is just an unencrypted SD card in a case,453,157,https://news.ycombinator.com/item?id=50326099,https://www.reddit.com/r/technology/comments/1xl2pr3/lenovos_encrypted_fingerprint_usb_drive_is_just/
+2026-11-02,5,The AI cost of JavaScript frameworks,346,264,https://news.ycombinator.com/item?id=50323088,https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/
+2026-11-02,6,Ask HN: Which TV do you recommend for privacy?,277,434,https://news.ycombinator.com/item?id=50328896,https://news.ycombinator.com/item?id=50328896
+2026-11-02,7,Postgres 19 is late because so many more bugs are being found now,276,179,https://news.ycombinator.com/item?id=50312408,http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html
+2026-11-02,8,Mathematics has changed. Let's act like it,274,292,https://news.ycombinator.com/item?id=50328251,https://terrytao.wordpress.com/2026/11/01/mathematics-has-changed-lets-act-like-it/
+2026-11-02,9,"Show HN: OmniDiff – Opensource, super fast, content aware Git difftool, in Rust",208,50,https://news.ycombinator.com/item?id=50325253,https://github.com/ivankovic/omnidiff
+2026-11-02,10,Show HN: Point your camera at a landscape to learn about its geology,186,41,https://news.ycombinator.com/item?id=50290533,https://outcrop.rocks/
