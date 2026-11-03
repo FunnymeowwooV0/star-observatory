@@ -3374,3 +3374,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-02,Spaces,8,wank3r/minimax-h3,264,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
 2026-11-02,Spaces,9,LiquidAI/LFM3-Omni-2B-WebGPU,70,,Chatbots,https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU
 2026-11-02,Spaces,10,AST-1320/Qwen-2511-Plus-Flux.2-klein,317,,Image Editing,https://huggingface.co/spaces/AST-1320/Qwen-2511-Plus-Flux.2-klein
+2026-11-03,模型,1,LiquidAI/LFM3-1.7B,1243,42384,text-generation,https://huggingface.co/LiquidAI/LFM3-1.7B
+2026-11-03,模型,2,deepseek-ai/DeepSeek-V4.1-Flash-1017,4754,177009,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-11-03,模型,3,nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B,700,32439,automatic-speech-recognition,https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+2026-11-03,模型,4,mistralai/Mistral-Large-4-1T-A52B,1510,5500,image-text-to-text,https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B
+2026-11-03,模型,5,speridlabs/idol,439,7787,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-03,模型,6,baidu/Unlimited-OCR-2,568,147588,image-text-to-text,https://huggingface.co/baidu/Unlimited-OCR-2
+2026-11-03,模型,7,ccore/Qwen3.5-4B-3D-Coder,573,63499,,https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder
+2026-11-03,模型,8,Lightricks/LTX-2.5,10392,2467613,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-03,模型,9,Pika-Labs/Pika-H3-Flex,366,491,image-to-video,https://huggingface.co/Pika-Labs/Pika-H3-Flex
+2026-11-03,模型,10,Qwen/Qwen3.8-27B,19032,7915637,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-03,資料集,1,nvidia/simready-assets,1300,1213121,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-03,資料集,2,Vyber07/cyber-security,616,9023,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-03,資料集,3,scenario-labs/3d-collection,367,39179,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-11-03,資料集,4,open-index/hacker-news,426,439143,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-03,資料集,5,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,604,193418,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-11-03,資料集,6,codepawl/simready-glb,58,12995,,https://huggingface.co/datasets/codepawl/simready-glb
+2026-11-03,資料集,7,secemp9/arxiv-complete,790,162057,,https://huggingface.co/datasets/secemp9/arxiv-complete
+2026-11-03,資料集,8,CohereLabs/10-2026-qwen-investigation-traces,104,6227,,https://huggingface.co/datasets/CohereLabs/10-2026-qwen-investigation-traces
+2026-11-03,資料集,9,nvidia/simready-central-library,111,360,,https://huggingface.co/datasets/nvidia/simready-central-library
+2026-11-03,資料集,10,ccore/ThreeJS-3D-Scenes,50,2631,,https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+2026-11-03,Spaces,1,nvidia/simready-central,355,,Other,https://huggingface.co/spaces/nvidia/simready-central
+2026-11-03,Spaces,2,kulkas2pintu/wan777,1216,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-03,Spaces,3,a-test-user-in-the-wrold/qwen-image-21-uncensored,182,,Image Generation,https://huggingface.co/spaces/a-test-user-in-the-wrold/qwen-image-21-uncensored
+2026-11-03,Spaces,4,hugging-apps/bfs-best-face-swap,704,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-03,Spaces,5,briaai/Fibo-2.0-editing,207,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
+2026-11-03,Spaces,6,linoyts/qwen-image-2-1-realtime,146,,Image Generation,https://huggingface.co/spaces/linoyts/qwen-image-2-1-realtime
+2026-11-03,Spaces,7,LiquidAI/LFM3-Omni-2B-WebGPU,85,,Chatbots,https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU
+2026-11-03,Spaces,8,JCisHERE/wan2-2-i2v-v3,175,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-03,Spaces,9,speridlabs/idol,81,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-03,Spaces,10,wank3r/minimax-h3,272,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
