@@ -3434,3 +3434,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-04,Spaces,8,briaai/Fibo-2.0-editing,213,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
 2026-11-04,Spaces,9,JCisHERE/wan2-2-i2v-v3,195,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
 2026-11-04,Spaces,10,wank3r/minimax-h3,279,,Video Generation,https://huggingface.co/spaces/wank3r/minimax-h3
+2026-11-05,模型,1,nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B,3017,44939,automatic-speech-recognition,https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+2026-11-05,模型,2,moonshotai/Kimi-K3.1-Pro,630,797,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+2026-11-05,模型,3,speridlabs/idol,649,14613,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-05,模型,4,deepseek-ai/DeepSeek-V4.1-Flash-1017,5301,221621,image-text-to-text,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+2026-11-05,模型,5,mistralai/Mistral-Large-4-1T-A52B,1593,8200,image-text-to-text,https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B
+2026-11-05,模型,6,LiquidAI/LFM3-1.7B,1495,54959,text-generation,https://huggingface.co/LiquidAI/LFM3-1.7B
+2026-11-05,模型,7,Pika-Labs/Pika-H3-Flex,436,749,image-to-video,https://huggingface.co/Pika-Labs/Pika-H3-Flex
+2026-11-05,模型,8,Lightricks/LTX-2.5,10640,2493402,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-05,模型,9,ccore/Qwen3.5-4B-3D-Coder,664,123321,,https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder
+2026-11-05,模型,10,burner22/numbat,347,8118,,https://huggingface.co/burner22/numbat
+2026-11-05,資料集,1,nvidia/simready-assets,1396,1267344,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-05,資料集,2,Vyber07/cyber-security,681,10815,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-05,資料集,3,open-index/hacker-news,494,467351,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-05,資料集,4,codepawl/simready-glb,67,20022,,https://huggingface.co/datasets/codepawl/simready-glb
+2026-11-05,資料集,5,scenario-labs/3d-collection,383,41265,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-11-05,資料集,6,PentesterFlow/OffsecCyber,57,2756,,https://huggingface.co/datasets/PentesterFlow/OffsecCyber
+2026-11-05,資料集,7,ccore/ThreeJS-3D-Scenes,64,4116,,https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+2026-11-05,資料集,8,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,623,203151,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-11-05,資料集,9,HuggingFaceBio/FineDNA,52,8693,,https://huggingface.co/datasets/HuggingFaceBio/FineDNA
+2026-11-05,資料集,10,nvidia/Granary-v2,48,5838,,https://huggingface.co/datasets/nvidia/Granary-v2
+2026-11-05,Spaces,1,a-test-user-in-the-wrold/qwen-image-21-uncensored,274,,Image Generation,https://huggingface.co/spaces/a-test-user-in-the-wrold/qwen-image-21-uncensored
+2026-11-05,Spaces,2,kulkas2pintu/wan777,1301,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-05,Spaces,3,speridlabs/idol,132,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-05,Spaces,4,hugging-apps/bfs-best-face-swap,760,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-05,Spaces,5,fendouai/free-ai-humanizer,183,,Text Generation,https://huggingface.co/spaces/fendouai/free-ai-humanizer
+2026-11-05,Spaces,6,LiquidAI/LFM3-Omni-2B-WebGPU,107,,Chatbots,https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU
+2026-11-05,Spaces,7,linoyts/qwen-image-2-1-realtime,168,,Image Generation,https://huggingface.co/spaces/linoyts/qwen-image-2-1-realtime
+2026-11-05,Spaces,8,nvidia/simready-central,374,,Other,https://huggingface.co/spaces/nvidia/simready-central
+2026-11-05,Spaces,9,JCisHERE/wan2-2-i2v-v3,210,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-05,Spaces,10,briaai/Fibo-2.0-editing,220,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
