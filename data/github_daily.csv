@@ -1243,3 +1243,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-05,8,github/spec-kit,808,147515,Python,https://github.com/github/spec-kit,💫 Toolkit to help you get started with SDD or any other process!
 2026-11-05,9,harry0703/MoneyPrinterTurbo,617,139329,Python,https://github.com/harry0703/MoneyPrinterTurbo,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
 2026-11-05,10,max-sixty/worktrunk,531,11208,Rust,https://github.com/max-sixty/worktrunk,"Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
+2026-11-06,1,NVIDIA/auto-ontology,2679,7920,Python,https://github.com/NVIDIA/auto-ontology,"Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows."
+2026-11-06,2,vercel-labs/agent-desktop,2173,17365,Rust,https://github.com/vercel-labs/agent-desktop,Computer use CLI for AI agents
+2026-11-06,3,mattpocock/skills,2071,315772,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-11-06,4,D4Vinci/Scrapling,1655,98357,Python,https://github.com/D4Vinci/Scrapling,"🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here:https://discord.gg/EMgGbDceNQand follow here for daily tips and tricks:https://x.com/Scrapling_dev"
+2026-11-06,5,JiaFeiMiao-K-Cat/DiscImageStudio,984,7483,C#,https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio,
+2026-11-06,6,floci-io/floci,779,30621,Java,https://github.com/floci-io/floci,"Light, fluffy, and always free - The AWS Local Emulator alternative"
+2026-11-06,7,scenario-labs/skills,667,3252,Python,https://github.com/scenario-labs/skills,"Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity."
+2026-11-06,8,garrytan/gstack,612,140171,TypeScript,https://github.com/garrytan/gstack,"Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA"
+2026-11-06,9,max-sixty/worktrunk,546,11658,Rust,https://github.com/max-sixty/worktrunk,"Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
+2026-11-06,10,Usagi-org/ai-goofish-monitor,240,17956,Python,https://github.com/Usagi-org/ai-goofish-monitor,基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。
