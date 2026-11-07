@@ -3494,3 +3494,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-06,Spaces,8,linoyts/qwen-image-2-1-realtime,178,,Image Generation,https://huggingface.co/spaces/linoyts/qwen-image-2-1-realtime
 2026-11-06,Spaces,9,nvidia/simready-central,379,,Other,https://huggingface.co/spaces/nvidia/simready-central
 2026-11-06,Spaces,10,briaai/Fibo-2.0-editing,226,,Image Editing,https://huggingface.co/spaces/briaai/Fibo-2.0-editing
+2026-11-07,模型,1,moonshotai/Kimi-K3.1-Pro,1549,18432,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+2026-11-07,模型,2,speridlabs/idol,971,19139,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-07,模型,3,ccore/Qwen3.5-4B-3D-Coder,804,190243,,https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder
+2026-11-07,模型,4,Lightricks/LTX-2.5,10891,2607491,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-07,模型,5,burner22/numbat,373,9066,,https://huggingface.co/burner22/numbat
+2026-11-07,模型,6,ricursiveAI/Ripple-65B-Preview,342,2013,,https://huggingface.co/ricursiveAI/Ripple-65B-Preview
+2026-11-07,模型,7,FusionCow/Sulphur-3,398,950,,https://huggingface.co/FusionCow/Sulphur-3
+2026-11-07,模型,8,Qwen/Qwen3.8-27B,19289,7845288,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-07,模型,9,nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B,3081,61049,automatic-speech-recognition,https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
+2026-11-07,模型,10,AtomicChat/DeepSeek-V4.1-Flash-1017-Uncensored-GSQ-RCO-GGUF,357,108162,text-generation,https://huggingface.co/AtomicChat/DeepSeek-V4.1-Flash-1017-Uncensored-GSQ-RCO-GGUF
+2026-11-07,資料集,1,nvidia/simready-assets,1453,1373507,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-07,資料集,2,Vyber07/cyber-security,732,12453,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-07,資料集,3,open-index/hacker-news,533,469321,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-07,資料集,4,codepawl/abo-glb,87,13013,,https://huggingface.co/datasets/codepawl/abo-glb
+2026-11-07,資料集,5,PentesterFlow/OffsecCyber,73,4538,,https://huggingface.co/datasets/PentesterFlow/OffsecCyber
+2026-11-07,資料集,6,ccore/ThreeJS-3D-Scenes,81,5844,,https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+2026-11-07,資料集,7,HuggingFaceBio/FineDNA,58,9586,,https://huggingface.co/datasets/HuggingFaceBio/FineDNA
+2026-11-07,資料集,8,codepawl/simready-glb,74,24739,,https://huggingface.co/datasets/codepawl/simready-glb
+2026-11-07,資料集,9,venvoo/china-a-share-l2-level2-limit-order-book-tick-data,644,214226,,https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data
+2026-11-07,資料集,10,scenario-labs/3d-collection,385,42973,,https://huggingface.co/datasets/scenario-labs/3d-collection
+2026-11-07,Spaces,1,huggingface/moe-blogpost,290,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-07,Spaces,2,a-test-user-in-the-wrold/qwen-image-21-uncensored,294,,Image Generation,https://huggingface.co/spaces/a-test-user-in-the-wrold/qwen-image-21-uncensored
+2026-11-07,Spaces,3,kulkas2pintu/wan777,1365,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-07,Spaces,4,speridlabs/idol,180,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-07,Spaces,5,hugging-apps/bfs-best-face-swap,809,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-07,Spaces,6,JCisHERE/wan2-2-i2v-v3,246,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-07,Spaces,7,LiquidAI/LFM3-Omni-2B-WebGPU,126,,Chatbots,https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU
+2026-11-07,Spaces,8,joelniklaus/harness-leaderboard,94,,Data Visualization,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-07,Spaces,9,linoyts/qwen-image-2-1-realtime,192,,Image Generation,https://huggingface.co/spaces/linoyts/qwen-image-2-1-realtime
+2026-11-07,Spaces,10,YuyaoTechnology/MatterSeek,2543,,Document Analysis,https://huggingface.co/spaces/YuyaoTechnology/MatterSeek

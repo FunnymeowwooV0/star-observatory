@@ -1253,3 +1253,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-06,8,garrytan/gstack,612,140171,TypeScript,https://github.com/garrytan/gstack,"Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA"
 2026-11-06,9,max-sixty/worktrunk,546,11658,Rust,https://github.com/max-sixty/worktrunk,"Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
 2026-11-06,10,Usagi-org/ai-goofish-monitor,240,17956,Python,https://github.com/Usagi-org/ai-goofish-monitor,基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。
+2026-11-07,1,cloudflare/security-audit-skill,2548,64443,JavaScript,https://github.com/cloudflare/security-audit-skill,"A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+2026-11-07,2,mattpocock/skills,2070,316937,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-11-07,3,NVIDIA/auto-ontology,2015,9332,Python,https://github.com/NVIDIA/auto-ontology,"Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows."
+2026-11-07,4,google/skills,534,22952,Python,https://github.com/google/skills,Agent Skills for Google products and technologies
+2026-11-07,5,lz4/lz4,315,12648,C,https://github.com/lz4/lz4,Extremely Fast Compression algorithm
+2026-11-07,6,zed-industries/zed,306,93832,Rust,https://github.com/zed-industries/zed,"Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter."
+2026-11-07,7,microsoft/vscode,301,195081,TypeScript,https://github.com/microsoft/vscode,Visual Studio Code
+2026-11-07,8,react/react,248,252307,JavaScript,https://github.com/react/react,The library for web and native user interfaces.
+2026-11-07,9,rust-lang/rust,192,121523,Rust,https://github.com/rust-lang/rust,Empowering everyone to build reliable and efficient software.
+2026-11-07,10,astral-sh/ruff,169,50756,Rust,https://github.com/astral-sh/ruff,"An extremely fast Python linter and code formatter, written in Rust."
