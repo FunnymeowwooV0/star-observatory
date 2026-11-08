@@ -1263,3 +1263,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-07,8,react/react,248,252307,JavaScript,https://github.com/react/react,The library for web and native user interfaces.
 2026-11-07,9,rust-lang/rust,192,121523,Rust,https://github.com/rust-lang/rust,Empowering everyone to build reliable and efficient software.
 2026-11-07,10,astral-sh/ruff,169,50756,Rust,https://github.com/astral-sh/ruff,"An extremely fast Python linter and code formatter, written in Rust."
+2026-11-08,1,cloudflare/security-audit-skill,2085,66051,JavaScript,https://github.com/cloudflare/security-audit-skill,"A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+2026-11-08,2,milind-soni/OpenMausBot,1955,17322,TypeScript,https://github.com/milind-soni/OpenMausBot,Open-source Grok Bot alternative with a virtual machine that bots can use
+2026-11-08,3,sherlock-project/sherlock,1766,101113,Python,https://github.com/sherlock-project/sherlock,Hunt down social media accounts by username across social networks
+2026-11-08,4,zed-industries/zed,1114,94356,Rust,https://github.com/zed-industries/zed,"Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter."
+2026-11-08,5,mattpocock/skills,1100,317946,Shell,https://github.com/mattpocock/skills,Skills for Real Engineers. Straight from my .agents directory.
+2026-11-08,6,google/skills,443,23531,Python,https://github.com/google/skills,Agent Skills for Google products and technologies
+2026-11-08,7,anthropics/skills,390,188944,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
+2026-11-08,8,astral-sh/ruff,350,51031,Rust,https://github.com/astral-sh/ruff,"An extremely fast Python linter and code formatter, written in Rust."
+2026-11-08,9,prometheus/prometheus,322,67491,Go,https://github.com/prometheus/prometheus,The Prometheus monitoring system and time series database.
+2026-11-08,10,ranxianglei/billion-context,191,4729,TypeScript,https://github.com/ranxianglei/billion-context,"A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need"
