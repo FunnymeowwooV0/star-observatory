@@ -1273,3 +1273,12 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-08,8,astral-sh/ruff,350,51031,Rust,https://github.com/astral-sh/ruff,"An extremely fast Python linter and code formatter, written in Rust."
 2026-11-08,9,prometheus/prometheus,322,67491,Go,https://github.com/prometheus/prometheus,The Prometheus monitoring system and time series database.
 2026-11-08,10,ranxianglei/billion-context,191,4729,TypeScript,https://github.com/ranxianglei/billion-context,"A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need"
+2026-11-09,1,sherlock-project/sherlock,2373,104934,Python,https://github.com/sherlock-project/sherlock,Hunt down social media accounts by username across social networks
+2026-11-09,2,milind-soni/OpenMausBot,1439,18833,TypeScript,https://github.com/milind-soni/OpenMausBot,Open-source Grok Bot alternative with a virtual machine that bots can use
+2026-11-09,3,meta/astryx,875,17752,TypeScript,https://github.com/meta/astryx,An open source design system that's fully customizable and agent ready
+2026-11-09,4,vercel-labs/agent-browser,815,47926,Rust,https://github.com/vercel-labs/agent-browser,Browser automation CLI for AI agents
+2026-11-09,5,anthropics/skills,792,189949,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
+2026-11-09,6,ranxianglei/billion-context,460,5419,TypeScript,https://github.com/ranxianglei/billion-context,"A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need"
+2026-11-09,7,dsx-ai-factory/nvke,345,950,Go,https://github.com/dsx-ai-factory/nvke,NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.
+2026-11-09,8,google-deepmind/mujoco,41,16598,C++,https://github.com/google-deepmind/mujoco,Multi-Joint dynamics with Contact. A general purpose physics simulator.
+2026-11-09,9,anthropics/claude-quickstarts,32,19614,Python,https://github.com/anthropics/claude-quickstarts,A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API

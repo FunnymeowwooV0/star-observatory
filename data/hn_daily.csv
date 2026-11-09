@@ -1279,3 +1279,13 @@ date,rank,title,points,comments,hn_url,url
 2026-11-08,8,"Every Windows 11 app should kill Electron, and Discord just showed why",288,254,https://news.ycombinator.com/item?id=50403507,https://www.windowslatest.com/2026/11/06/every-windows-11-app-should-kill-electron-and-discord-just-showed-why-no-starting-screen-and-70-less-ram-even-with-two-accounts-signed-in/
 2026-11-08,9,"MaxxBench – ""Nice DeepSWE score. But is it true?""",270,74,https://news.ycombinator.com/item?id=50406222,https://maxxbench.unlap.ai/research/why-maxxbench/
 2026-11-08,10,Running a law firm on Free software,258,125,https://news.ycombinator.com/item?id=50403066,https://decoded.legal/blog/2026/11/running-a-law-firm-on-free-software-2026-edition/
+2026-11-09,1,"Goodbye Claude, hello Pi",743,454,https://news.ycombinator.com/item?id=50410107,https://caleb.software/posts/claude-to-pi.html
+2026-11-09,2,Goldman Sachs is pulling Claude Code from its bankers and traders,722,396,https://news.ycombinator.com/item?id=50415628,https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers
+2026-11-09,3,Nvidia CEO Jensen Huang's letter to staff about affair,555,576,https://news.ycombinator.com/item?id=50418016,https://nvidianews.nvidia.com/news/a-message-to-our-company
+2026-11-09,4,Declarative Dragging,484,63,https://news.ycombinator.com/item?id=50368481,https://declarative-dragging.github.io/
+2026-11-09,5,"Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",408,182,https://news.ycombinator.com/item?id=50411961,https://github.com/synchopate/llama-modchip
+2026-11-09,6,KetchUp – Open-source SketchUp alternative built with Rust and WebGPU,397,108,https://news.ycombinator.com/item?id=50418176,https://ketchup3d.github.io/app/
+2026-11-09,7,Outlook.com is rejecting email from domains without DMARC,366,263,https://news.ycombinator.com/item?id=50416158,https://mailroute.net/blog/outlook-rejecting-email-without-dmarc
+2026-11-09,8,Writing as a thinking tool,334,87,https://news.ycombinator.com/item?id=50412067,http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html
+2026-11-09,9,"RIP, Harvest",297,89,https://news.ycombinator.com/item?id=50420035,https://aphyr.com/posts/427-rip-harvest
+2026-11-09,10,"Dux: Free, open-source Wayland desktop shell with file manager and theming",255,85,https://news.ycombinator.com/item?id=50416053,https://duxlabs.dev/
