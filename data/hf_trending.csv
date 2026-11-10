@@ -3584,3 +3584,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-09,Spaces,8,YuyaoTechnology/MatterSeek,3155,,Document Analysis,https://huggingface.co/spaces/YuyaoTechnology/MatterSeek
 2026-11-09,Spaces,9,LiquidAI/LFM3-Omni-2B-WebGPU,142,,Chatbots,https://huggingface.co/spaces/LiquidAI/LFM3-Omni-2B-WebGPU
 2026-11-09,Spaces,10,fendouai/free-ai-humanizer,221,,Text Generation,https://huggingface.co/spaces/fendouai/free-ai-humanizer
+2026-11-10,模型,1,speridlabs/idol,1685,24747,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-10,模型,2,xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic,1087,11755,text-generation,https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic
+2026-11-10,模型,3,moonshotai/Kimi-K3.1-Pro,1815,27926,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+2026-11-10,模型,4,ricursiveAI/Ripple-65B-Preview,463,5835,,https://huggingface.co/ricursiveAI/Ripple-65B-Preview
+2026-11-10,模型,5,Lightricks/LTX-2.5,11292,2720096,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-10,模型,6,NousResearch/Arete-27B,374,2407,text-generation,https://huggingface.co/NousResearch/Arete-27B
+2026-11-10,模型,7,ccore/Qwen3.5-4B-3D-Coder,961,289466,,https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder
+2026-11-10,模型,8,DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF,2794,1530688,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF
+2026-11-10,模型,9,Qwen/Qwen3.8-27B,19512,7508158,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-10,模型,10,webAI-Official/TwIL-8B,262,34546,text-generation,https://huggingface.co/webAI-Official/TwIL-8B
+2026-11-10,資料集,1,Angais/pixel-art-atlas-1.4m,268,9427,,https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m
+2026-11-10,資料集,2,nvidia/simready-assets,1510,1450343,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-10,資料集,3,Vyber07/cyber-security,826,13397,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-10,資料集,4,open-index/hacker-news,565,481430,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-10,資料集,5,codepawl/abo-glb,104,27676,,https://huggingface.co/datasets/codepawl/abo-glb
+2026-11-10,資料集,6,PentesterFlow/OffsecCyber,86,6341,,https://huggingface.co/datasets/PentesterFlow/OffsecCyber
+2026-11-10,資料集,7,tencent/TailorRig,62,4775,,https://huggingface.co/datasets/tencent/TailorRig
+2026-11-10,資料集,8,NousResearch/arete-data-pairs,51,1030,,https://huggingface.co/datasets/NousResearch/arete-data-pairs
+2026-11-10,資料集,9,codepawl/scanned-objects-glb,54,12689,,https://huggingface.co/datasets/codepawl/scanned-objects-glb
+2026-11-10,資料集,10,ccore/ThreeJS-3D-Scenes,102,8172,,https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+2026-11-10,Spaces,1,huggingface/moe-blogpost,493,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-10,Spaces,2,joelniklaus/harness-leaderboard,240,,Data Visualization,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-10,Spaces,3,kulkas2pintu/wan777,1451,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-10,Spaces,4,fendouai/free-ai-humanizer,227,,Text Generation,https://huggingface.co/spaces/fendouai/free-ai-humanizer
+2026-11-10,Spaces,5,speridlabs/idol,230,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-10,Spaces,6,hugging-apps/bfs-best-face-swap,864,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-10,Spaces,7,thea2026/image-to-video,137,,Video Generation,https://huggingface.co/spaces/thea2026/image-to-video
+2026-11-10,Spaces,8,JCisHERE/wan2-2-i2v-v3,286,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-10,Spaces,9,a-test-user-in-the-wrold/qwen-image-21-uncensored,314,,Image Generation,https://huggingface.co/spaces/a-test-user-in-the-wrold/qwen-image-21-uncensored
+2026-11-10,Spaces,10,YuyaoTechnology/MatterSeek,3156,,Document Analysis,https://huggingface.co/spaces/YuyaoTechnology/MatterSeek

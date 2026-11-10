@@ -1282,3 +1282,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-09,7,dsx-ai-factory/nvke,345,950,Go,https://github.com/dsx-ai-factory/nvke,NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.
 2026-11-09,8,google-deepmind/mujoco,41,16598,C++,https://github.com/google-deepmind/mujoco,Multi-Joint dynamics with Contact. A general purpose physics simulator.
 2026-11-09,9,anthropics/claude-quickstarts,32,19614,Python,https://github.com/anthropics/claude-quickstarts,A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API
+2026-11-10,1,sherlock-project/sherlock,4267,107838,Python,https://github.com/sherlock-project/sherlock,Hunt down social media accounts by username across social networks
+2026-11-10,2,meta/astryx,3278,20960,TypeScript,https://github.com/meta/astryx,An open source design system that's fully customizable and agent ready
+2026-11-10,3,milind-soni/OpenMausBot,1587,20152,TypeScript,https://github.com/milind-soni/OpenMausBot,Open-source Grok Bot alternative with a virtual machine that bots can use
+2026-11-10,4,anthropics/skills,1038,191474,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
+2026-11-10,5,vercel-labs/agent-browser,916,48745,Rust,https://github.com/vercel-labs/agent-browser,Browser automation CLI for AI agents
+2026-11-10,6,google-deepmind/mujoco,574,17080,C++,https://github.com/google-deepmind/mujoco,Multi-Joint dynamics with Contact. A general purpose physics simulator.
+2026-11-10,7,anthropics/claude-quickstarts,551,20175,Python,https://github.com/anthropics/claude-quickstarts,A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API
+2026-11-10,8,ZhuLinsen/daily_stock_analysis,506,69287,Python,https://github.com/ZhuLinsen/daily_stock_analysis,"LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs."
+2026-11-10,9,garrytan/gbrain,216,32329,TypeScript,https://github.com/garrytan/gbrain,Garry's Opinionated OpenClaw/Hermes Agent Brain
+2026-11-10,10,ruvnet/RuView,172,103697,Rust,https://github.com/ruvnet/RuView,"π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video."
