@@ -1302,3 +1302,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-11,8,addyosmani/agent-skills,465,115391,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
 2026-11-11,9,google-deepmind/mujoco,456,17499,C++,https://github.com/google-deepmind/mujoco,Multi-Joint dynamics with Contact. A general purpose physics simulator.
 2026-11-11,10,ranxianglei/billion-context,375,6551,TypeScript,https://github.com/ranxianglei/billion-context,"A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need"
+2026-11-12,1,meta/astryx,2776,25602,TypeScript,https://github.com/meta/astryx,An open source design system that's fully customizable and agent ready
+2026-11-12,2,we-promise/sure,1078,13242,Ruby,https://github.com/we-promise/sure,The personal finance app for everyone (by everyone)
+2026-11-12,3,addyosmani/agent-skills,787,116181,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-11-12,4,vercel-labs/agent-browser,708,50065,Rust,https://github.com/vercel-labs/agent-browser,Browser automation CLI for AI agents
+2026-11-12,5,homeassistant-ai/ha-mcp,645,7560,Python,https://github.com/homeassistant-ai/ha-mcp,"Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
+2026-11-12,6,shadcn/improve,361,11201,,https://github.com/shadcn/improve,Use your most capable model to audit your codebase and write plans for cheaper models to execute.
+2026-11-12,7,ZhuLinsen/daily_stock_analysis,278,70763,Python,https://github.com/ZhuLinsen/daily_stock_analysis,"LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs."
+2026-11-12,8,GoogleChrome/modern-web-guidance-src,159,2035,TypeScript,https://github.com/GoogleChrome/modern-web-guidance-src,
+2026-11-12,9,openai/codex-security,52,11951,TypeScript,https://github.com/openai/codex-security,"OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm:https://www.npmjs.com/package/@openai/codex-security"
+2026-11-12,10,TheAlgorithms/Java,51,67158,Java,https://github.com/TheAlgorithms/Java,All Algorithms implemented in Java
