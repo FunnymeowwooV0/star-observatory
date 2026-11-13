@@ -1312,3 +1312,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-12,8,GoogleChrome/modern-web-guidance-src,159,2035,TypeScript,https://github.com/GoogleChrome/modern-web-guidance-src,
 2026-11-12,9,openai/codex-security,52,11951,TypeScript,https://github.com/openai/codex-security,"OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm:https://www.npmjs.com/package/@openai/codex-security"
 2026-11-12,10,TheAlgorithms/Java,51,67158,Java,https://github.com/TheAlgorithms/Java,All Algorithms implemented in Java
+2026-11-13,1,meta/astryx,1830,26909,TypeScript,https://github.com/meta/astryx,An open source design system that's fully customizable and agent ready
+2026-11-13,2,we-promise/sure,967,14193,Ruby,https://github.com/we-promise/sure,The personal finance app for everyone (by everyone)
+2026-11-13,3,addyosmani/agent-skills,816,116863,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-11-13,4,GoogleChrome/modern-web-guidance-src,739,3671,TypeScript,https://github.com/GoogleChrome/modern-web-guidance-src,Keep your coding agent up to date with the latest web best practices
+2026-11-13,5,openai/codex-security,643,12671,TypeScript,https://github.com/openai/codex-security,"OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm:https://www.npmjs.com/package/@openai/codex-security"
+2026-11-13,6,Alishahryar1/free-claude-code,415,69564,Python,https://github.com/Alishahryar1/free-claude-code,"Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)"
+2026-11-13,7,CopilotKit/OpenBot,298,11866,TypeScript,https://github.com/CopilotKit/OpenBot,"Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent."
+2026-11-13,8,pookjw/HermesEnabler,218,1653,Objective-C,https://github.com/pookjw/HermesEnabler,Enable Hermès Watch Faces on any Apple Watch devices
+2026-11-13,9,ggml-org/llama.cpp,176,134728,C++,https://github.com/ggml-org/llama.cpp,LLM inference in C/C++
+2026-11-13,10,QwenLM/qwen-code,151,29992,TypeScript,https://github.com/QwenLM/qwen-code,An open-source AI coding agent that lives in your terminal.
