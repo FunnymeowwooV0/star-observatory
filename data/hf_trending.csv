@@ -3704,3 +3704,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-13,Spaces,8,speridlabs/idol,255,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
 2026-11-13,Spaces,9,PrunaAI/P-H3-Image,126,,Image Generation,https://huggingface.co/spaces/PrunaAI/P-H3-Image
 2026-11-13,Spaces,10,MiniMaxAI/minimax-h3-image,61,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+2026-11-14,模型,1,xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic,6759,21586,text-generation,https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic
+2026-11-14,模型,2,MiniMaxAI/MiniMax-H3-Image,1048,437039,text-to-image,https://huggingface.co/MiniMaxAI/MiniMax-H3-Image
+2026-11-14,模型,3,NousResearch/Arete-27B,573,5545,text-generation,https://huggingface.co/NousResearch/Arete-27B
+2026-11-14,模型,4,Lightricks/LTX-2.5,11822,2778909,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-14,模型,5,Qwen/Qwen3.8-27B,19913,6960395,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-14,模型,6,speridlabs/idol,2313,31367,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-14,模型,7,DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF,3075,1639400,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF
+2026-11-14,模型,8,moonshotai/Kimi-K3.1-Pro,2050,40953,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+2026-11-14,模型,9,Comfy-Org/MiniMax-H3-Image,360,1257301,text-to-image,https://huggingface.co/Comfy-Org/MiniMax-H3-Image
+2026-11-14,模型,10,Zyphra/ZONOS3-Mini,311,13068,text-to-speech,https://huggingface.co/Zyphra/ZONOS3-Mini
+2026-11-14,資料集,1,Angais/pixel-art-atlas-1.4m,465,53473,,https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m
+2026-11-14,資料集,2,Vyber07/cyber-security,1031,20450,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-14,資料集,3,nvidia/simready-assets,1572,1432334,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-14,資料集,4,tencent/TailorRig,95,5714,,https://huggingface.co/datasets/tencent/TailorRig
+2026-11-14,資料集,5,NousResearch/arete-data-pairs,69,1424,,https://huggingface.co/datasets/NousResearch/arete-data-pairs
+2026-11-14,資料集,6,nvidia/PhysicalAI-Human-1M-100K,53,8244,,https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K
+2026-11-14,資料集,7,NousResearch/Propaganda_Eval,60,3943,,https://huggingface.co/datasets/NousResearch/Propaganda_Eval
+2026-11-14,資料集,8,open-index/hacker-news,580,459120,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-14,資料集,9,codepawl/plateau-city-glb,46,9037,,https://huggingface.co/datasets/codepawl/plateau-city-glb
+2026-11-14,資料集,10,ccore/ThreeJS-3D-Scenes,123,11116,,https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes
+2026-11-14,Spaces,1,huggingface/moe-blogpost,623,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-14,Spaces,2,joelniklaus/harness-leaderboard,355,,Data Visualization,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-14,Spaces,3,kulkas2pintu/wan777,1589,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-14,Spaces,4,JCisHERE/wan2-2-i2v-v3,364,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-14,Spaces,5,PrunaAI/P-H3-Image,148,,Image Generation,https://huggingface.co/spaces/PrunaAI/P-H3-Image
+2026-11-14,Spaces,6,hugging-apps/bfs-best-face-swap,921,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-14,Spaces,7,speridlabs/idol,266,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-14,Spaces,8,MiniMaxAI/minimax-h3-image,87,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+2026-11-14,Spaces,9,aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing,164,,Video Generation,https://huggingface.co/spaces/aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing
+2026-11-14,Spaces,10,Tanyakhan/pornflux-i2v-6e9et,191,,Video Generation,https://huggingface.co/spaces/Tanyakhan/pornflux-i2v-6e9et
