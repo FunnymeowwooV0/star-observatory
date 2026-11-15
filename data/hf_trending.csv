@@ -3734,3 +3734,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-14,Spaces,8,MiniMaxAI/minimax-h3-image,87,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
 2026-11-14,Spaces,9,aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing,164,,Video Generation,https://huggingface.co/spaces/aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing
 2026-11-14,Spaces,10,Tanyakhan/pornflux-i2v-6e9et,191,,Video Generation,https://huggingface.co/spaces/Tanyakhan/pornflux-i2v-6e9et
+2026-11-15,模型,1,xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic,7405,24470,text-generation,https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic
+2026-11-15,模型,2,MiniMaxAI/MiniMax-H3-Image,1130,517948,text-to-image,https://huggingface.co/MiniMaxAI/MiniMax-H3-Image
+2026-11-15,模型,3,Qwen/Qwen3.8-27B,20038,6757964,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-15,模型,4,Lightricks/LTX-2.5,11958,2777667,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-15,模型,5,DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF,3135,1657783,image-text-to-text,https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF
+2026-11-15,模型,6,Comfy-Org/MiniMax-H3-Image,390,1615613,text-to-image,https://huggingface.co/Comfy-Org/MiniMax-H3-Image
+2026-11-15,模型,7,speridlabs/idol,2345,32619,image-to-3d,https://huggingface.co/speridlabs/idol
+2026-11-15,模型,8,NousResearch/Arete-27B,599,6191,text-generation,https://huggingface.co/NousResearch/Arete-27B
+2026-11-15,模型,9,Zyphra/ZONOS3-Mini,354,19743,text-to-speech,https://huggingface.co/Zyphra/ZONOS3-Mini
+2026-11-15,模型,10,moonshotai/Kimi-K3.1-Pro,2083,43687,image-text-to-text,https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+2026-11-15,資料集,1,Angais/pixel-art-atlas-1.4m,486,57565,,https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m
+2026-11-15,資料集,2,Vyber07/cyber-security,1067,20702,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-15,資料集,3,nvidia/simready-assets,1581,1569965,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-15,資料集,4,tencent/TailorRig,103,5803,,https://huggingface.co/datasets/tencent/TailorRig
+2026-11-15,資料集,5,nvidia/PhysicalAI-Human-1M-100K,53,9492,,https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K
+2026-11-15,資料集,6,google/physical-engineerings-last-exam,59,43834,,https://huggingface.co/datasets/google/physical-engineerings-last-exam
+2026-11-15,資料集,7,israellaguan/codex-tool-use-trajectories,48,895,,https://huggingface.co/datasets/israellaguan/codex-tool-use-trajectories
+2026-11-15,資料集,8,arc4g/arc-art,44,2197,,https://huggingface.co/datasets/arc4g/arc-art
+2026-11-15,資料集,9,NousResearch/arete-data-pairs,71,1521,,https://huggingface.co/datasets/NousResearch/arete-data-pairs
+2026-11-15,資料集,10,open-index/hacker-news,582,459114,,https://huggingface.co/datasets/open-index/hacker-news
+2026-11-15,Spaces,1,huggingface/moe-blogpost,639,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-15,Spaces,2,joelniklaus/harness-leaderboard,367,,Data Visualization,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-15,Spaces,3,kulkas2pintu/wan777,1610,,Video Generation,https://huggingface.co/spaces/kulkas2pintu/wan777
+2026-11-15,Spaces,4,JCisHERE/wan2-2-i2v-v3,382,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-15,Spaces,5,MiniMaxAI/minimax-h3-image,97,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+2026-11-15,Spaces,6,PrunaAI/P-H3-Image,159,,Image Generation,https://huggingface.co/spaces/PrunaAI/P-H3-Image
+2026-11-15,Spaces,7,hugging-apps/bfs-best-face-swap,940,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-15,Spaces,8,speridlabs/idol,270,,3D Modeling,https://huggingface.co/spaces/speridlabs/idol
+2026-11-15,Spaces,9,aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing,172,,Video Generation,https://huggingface.co/spaces/aaaa33311/wan2-2-fp8da-aoti-preview-2c-finishing
+2026-11-15,Spaces,10,Tanyakhan/pornflux-i2v-6e9et,207,,Video Generation,https://huggingface.co/spaces/Tanyakhan/pornflux-i2v-6e9et
