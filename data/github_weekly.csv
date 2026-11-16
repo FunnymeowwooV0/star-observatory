@@ -169,3 +169,13 @@ week,date,rank,repo,new_stars,total_stars,language,url,description
 2026-W45,2026-11-02,8,thedotmack/claude-mem,5852,109859,TypeScript,https://github.com/thedotmack/claude-mem,"Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More"
 2026-W45,2026-11-02,9,JetBrains/thinkrail,5760,7061,TypeScript,https://github.com/JetBrains/thinkrail,"Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need"
 2026-W45,2026-11-02,10,TauricResearch/TradingAgents,5432,119693,Python,https://github.com/TauricResearch/TradingAgents,TradingAgents: Multi-Agents LLM Financial Trading Framework
+2026-W47,2026-11-16,1,meta/astryx,13501,29135,TypeScript,https://github.com/meta/astryx,An open source design system that's fully customizable and agent ready
+2026-W47,2026-11-16,2,sherlock-project/sherlock,10412,112724,Python,https://github.com/sherlock-project/sherlock,Hunt down social media accounts by username across social networks
+2026-W47,2026-11-16,3,anthropics/skills,6077,195535,Python,https://github.com/anthropics/skills,Public repository for Agent Skills
+2026-W47,2026-11-16,4,milind-soni/OpenMausBot,5463,23701,TypeScript,https://github.com/milind-soni/OpenMausBot,Open-source Grok Bot alternative with a virtual machine that bots can use
+2026-W47,2026-11-16,5,google/elephant-goldfish-model,5060,19976,Python,https://github.com/google/elephant-goldfish-model,Open-source plugin for designing and reviewing software with agents
+2026-W47,2026-11-16,6,we-promise/sure,4556,15809,Ruby,https://github.com/we-promise/sure,The personal finance app for everyone (by everyone)
+2026-W47,2026-11-16,7,ZhuLinsen/daily_stock_analysis,4548,72621,Python,https://github.com/ZhuLinsen/daily_stock_analysis,"LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs."
+2026-W47,2026-11-16,8,vercel-labs/agent-browser,4217,51768,Rust,https://github.com/vercel-labs/agent-browser,Browser automation CLI for AI agents
+2026-W47,2026-11-16,9,addyosmani/agent-skills,3889,118065,JavaScript,https://github.com/addyosmani/agent-skills,Production-grade engineering skills for AI coding agents.
+2026-W47,2026-11-16,10,google-deepmind/mujoco,1922,18113,C++,https://github.com/google-deepmind/mujoco,Multi-Joint dynamics with Contact. A general purpose physics simulator.
