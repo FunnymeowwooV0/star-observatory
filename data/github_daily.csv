@@ -1372,3 +1372,13 @@ date,rank,repo,new_stars,total_stars,language,url,description
 2026-11-18,8,mvanhorn/last30days-skill,696,69424,Python,https://github.com/mvanhorn/last30days-skill,"AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
 2026-11-18,9,backnotprop/plannotator,691,13208,TypeScript,https://github.com/backnotprop/plannotator,"The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click."
 2026-11-18,10,getarcaneapp/arcane,618,9506,Go,https://github.com/getarcaneapp/arcane,"Modern Docker Management, Designed for Everyone"
+2026-11-19,1,google-research/paper-orchestra,1524,4635,Python,https://github.com/google-research/paper-orchestra,PaperOrchestra is a multi-agent framework for automated AI research paper writing.
+2026-11-19,2,affaan-m/ECC,1108,306803,JavaScript,https://github.com/affaan-m/ECC,"The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond."
+2026-11-19,3,mvanhorn/last30days-skill,1059,70337,Python,https://github.com/mvanhorn/last30days-skill,"AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+2026-11-19,4,obra/superpowers,822,321530,Shell,https://github.com/obra/superpowers,An agentic skills framework & software development methodology that works.
+2026-11-19,5,sveltejs/svelte,692,89714,JavaScript,https://github.com/sveltejs/svelte,web development for the rest of us
+2026-11-19,6,getarcaneapp/arcane,547,9977,Go,https://github.com/getarcaneapp/arcane,"Modern Docker Management, Designed for Everyone"
+2026-11-19,7,HKUDS/CLI-Anything,389,60068,Python,https://github.com/HKUDS/CLI-Anything,"""CLI-Anything: Making ALL Software Agent-Native"" -- CLI-Hub:https://clianything.cc/"
+2026-11-19,8,google-labs-code/stitch-skills,365,10525,TypeScript,https://github.com/google-labs-code/stitch-skills,"A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+2026-11-19,9,n8n-io/n8n,325,211287,TypeScript,https://github.com/n8n-io/n8n,"Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
+2026-11-19,10,cursor/plugins,314,17356,TypeScript,https://github.com/cursor/plugins,Cursor plugin specification and official plugins
