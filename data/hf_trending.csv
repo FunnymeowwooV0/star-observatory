@@ -3914,3 +3914,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-20,Spaces,8,amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer,104,,Image Editing,https://huggingface.co/spaces/amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer
 2026-11-20,Spaces,9,PrunaAI/P-Image-OSS,189,,Image Generation,https://huggingface.co/spaces/PrunaAI/P-Image-OSS
 2026-11-20,Spaces,10,rdata92/LTX-2.3-10Eros,212,,Video Generation,https://huggingface.co/spaces/rdata92/LTX-2.3-10Eros
+2026-11-21,模型,1,thinkingmachines/Inkling-2-Mini,986,136,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling-2-Mini
+2026-11-21,模型,2,harness-hub/Qwen3.8-27B-pi-adapted,828,1874,image-text-to-text,https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted
+2026-11-21,模型,3,Sentinel7/h3,508,0,,https://huggingface.co/Sentinel7/h3
+2026-11-21,模型,4,Lightricks/LTX-2.5,12929,2964523,image-to-video,https://huggingface.co/Lightricks/LTX-2.5
+2026-11-21,模型,5,tencent/Hy4-flash,557,3949,image-text-to-text,https://huggingface.co/tencent/Hy4-flash
+2026-11-21,模型,6,higurashi-ai/Haru-4B,5707,7323,audio-to-audio,https://huggingface.co/higurashi-ai/Haru-4B
+2026-11-21,模型,7,unsloth/Inkling-2-Mini-GGUF,327,0,image-text-to-text,https://huggingface.co/unsloth/Inkling-2-Mini-GGUF
+2026-11-21,模型,8,Qwen/Qwen3.8-27B,20825,6454419,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-21,模型,9,sensenova/SenseNova-Loop-9B,454,1631,image-text-to-text,https://huggingface.co/sensenova/SenseNova-Loop-9B
+2026-11-21,模型,10,inworld/voice-isolator,510,0,audio-to-audio,https://huggingface.co/inworld/voice-isolator
+2026-11-21,資料集,1,Vyber07/cyber-security,1330,28056,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-21,資料集,2,nvidia/USDCraft-10K,133,55150,,https://huggingface.co/datasets/nvidia/USDCraft-10K
+2026-11-21,資料集,3,Angais/pixel-art-atlas-1.4m,653,72583,,https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m
+2026-11-21,資料集,4,nvidia/simready-assets,1693,1731953,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-21,資料集,5,google/physical-engineerings-last-exam,159,223078,,https://huggingface.co/datasets/google/physical-engineerings-last-exam
+2026-11-21,資料集,6,Digitaluz/uzbek-language-corpus,73,877,,https://huggingface.co/datasets/Digitaluz/uzbek-language-corpus
+2026-11-21,資料集,7,HubLabs/HubEgo-100K,72,190021,,https://huggingface.co/datasets/HubLabs/HubEgo-100K
+2026-11-21,資料集,8,nvidia/PhysicalAI-Human-1M-100K,111,19357,,https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K
+2026-11-21,資料集,9,KORMo-VL/EVIDENT,64,768,,https://huggingface.co/datasets/KORMo-VL/EVIDENT
+2026-11-21,資料集,10,google/multimodal-knowledge-agent,85,7529,,https://huggingface.co/datasets/google/multimodal-knowledge-agent
+2026-11-21,Spaces,1,huggingface/moe-blogpost,784,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-21,Spaces,2,JCisHERE/wan2-2-i2v-v3,540,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-21,Spaces,3,MiniMaxAI/minimax-h3-image,230,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+2026-11-21,Spaces,4,joelniklaus/harness-leaderboard,484,,Text Generation,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-21,Spaces,5,cfahlgren1/slack-moji,71,,,https://huggingface.co/spaces/cfahlgren1/slack-moji
+2026-11-21,Spaces,6,hugging-apps/bfs-best-face-swap,1013,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-21,Spaces,7,waitinghere/Krea2T-Revamped,100,,Image Editing,https://huggingface.co/spaces/waitinghere/Krea2T-Revamped
+2026-11-21,Spaces,8,amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer,107,,Image Editing,https://huggingface.co/spaces/amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer
+2026-11-21,Spaces,9,rdata92/LTX-2.3-10Eros,217,,Video Generation,https://huggingface.co/spaces/rdata92/LTX-2.3-10Eros
+2026-11-21,Spaces,10,agent-memory-leaderboard/leaderboard,932,,Data Visualization,https://huggingface.co/spaces/agent-memory-leaderboard/leaderboard
