@@ -3974,3 +3974,33 @@ date,type,rank,id,likes,downloads,tag,url
 2026-11-22,Spaces,8,hugging-apps/bfs-best-face-swap,1028,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
 2026-11-22,Spaces,9,amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer,115,,Image Editing,https://huggingface.co/spaces/amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer
 2026-11-22,Spaces,10,rdata92/LTX-2.3-10Eros,230,,Video Generation,https://huggingface.co/spaces/rdata92/LTX-2.3-10Eros
+2026-11-23,模型,1,thinkingmachines/Inkling-2-Mini,5166,23543,image-text-to-text,https://huggingface.co/thinkingmachines/Inkling-2-Mini
+2026-11-23,模型,2,unsloth/Inkling-2-Mini-GGUF,947,805993,image-text-to-text,https://huggingface.co/unsloth/Inkling-2-Mini-GGUF
+2026-11-23,模型,3,inworld/voice-isolator,664,0,audio-to-audio,https://huggingface.co/inworld/voice-isolator
+2026-11-23,模型,4,tencent/Hy4-flash,630,6617,image-text-to-text,https://huggingface.co/tencent/Hy4-flash
+2026-11-23,模型,5,harness-hub/Qwen3.8-27B-pi-adapted,1002,2831,image-text-to-text,https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted
+2026-11-23,模型,6,AtomicChat/Inkling-2-Mini-Uncensored-GGUF,542,129693,image-text-to-text,https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF
+2026-11-23,模型,7,apple/DepthPro2,1060,0,depth-estimation,https://huggingface.co/apple/DepthPro2
+2026-11-23,模型,8,higurashi-ai/Haru-4B,906,8608,audio-to-audio,https://huggingface.co/higurashi-ai/Haru-4B
+2026-11-23,模型,9,Qwen/Qwen3.8-27B,21622,6297396,image-text-to-text,https://huggingface.co/Qwen/Qwen3.8-27B
+2026-11-23,模型,10,sensenova/SenseNova-Loop-9B,580,1863,image-text-to-text,https://huggingface.co/sensenova/SenseNova-Loop-9B
+2026-11-23,資料集,1,Vyber07/cyber-security,1449,30255,,https://huggingface.co/datasets/Vyber07/cyber-security
+2026-11-23,資料集,2,Angais/pixel-art-atlas-1.4m,693,75279,,https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m
+2026-11-23,資料集,3,nvidia/USDCraft-10K,159,76240,,https://huggingface.co/datasets/nvidia/USDCraft-10K
+2026-11-23,資料集,4,nvidia/simready-assets,1744,1751763,,https://huggingface.co/datasets/nvidia/simready-assets
+2026-11-23,資料集,5,google/physical-engineerings-last-exam,215,378338,,https://huggingface.co/datasets/google/physical-engineerings-last-exam
+2026-11-23,資料集,6,Digitaluz/uzbek-language-corpus,122,2029,,https://huggingface.co/datasets/Digitaluz/uzbek-language-corpus
+2026-11-23,資料集,7,HubLabs/HubEgo-100K,116,257205,,https://huggingface.co/datasets/HubLabs/HubEgo-100K
+2026-11-23,資料集,8,KORMo-VL/EVIDENT,94,825,,https://huggingface.co/datasets/KORMo-VL/EVIDENT
+2026-11-23,資料集,9,JaimeMaLangue/JML-fon-speech-v1,75,564,,https://huggingface.co/datasets/JaimeMaLangue/JML-fon-speech-v1
+2026-11-23,資料集,10,nvidia/PhysicalAI-Human-1M-100K,151,21855,,https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K
+2026-11-23,Spaces,1,huggingface/moe-blogpost,829,,Other,https://huggingface.co/spaces/huggingface/moe-blogpost
+2026-11-23,Spaces,2,JCisHERE/wan2-2-i2v-v3,622,,Video Generation,https://huggingface.co/spaces/JCisHERE/wan2-2-i2v-v3
+2026-11-23,Spaces,3,MiniMaxAI/minimax-h3-image,289,,Image Generation,https://huggingface.co/spaces/MiniMaxAI/minimax-h3-image
+2026-11-23,Spaces,4,joelniklaus/harness-leaderboard,525,,Data Visualization,https://huggingface.co/spaces/joelniklaus/harness-leaderboard
+2026-11-23,Spaces,5,Lakonik/pi-H3,128,,Video Generation,https://huggingface.co/spaces/Lakonik/pi-H3
+2026-11-23,Spaces,6,waitinghere/Krea2T-Revamped,141,,Image Generation,https://huggingface.co/spaces/waitinghere/Krea2T-Revamped
+2026-11-23,Spaces,7,cfahlgren1/slack-moji,95,,,https://huggingface.co/spaces/cfahlgren1/slack-moji
+2026-11-23,Spaces,8,hugging-apps/bfs-best-face-swap,1044,,Image Editing,https://huggingface.co/spaces/hugging-apps/bfs-best-face-swap
+2026-11-23,Spaces,9,amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer,126,,Image Editing,https://huggingface.co/spaces/amisima/Qwen-2.1-Turbo-Qwen-Face-Swap-MOSS-Image-Edit-Outpaint-Qwen-Detail-Enhancer
+2026-11-23,Spaces,10,thejagstudio/tessera-pixel-studio,81,,Image Generation,https://huggingface.co/spaces/thejagstudio/tessera-pixel-studio
