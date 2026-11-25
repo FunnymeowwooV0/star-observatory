@@ -1439,3 +1439,13 @@ date,rank,title,points,comments,hn_url,url
 2026-11-24,8,New York Bans Subscription and Post-Purchase Fees on Cars,374,118,https://news.ycombinator.com/item?id=50622774,https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-signs-bill-restricting-exploitative-vehicle-subscription
 2026-11-24,9,Nespresso's project to reduce grams of coffee per capsule,314,333,https://news.ycombinator.com/item?id=50605479,https://alvinbunk.wordpress.com/2026/11/01/nespresso-project-olympus/
 2026-11-24,10,GPUI is getting its own repository,263,102,https://news.ycombinator.com/item?id=50619103,https://github.com/zed-industries/gpui
+2026-11-25,1,Matrix Multiplication is Θ(n^2.25) [pdf],605,307,https://news.ycombinator.com/item?id=50637220,https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf
+2026-11-25,2,The Spray Bottle,476,109,https://news.ycombinator.com/item?id=50598555,https://mechanical-pencil.com/products/spray-bottle
+2026-11-25,3,Ternary Bonsai 2.5 27B,440,137,https://news.ycombinator.com/item?id=50633922,https://prismml.com/news/bonsai-2-5-27b
+2026-11-25,4,GTA 6 Running on Windows,390,466,https://news.ycombinator.com/item?id=50627783,https://twitter.com/raul_bs3/status/2125213756238291075
+2026-11-25,5,Button Sounds – collection of professionally-recorded button clicks and presses,352,42,https://news.ycombinator.com/item?id=50638032,https://buttons.joshwcomeau.com/
+2026-11-25,6,Active intrusion campaign against Check Point security management servers,282,140,https://news.ycombinator.com/item?id=50630594,https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign
+2026-11-25,7,Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?,270,211,https://news.ycombinator.com/item?id=50630809,https://news.ycombinator.com/item?id=50630809
+2026-11-25,8,GPT-6 models demonstrate intrinsic protein-design capabilities,258,80,https://news.ycombinator.com/item?id=50634658,https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/
+2026-11-25,9,PenGPT: A Generative Transformer for Handwriting and Sketches,241,42,https://news.ycombinator.com/item?id=50637056,https://greydanus.github.io/2026/11/12/pengpt/
+2026-11-25,10,Models Can Communicate via Inference Servers Despite Being Sandboxed,219,81,https://news.ycombinator.com/item?id=50637686,https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being
