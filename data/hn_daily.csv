@@ -1449,3 +1449,13 @@ date,rank,title,points,comments,hn_url,url
 2026-11-25,8,GPT-6 models demonstrate intrinsic protein-design capabilities,258,80,https://news.ycombinator.com/item?id=50634658,https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/
 2026-11-25,9,PenGPT: A Generative Transformer for Handwriting and Sketches,241,42,https://news.ycombinator.com/item?id=50637056,https://greydanus.github.io/2026/11/12/pengpt/
 2026-11-25,10,Models Can Communicate via Inference Servers Despite Being Sandboxed,219,81,https://news.ycombinator.com/item?id=50637686,https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being
+2026-11-26,1,Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening,1470,1278,https://news.ycombinator.com/item?id=50646108,https://scottaaronson.blog/?p=10379
+2026-11-26,2,1Password Security Incident,1404,596,https://news.ycombinator.com/item?id=50644817,https://1password.com/blog/update-on-nov-2026-security-incident
+2026-11-26,3,Much shorter version of GRH Lean verification from Anthropic,443,225,https://news.ycombinator.com/item?id=50648050,https://github.com/lsernau/grh-lean
+2026-11-26,4,The New York Times warns photographers not to update Photoshop over AI features,366,313,https://news.ycombinator.com/item?id=50647673,https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features
+2026-11-26,5,GPT-6.2 Astra is the first model to beat Googlers' code golf records,365,104,https://news.ycombinator.com/item?id=50601280,https://bjin.github.io/go-codegolf-benchmark/#leaderboard
+2026-11-26,6,Slow Ubuntu security response times,281,125,https://news.ycombinator.com/item?id=50647181,https://www.openwall.com/lists/oss-security/2026/11/25/9
+2026-11-26,7,Tell HN: Lots of Ask HNs again,252,93,https://news.ycombinator.com/item?id=50649864,https://news.ycombinator.com/item?id=50649864
+2026-11-26,8,I checked Clojure's core with Lean and found unreported bugs,219,76,https://news.ycombinator.com/item?id=50642939,https://s.conao3.com/blog/2026/e4f733
+2026-11-26,9,"OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",218,111,https://news.ycombinator.com/item?id=50651117,https://twitter.com/thsottiaux/status/2125784147889393806
+2026-11-26,10,SSH is a GUI framework,188,96,https://news.ycombinator.com/item?id=50589784,https://zydra.sh/articles/ssh-is-a-gui-framework/
