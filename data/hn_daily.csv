@@ -1469,3 +1469,13 @@ date,rank,title,points,comments,hn_url,url
 2026-11-27,8,AMD-specific fork of llama.cpp,351,84,https://news.ycombinator.com/item?id=50657265,https://devnull.land/amd-specific-llama-cpp
 2026-11-27,9,Hard Drive pricing has gotten bad,332,236,https://news.ycombinator.com/item?id=50661646,https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/
 2026-11-27,10,Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email,326,290,https://news.ycombinator.com/item?id=50653477,https://techstackups.com/articles/google-workspace-ai-agents-mcp/
+2026-11-28,1,Credit card skimming scripts using WebRTC found on popular shopping sites,511,267,https://news.ycombinator.com/item?id=50668145,https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer
+2026-11-28,2,Michael Nielsen took down his book on neural nets,506,311,https://news.ycombinator.com/item?id=50670757,https://neuralnetworksanddeeplearning.com/
+2026-11-28,3,GPT 6.2 Astra Solves a Historical Mystery,432,272,https://news.ycombinator.com/item?id=50643158,https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical
+2026-11-28,4,"States sue SpaceX to stop Grok from generating child sex images, revenge porn",372,219,https://news.ycombinator.com/item?id=50670855,https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform
+2026-11-28,5,Show HN: bouncemarket – a live prediction market game for a bouncing ball,369,124,https://news.ycombinator.com/item?id=50667726,https://bouncemarket.minhanhday.com/
+2026-11-28,6,Google's DeepCrossAttention achieves comparable model quality up to 3x faster,347,134,https://news.ycombinator.com/item?id=50672565,https://research.google/blog/supercharging-transformer-residual-connections/
+2026-11-28,7,The Balatro Timeline,306,67,https://news.ycombinator.com/item?id=50657346,https://localthunk.com/blog/balatro-timeline-3aarh
+2026-11-28,8,Convex skills send the user's app idea to a remote server without telling them,294,93,https://news.ycombinator.com/item?id=50669765,https://github.com/convex/convex-backend-skill/issues/64
+2026-11-28,9,"Unkernel: Real Linux kernel, compiled to WebAssembly",230,43,https://news.ycombinator.com/item?id=50674218,https://unkernel.dev
+2026-11-28,10,False computer-checked proofs,223,86,https://news.ycombinator.com/item?id=50667989,https://cr.yp.to/proofs/falseccp.html
